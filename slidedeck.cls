@@ -39,12 +39,14 @@
 
 \LoadClass{article}
 \RequirePackage{geometry}
-  \geometry{paperwidth=16in, paperheight=9in, left=1in, right=1in, top=1in, bottom=1in}
+  \geometry{paperwidth=16in, paperheight=9in, marginparsep=2in, marginparwidth=2in, left=0.5in, right=0.5in, textwidth=10in, top=2in, bottom=2in, headsep=1.5in, footskip=1.5in}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{multicol}
+\RequirePackage{enumitem}
+\RequirePackage{changepage}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
@@ -65,17 +67,19 @@
   \fancyhf{}
   \fancyhead[R]{\ttfamily {\Huge\thepage{}}{\Large/\pageref{LastPage}}}
 
-\newcommand\sdSTART{}
-\newcommand\sdBODY{}
-\newcommand\sdEND{}
-\newcommand\sdFLUSH{\sdSTART\sdBODY\sdEND\vspace*{0pt}\newpage}
-
-\newcommand\sdClear{
-  \sdFLUSH
-  \renewcommand\sdSTART{}
-  \renewcommand\sdBODY{}
-  \renewcommand\sdEND{}
+\newcommand*\sdBODY{}
+\newcommand*\sdHOOKS{}
+\newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
+\newcommand\sdClear{\sdFLUSH\renewcommand*\sdBODY{}}
+\newcommand\sdClick{\sdFLUSH}
+\newcommand\sdHook[2]{
+  \expandafter\newcommand\csname sdHOOK#1\endcsname{#2}
+  \gappto\sdHOOKS{\csname sdHOOK#1\endcsname}
 }
+\newcommand\sdHookDelete[1]{
+  \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
+}
+
 \newcommand\sdTopLeft[1]{\fancyhead[L]{\Large\ttfamily #1}}
 \newcommand\sdBottomLeft[1]{\fancyfoot[L]{\Large\ttfamily #1}}
 
@@ -83,32 +87,48 @@
   \gappto\sdBODY{
     \begin{textblock}{14}[0.5,0.5](8,8)%
       \begin{center}\tikz{
-        \node[fill=sd-green,font={\fontsize{72pt}{72pt}\selectfont}] (title) {#1};
-        \node[fill=sd-green,below right=1cm and 4cm of title.south, anchor=north] (subtitle) {#2};
+        \begin{scope}[rotate=12,transform shape]
+          \node[fill=sd-green,font={\color{sd-black}\fontsize{92pt}{92pt}\selectfont}] (title) {#1};
+          \node[fill=sd-green,font={\color{sd-black}\fontsize{48pt}{48pt}\selectfont},below right=1cm and 4cm of title.south, anchor=north] (subtitle) {#2};
+        \end{scope}
       }\end{center}%
     \end{textblock}
   }
 }
 
-\newcommand\sdClick{\sdFLUSH}
-
 \newcommand*\sdTOC{}
 \newcommand\sdToc[1]{
   \ifx\sdTOC\empty
-    \gappto\sdSTART{\begin{itemize}}
-    \gappto\sdBODY{\sdTOC}
-    \gpreto\sdEND{\end{itemize}}
+    \gappto\sdBODY{
+      \begin{adjustwidth}{6in}{0in}
+        \begin{itemize}[label={}]
+          \sdTOC
+        \end{itemize}
+      \end{adjustwidth}
+    }
   \fi
   \gappto\sdTOC{\item #1}
 }
 \newcommand\sdTocNext{}
 \newcommand\sdTocDelete{}
 
-\newcommand\sdMenu[1]{...}
+\newcommand*\sdMENU{}
+\newcommand\sdMenu[1]{
+  \ifx\sdMENU\empty
+    \sdHook{menu}{
+      \begin{textblock}{4}(1,1)%
+        \begin{itemize}[label={}]
+          \sdMENU
+        \end{itemize}
+      \end{textblock}%
+    }
+  \fi
+  \gappto\sdMENU{\item #1}
+}
 \newcommand\sdMenuNext{}
-\newcommand\sdMenuDelete{}
+\newcommand\sdMenuDelete{\sdHookDelete{menu}}
 
-\newcommand\sdBanner[1][1]{#1}
+\newcommand\sdBanner[1][1]{\tikz{\node[fill=sd-green,color=sd-black]{#1};}}
 
 \newcommand\sdQR[1]{#1}
 
@@ -140,10 +160,11 @@
   \raggedbottom%
   \raggedright%
   \setlength\topskip{0mm}%
+  \setlength\headheight{24pt}%
   \setlength\parindent{0pt}%
   \setlength\parskip{6pt}%
   \setlength\columnsep{32pt}%
-  \Huge
+  \fontsize{28pt}{32pt}\selectfont
 }
 
 \endinput
