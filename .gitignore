@@ -1,0 +1,17 @@
+.DS_Store
+target/
+_minted-*/
+*.pdf
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+_minted-wp/
+*.fls
+*.log
+*.run.xml
+*.aux
+*.pyg
+*.out
+*.dvi
+*.xcp
