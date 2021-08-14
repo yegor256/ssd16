@@ -5,7 +5,7 @@
 \sdBottomLeft{Lecture \#1: \thetitle{} \thesubtitle{}}
 \begin{document}
 
-\sdTitle{\thetitle}{\thesubtitle}
+\sdPrint{\sdTitle{\thetitle}{\thesubtitle}}
 
 \sdClear
 
@@ -24,7 +24,7 @@
 
 \sdClear
 
-\sdPrint{\begin{center}\sdBanner[green,XL]{Software Design Description (SDD)}\end{center}}
+\sdPrint{\sdCenter{\sdBanner[green]{\large Software Design Description (SDD)}}}
 \sdClear
 
 \sdMenu{Glossary}
@@ -41,7 +41,7 @@
   A \ul{client} is a computer with a web browser.\par
   A \ul{server} is a computer with a software installed.\par
 }\sdClick
-\sdPrint{\sdBanner[green,M]{If I don't understand you, it's your fault!}}\sdClick
+\sdPrint{\sdBanner[green]{If I don't understand you, it's your fault!}}\sdClick
 \sdPrint{\sdQR{https://www.yegor256.com/2015/03/16/technical-glossaries.html}}
 
 % Languages
@@ -75,12 +75,12 @@
 % Rationale
 \sdClear
 \sdMenuNext
+\sdPrint{\sdBanner[green]{\large Why MongoDB, why not MySQL?}}\sdClick
 \sdPrint{
-  \sdBanner[green,M]{Why MongoDB, why not MySQL?}
-  Multi-Criteria Decision Making (MCDM)\par
-  Architecture Tradeoff Analysis Method (ATAM)\par
-  Decision Table\par
-  Multi Factor Analysis\par
+  Multi-Criteria Decision Making (MCDM)\\
+  Architecture Tradeoff Analysis Method (ATAM)\\
+  Decision Table\\
+  Multi Factor Analysis\\
   Decision Matrix
 }
 

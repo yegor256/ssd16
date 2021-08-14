@@ -40,7 +40,7 @@
 
 \LoadClass{article}
 \RequirePackage{geometry}
-  \geometry{paperwidth=16in, paperheight=9in, marginparsep=2in, marginparwidth=2in, left=0.5in, right=0.5in, textwidth=10in, top=2in, bottom=2in, headsep=1.5in, footskip=1.5in}
+  \geometry{paperwidth=16in, paperheight=9in, left=0.5in, right=0.5in, textwidth=10in, top=2in, bottom=2in, headsep=1.5in, footskip=1.5in}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
 \RequirePackage[T1]{fontenc}
@@ -69,11 +69,11 @@
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \fancyhead[R]{\ttfamily {\Huge\thepage{}}{\Large/\pageref{LastPage}}}
+  \fancyhead[R]{\ttfamily {\thepage{}}{\small/\pageref{LastPage}}}
 
 \newcommand*\sdBODY{}
 \newcommand*\sdHOOKS{}
-\newcommand\sdFLUSH{\sdHOOKS\begin{minipage}{\linewidth}\sdBODY\end{minipage}\vspace*{0pt}\newpage}
+\newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
 \newcommand\sdClear{\sdFLUSH\renewcommand*\sdBODY{}}
 \newcommand\sdClick{\sdFLUSH}
 \newcommand\sdHook[2]{
@@ -88,16 +88,12 @@
 \newcommand\sdBottomLeft[1]{\fancyfoot[L]{\footnotesize\ttfamily #1}}
 
 \newcommand\sdTitle[2]{
-  \gappto\sdBODY{
-    \begin{textblock}{14}[0.5,0.5](8,8)%
-      \begin{center}\tikz{
-        \begin{scope}[rotate=12,transform shape]
-          \node[fill=sd-green,font={\color{sd-black}\fontsize{92pt}{92pt}\selectfont}] (title) {#1};
-          \node[fill=sd-green,font={\color{sd-black}\fontsize{48pt}{48pt}\selectfont},below right=1cm and 4cm of title.south, anchor=north] (subtitle) {#2};
-        \end{scope}
-      }\end{center}%
-    \end{textblock}
-  }
+  \sdCenter{\tikz{
+    \begin{scope}[rotate=12,transform shape]
+      \node[fill=sd-green,font={\color{sd-black}\fontsize{92pt}{92pt}\selectfont}] (title) {#1};
+      \node[fill=sd-green,font={\color{sd-black}\fontsize{48pt}{48pt}\selectfont},below right=1cm and 4cm of title.south, anchor=north] (subtitle) {#2};
+    \end{scope}
+  }}
 }
 
 \newcommand\sdSkip[1]{\parshape 1 #1 \dimexpr\linewidth-#1\relax}
@@ -130,7 +126,7 @@
   \ifx\sdMENU\empty
     \setcounter{sdMENUcnt}{1}
     \sdHook{menu}{
-      \sdSkip{4in}
+      \newgeometry{textwidth=6in}
       \begin{textblock}{4}(1,3)%
         \tikz{
           \node (z) {
@@ -157,6 +153,7 @@
 \newcommand\sdMenuNext{\stepcounter{sdMENUcnt}}
 \newcommand\sdMenuDelete{
   \sdHookDelete{menu}
+  \restoregeometry
 }
 
 \newcommand\sdBanner[2][]{
@@ -171,6 +168,12 @@
   \gappto\sdBODY{#1}
 }
 
+\newcommand\sdCenter[1]{
+  \vspace*{\fill}
+  \begin{center} #1 \end{center}
+  \vspace*{\fill}
+}
+
 \newcommand\sdQuote[3]{
   \begin{multicols}{2}\raggedcolumns
     \begin{flushright}
@@ -179,16 +182,18 @@
 
     \columnbreak
 
-    ``#2''
+    \begin{raggedright}
+      ``#2''
+    \end{raggedright}
 
     \begin{flushright}
-      \Large --- #3
+      \small --- #3
     \end{flushright}
   \end{multicols}
 }
 
 \renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
-\renewcommand\small{\fontsize{24pt}{28pt}\selectfont}
+\renewcommand\small{\fontsize{22pt}{24pt}\selectfont}
 \renewcommand\footnotesize{\fontsize{16pt}{20pt}\selectfont}
 \renewcommand\large{\fontsize{32pt}{36pt}\selectfont}
 
@@ -196,7 +201,7 @@
   \raggedbottom%
   \raggedright%
   \setlength\topskip{0pt}%
-  \setlength\headheight{24pt}%
+  \setlength\headheight{32pt}%
   \setlength\parindent{0pt}%
   \setlength\parskip{18pt}%
   \setlength\columnsep{32pt}%
