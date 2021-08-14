@@ -48,6 +48,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
+\RequirePackage{soul}
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
   \usetikzlibrary{decorations}
@@ -69,7 +70,7 @@
 
 \newcommand*\sdBODY{}
 \newcommand*\sdHOOKS{}
-\newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
+\newcommand\sdFLUSH{\sdHOOKS\begin{minipage}{\linewidth}\sdBODY\end{minipage}\vspace*{0pt}\newpage}
 \newcommand\sdClear{\sdFLUSH\renewcommand*\sdBODY{}}
 \newcommand\sdClick{\sdFLUSH}
 \newcommand\sdHook[2]{
@@ -116,7 +117,8 @@
 \newcommand\sdMenu[1]{
   \ifx\sdMENU\empty
     \sdHook{menu}{
-      \begin{textblock}{4}(1,1)%
+      \parshape 1 4in \dimexpr\linewidth-4in\relax%
+      \begin{textblock}{4}(1,3)%
         \begin{itemize}[label={}]
           \sdMENU
         \end{itemize}
@@ -126,40 +128,43 @@
   \gappto\sdMENU{\item #1}
 }
 \newcommand\sdMenuNext{}
-\newcommand\sdMenuDelete{\sdHookDelete{menu}}
+\newcommand\sdMenuDelete{
+  \sdHookDelete{menu}
+  % \setlength\leftskip{0pt}%
+}
 
-\newcommand\sdBanner[1][1]{\tikz{\node[fill=sd-green,color=sd-black]{#1};}}
+\newcommand\sdBanner[2][]{
+  \tikz{\node[rotate=6,transform shape,fill=sd-green,font={\color{sd-black}}]{#2};}\par
+}
 
 \newcommand\sdQR[1]{#1}
 
 \newcommand\sdTwoColumns{}
 
-\newcommand\sdImage[1][1]{#1}
-
-\newcommand\sdPrint[1]{#1}
+\newcommand\sdPrint[1]{
+  \gappto\sdBODY{#1}
+}
 
 \newcommand\sdQuote[3]{
-  \gappto\sdBODY{
-    \begin{multicols}{2}\raggedcolumns
-      \begin{flushright}
-        \includegraphics[width=0.5\columnwidth]{#1}
-      \end{flushright}
+  \begin{multicols}{2}\raggedcolumns
+    \begin{flushright}
+      \includegraphics[width=0.5\columnwidth]{#1}
+    \end{flushright}
 
-      \columnbreak
+    \columnbreak
 
-      ``#2''
+    ``#2''
 
-      \begin{flushright}
-        \Large --- #3
-      \end{flushright}
-    \end{multicols}
-  }
+    \begin{flushright}
+      \Large --- #3
+    \end{flushright}
+  \end{multicols}
 }
 
 \AtBeginDocument{%
   \raggedbottom%
   \raggedright%
-  \setlength\topskip{0mm}%
+  \setlength\topskip{0pt}%
   \setlength\headheight{24pt}%
   \setlength\parindent{0pt}%
   \setlength\parskip{6pt}%
