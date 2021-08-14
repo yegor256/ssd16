@@ -28,6 +28,7 @@
   \definecolor{sd-white}{HTML}{EEEEEE}
   \definecolor{sd-red}{HTML}{E63946}
   \definecolor{sd-black}{HTML}{232527}
+  \definecolor{sd-grey}{HTML}{EAF6FF}
   \definecolor{sd-green}{HTML}{5C946E}
   \definecolor{sd-blue}{HTML}{1D3557}
 
@@ -45,7 +46,9 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{multicol}
+\RequirePackage{varwidth}
 \RequirePackage{enumitem}
+\RequirePackage{pbox}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
 \RequirePackage{soul}
@@ -81,8 +84,8 @@
   \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
 }
 
-\newcommand\sdTopLeft[1]{\fancyhead[L]{\Large\ttfamily #1}}
-\newcommand\sdBottomLeft[1]{\fancyfoot[L]{\Large\ttfamily #1}}
+\newcommand\sdTopLeft[1]{\fancyhead[L]{\footnotesize\ttfamily #1}}
+\newcommand\sdBottomLeft[1]{\fancyfoot[L]{\footnotesize\ttfamily #1}}
 
 \newcommand\sdTitle[2]{
   \gappto\sdBODY{
@@ -97,15 +100,23 @@
   }
 }
 
+\newcommand\sdSkip[1]{\parshape 1 #1 \dimexpr\linewidth-#1\relax}
+
 \newcommand*\sdTOC{}
 \newcommand\sdToc[1]{
   \ifx\sdTOC\empty
     \gappto\sdBODY{
-      \begin{adjustwidth}{6in}{0in}
-        \begin{itemize}[label={}]
-          \sdTOC
-        \end{itemize}
-      \end{adjustwidth}
+      \sdSkip{6in}
+      \tikz{
+        \node (z) {
+          \begin{varwidth}{\textwidth}
+            \begin{itemize}[label={}]
+              \sdTOC
+            \end{itemize}
+          \end{varwidth}
+        };
+        \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
+      }
     }
   \fi
   \gappto\sdTOC{\item #1}
@@ -114,23 +125,38 @@
 \newcommand\sdTocDelete{}
 
 \newcommand*\sdMENU{}
+\newcounter{sdMENUcnt}
 \newcommand\sdMenu[1]{
   \ifx\sdMENU\empty
+    \setcounter{sdMENUcnt}{1}
     \sdHook{menu}{
-      \parshape 1 4in \dimexpr\linewidth-4in\relax%
+      \sdSkip{4in}
       \begin{textblock}{4}(1,3)%
-        \begin{itemize}[label={}]
-          \sdMENU
-        \end{itemize}
+        \tikz{
+          \node (z) {
+            \begin{varwidth}{\textwidth}
+              \small\ttfamily
+              \begin{enumerate}[label={}]
+                \sdMENU
+              \end{enumerate}
+            \end{varwidth}
+          };
+          \path [draw=sd-white,line width=4pt] (z.north east) -- (z.south east);
+        }
       \end{textblock}%
     }
   \fi
-  \gappto\sdMENU{\item #1}
+  \gappto\sdMENU{
+    \item \ifnum\value{enumi}=\value{sdMENUcnt}
+      \ul{#1}
+    \else
+      {#1}
+    \fi
+  }
 }
-\newcommand\sdMenuNext{}
+\newcommand\sdMenuNext{\stepcounter{sdMENUcnt}}
 \newcommand\sdMenuDelete{
   \sdHookDelete{menu}
-  % \setlength\leftskip{0pt}%
 }
 
 \newcommand\sdBanner[2][]{
@@ -161,15 +187,20 @@
   \end{multicols}
 }
 
+\renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
+\renewcommand\small{\fontsize{24pt}{28pt}\selectfont}
+\renewcommand\footnotesize{\fontsize{16pt}{20pt}\selectfont}
+\renewcommand\large{\fontsize{32pt}{36pt}\selectfont}
+
 \AtBeginDocument{%
   \raggedbottom%
   \raggedright%
   \setlength\topskip{0pt}%
   \setlength\headheight{24pt}%
   \setlength\parindent{0pt}%
-  \setlength\parskip{6pt}%
+  \setlength\parskip{18pt}%
   \setlength\columnsep{32pt}%
-  \fontsize{28pt}{32pt}\selectfont
+  \normalsize
 }
 
 \endinput
