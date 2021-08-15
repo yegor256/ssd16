@@ -86,7 +86,10 @@
 \newcommand\sdClear{\sdFLUSH\renewcommand*\sdBODY{}}
 \newcommand\sdClick{\sdFLUSH}
 \newcommand\sdHook[2]{
-  \expandafter\newcommand\csname sdHOOK#1\endcsname{#2}
+  \ifcsname sdHOOK#1\endcsname\else
+    \expandafter\newcommand\csname sdHOOK#1\endcsname{}
+  \fi
+  \expandafter\renewcommand\csname sdHOOK#1\endcsname{#2}
   \gappto\sdHOOKS{\csname sdHOOK#1\endcsname}
 }
 \newcommand\sdHookDelete[1]{
