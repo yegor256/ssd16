@@ -23,7 +23,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{slidedeck}[00.00.0000 0.0.0 Slide Deck]
 
-\RequirePackage{pagecolor}
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
   \definecolor{sd-red}{HTML}{E63946}
@@ -31,6 +30,7 @@
   \definecolor{sd-grey}{HTML}{EAF6FF}
   \definecolor{sd-green}{HTML}{5C946E}
   \definecolor{sd-blue}{HTML}{1D3557}
+\RequirePackage{pagecolor}
 
 \DeclareOption{inverse}{
   \pagecolor{sd-black}
@@ -40,16 +40,18 @@
 
 \LoadClass{article}
 \RequirePackage{geometry}
-  \geometry{paperwidth=16in, paperheight=9in, left=0.5in, right=0.5in, textwidth=10in, top=2in, bottom=2in, headsep=1.5in, footskip=1.5in}
+  \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{multicol}
+\RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
 \RequirePackage{enumitem}
-\RequirePackage{pbox}
+\RequirePackage{multirow}
 \RequirePackage{changepage}
+\RequirePackage{tabularx}
 \RequirePackage{graphicx}
 \RequirePackage{soul}
 \RequirePackage{tikz}
@@ -69,7 +71,13 @@
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \fancyhead[R]{\ttfamily {\thepage{}}{\small/\pageref{LastPage}}}
+  \fancyhead[R]{
+    \ifnum\value{page}=1\else%
+      \begin{textblock}{8}[1,0](15,1)%
+        \ttfamily {\thepage{}}{\small/\pageref{LastPage}}
+      \end{textblock}%
+    \fi
+  }
 
 \newcommand*\sdBODY{}
 \newcommand*\sdHOOKS{}
@@ -84,25 +92,34 @@
   \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
 }
 
-\newcommand\sdTopLeft[1]{\fancyhead[L]{\footnotesize\ttfamily #1}}
-\newcommand\sdBottomLeft[1]{\fancyfoot[L]{\footnotesize\ttfamily #1}}
-
-\newcommand\sdTitle[2]{
-  \sdCenter{\tikz{
-    \begin{scope}[rotate=12,transform shape]
-      \node[fill=sd-green,font={\color{sd-black}\fontsize{92pt}{92pt}\selectfont}] (title) {#1};
-      \node[fill=sd-green,font={\color{sd-black}\fontsize{48pt}{48pt}\selectfont},below right=1cm and 4cm of title.south, anchor=north] (subtitle) {#2};
-    \end{scope}
-  }}
+\newcommand\sdTopLeft[1]{
+  \fancyhead[L]{
+    \ifnum\value{page}=1\else%
+      \begin{textblock}{8}(1,1)%
+        \footnotesize\ttfamily #1
+      \end{textblock}%
+    \fi
+  }
+}
+\newcommand\sdBottomLeft[1]{
+  \fancyfoot[L]{
+    \ifnum\value{page}=1\else%
+      \begin{textblock}{8}[0,1](1,15)%
+        \footnotesize\ttfamily #1
+      \end{textblock}%
+    \fi
+  }
 }
 
-\newcommand\sdSkip[1]{\parshape 1 #1 \dimexpr\linewidth-#1\relax}
+\newcommand\sdTitle[2]{
+  {\fontsize{92pt}{92pt}\selectfont\sdBanner{#1}}
+  {\fontsize{32pt}{32pt}\selectfont\sdBanner{#2}}
+}
 
 \newcommand*\sdTOC{}
 \newcommand\sdToc[1]{
   \ifx\sdTOC\empty
     \gappto\sdBODY{
-      \sdSkip{6in}
       \tikz{
         \node (z) {
           \begin{varwidth}{\textwidth}
@@ -126,7 +143,6 @@
   \ifx\sdMENU\empty
     \setcounter{sdMENUcnt}{1}
     \sdHook{menu}{
-      \newgeometry{textwidth=6in}
       \begin{textblock}{4}(1,3)%
         \tikz{
           \node (z) {
@@ -153,12 +169,12 @@
 \newcommand\sdMenuNext{\stepcounter{sdMENUcnt}}
 \newcommand\sdMenuDelete{
   \sdHookDelete{menu}
-  \restoregeometry
 }
 
-\newcommand\sdBanner[2][]{
-  \tikz{\node[rotate=6,transform shape,fill=sd-green,font={\color{sd-black}}]{#2};}\par
-}
+\RequirePackage{tcolorbox}
+  \newtcbox{\sdBANNER}{nobeforeafter,colback=sd-green,boxsep=6pt,boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+\newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
+\newcommand\sdBanner[2][]{\sdBANNER{#2}\par}
 
 \newcommand\sdQR[1]{#1}
 
@@ -168,28 +184,17 @@
   \gappto\sdBODY{#1}
 }
 
-\newcommand\sdCenter[1]{
-  \vspace*{\fill}
-  \begin{center} #1 \end{center}
-  \vspace*{\fill}
-}
-
 \newcommand\sdQuote[3]{
-  \begin{multicols}{2}\raggedcolumns
-    \begin{flushright}
-      \includegraphics[width=0.5\columnwidth]{#1}
-    \end{flushright}
-
-    \columnbreak
-
-    \begin{raggedright}
-      ``#2''
-    \end{raggedright}
-
-    \begin{flushright}
-      \small --- #3
-    \end{flushright}
-  \end{multicols}
+  \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
+  \raisebox{-\height}{\includegraphics[width=0.25\columnwidth]{#1}}
+    % \multirow{2}*{\includegraphics[width=0.25\columnwidth]{#1}}
+    &
+    ``#2''
+    \newline\newline
+    \small
+    --- #3
+    \\
+  \end{tabularx}
 }
 
 \renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
@@ -202,6 +207,7 @@
   \raggedright%
   \setlength\topskip{0pt}%
   \setlength\headheight{32pt}%
+  \setlength\footskip{32pt}%
   \setlength\parindent{0pt}%
   \setlength\parskip{18pt}%
   \setlength\columnsep{32pt}%
