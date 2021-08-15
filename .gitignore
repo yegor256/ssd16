@@ -15,3 +15,5 @@ _minted-wp/
 *.out
 *.dvi
 *.xcp
+*.toc
+*.crumbs

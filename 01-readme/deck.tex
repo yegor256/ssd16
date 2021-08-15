@@ -1,8 +1,7 @@
 \documentclass[inverse]{../slidedeck}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
-\sdTopLeft{@yegor256}
-\sdBottomLeft{Lecture \#1: \thetitle{} \thesubtitle{}}
+\newcommand*\theauthor{@yegor256}
 \begin{document}
 
 \sdPrint{
@@ -11,31 +10,20 @@
   Lecture \#1 \br
   90 minutes
 }
+\sdFlush
 
-\sdClear
+\sdTocPrint
 
-\sdSticker{Agenda}
-\sdToc{Software vs. Interiors}\sdClick
-\sdToc{IEEE 1016}\sdClick
-\sdToc{SAD \@ RUP}\sdClick
-\sdToc{TS \@ CMMI}\sdClick
-\sdToc{SWEBOK}\sdClick
-\sdToc{README}\sdClick
-\sdToc{Books, Venues, C2A}
+\sdToc{Interiors}{Software vs. Interiors}
 
-\sdClear
-\sdStickerDelete
-\sdTocNext
 \sdPrint{\sdQuote{freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart \br CACM vol. 47, no. 8, 2004}}
+\sdFlush
 
-\sdClear
 \sdPrint{\sdQuote{ieee-1016}{}{IEEE 1016-2009, \br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}
+\sdFlush
 
-\sdSticker{SDD}
-\sdClear
-\sdPrint{\sdBanner[green]{\large Software Design Description (SDD)}}
+\sdToc{SDD}{SDD at IEEE 1016}
 
-\sdClear
 \sdMenu{Glossary}
 \sdMenu{Languages}
 \sdMenu{Stakeholders}
@@ -52,37 +40,37 @@
 }\sdClick
 \sdPrint{\sdBanner[green]{If I don't understand you, it's your fault!}}\sdClick
 \sdPrint{\sdQR{https://www.yegor256.com/2015/03/16/technical-glossaries.html}}
+\sdFlush
 
 % Languages
-\sdClear
 \sdMenuNext
 \sdPrint{
   \includegraphics[width=0.4\textwidth]{bad-diagram}\par
   UML + visual-paradigm.com
 }
+\sdFlush
 
 % Stakeholders
-\sdClear
 \sdMenuNext
 \sdPrint{\sdQuote{pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}}
+\sdFlush
 
 % Concerns
-\sdClear
 \sdMenuNext
 \sdPrint{Functional \br and \br Non-Functional Requirements}
+\sdFlush
 
 % Viewpoints
-\sdClear
 \sdMenuNext
 \sdPrint{\includegraphics[width=0.5\textwidth]{viewpoint}}
+\sdFlush
 
 % Elements
-\sdClear
 \sdMenuNext
 \sdPrint{\includegraphics[width=0.3\textwidth]{element}}
+\sdFlush
 
 % Rationale
-\sdClear
 \sdMenuNext
 \sdPrint{\sdBanner[green]{\large Why MongoDB, why not MySQL?}}\sdClick
 \sdPrint{
@@ -92,12 +80,25 @@
   Multi Factor Analysis\\
   Decision Matrix
 }
-
-\sdClear
-\sdStickerDelete
+\sdFlush
 \sdMenuDelete
-\sdPrint{\sdQuote{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemas are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
 
-\sdClear
+\sdToc{RUP}{SAD at RUP}
+
+
+\sdToc{CMMI}{TS at CMMI}
+
+\sdPrint{\sdQuote{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemas are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
+\sdFlush
+
+\sdToc{SWEBOK}{SWEBOK}
+
+\sdPrint{\sdQuote{swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
+\sdFlush
+
+\sdToc{README}{README}
+
+\sdToc{B.V.C.}{Books, Venues, C2A}
+
 
 \end{document}

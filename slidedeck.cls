@@ -49,7 +49,7 @@
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 \RequirePackage{multirow}
 \RequirePackage{changepage}
 \RequirePackage{tabularx}
@@ -74,10 +74,36 @@
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
+  \fancyhead[L]{
+    \ifnum\value{page}=1\else%
+      \ifx\sdCRUMBS\empty\else%
+        \begin{textblock}{8}(1,1)%
+          \footnotesize\ttfamily
+          \begin{enumerate*}[label={},labelindent=0pt]
+            \sdCRUMBS
+          \end{enumerate*}
+        \end{textblock}%
+      \fi
+    \fi
+  }
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,0](15,1)%
-        \ttfamily {\thepage{}}{\small/\pageref{LastPage}}
+        \ttfamily {\thepage{}}{\small{\color{sd-grey}/\pageref{LastPage}}}
+      \end{textblock}%
+    \fi
+  }
+  \fancyfoot[L]{
+    \ifnum\value{page}=1\else%
+      \begin{textblock}{8}[0,1](1,15)%
+        \footnotesize\ttfamily \thetitle{} \thesubtitle{}
+      \end{textblock}%
+    \fi
+  }
+  \fancyfoot[R]{
+    \ifnum\value{page}=1\else%
+      \begin{textblock}{8}[1,1](15,15)%
+        \footnotesize\ttfamily \theauthor{}
       \end{textblock}%
     \fi
   }
@@ -85,7 +111,7 @@
 \newcommand*\sdBODY{}
 \newcommand*\sdHOOKS{}
 \newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
-\newcommand\sdClear{\sdFLUSH\renewcommand*\sdBODY{}}
+\newcommand\sdFlush{\sdFLUSH\renewcommand*\sdBODY{}}
 \newcommand\sdClick{\sdFLUSH}
 \newcommand\sdHook[2]{
   \ifcsname sdHOOK#1\endcsname\else
@@ -100,32 +126,44 @@
 
 \newcommand\br{\newline}
 
-\newcommand\sdTopLeft[1]{
-  \fancyhead[L]{
-    \ifnum\value{page}=1\else%
-      \begin{textblock}{8}(1,1)%
-        \footnotesize\ttfamily #1
-      \end{textblock}%
-    \fi
-  }
-}
-\newcommand\sdBottomLeft[1]{
-  \fancyfoot[L]{
-    \ifnum\value{page}=1\else%
-      \begin{textblock}{8}[0,1](1,15)%
-        \footnotesize\ttfamily #1
-      \end{textblock}%
-    \fi
-  }
-}
-
 \newcommand\sdTitle[2]{
   {\fontsize{92pt}{92pt}\selectfont\sdBanner{#1}}
   {\fontsize{32pt}{32pt}\selectfont\sdBanner{#2}}
 }
 
+% see https://tex.stackexchange.com/a/12414/1449
+\RequirePackage{catchfile}
+  \newwrite\appendwrite
+  \newcommand*\appendtofile[2]{%
+      \begingroup
+      \IfFileExists{#1}%
+        {\CatchFileDef{\filecontent}{#1}{\endlinechar=`^^J\catcode\endlinechar=12\relax}}% keep existing end-of-lines
+        {\let\filecontent\empty}%
+      \immediate\openout\appendwrite=#1\relax
+      \immediate\write\appendwrite{\unexpanded\expandafter{\filecontent} #2}%
+      \immediate\closeout\appendwrite
+      \endgroup
+  }
+\newcommand\sdTocPrint{
+  \IfFileExists{\jobname.toc}{\input{\jobname.toc}}{\sdPrint{Table of Contents}}
+  \IfFileExists{\jobname.crumbs}{\input{\jobname.crumbs}}{}
+  \sdFlush
+}
+\makeatletter\newcommand\back{\@backslashchar}\makeatother
+\newcommand\sdToc[2]{
+  \stepcounter{sdCRUMBScnt}
+  \ifx\sdTOC\empty
+    \ifnum\value{sdCRUMBScnt}=1\else%
+      \appendtofile{\jobname.toc}{\back sdClick}
+    \fi
+    \appendtofile{\jobname.toc}{\back sdTOCITEM{#2}}
+  \fi
+  \ifx\sdCRUMBS\empty
+    \appendtofile{\jobname.crumbs}{\back sdCRUMBSITEM{#1}}
+  \fi
+}
 \newcommand*\sdTOC{}
-\newcommand\sdToc[1]{
+\newcommand\sdTOCITEM[1]{
   \ifx\sdTOC\empty
     \gappto\sdBODY{
       \tikz{
@@ -142,8 +180,17 @@
   \fi
   \gappto\sdTOC{\item #1}
 }
-\newcommand\sdTocNext{}
-\newcommand\sdTocDelete{}
+\newcommand*\sdCRUMBS{}
+\newcounter{sdCRUMBScnt}
+\newcommand\sdCRUMBSITEM[1]{
+  \gappto\sdCRUMBS{
+    \item \ifnum\value{enumi}=\value{sdCRUMBScnt}
+      \ul{#1}
+    \else
+      #1
+    \fi
+  }
+}
 
 \newcommand*\sdMENU{}
 \newcounter{sdMENUcnt}
