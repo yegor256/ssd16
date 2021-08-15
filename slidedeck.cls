@@ -54,6 +54,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{graphicx}
 \RequirePackage{soul}
+\RequirePackage{tcolorbox}
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
   \usetikzlibrary{decorations}
@@ -143,17 +144,17 @@
   \ifx\sdMENU\empty
     \setcounter{sdMENUcnt}{1}
     \sdHook{menu}{
-      \begin{textblock}{4}(1,3)%
+      \begin{textblock}{4}[0,1](1,14)%
         \tikz{
-          \node (z) {
+          \node[inner sep=0pt] (z) {
             \begin{varwidth}{\textwidth}
               \small\ttfamily
-              \begin{enumerate}[label={}]
+              \begin{enumerate}[label={},labelindent=0pt]
                 \sdMENU
               \end{enumerate}
             \end{varwidth}
           };
-          \path [draw=sd-white,line width=4pt] (z.north east) -- (z.south east);
+          \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
         }
       \end{textblock}%
     }
@@ -171,8 +172,19 @@
   \sdHookDelete{menu}
 }
 
-\RequirePackage{tcolorbox}
-  \newtcbox{\sdBANNER}{nobeforeafter,colback=sd-green,boxsep=6pt,boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+\newtcbox{\sdSTICKER}{nobeforeafter,colback=sd-grey,boxsep=2pt,boxrule=0pt,arc=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
+\newcommand\sdSticker[1]{
+  \sdHook{sticker}{
+    \begin{textblock}{4}(1,2)%
+      \sdSTICKER{\color{sd-black}\ttfamily #1}
+    \end{textblock}%
+  }
+}
+\newcommand\sdStickerDelete{
+  \sdHookDelete{sticker}
+}
+
+\newtcbox{\sdBANNER}{nobeforeafter,colback=sd-green,boxsep=6pt,boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
 \newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
 \newcommand\sdBanner[2][]{\sdBANNER{#2}\par}
 
