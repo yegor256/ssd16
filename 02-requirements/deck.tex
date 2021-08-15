@@ -1,0 +1,187 @@
+\documentclass[inverse]{../slidedeck}
+\newcommand*\thetitle{Requirements}
+\newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
+\newcommand*\theauthor{@yegor256}
+\begin{document}
+
+\sdPrintAndFlush{
+  \sdTitle{\thetitle}{\thesubtitle}
+
+  Yegor Bugayenko
+
+  Lecture \#1 out of 16 \br
+  90 minutes
+}
+
+\sdTocPrint
+
+\sdToc{Interiors}{Software vs. Interiors}
+
+\sdPrintAndFlush{\sdQuote{freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart \br CACM vol. 47, no. 8, 2004}}
+
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \sdPic{0.7}{interior}\br
+    Interior
+
+    \sdPic{0.7}{floor-plan}\br
+    Interior Design
+    \columnbreak
+
+    \sdPic{0.7}{docker-logo}\br
+    Software
+
+    \sdPic{0.7}{docker-uml}\br
+    Software Design
+  \end{multicols}
+}
+
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \sdPic{0.8}{floor-plan}\br
+    \textcolor{sd-red}{How to explain it?}\br
+    \textcolor{sd-green}{Standards}
+
+    \columnbreak
+
+    \sdPic{0.8}{interior}\br
+    \textcolor{sd-red}{How to design?}\br
+    \textcolor{sd-green}{Patterns}
+  \end{multicols}
+}
+
+\sdToc{SDD}{SDD at IEEE 1016}
+
+\sdPrint{\sdQuote{ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}\sdClick
+\sdPrint{\sdBanner[red]{Inactive-Reserved on March 2020}}
+\sdFlush
+
+\sdMenu{Glossary}
+\sdMenu{Languages}
+\sdMenu{Stakeholders}
+\sdMenu{Concerns}
+\sdMenu{Viewpoints}
+\sdMenu{Elements}
+\sdMenu{Rationale}
+
+% Glossary
+\sdPrint{
+  A \ul{request} is data package sent from a \ul{client} to a \ul{server}.\br
+  A \ul{client} is a computer with a web browser.\br
+  A \ul{server} is a computer with a software installed.\br
+}\sdClick
+\sdPrint{\sdBanner[green]{If I don't understand you, it's your fault!}}\sdClick
+\sdPrint{\sdQR{https://www.yegor256.com/2015/03/16/technical-glossaries.html}}
+\sdFlush
+
+% Languages
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner[red]{NOT like this:}
+
+  \sdPic{0.4}{bad-diagram}
+
+  UML + visual-paradigm.com
+}
+
+% Stakeholders
+\sdMenuNext
+\sdPrintAndFlush{\sdQuote{pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}}
+
+% Concerns
+\sdMenuNext
+\sdPrintAndFlush{Functional \br and \br Non-Functional Requirements}
+
+% Viewpoints
+\sdMenuNext
+\sdPrintAndFlush{\sdPic{0.6}{viewpoint}}
+
+% Elements
+\sdMenuNext
+\sdPrintAndFlush{\sdPic{0.5}{element}}
+
+% Rationale
+\sdMenuNext
+\sdPrint{\sdBanner{\large Why MongoDB, why not MySQL?}}\sdClick
+\sdPrint{
+  Multi-Criteria Decision Making (MCDM)\\
+  Architecture Tradeoff Analysis Method (ATAM)\\
+  Decision Table\\
+  Multi Factor Analysis\\
+  Decision Matrix
+}
+\sdFlush
+\sdMenuDelete
+
+\sdToc{RUP}{SAD at RUP}
+
+\sdPrintAndFlush{\sdQuote{rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br Per Kroll et al.}}
+
+\sdToc{CMMI}{TS at CMMI}
+
+\sdPrintAndFlush{\sdQuote{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemas are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
+
+\sdToc{SWEBOK}{SWEBOK}
+
+\sdPrintAndFlush{\sdQuote{swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
+
+\sdPrint{\sdBanner[red]{Microsoft Word}}\sdClick
+\sdPrint{\sdBanner[green]{\LaTeX{} + Git}}
+\sdFlush
+
+\sdToc{README}{README}
+
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \sdPic{0.8}{markdown}
+
+    \columnbreak
+
+    \sdPic{0.2}{github-logo}
+
+    GitHub
+
+    Markdown \br by John Gruber \br since 2004
+  \end{multicols}
+}
+
+\sdPrintAndFlush{
+  \sdPic{0.4}{mockups}
+
+  UI mockups
+
+  moqups.com, balsamiq.com, sketch.com, dribbble.com, etc.
+}
+
+\sdToc{B.V.C.}{Books, Venues, C2A}
+
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \sdPic{0.4}{bass}\br
+    ``Software Architecture in Practice,'' Len Bass et al.
+
+    \columnbreak
+
+    \sdPic{0.4}{clements}\br
+    ``Documenting Software Architectures: Views and Beyond,'' Paul Clements et al.
+  \end{multicols}
+}
+
+\sdPrintAndFlush{
+  % \sdPic{0.2}{hat}\br
+  \sdBanner{Where to publish:}
+
+  IEEE International Conference on Software Architecture (ICSA)
+}
+
+
+\sdPrintAndFlush{
+  \sdBanner{Call to Action:}
+
+  Create and explain the design of a QR-code generator app in the
+  README.md file in a new GitHub repository.
+
+  Sample: www.4qrcode.com
+}
+
+\end{document}

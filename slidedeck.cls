@@ -126,8 +126,8 @@
 \newcommand\br{\newline}
 
 \newcommand\sdTitle[2]{
-  {\fontsize{92pt}{92pt}\selectfont\sdBanner{#1}}
-  {\fontsize{32pt}{32pt}\selectfont\sdBanner{#2}}
+  {\sdBanner{\Huge #1}}
+  {\sdBanner{\large #2}}
 }
 
 % see https://tex.stackexchange.com/a/12414/1449
@@ -232,7 +232,7 @@
 
 \newcommand\sdPic[2]{\includegraphics[width=#1\columnwidth]{#2}}
 
-\newcommand\sdQR[1]{\tikz{\node[draw=sd-white]{\qrcode[height=1in]{#1}}}}
+\newcommand\sdQR[2][1in]{\tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}}
 
 \newcommand\sdPrint[1]{
   \gappto\sdBODY{
@@ -259,6 +259,9 @@
 \renewcommand\small{\fontsize{22pt}{24pt}\selectfont}
 \renewcommand\footnotesize{\fontsize{16pt}{20pt}\selectfont}
 \renewcommand\large{\fontsize{32pt}{36pt}\selectfont}
+\renewcommand\Large{\fontsize{42pt}{42pt}\selectfont}
+\renewcommand\LARGE{\fontsize{52pt}{52pt}\selectfont}
+\renewcommand\Huge{\fontsize{92pt}{92pt}\selectfont}
 
 \AtBeginDocument{%
   \raggedbottom%
