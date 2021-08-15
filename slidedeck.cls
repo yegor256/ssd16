@@ -53,6 +53,7 @@
 \RequirePackage{changepage}
 \RequirePackage{tabularx}
 \RequirePackage{graphicx}
+\RequirePackage{qrcode}
 \RequirePackage{soul}
 \RequirePackage{tcolorbox}
 \RequirePackage{tikz}
@@ -95,6 +96,8 @@
 \newcommand\sdHookDelete[1]{
   \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
 }
+
+\newcommand\br{\newline}
 
 \newcommand\sdTopLeft[1]{
   \fancyhead[L]{
@@ -191,12 +194,15 @@
 \newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
 \newcommand\sdBanner[2][]{\sdBANNER{#2}\par}
 
-\newcommand\sdQR[1]{#1}
+\newcommand\sdQR[1]{\tikz{\node[draw=sd-white]{\qrcode[height=1in]{#1}}}}
 
 \newcommand\sdTwoColumns{}
 
 \newcommand\sdPrint[1]{
-  \gappto\sdBODY{#1}
+  \gappto\sdBODY{
+    #1
+
+  }
 }
 
 \newcommand\sdQuote[3]{
