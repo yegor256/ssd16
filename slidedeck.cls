@@ -56,7 +56,6 @@
 \RequirePackage{graphicx}
 \RequirePackage{qrcode}
 \RequirePackage{soul}
-\RequirePackage{tcolorbox}
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
   \usetikzlibrary{decorations}
@@ -226,25 +225,14 @@
   \sdHookDelete{menu}
 }
 
-\newtcbox{\sdSTICKER}{nobeforeafter,colback=sd-orange,boxsep=2pt,boxrule=0pt,arc=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
-\newcommand\sdSticker[1]{
-  \sdHook{sticker}{
-    \begin{textblock}{4}(1,2)%
-      \sdSTICKER{\color{sd-white}\ttfamily #1}
-    \end{textblock}%
-  }
-}
-\newcommand\sdStickerDelete{
-  \sdHookDelete{sticker}
+\newcommand\sdBanner[2][green]{
+  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{#2}}
+  \par
 }
 
-\newtcbox{\sdBANNER}{nobeforeafter,colback=sd-green,boxsep=6pt,boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
-\newcommand{\ff}[1]{\ffcodebox{\ffcoderule\texttt{#1}}}
-\newcommand\sdBanner[2][]{\sdBANNER{#2}\par}
+\newcommand\sdPic[2]{\includegraphics[width=#1\columnwidth]{#2}}
 
 \newcommand\sdQR[1]{\tikz{\node[draw=sd-white]{\qrcode[height=1in]{#1}}}}
-
-\newcommand\sdTwoColumns{}
 
 \newcommand\sdPrint[1]{
   \gappto\sdBODY{
@@ -253,10 +241,11 @@
   }
 }
 
+\newcommand\sdPrintAndFlush[1]{\sdPrint{#1}\sdFlush}
+
 \newcommand\sdQuote[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-  \raisebox{-\height}{\includegraphics[width=0.25\columnwidth]{#1}}
-    % \multirow{2}*{\includegraphics[width=0.25\columnwidth]{#1}}
+    \raisebox{-\height}{\sdPic{0.25}{#1}}
     &
     ``#2''
     \newline\newline
