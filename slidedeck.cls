@@ -26,6 +26,7 @@
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
   \definecolor{sd-red}{HTML}{E63946}
+  \definecolor{sd-orange}{HTML}{F45D01}
   \definecolor{sd-black}{HTML}{232527}
   \definecolor{sd-grey}{HTML}{EAF6FF}
   \definecolor{sd-green}{HTML}{5C946E}
@@ -178,11 +179,11 @@
   \sdHookDelete{menu}
 }
 
-\newtcbox{\sdSTICKER}{nobeforeafter,colback=sd-grey,boxsep=2pt,boxrule=0pt,arc=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
+\newtcbox{\sdSTICKER}{nobeforeafter,colback=sd-orange,boxsep=2pt,boxrule=0pt,arc=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
 \newcommand\sdSticker[1]{
   \sdHook{sticker}{
     \begin{textblock}{4}(1,2)%
-      \sdSTICKER{\color{sd-black}\ttfamily #1}
+      \sdSTICKER{\color{sd-white}\ttfamily #1}
     \end{textblock}%
   }
 }
