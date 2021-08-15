@@ -1,7 +1,6 @@
 \documentclass[inverse]{../slidedeck}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
-\newcommand*\theauthor{@yegor256}
 \begin{document}
 
 \sdPrintAndFlush{
@@ -11,6 +10,8 @@
 
   Lecture \#1 out of 16 \br
   90 minutes
+
+  \sdDisclaimer{}
 }
 
 \sdTocPrint
@@ -153,35 +154,42 @@
   moqups.com, balsamiq.com, sketch.com, dribbble.com, etc.
 }
 
-\sdToc{B.V.C.}{Books, Venues, C2A}
+\sdToc{B.V.C.}{Books, Venues, Call-to-Action}
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
     \sdPic{0.4}{bass}\br
-    ``Software Architecture in Practice,'' Len Bass et al.
+    ``Software Architecture in Practice,'' \br Len Bass et al.
 
     \columnbreak
 
     \sdPic{0.4}{clements}\br
-    ``Documenting Software Architectures: Views and Beyond,'' Paul Clements et al.
+    ``Documenting Software Architectures: Views and Beyond,'' \br Paul Clements et al.
   \end{multicols}
 }
 
 \sdPrintAndFlush{
-  % \sdPic{0.2}{hat}\br
   \sdBanner{Where to publish:}
 
   IEEE International Conference on Software Architecture (ICSA)
 }
 
-
 \sdPrintAndFlush{
   \sdBanner{Call to Action:}
 
   Create and explain the design of a QR-code generator app in the
-  README.md file in a new GitHub repository.
+  README.md file in a new GitHub repository. Sample: www.4qrcode.com
+}
 
-  Sample: www.4qrcode.com
+\sdPrintAndFlush{
+  \sdBanner[orange]{Still unresolved issues:}
+
+  \begin{itemize}
+    \item How to \ul{synchronize} an SDD with the source code?
+    \item How to \ul{generate} the code from an SDD?
+    \item How to \ul{embed} diagrams into the source code?
+    \item How to \ul{validate} source code vs. the SDD?
+  \end{itemize}
 }
 
 \end{document}

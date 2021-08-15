@@ -30,7 +30,7 @@
   \definecolor{sd-black}{HTML}{232527}
   \definecolor{sd-grey}{HTML}{EAF6FF}
   \definecolor{sd-green}{HTML}{5C946E}
-  \definecolor{sd-blue}{HTML}{1D3557}
+  \definecolor{sd-blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
 
 \DeclareOption{inverse}{
@@ -50,9 +50,11 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
 \RequirePackage[inline]{enumitem}
+\RequirePackage{ffcode}
 \RequirePackage{multirow}
 \RequirePackage{changepage}
 \RequirePackage{tabularx}
+\RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{qrcode}
 \RequirePackage{soul}
@@ -77,7 +79,7 @@
     \ifnum\value{page}=1\else%
       \ifx\sdCRUMBS\empty\else%
         \begin{textblock}{8}(1,1)%
-          \footnotesize\ttfamily
+          \small\ttfamily
           \begin{enumerate*}[label={},labelindent=0pt]
             \sdCRUMBS
           \end{enumerate*}
@@ -160,6 +162,13 @@
   \ifx\sdCRUMBS\empty
     \appendtofile{\jobname.crumbs}{\back sdCRUMBSITEM{#1}}
   \fi
+  \sdPrintAndFlush{
+    \vspace*{\fill}%
+    {\ttfamily Chapter \#\thesdCRUMBScnt:}
+    \br
+    \sdBanner[blue]{\Large #2}
+    \vspace*{\fill}
+  }
 }
 \newcommand*\sdTOC{}
 \newcommand\sdTOCITEM[1]{
@@ -173,7 +182,7 @@
             \end{itemize}
           \end{varwidth}
         };
-        \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
+        \path [draw=sd-blue,line width=4pt] (z.north west) -- (z.south west);
       }
     }
   \fi
@@ -184,7 +193,7 @@
 \newcommand\sdCRUMBSITEM[1]{
   \gappto\sdCRUMBS{
     \item \ifnum\value{enumi}=\value{sdCRUMBScnt}
-      \ul{#1}
+      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
     \else
       #1
     \fi
@@ -248,20 +257,30 @@
     \raisebox{-\height}{\sdPic{0.25}{#1}}
     &
     ``#2''
-    \newline\newline
-    \small
-    --- #3
+    \def\param{#3}%
+    \ifx\param\empty\else
+      \newline\newline
+      \small
+      --- #3
+    \fi
     \\
   \end{tabularx}
 }
+
+\newcommand\sdDisclaimer{{\color{sd-grey}\ttfamily\footnotesize All visual and text materials presented in
+this slidedeck are either originally made by the author or taken from public
+Internet sources, such as website. Copyright belongs to their respected
+authors.\par}}
 
 \renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
 \renewcommand\small{\fontsize{22pt}{24pt}\selectfont}
 \renewcommand\footnotesize{\fontsize{16pt}{20pt}\selectfont}
 \renewcommand\large{\fontsize{32pt}{36pt}\selectfont}
 \renewcommand\Large{\fontsize{42pt}{42pt}\selectfont}
-\renewcommand\LARGE{\fontsize{52pt}{52pt}\selectfont}
-\renewcommand\Huge{\fontsize{92pt}{92pt}\selectfont}
+\renewcommand\LARGE{\fontsize{52pt}{56pt}\selectfont}
+\renewcommand\Huge{\fontsize{92pt}{104pt}\selectfont}
+
+\newcommand*\theauthor{@yegor256}
 
 \AtBeginDocument{%
   \raggedbottom%
