@@ -33,10 +33,10 @@
   \definecolor{sd-blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
 
-\DeclareOption{inverse}{
-  \pagecolor{sd-black}
-  \color{sd-white}
-}
+\newif\ifwhite
+\DeclareOption{white}{\whitetrue}
+\newif\ifstatic
+\DeclareOption{static}{\statictrue}
 \ProcessOptions\relax
 
 \LoadClass{article}
@@ -113,7 +113,7 @@
 \newcommand*\sdHOOKS{}
 \newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
 \newcommand\sdFlush{\sdFLUSH\renewcommand*\sdBODY{}}
-\newcommand\sdClick{\sdFLUSH}
+\newcommand\sdClick{\ifstatic\else\sdFLUSH\fi}
 \newcommand\sdHook[2]{
   \ifcsname sdHOOK#1\endcsname\else
     \expandafter\newcommand\csname sdHOOK#1\endcsname{}
@@ -283,6 +283,10 @@ authors.\par}}
 \newcommand*\theauthor{@yegor256}
 
 \AtBeginDocument{%
+  \ifwhite\else
+    \pagecolor{sd-black}
+    \color{sd-white}
+  \fi
   \raggedbottom%
   \raggedright%
   \setlength\topskip{0pt}%
