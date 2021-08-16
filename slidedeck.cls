@@ -25,10 +25,10 @@
 
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
-  \definecolor{sd-red}{HTML}{E63946}
-  \definecolor{sd-orange}{HTML}{F45D01}
+  \definecolor{sd-red}{HTML}{ED474A}
+  \definecolor{sd-orange}{HTML}{F06543}
   \definecolor{sd-black}{HTML}{232527}
-  \definecolor{sd-grey}{HTML}{EAF6FF}
+  \definecolor{sd-grey}{HTML}{C0BCB5}
   \definecolor{sd-green}{HTML}{5C946E}
   \definecolor{sd-blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
@@ -271,6 +271,8 @@
 this slidedeck are either originally made by the author or taken from public
 Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
+
+\newcommand\nospell[1]{#1}
 
 \renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
 \renewcommand\small{\fontsize{22pt}{24pt}\selectfont}
