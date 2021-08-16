@@ -239,9 +239,17 @@
   \par
 }
 
-\newcommand\sdPic[2]{\includegraphics[width=#1\columnwidth]{#2}}
+\newcommand\sdPic[2]{
+  {%
+    \setlength{\fboxsep}{0pt}%
+    \setlength{\fboxrule}{1pt}%
+    \fcolorbox{sd-grey}{sd-white}{%
+      \includegraphics[width=#1\columnwidth]{#2}%
+    }%
+  }
+}
 
-\newcommand\sdQR[2][1in]{\tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}}
+\newcommand\sdQR[2][2in]{\tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}}
 
 \newcommand\sdPrint[1]{
   \gappto\sdBODY{

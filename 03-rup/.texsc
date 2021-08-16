@@ -1,0 +1,3 @@
+--pws=../aspell.en.pws
+--ignore=href,ffcode
+--ignore=ff,nospell,citet,citep
