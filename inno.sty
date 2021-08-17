@@ -29,7 +29,7 @@ Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
 
 \newcommand\innoTitlePage[1]{
-  \sdPrintAndFlush{
+  \sdPrintAndFlush[2]{
     \sdTitle{\thetitle}{\thesubtitle}
 
     {\scshape Yegor Bugayenko}
@@ -49,15 +49,15 @@ authors.\par}}
 
 }
 
-\newcommand\innoThought[1]{
+\newcommand\innoThought[2][1]{
   \sdMenuHide
-  \sdPrintAndFlush{
+  \sdPrintAndFlush[#1]{
     \sdMiddle{
       \tikz{
         \node [inner sep=18pt] (z) {
           \begin{varwidth}{0.8\textwidth}
             \Large
-            #1
+            #2
           \end{varwidth}
         };
         \path [draw=sd-green,line width=8pt] (z.north west) -- (z.south west);

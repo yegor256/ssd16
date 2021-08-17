@@ -94,6 +94,9 @@
       \begin{textblock}{8}[1,0](15,1)%
         \ttfamily {\thepage{}}{\small{\color{sd-grey}/\pageref{LastPage}}}
       \end{textblock}%
+      \begin{textblock}{1}[1,0](15.8,0.2)%
+        \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\footnotesize\ttfamily\thesdMinutes{}};}
+      \end{textblock}%
     \fi
   }
   \fancyfoot[L]{
@@ -114,7 +117,7 @@
 \newcommand*\sdBODY{}
 \newcommand*\sdHOOKS{}
 \newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
-\newcommand\sdFlush{\sdFLUSH\renewcommand*\sdBODY{}}
+\newcommand\sdFlush[1][1]{\sdFLUSH\renewcommand*\sdBODY{}\sdMins{#1}}
 \newcommand\sdClick{\ifstatic\else\sdFLUSH\fi}
 \newcommand\sdHook[2]{
   \ifcsname sdHOOK#1\endcsname\else
@@ -243,7 +246,7 @@
 
 \newcommand\sdBanner[2][green]{
   \par
-  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{#2}}
+  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{\color{sd-white} #2}}
   \par
 }
 
@@ -270,7 +273,11 @@
   }}
 }
 
-\newcommand\sdPrintAndFlush[1]{\sdPrint{#1}\sdFlush}
+% [1]: How many minutes to stay here
+% [1]: The content to print and flush
+\newcommand\sdPrintAndFlush[2][1]{
+  \sdPrint{#2}\sdFlush[#1]
+}
 
 \newcommand\sdQuote[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
@@ -286,6 +293,12 @@
     \\
   \end{tabularx}
 }
+
+% How many minutes more we spend
+\newcommand\sdMins[1]{
+  \addtocounter{sdMinutes}{#1}
+}
+\newcounter{sdMinutes}
 
 \newcommand\nospell[1]{#1}
 
