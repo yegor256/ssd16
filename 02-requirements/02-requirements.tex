@@ -29,6 +29,9 @@
 
 \sdPrintAndFlush{\sdQuote{../03-rup/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
+\sdPrintAndFlush{\sdQuote{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+with have explicit \ul{borders}.}{Code Ahead \br Yegor Bugayenko}}
+
 \sdTocPrint
 
 \sdToc{UCs}{Use Cases (user stories)}
@@ -36,16 +39,16 @@
 \sdPrintAndFlush{
   \begin{multicols}{2}
     \sdPic{0.4}{jacobson}\br
-    Ivar Jacobson \br
+    \nospell{Ivar Jacobson} \br
     in 1987
 
     \columnbreak
 
     \sdPic{0.3}{booch}\br
-    Grady Booch
+    \nospell{Grady Booch}
 
     \sdPic{0.3}{rumbaugh}\br
-    James Rumbaugh
+    \nospell{James Rumbaugh}
   \end{multicols}
   }
 
@@ -75,7 +78,7 @@ Extensions:
 \sdToc{FPA}{FPA \& IFPUG \& COSMIC}
 
 \sdPrint{\sdBanner{Function Point Analysis (FPA)}}
-\sdPrint{FPA was originally developed by Allan Albrecht in the late 1970s at IBM}\sdClick
+\sdPrint{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\sdClick
 \sdPrint{International Function Point Users Group (IFPUG) is in charge}\sdClick
 \sdPrint{Regulated by ISO 20296}\sdClick
 \sdPrint{COSMIC is the modern version: ISO/IEC 14143}\sdClick
@@ -108,7 +111,7 @@ Extensions:
 
 \sdToc{NFRs}{Non-Functional Requirements (NFRs)}
 
-\sdPrint{\sdBanner{Quality Attributes or just ``-ilities'':}}
+\sdPrint{\sdBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
 \sdPrint{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\sdClick
 \sdPrint{Capacity: Clicks Per Second (CPS)}\sdClick
 \sdPrint{Recovery: Recovery Time Objective (RTO)}\sdClick
@@ -142,9 +145,29 @@ Extensions:
   \end{multicols}
 }
 
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    ``Ten Mistakes in Specs'' (2015)
+    \sdQR{https://www.yegor256.com/2015/nov/2015-11-10-ten-mistakes-in-specs}
+    \columnbreak
+    \small
+    \begin{itemize}
+      \item No Glossary or a Messy One
+      \item Questions, Discussions, Opinions
+      \item Mixing Functional and NFRs
+      \item Mixing Requirements and Docs
+      \item Un-measurable NFRs
+      \item Implementation Instructions
+      \item Lack of Actor Perspective
+      \item Noise
+      \item Will, Need, Must
+    \end{itemize}
+  \end{multicols}
+}
+
 \sdToc{COCOMO}{Estimates and COCOMO II}
 
-\sdPrintAndFlush{\sdQuote{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br Barry W. Boehm}}
+\sdPrintAndFlush{\sdQuote{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
 \sdPrintAndFlush{
   First, we predict the size in Kilo Lines of Code ($K$).
@@ -170,7 +193,7 @@ Extensions:
 \sdPrintAndFlush{
   \sdQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}
 
-  ``How much for this sofware?'' they ask.
+  ``How much for this software?'' they ask.
 
   ``The development will take forever and will consume all your money,'' we answer.
 }
@@ -180,11 +203,11 @@ Extensions:
 \sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{wiegers}
-      {Karl Wiegers et al.}
+      {\nospell{Karl Wiegers} et al.}
       {Software Requirements}
     \columnbreak
     \innoBook{wiegers2}
-      {Karl Wiegers}
+      {\nospell{Karl Wiegers}}
       {More About Software Requirements: Thorny Issues and Practical Advice}
   \end{multicols}
 }
@@ -192,11 +215,11 @@ Extensions:
 \sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{cockburn}
-      {Alistair Cockburn}
+      {\nospell{Alistair Cockburn}}
       {Writing Effective Use Cases}
     \columnbreak
     \innoBook{mcconnell}
-      {Steve McConnell}
+      {\nospell{Steve McConnell}}
       {Software Estimation: Demystifying the Black Art}
   \end{multicols}
 }

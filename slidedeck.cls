@@ -258,7 +258,9 @@
 }
 
 \newcommand\sdQR[2][2in]{
+  \par
   \tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}
+  \par
 }
 
 \newcommand\sdPrint[1]{
