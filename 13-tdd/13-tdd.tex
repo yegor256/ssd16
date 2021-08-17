@@ -20,9 +20,9 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
-\newcommand*\thetitle{Patterns}
-\newcommand*\thesubtitle{Anti-Patterns and Refactoring}
+\documentclass{../slidedeck}
+\newcommand*\thetitle{Test-Driven}
+\newcommand*\thesubtitle{Development}
 \begin{document}
 
 \sdPrintAndFlush{
@@ -30,7 +30,7 @@
 
   Yegor Bugayenko
 
-  Lecture \#6 out of 16 \br
+  Lecture \#13 out of 16 \br
   90 minutes
 
   \sdDisclaimer{}
@@ -38,41 +38,26 @@
 
 \sdTocPrint
 
-\sdToc{UCs}{}
+\sdToc{BDD}{Behavior Driven Development (BDD)}
 
-\sdPrintAndFlush{
-}
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
-    \innoBook{feathers}
-      {Michael Feathers}
-      {Working Effectively with Legacy Code}
+    \sdPic{0.4}{../01-readme/rup}\br
+    ``A Practitioner's Guide to the RUP,'' \br Per Kroll et al.
+
     \columnbreak
-    \innoBook{fowler-refactoring}
-      {Martin Fowler}
-      {Refactoring: Improving the Design of Existing Code}
+
+    % \sdPic{0.4}{03-rup/..agile-martin}\br
+    % ``Agile Software Development. Principles, Patterns, and Practices,'' \br Robert Martin
   \end{multicols}
 }
-
-\sdPrintAndFlush{
-  \begin{multicols}{2}
-    \innoBook{gamma}
-      {Erich Gamma et al.}
-      {Design Patterns: Elements of Reusable Object-Oriented Software}
-    \columnbreak
-    \innoBook{meyers}
-      {Scott Meyers}
-      {Effective C++: 55 Specific Ways to Improve Your Programs and Designs}
-  \end{multicols}
-}
-
 
 \sdPrintAndFlush{
   \sdBanner{Where to publish:}
 
-  ...
+  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
 \sdPrintAndFlush{

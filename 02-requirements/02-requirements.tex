@@ -25,16 +25,9 @@
 \newcommand*\thesubtitle{Engineering}
 \begin{document}
 
-\sdPrintAndFlush{
-  \sdTitle{\thetitle}{\thesubtitle}
+\innoTitlePage{2}
 
-  Yegor Bugayenko
-
-  Lecture \#2 out of 16 \br
-  90 minutes
-
-  \sdDisclaimer{}
-}
+\sdPrintAndFlush{\sdQuote{../03-rup/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
 \sdTocPrint
 
@@ -91,7 +84,7 @@ Extensions:
 \sdFlush
 
 \sdPrintAndFlush{
-  \sdQR[2in]{https://en.wikipedia.org/wiki/Use_case_points}
+  \sdQR{https://en.wikipedia.org/wiki/Use_case_points}
 
   Also, read about Use Case Points (UCP)
 }
@@ -175,7 +168,7 @@ Extensions:
 }
 
 \sdPrintAndFlush{
-  \sdQR[2in]{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}
+  \sdQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}
 
   ``How much for this sofware?'' they ask.
 
@@ -186,25 +179,25 @@ Extensions:
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
-    \sdPic{0.4}{wiegers}\br
-    ``Software Requirements,'' \br Karl Wiegers et al.
-
+    \innoBook{wiegers}
+      {Karl Wiegers et al.}
+      {Software Requirements}
     \columnbreak
-
-    \sdPic{0.4}{wiegers2}\br
-    ``More About Software Requirements: Thorny Issues and Practical Advice,'' \br Karl Wiegers
+    \innoBook{wiegers2}
+      {Karl Wiegers}
+      {More About Software Requirements: Thorny Issues and Practical Advice}
   \end{multicols}
 }
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
-    \sdPic{0.4}{cockburn}\br
-    ``Writing Effective Use Cases,'' \br Alistair Cockburn
-
+    \innoBook{cockburn}
+      {Alistair Cockburn}
+      {Writing Effective Use Cases}
     \columnbreak
-
-    \sdPic{0.4}{mcconnell}\br
-    ``Software Estimation: Demystifying the Black Art,'' \br Steve McConnell
+    \innoBook{mcconnell}
+      {Steve McConnell}
+      {Software Estimation: Demystifying the Black Art}
   \end{multicols}
 }
 

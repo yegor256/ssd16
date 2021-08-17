@@ -23,6 +23,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{slidedeck}[00.00.0000 0.0.0 Slide Deck]
 
+\RequirePackage{../inno}
+
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
   \definecolor{sd-red}{HTML}{ED474A}
@@ -127,6 +129,8 @@
 
 \newcommand\br{\newline}
 
+\newcommand\sdMiddle[1]{\vspace*{\fill}#1\vspace*{\fill}}
+
 \newcommand\sdTitle[2]{
   {\sdBanner{\Huge #1}}
   {\sdBanner{\large #2}}
@@ -163,11 +167,10 @@
     \appendtofile{\jobname.crumbs}{\back sdCRUMBSITEM{#1}}
   \fi
   \sdPrintAndFlush{
-    \vspace*{\fill}%
-    {\ttfamily Chapter \#\thesdCRUMBScnt:}
-    \br
-    \sdBanner[blue]{\Large #2}
-    \vspace*{\fill}
+    \sdMiddle{%
+      {\ttfamily Chapter \#\thesdCRUMBScnt:}
+      \sdBanner[blue]{\Large #2}
+    }
   }
 }
 \newcommand*\sdTOC{}
@@ -200,25 +203,29 @@
   }
 }
 
+\newif\ifmenuvisible\menuvisibletrue
 \newcommand*\sdMENU{}
 \newcounter{sdMENUcnt}
 \newcommand\sdMenu[1]{
+  \menuvisibletrue
   \ifx\sdMENU\empty
     \setcounter{sdMENUcnt}{1}
     \sdHook{menu}{
-      \begin{textblock}{4}[0,1](1,14)%
-        \tikz{
-          \node[inner sep=0pt] (z) {
-            \begin{varwidth}{\textwidth}
-              \small\ttfamily
-              \begin{enumerate}[label={},labelindent=0pt]
-                \sdMENU
-              \end{enumerate}
-            \end{varwidth}
-          };
-          \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
-        }
-      \end{textblock}%
+      \ifmenuvisible
+        \begin{textblock}{4}[0,1](1,14)%
+          \tikz{
+            \node[inner sep=0pt] (z) {
+              \begin{varwidth}{\textwidth}
+                \small\ttfamily
+                \begin{enumerate}[label={},labelindent=0pt]
+                  \sdMENU
+                \end{enumerate}
+              \end{varwidth}
+            };
+            \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
+          }
+        \end{textblock}%
+      \fi
     }
   \fi
   \gappto\sdMENU{
@@ -230,11 +237,12 @@
   }
 }
 \newcommand\sdMenuNext{\stepcounter{sdMENUcnt}}
-\newcommand\sdMenuDelete{
-  \sdHookDelete{menu}
-}
+\newcommand\sdMenuDelete{\sdHookDelete{menu}}
+\newcommand\sdMenuHide{\menuvisiblefalse}
+\newcommand\sdMenuShow{\menuvisibletrue}
 
 \newcommand\sdBanner[2][green]{
+  \par
   {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{#2}}
   \par
 }
@@ -249,20 +257,22 @@
   }
 }
 
-\newcommand\sdQR[2][2in]{\tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}}
+\newcommand\sdQR[2][2in]{
+  \tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}
+}
 
 \newcommand\sdPrint[1]{
-  \gappto\sdBODY{
+  \gappto\sdBODY{{
     #1
-
-  }
+    \par
+  }}
 }
 
 \newcommand\sdPrintAndFlush[1]{\sdPrint{#1}\sdFlush}
 
 \newcommand\sdQuote[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-    \raisebox{-\height}{\sdPic{0.25}{#1}}
+    \raisebox{\dimexpr-\height+\ht\strutbox}{\sdPic{0.25}{#1}}
     &
     ``#2''
     \def\param{#3}%
@@ -274,11 +284,6 @@
     \\
   \end{tabularx}
 }
-
-\newcommand\sdDisclaimer{{\color{sd-grey}\ttfamily\footnotesize All visual and text materials presented in
-this slidedeck are either originally made by the author or taken from public
-Internet sources, such as website. Copyright belongs to their respected
-authors.\par}}
 
 \newcommand\nospell[1]{#1}
 

@@ -32,7 +32,7 @@ all:
 
 copy:
 	for d in $(DIRS); do
-		cp .latexmk $${d}
+		cp .latexmkrc $${d}
 		cp .texsc $${d}
 		cp .texqc $${d}
 	done

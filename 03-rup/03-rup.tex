@@ -25,34 +25,136 @@
 \newcommand*\thesubtitle{vs. Agile/XP}
 \begin{document}
 
-\sdPrintAndFlush{
-  \sdTitle{\thetitle}{\thesubtitle}
-
-  Yegor Bugayenko
-
-  Lecture \#3 out of 16 \br
-  90 minutes
-
-  \sdDisclaimer{}
-}
+\innoTitlePage{3}
 
 \sdTocPrint
 
-\sdToc{UCs}{}
+\sdToc{Methodologies}{Software Development Methodologies}
+
+\sdPrint{\sdBanner{Methodologies:}}\sdClick
+\sdPrint{Waterfall / SDLC}\sdClick
+\sdPrint{Rational Unified Process (RUP)}\sdClick
+\sdPrint{Microsoft Solutions Framework (MSF)}\sdClick
+\sdPrint{Kanban}\sdClick
+\sdPrint{Scrum}\sdClick
+\sdPrint{XP}
+\sdFlush
+
+\sdPrintAndFlush{\sdPic{0.8}{sdlc}}
+
+\sdToc{RUP}{Rational Unified Process (RUP)}
 
 \sdPrintAndFlush{
+  Iterative \& Incremental
+
+  \sdPic{0.7}{rup}
 }
+
+\sdPrintAndFlush{
+  Iterative:
+
+  \sdPic{0.7}{iterative}
+}
+
+\sdPrintAndFlush{\sdPic{0.7}{i-and-i}}
+
+\sdPrintAndFlush{
+  \sdPic{0.7}{rup-architect}
+  \sdPic{0.7}{rup-designer}
+}
+
+\sdPrintAndFlush{\sdPic{0.7}{rup-certificate}}
+
+\sdToc{Agile}{Agile/XP}
+
+\sdPrintAndFlush{\sdPic{0.7}{cost-of-bug}}
+
+\sdPrintAndFlush{\sdQuote{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
+
+\sdPrintAndFlush{\sdQuote{xp}{We will continually refine the design of the system, starting from a very simple
+beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Programming Explained: Embrace Change \br Kent Beck}}
+
+\sdToc{Qualities}{Qualities of Good Design}
+
+\sdMenu{Complexity}
+\sdMenu{Duplication}
+\sdMenu{Immobility}
+
+\sdPrintAndFlush{
+  \sdBanner{It must be simple}
+
+  \small
+  ``We should make the smallest possible \ul{investment} in the design before getting payback for it'' -- Kent Beck
+
+  ``A design contains \ul{needless complexity} when it contains elements that aren't currently useful. This frequently happens when developers anticipate changes to the requirements, and put facilities in the software to deal with those potential changes.'' -- Robert Martin
+
+  ``Our failure to master the complexity of software results in projects that are late, over budget, and deficient in their stated requirements. We often call this condition the \ul{software crisis}, but frankly, a malady that has carried on this long must be called normal.'' -- \nospell{Grady Booch}
+}
+
+\sdPrintAndFlush{\sdPic{0.7}{complexity1}}
+
+\sdPrintAndFlush{
+  \sdPic{0.7}{complexity2}
+  \sdQR[1.5in]{https://mattgemmell.com/perceived-software-complexity/}
+}
+
+\sdPrintAndFlush{
+  ``The main virtue of an architect is the ability to \ul{reduce complexity}. Thus, a good architect would never be proud of a complex diagram. Instead, they would be proud of a simple and easy-to-understand drawing with a few rectangles that perfectly explain an entire multi-tier application. That is what is really difficult to do. That's where a true architectural mind shines.'' --- me.
+
+  \sdQR{https://www.yegor256.com/2015/06/29/simple-diagrams.html}
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{It must not repeat itself}
+
+  ``When there is \ul{redundant code} in the system, the job of changing the system can become arduous. Bugs found in such a repeating unit have to be fixed in every repetition. However, since each repetition is slightly different from every other, the fix is not always the same.'' -- Robert Martin
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{It must be modular}
+  ``A design is \ul{immobile} when it contains parts that could be useful in other systems, but the effort and risk involved with separating those parts from the original system are too great.'' -- Robert Martin
+
+  ``A design is rigid if a single change causes a cascade of subsequent changes in dependent modules. The more modules that must be changed, the more \ul{rigid} the design.'' -- Robert Martin
+}
+\sdMenuDelete
+
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
-    \sdPic{0.4}{../01-readme/rup}\br
-    ``A Practitioner's Guide to the RUP,'' \br Per Kroll et al.
-
+    \innoBook{../01-readme/rup}
+      {\nospell{Per Kroll} et al.}
+      {A Practitioner's Guide to the RUP}
     \columnbreak
+    \innoBook{agile-martin}
+      {Robert Martin}
+      {Agile Software Development. Principles, Patterns, and Practices}
+  \end{multicols}
+}
 
-    \sdPic{0.4}{agile-martin}\br
-    ``Agile Software Development. Principles, Patterns, and Practices,'' \br Robert Martin
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \innoBook{clean-architecture}
+      {Robert Martin}
+      {Clean Architecture: A Craftsman's Guide to Software Structure and Design}
+    \columnbreak
+    \innoBook{code-complete}
+      {Steve McConnell}
+      {Code Complete}
+  \end{multicols}
+}
+
+\sdPrintAndFlush{
+  \begin{multicols}{2}
+    \innoBook{brooks}
+      {Frederick Brooks Jr.}
+      {Mythical Man-Month, The: Essays on Software Engineering}
+    \columnbreak
+    \innoBook{pragmatic}
+      {David Thomas et al.}
+      {The Pragmatic Programmer: Your Journey To Mastery}
   \end{multicols}
 }
 
@@ -65,17 +167,19 @@
 \sdPrintAndFlush{
   \sdBanner{Call to Action:}
 
-  ...
+  Break down the development of your app into four interactions
+  and specify the functionality to be delivered by the end
+  of each of them.
 }
 
 \sdPrintAndFlush{
   \sdBanner[orange]{Still unresolved issues:}
 
   \begin{itemize}
-    \item How to \ul{validate} requirements automatically?
-    \item How to \ul{trace} them automatically?
-    \item How to \ul{specify} in Controlled Natural Language (CNL)?
-    \item How to \ul{reduce} them?
+    \item How to \ul{restrict} design automatically?
+    \item How to \ul{decompose} the task of design?
+    \item How to \ul{coordinate} design process by robots?
+    \item How to \ul{} them?
   \end{itemize}
 }
 

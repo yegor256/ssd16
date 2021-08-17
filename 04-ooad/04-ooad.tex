@@ -20,46 +20,109 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
-\newcommand*\thetitle{RUP}
-\newcommand*\thesubtitle{vs. Agile/XP}
+\documentclass{../slidedeck}
+\newcommand*\thetitle{Object-Oriented}
+\newcommand*\thesubtitle{Analysis and Design}
 \begin{document}
 
+\innoTitlePage{4}
+
 \sdPrintAndFlush{
-  \sdTitle{\thetitle}{\thesubtitle}
+  Structured Programming (C, Pascal, FORTRAN, ALGOL) + CASE + Waterfall
 
-  Yegor Bugayenko
-
-  Lecture \#3 out of 16 \br
-  90 minutes
-
-  \sdDisclaimer{}
+  Object-Oriented Programming (C++, Object Pascal, Java) + RUP
 }
 
 \sdTocPrint
 
-\sdToc{UCs}{}
+\sdToc{SOLID}{SOLID Principles by Uncle Bob}
+
+\sdMenu{SRP}
+\sdMenu{OCP}
+\sdMenu{LSP}
+\sdMenu{ISP}
+\sdMenu{DIP}
+
+\sdPrintAndFlush{\sdQuote{../03-rup/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
 \sdPrintAndFlush{
+  \sdPic{0.2}{uncle-bob}
+
+  ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia
+
+  \ff{https://www.cleancoder.com}
+
+  \ff{@unclebobmartin} on Twitter
 }
+
+\sdPrintAndFlush{
+  \sdBanner{Single Responsibility Principle (SRP)}
+
+  ``A class should have only one reason to change.'' --- Robert Martin
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{Open-Close Principle (OCP)}
+
+  ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{Liskov Substitution Principle (OCP)}
+
+  ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- Barbara Liskov
+
+  \sdPic{0.3}{lsp}
+
+  ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{Dependency Inversion Principle (DIP)}
+
+  ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
+}
+
+\sdMenuNext
+\sdPrintAndFlush{
+  \sdBanner{Interface-Segregation Principle (ISP)}
+
+  ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
+}
+
+
+\sdMenuDelete
+
+\sdToc{Contracts}{Design by Contract}
+
+\sdToc{DRY}{Don't Repeat Yourself (DRY)}
+
+\sdToc{YAGNI}{You Ain't Gonna Need It (YAGNI)}
+
+\sdToc{DI}{Dependency Injection}
+
+\sdToc{IoC}{Inversion of Control}
+
+\sdPrintAndFlush{}
+
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 
 \sdPrintAndFlush{
   \begin{multicols}{2}
-    \sdPic{0.4}{../01-readme/rup}\br
-    ``A Practitioner's Guide to the RUP,'' \br Per Kroll et al.
-
+    \innoBook{../01-readme/rup}
+      {\nospell{Per Kroll} et al.}
+      {A Practitioner's Guide to the RUP}
     \columnbreak
-
-    \sdPic{0.4}{agile-martin}\br
-    ``Agile Software Development. Principles, Patterns, and Practices,'' \br Robert Martin
   \end{multicols}
 }
 
 \sdPrintAndFlush{
   \sdBanner{Where to publish:}
 
-  IEEE International Conference on Software Engineering (ICSE)
+  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
 \sdPrintAndFlush{
