@@ -20,14 +20,14 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
+\documentclass[white]{../slidedeck}
 \newcommand*\thetitle{RUP}
 \newcommand*\thesubtitle{vs. Agile/XP}
 \begin{document}
 
 \innoTitlePage{3}
 
-\sdTocPrint
+\sdTocPrint\sdMins{1}
 
 \sdToc{Methodologies}{Software Development Methodologies}
 
@@ -38,9 +38,9 @@
 \sdPrint{Kanban}\sdClick
 \sdPrint{Scrum}\sdClick
 \sdPrint{XP}
-\sdFlush
+\sdFlush[4]
 
-\sdPrintAndFlush{\sdPic{0.8}{sdlc}}
+\sdPrintAndFlush[3]{\sdPic{0.8}{sdlc}}
 
 \sdToc{RUP}{Rational Unified Process (RUP)}
 
@@ -48,30 +48,30 @@
   Iterative \& Incremental
 
   \sdPic{0.7}{rup}
-}
+}[5]
 
 \sdPrintAndFlush{
   Iterative:
 
   \sdPic{0.7}{iterative}
-}
+}[3]
 
-\sdPrintAndFlush{\sdPic{0.7}{i-and-i}}
+\sdPrintAndFlush[3]{\sdPic{0.7}{i-and-i}}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \sdPic{0.7}{rup-architect}
   \sdPic{0.7}{rup-designer}
 }
 
-\sdPrintAndFlush{\sdPic{0.7}{rup-certificate}}
+\sdPrintAndFlush[2]{\sdPic{0.7}{rup-certificate}}
 
 \sdToc{Agile}{Agile/XP}
 
-\sdPrintAndFlush{\sdPic{0.7}{cost-of-bug}}
+\sdPrintAndFlush[2]{\sdPic{0.7}{cost-of-bug}}
 
-\sdPrintAndFlush{\sdQuote{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
+\sdPrintAndFlush[2]{\sdQuote{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
-\sdPrintAndFlush{\sdQuote{xp}{We will continually refine the design of the system, starting from a very simple
+\sdPrintAndFlush[1]{\sdQuote{xp}{We will continually refine the design of the system, starting from a very simple
 beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Programming Explained: Embrace Change \br Kent Beck}}
 
 \sdToc{Qualities}{Qualities of Good Design}
@@ -80,7 +80,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
 \sdMenu{Duplication}
 \sdMenu{Immobility}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[4]{
   \sdBanner{It must be simple}
 
   \small
@@ -91,28 +91,28 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
   ``Our failure to master the complexity of software results in projects that are late, over budget, and deficient in their stated requirements. We often call this condition the \ul{software crisis}, but frankly, a malady that has carried on this long must be called normal.'' -- \nospell{Grady Booch}
 }
 
-\sdPrintAndFlush{\sdPic{0.7}{complexity1}}
+\sdPrintAndFlush[2]{\sdPic{0.7}{complexity1}}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[4]{
   \sdPic{0.7}{complexity2}
   \sdQR[1.5in]{https://mattgemmell.com/perceived-software-complexity/}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   ``The main virtue of an architect is the ability to \ul{reduce complexity}. Thus, a good architect would never be proud of a complex diagram. Instead, they would be proud of a simple and easy-to-understand drawing with a few rectangles that perfectly explain an entire multi-tier application. That is what is really difficult to do. That's where a true architectural mind shines.'' --- me.
 
   \sdQR{https://www.yegor256.com/2015/06/29/simple-diagrams.html}
 }
 
 \sdMenuNext
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{It must not repeat itself}
 
   ``When there is \ul{redundant code} in the system, the job of changing the system can become arduous. Bugs found in such a repeating unit have to be fixed in every repetition. However, since each repetition is slightly different from every other, the fix is not always the same.'' -- Robert Martin
 }
 
 \sdMenuNext
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{It must be modular}
   ``A design is \ul{immobile} when it contains parts that could be useful in other systems, but the effort and risk involved with separating those parts from the original system are too great.'' -- Robert Martin
 
@@ -122,7 +122,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
 
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \begin{multicols}{2}
     \innoBook{../01-readme/rup}
       {\nospell{Per Kroll} et al.}
@@ -134,7 +134,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \begin{multicols}{2}
     \innoBook{clean-architecture}
       {Robert Martin}
@@ -146,7 +146,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
   \begin{multicols}{2}
     \innoBook{brooks}
       {Frederick Brooks Jr.}
@@ -158,13 +158,13 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
   \sdBanner{Where to publish:}
 
   IEEE International Conference on Software Engineering (ICSE)
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Call to Action:}
 
   Break down the development of your app into four interactions
@@ -172,14 +172,14 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
   of each of them.
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[4]{
   \sdBanner[orange]{Still unresolved issues:}
 
   \begin{itemize}
     \item How to \ul{restrict} design automatically?
     \item How to \ul{decompose} the task of design?
     \item How to \ul{coordinate} design process by robots?
-    \item How to \ul{} them?
+    \item How to \ul{enforce} good design?
   \end{itemize}
 }
 

@@ -20,23 +20,23 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[white]{../slidedeck}
+\documentclass[static]{../slidedeck}
 \newcommand*\thetitle{Requirements}
 \newcommand*\thesubtitle{Engineering}
 \begin{document}
 
 \innoTitlePage{2}
 
-\sdPrintAndFlush{\sdQuote{../03-rup/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
+\sdPrintAndFlush[2]{\sdQuote{../03-rup/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
-\sdPrintAndFlush{\sdQuote{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+\sdPrintAndFlush[2]{\sdQuote{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
 with have explicit \ul{borders}.}{Code Ahead \br Yegor Bugayenko}}
 
-\sdTocPrint
+\sdTocPrint\sdMins{1}
 
 \sdToc{UCs}{Use Cases (user stories)}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \begin{multicols}{2}
     \sdPic{0.4}{jacobson}\br
     \nospell{Ivar Jacobson} \br
@@ -52,7 +52,7 @@ with have explicit \ul{borders}.}{Code Ahead \br Yegor Bugayenko}}
   \end{multicols}
   }
 
-\sdPrintAndFlush{\sdQuote{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
+\sdPrintAndFlush[3]{\sdQuote{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
 \begin{ffcode}
 Use Case: Make a QR code
@@ -68,8 +68,9 @@ Extensions:
   3a. The User cancels downloading.
     1. The System stops sending data over HTTP.
 \end{ffcode}
+\sdMins{7}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Use Case Diagram}
 
   \colorbox{sd-white}{\sdPic{0.5}{uc-diagram}}
@@ -84,9 +85,9 @@ Extensions:
 \sdPrint{COSMIC is the modern version: ISO/IEC 14143}\sdClick
 \sdPrint{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\sdClick
 \sdPrint{Function Points (FPs) are used for estimates}
-\sdFlush
+\sdFlush[4]
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \sdQR{https://en.wikipedia.org/wiki/Use_case_points}
 
   Also, read about Use Case Points (UCP)
@@ -94,7 +95,7 @@ Extensions:
 
 \sdToc{Matrix}{Traceability Matrix}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[5]{
   \sdBanner{Traceability Matrix}
 
   \colorbox{sd-white}{\sdPic{0.6}{matrix}}
@@ -106,7 +107,7 @@ Extensions:
 
 \sdToc{V\&V}{Verification \& Validation}
 
-\sdPrintAndFlush{\sdQuote{cmmi-vv}{Two different questions may be asked by a project team:
+\sdPrintAndFlush[3]{\sdQuote{cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
 \sdToc{NFRs}{Non-Functional Requirements (NFRs)}
@@ -117,9 +118,9 @@ Extensions:
 \sdPrint{Recovery: Recovery Time Objective (RTO)}\sdClick
 \sdPrint{Maintainability: Mean Time To Repair (MTTR)}\sdClick
 \sdPrint{Usability: focus group surveys?}
-\sdFlush
+\sdFlush[8]
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[5]{
   \begin{multicols}{2}
     \sdBanner[red]{Bad NFRs}
 
@@ -145,7 +146,7 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[9]{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
     \sdQR{https://www.yegor256.com/2015/nov/2015-11-10-ten-mistakes-in-specs}
@@ -167,9 +168,9 @@ Extensions:
 
 \sdToc{COCOMO}{Estimates and COCOMO II}
 
-\sdPrintAndFlush{\sdQuote{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
+\sdPrintAndFlush[2]{\sdQuote{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).
 
   Then, we find effort adjustment factor ($F$).
@@ -185,12 +186,12 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[5]{
   \sdBanner{Cone of Uncertainty}
   \sdPic{0.6}{cone}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[5]{
   \sdQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}
 
   ``How much for this software?'' they ask.
@@ -200,7 +201,7 @@ Extensions:
 
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
   \begin{multicols}{2}
     \innoBook{wiegers}
       {\nospell{Karl Wiegers} et al.}
@@ -212,7 +213,7 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
   \begin{multicols}{2}
     \innoBook{cockburn}
       {\nospell{Alistair Cockburn}}
@@ -224,13 +225,13 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[2]{
   \sdBanner{Where to publish:}
 
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Call to Action:}
 
   Specify 4+ use cases and 10+ non-functional requirements for your app.
@@ -238,7 +239,7 @@ Extensions:
   the cost in man-months using COCOMO II.
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[4]{
   \sdBanner[orange]{Still unresolved issues:}
 
   \begin{itemize}

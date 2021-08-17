@@ -94,9 +94,11 @@
       \begin{textblock}{8}[1,0](15,1)%
         \ttfamily {\thepage{}}{\small{\color{sd-grey}/\pageref{LastPage}}}
       \end{textblock}%
-      \begin{textblock}{1}[1,0](15.8,0.2)%
-        \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\footnotesize\ttfamily\thesdMinutes{}};}
-      \end{textblock}%
+      \ifstatic\else%
+        \begin{textblock}{1}[1,0](15.8,0.2)%
+          \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\footnotesize\ttfamily\thesdMinutes{}};}
+        \end{textblock}%
+      \fi
     \fi
   }
   \fancyfoot[L]{
