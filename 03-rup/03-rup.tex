@@ -35,14 +35,15 @@
 \sdPrint{Waterfall / SDLC}\sdClick
 \sdPrint{Rational Unified Process (RUP)}\sdClick
 \sdPrint{Microsoft Solutions Framework (MSF)}\sdClick
-\sdPrint{Kanban}\sdClick
-\sdPrint{Scrum}\sdClick
-\sdPrint{XP}
+\sdPrint{Information Technology Infrastructure Library (ITIL)}\sdClick
+\sdPrint{Agile \& Co.}\sdClick
 \sdFlush[4]
 
-\sdPrintAndFlush[3]{\sdPic{0.8}{sdlc}}
+\sdPrintAndFlush[3]{\sdPic{0.7}{waterfall}}
 
-\sdToc{RUP}{Rational Unified Process (RUP)}
+\sdPrintAndFlush[2]{\sdPic{0.8}{sdlc}}
+
+\sdToc{RUP \& Co.}{Rational Unified Process (RUP) \& Co.}
 
 \sdPrintAndFlush[5]{
   Iterative \& Incremental
@@ -65,17 +66,55 @@
 
 \sdPrintAndFlush[2]{\sdPic{0.7}{rup-certificate}}
 
-\sdToc{Agile}{Agile/XP}
+\sdPrintAndFlush[2]{
+  \sdBanner{Microsoft Solutions Framework (MSF)}
+  \sdPic{0.7}{msf}
+}
 
-\sdPrintAndFlush[2]{\sdPic{0.7}{cost-of-bug}}
+\sdPrintAndFlush[2]{
+  \sdBanner{Information Technology Infrastructure Library (ITIL)}
+  \sdPic{0.4}{itil}
+}
+
+\sdPrintAndFlush[2]{
+  \sdPic{0.4}{spiral}
+  \sdPic{0.4}{vmodel}
+  \sdPic{0.4}{rad}
+}
+
+\sdToc{Agile \& Co.}{Agile, Kanban, Scrum, XP}
+\sdMenu{Agile}
+\sdMenu{Kanban}
+\sdMenu{Scrum}
+\sdMenu{XP}
+\sdMenu{Cost of Bugs}
 
 \sdPrintAndFlush[2]{\sdQuote{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
 
+\sdPrintAndFlush[2]{\sdPic{0.7}{agile}}
+
+\sdMenuNext
+\sdPrintAndFlush[2]{\sdPic{0.7}{kanban}}
+
+\sdMenuNext
+\sdPrintAndFlush[2]{
+  \sdBanner{Scrum Framework}
+  \sdPic{0.8}{scrum}
+}
+
+\sdMenuNext
 \sdPrintAndFlush[1]{\sdQuote{xp}{We will continually refine the design of the system, starting from a very simple
 beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Programming Explained: Embrace Change \br Kent Beck}}
 
-\sdToc{Qualities}{Qualities of Good Design}
+\sdPrintAndFlush[2]{
+  \sdBanner{eXtreme Programming (XP)}
+  \sdPic{0.5}{xp}
+}
 
+\sdMenuNext
+\sdPrintAndFlush[2]{\sdPic{0.7}{cost-of-bug}}
+
+\sdToc{Qualities}{Qualities of Good Design}
 \sdMenu{Complexity}
 \sdMenu{Duplication}
 \sdMenu{Immobility}
@@ -118,7 +157,6 @@ beginning. We will remove any flexibility that doesn't prove useful.}{Extreme Pr
 
   ``A design is rigid if a single change causes a cascade of subsequent changes in dependent modules. The more modules that must be changed, the more \ul{rigid} the design.'' -- Robert Martin
 }
-\sdMenuDelete
 
 \sdToc{B.V.C}{Books, Venues, Call-to-Action}
 

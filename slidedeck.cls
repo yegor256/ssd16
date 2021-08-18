@@ -130,7 +130,9 @@
   \gappto\sdHOOKS{\csname sdHOOK#1\endcsname}
 }
 \newcommand\sdHookDelete[1]{
-  \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
+  \ifcsname sdHOOK#1\endcsname
+    \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
+  \fi
 }
 
 \newcommand\br{\newline}
@@ -162,6 +164,7 @@
 }
 \makeatletter\newcommand\back{\@backslashchar}\makeatother
 \newcommand\sdToc[2]{
+  \sdMenuDelete
   \stepcounter{sdCRUMBScnt}
   \ifx\sdTOC\empty
     \ifnum\value{sdCRUMBScnt}=1\else%
