@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[white,static]{../slidedeck}
+\documentclass[white]{../slidedeck}
 \newcommand*\thetitle{Object-Oriented}
 \newcommand*\thesubtitle{Analysis and Design}
 \begin{document}
@@ -28,8 +28,15 @@
 \innoTitlePage{4}
 
 \sdPrintAndFlush[1]{
-  Structured Programming (C, Pascal, FORTRAN, ALGOL) + CASE + Waterfall\par
-  Object-Oriented Programming (C++, Object Pascal, Java) + RUP
+  \sdBanner[red]{Before:}
+  Structured Programming\br
+  C, Pascal, FORTRAN, ALGOL\br
+  CASE\br
+  Waterfall
+  \sdBanner{After:}
+  Object-Oriented Programming\br
+  C++, Object Pascal, Java\br
+  RUP
 }
 
 \sdTocPrint
@@ -40,17 +47,40 @@
 \sdMenu{Modularity}
 \sdMenu{Hierarchy}
 
-\sdPrintAndFlush{\sdPic{0.7}{java-abstraction}}
+\sdPrintAndFlush[3]{\sdPic{0.8}{oop-vs-pp}}
 
-\sdPrintAndFlush{\sdPic{0.4}{java-abstraction2}}
+\sdPrintAndFlush[3]{
+  \sdBanner{\ul{Some} Principles of OOP}\par
+  \begin{multicols}{2}
+    Abstraction\br
+    Encapsulation\br
+    Modularity\br
+    Hierarchy\par
+    \columnbreak
+    Polymorphism\br
+    Inheritance\br
+    Composition\br
+    Delegation\br
+    Subtyping\br
+    Data Hiding\br
+    Separation of Concerns
+  \end{multicols}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Abstraction \& Polymorphism}
+  \sdPic{0.6}{java-abstraction}
+}
+
+\sdPrintAndFlush[2]{\sdPic{0.4}{java-abstraction2}}
 
 \sdMenuNext
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Encapsulation}
   \sdPic{0.7}{encapsulation}
 }
 
-\sdPrintAndFlush{\sdPic{0.7}{encapsulation2}}
+\sdPrintAndFlush[2]{\sdPic{0.7}{encapsulation2}}
 
 \sdPrint{
   ``Encapsulation Covers Up Naked Data'' (2016)\par
@@ -58,7 +88,32 @@
 }\sdClick
 \sdPrint{\sdPic{0.4}{naked1}}\sdClick
 \sdPrint{\sdPic{0.4}{naked2}}
-\sdFlush
+\sdFlush[5]
+
+\sdMenuNext
+\sdPrintAndFlush[3]{
+  \sdBanner{Modularity}
+  \sdPic{0.7}{modularity}
+}
+
+\sdMenuNext
+\sdPrintAndFlush[3]{
+  \sdBanner{Hierarchy}
+  \sdPic{0.7}{hierarchy}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Inheritance vs. Composition}
+  \sdPic{0.5}{inheritance-versus-composition}
+}
+
+\sdPrintAndFlush[2]{
+  ``Prefer composition over inheritance?'' (2008) at StackOverflow\br
+  \sdQR[1.5in]{https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance}\par
+  ``Inheritance Is a Procedural Technique for Code Reuse'' (2016)\br
+  \sdQR[1.5in]{https://www.yegor256.com/2016/09/13/inheritance-is-procedural.html}
+}
+
 
 \sdToc{SOLID}{SOLID Principles by Uncle Bob}
 \sdMenu{SRP}
@@ -67,87 +122,168 @@
 \sdMenu{ISP}
 \sdMenu{DIP}
 
-\sdPrintAndFlush{\sdQuote{../03-rup/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{Agile Software Development. Principles, Patterns, and Practices \br Robert Martin}}
+\sdPrintAndFlush[1]{\sdQuote{../03-rup/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
+  \textbf{SOLID} principles:
+  \begin{itemize}
+    \item \nospell{\textbf{S}ingle} Responsibility Principle
+    \item \nospell{\textbf{O}pen} Close Principle
+    \item \nospell{\textbf{L}iskov} Substitution Principle
+    \item \nospell{\textbf{I}nterface} Segregation Principle
+    \item \nospell{\textbf{D}ependency} Inversion Principle
+  \end{itemize}
+}
+
+\sdPrintAndFlush[1]{
   \sdPic{0.2}{uncle-bob}\par
   ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia\par
   \ff{https://www.cleancoder.com}\par
   \ff{@unclebobmartin} on Twitter
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Single Responsibility Principle (SRP)}\par
-  ``A class should have only one reason to change.'' --- Robert Martin
+  \small
+  ``A class should have only one reason to change.''\par
+  ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
+  ``Each module should be responsible for each role.''\par
+  ``SRP is a Hoax'' (2017) \br
+  \sdQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
+}
+
+\sdPrintAndFlush[2]{
+  \sdBanner{SRP}
+  \sdPic{0.7}{srp}
 }
 
 \sdMenuNext
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
   \sdBanner{Open-Close Principle (OCP)}\par
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
 }
 
+\sdPrintAndFlush[3]{
+  \sdBanner{OCP}
+  \sdPic{0.7}{ocp}
+}
+
 \sdMenuNext
-\sdPrintAndFlush{
-  \sdBanner{\nospell{Liskov} Substitution Principle (OCP)}\par
+\sdPrintAndFlush[3]{
+  \sdBanner{\nospell{Liskov} Substitution Principle (LSP)}\par
+  \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
   \sdPic{0.3}{lsp}\par
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
+\sdPrintAndFlush[3]{
+  \sdBanner{Duck Typing}
+  \sdPic{0.7}{duck}
+}
+
 \sdMenuNext
-\sdPrintAndFlush{
+\sdPrintAndFlush[1]{
+  \sdBanner{Interface Segregation Principle (ISP)}\par
+  ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{ISP}
+  \sdPic{0.6}{isp}
+}
+
+\sdMenuNext
+\sdPrintAndFlush[1]{
   \sdBanner{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
 }
 
-\sdMenuNext
-\sdPrintAndFlush{
-  \sdBanner{Interface-Segregation Principle (ISP)}\par
-  ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
+\sdPrintAndFlush[3]{
+  \sdBanner{DIP}
+  \sdPic{0.7}{dip}
 }
 
-\sdToc{Contracts}{Design by Contract}
+\sdToc{Contracts}{Design by Contract by Bertrand Meyer}
+
+\sdPrintAndFlush[1]{\sdPic{0.5}{contracts}}
 
 \sdToc{DRY}{Don't Repeat Yourself (DRY)}
 
+\sdPrintAndFlush[3]{\sdPic{0.5}{dry}}
+
 \sdToc{YAGNI}{You Ain't Gonna Need It (YAGNI)}
 
-\sdToc{DI}{Dependency Injection}
+\sdPrintAndFlush[3]{\sdPic{0.7}{yagni}}
 
 \sdToc{IoC}{Inversion of Control}
 
-\sdPrintAndFlush{}
+\sdPrintAndFlush[4]{
+  ``How Does Inversion of Control Really Work?'' (2017)\par
+  \sdQR[0.75in]{https://www.yegor256.com/2017/05/10/inversion-of-control.html}\par
+  \sdPic{0.6}{ioc}
+}
 
-\sdToc{B.V.C}{Books, Venues, Call-to-Action}
+\sdToc{FP}{OOP vs. Functional Programming}
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
+  \sdPic{0.8}{oop-vs-fp}\br
+  (c) Uncle Bob
+}
+
+\sdPrintAndFlush[1]{
   \begin{multicols}{2}
-    \innoBook{../01-readme/rup}
-      {\nospell{Per Kroll} et al.}
-      {A Practitioner's Guide to the RUP}
+    \sdPic{0.8}{issues}\par
     \columnbreak
+    ``What's Wrong With Object-Oriented Programming?'' (2016)\par
+    \sdQR{https://www.yegor256.com/2016/08/15/what-is-wrong-object-oriented-programming.html}
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdToc{B.V.C}{Books, Venues, Call-to-Action}
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{clean-code}
+      {Robert C. Martin}
+      {Clean Code: A Handbook of Agile Software Craftsmanship}
+    \columnbreak
+    \innoBook{booch-book}
+      {\nospell{Grady Booch} et al.}
+      {Object-Oriented Analysis and Design with Applications}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{stroustrup}
+      {\nospell{Bjarne Stroustrup}}
+      {Programming: Principles and Practice Using C++}
+    \columnbreak
+    \innoBook{head-first}
+      {\nospell{Brett McLaughlin}}
+      {Head First Object-Oriented Analysis and Design: A Brain Friendly Guide to OOA\&D}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
   \sdBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner{Call to Action:}
-
-  ...
+  Analyze one of the apps you've written recently and find out
+  which design principles you've used and where.
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \sdBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
-    \item How to \ul{validate} requirements automatically?
-    \item How to \ul{trace} them automatically?
-    \item How to \ul{specify} in Controlled Natural Language (CNL)?
-    \item How to \ul{reduce} them?
+    \item How to \ul{fix} object-oriented programming?
+    \item How to \ul{enforce} it automatically?
+    \item How to \ul{eliminate} root causes of violations?
+    \item How to \ul{make} better programming languages?
   \end{itemize}
 }
 

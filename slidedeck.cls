@@ -81,7 +81,7 @@
   \fancyhead[L]{
     \ifnum\value{page}=1\else%
       \ifx\sdCRUMBS\empty\else%
-        \begin{textblock}{8}(1,1)%
+        \begin{textblock}{12}(1,1)%
           \small\ttfamily
           \begin{enumerate*}[label={},labelindent=0pt]
             \sdCRUMBS
@@ -92,7 +92,7 @@
   }
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
-      \begin{textblock}{8}[1,0](15,1)%
+      \begin{textblock}{4}[1,0](15,1)%
         \ttfamily {\thepage{}}{\small{\color{sd-grey}/\pageref{LastPage}}}
       \end{textblock}%
       \ifstatic\else%
@@ -160,7 +160,7 @@
 \newcommand\sdTocPrint{
   \IfFileExists{\jobname.toc}{\input{\jobname.toc}}{\sdPrint{Table of Contents}}
   \IfFileExists{\jobname.crumbs}{\input{\jobname.crumbs}}{}
-  \sdFlush
+  \sdFlush[1]
 }
 \makeatletter\newcommand\back{\@backslashchar}\makeatother
 \newcommand\sdToc[2]{
