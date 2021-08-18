@@ -270,7 +270,7 @@
   \tikz{%
     \node[draw=sd-white]{%
       \href{#2}{%
-        \qrcode[height=#1]{#2}
+        \qrcode[height=#1]{#2}%
       }%
     }%
   }
