@@ -51,6 +51,7 @@
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
 \RequirePackage{multirow}
@@ -220,12 +221,12 @@
         \begin{textblock}{4}[0,1](1,14)%
           \tikz{
             \node[inner sep=0pt] (z) {
-              \begin{varwidth}{\textwidth}
+              \begin{minipage}{0.9\textwidth}
                 \small\ttfamily
                 \begin{enumerate}[label={},labelindent=0pt]
                   \sdMENU
                 \end{enumerate}
-              \end{varwidth}
+              \end{minipage}
             };
             \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
           }
@@ -263,9 +264,13 @@
 }
 
 \newcommand\sdQR[2][2in]{
-  \par
-  \tikz{\node[draw=sd-white]{\qrcode[height=#1]{#2}}}
-  \par
+  \tikz{%
+    \node[draw=sd-white]{%
+      \href{#2}{%
+        \qrcode[height=#1]{#2}
+      }%
+    }%
+  }
 }
 
 \newcommand\sdPrint[1]{
