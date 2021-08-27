@@ -45,7 +45,7 @@ authors.\par}}
 % 2: author
 % 3: title
 \newcommand\innoBook[3]{
-  \sdPic{0.4}{#1} \br ``#3'' by~{\scshape #2}
+  \sdPic{0.4}{../images/books/#1} \br ``#3'' by~{\scshape #2}
 
 }
 
@@ -65,6 +65,14 @@ authors.\par}}
     }
   }
   \sdMenuShow
+}
+
+\newcommand\innoBVC{
+  \sdToc{B.V.C.}{Books, Venues, Call-to-Action}
+}
+
+\newcommand\innoBlogPin[1]{
+  \sdPin{\sdQR[1in]{#1}}
 }
 
 \endinput

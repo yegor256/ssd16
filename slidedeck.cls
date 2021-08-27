@@ -51,6 +51,7 @@
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
+\RequirePackage{verbatim}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
@@ -62,6 +63,7 @@
 \RequirePackage{qrcode}
 \RequirePackage{soul}
 \RequirePackage{tikz}
+  \RequirePackage{tikzpagenodes}
   \usetikzlibrary{arrows}
   \usetikzlibrary{decorations}
   \usetikzlibrary{decorations.pathmorphing}
@@ -105,14 +107,14 @@
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
-        \footnotesize\ttfamily \thetitle{} \thesubtitle{}
+        {\color{sd-grey}\footnotesize\ttfamily \thetitle{} \thesubtitle{}}
       \end{textblock}%
     \fi
   }
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
-        \footnotesize\ttfamily \theauthor{}
+        {\color{sd-grey}\footnotesize\ttfamily \theauthor{}}
       \end{textblock}%
     \fi
   }
@@ -289,9 +291,9 @@
   \sdPrint{#2}\sdFlush[#1]
 }
 
-\newcommand\sdQuote[3]{
+\newcommand\sdCite[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-    \raisebox{\dimexpr-\height+\ht\strutbox}{\sdPic{0.25}{#1}}
+    \raisebox{\dimexpr-\height+\ht\strutbox}{\sdPic{0.25}{../images/books/#1}}
     &
     ``#2''
     \def\param{#3}%
@@ -304,11 +306,25 @@
   \end{tabularx}
 }
 
+\newcommand\sdQuote[3]{\sdCite{../people/#1}{#2}{#3}}
+
 % How many minutes more we spend
 \newcommand\sdMins[1]{
   \addtocounter{sdMinutes}{#1}
 }
 \newcounter{sdMinutes}
+
+\newcommand\sdSnippet[1]{
+  \begin{samepage}
+    \small\verbatiminput{#1}
+  \end{samepage}
+}
+
+\newcommand\sdPin[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east] at (current page text area.north east) {#1};
+  \end{tikzpicture}
+}
 
 \newcommand\nospell[1]{#1}
 

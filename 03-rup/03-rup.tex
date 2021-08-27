@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[white]{../slidedeck}
+\documentclass[static]{../slidedeck}
 \newcommand*\thetitle{RUP}
 \newcommand*\thesubtitle{vs. Agile/XP}
 \begin{document}
@@ -75,9 +75,15 @@
 }
 
 \sdPrintAndFlush[2]{
-  \sdPic{0.4}{spiral}
-  \sdPic{0.4}{vmodel}
-  \sdPic{0.4}{rad}
+  \begin{multicols}{2}
+    Spiral\br
+    \sdPic{0.7}{spiral}\par
+    \columnbreak
+    V-Model\br
+    \sdPic{0.7}{vmodel}\par
+    Rapid Application Development\br
+    \sdPic{0.7}{rad}
+  \end{multicols}
 }
 
 \sdToc{Agile \& Co.}{Agile, Kanban, Scrum, XP}
@@ -87,7 +93,7 @@
 \sdMenu{XP}
 \sdMenu{Cost of Bugs}
 
-\sdPrintAndFlush[2]{\sdQuote{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{\emph{Agile Software Development. Principles, Patterns, and Practices} Robert Martin}}
+\sdPrintAndFlush[2]{\sdCite{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{\emph{Agile Software Development. Principles, Patterns, and Practices} Robert Martin}}
 
 \sdPrintAndFlush[2]{\sdPic{0.7}{agile}}
 
@@ -101,7 +107,7 @@
 }
 
 \sdMenuNext
-\sdPrintAndFlush[1]{\sdQuote{xp}{We will continually refine the design of the system, starting from a very simple
+\sdPrintAndFlush[1]{\sdCite{xp}{We will continually refine the design of the system, starting from a very simple
 beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extreme Programming Explained: Embrace Change}, Kent Beck}}
 
 \sdPrintAndFlush[2]{
@@ -150,7 +156,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extr
   ``A design is rigid if a single change causes a cascade of subsequent changes in dependent modules. The more modules that must be changed, the more \ul{rigid} the design.'' -- Robert Martin
 }
 
-\sdToc{B.V.C}{Books, Venues, Call-to-Action}
+\innoBVC
 
 \sdPrintAndFlush[2]{
   \begin{multicols}{2}

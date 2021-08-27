@@ -1,0 +1,99 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass[static]{../slidedeck}
+\newcommand*\thetitle{Object Thinking}
+\newcommand*\thesubtitle{and Domain Driven Design}
+\begin{document}
+
+\innoTitlePage{5}
+
+\sdPrintAndFlush[1]{\sdQuote{edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{Edsger W. Dijkstra (1989)}}
+
+\sdPrintAndFlush[1]{\sdQuote{alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{Alan Kay (1997)}}
+
+\sdPrintAndFlush[1]{\sdQuote{paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{Paul Graham (2003)}}
+
+\sdPrintAndFlush[1]{\sdQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{Linus Torvalds (2007)}}
+
+\sdTocPrint
+
+\sdToc{Status Quo}
+  - frameworks
+  - example of code
+  - consequences
+\sdToc{Objects are Alive}
+
+\sdPrintAndFlush[3]{\sdPic{0.7}{basic}}
+
+\sdPrintAndFlush[3]{\sdPic{0.6}{flowchart}}
+
+\sdPrintAndFlush[2]{\sdBanner{yegor256/hangman}}
+
+\sdPrintAndFlush[2]{\sdBanner{elegantobjects.org}}
+
+
+\innoBVC
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{object-thinking}
+      {David West}
+      {Object Thinking}
+    \columnbreak
+    \innoBook{ddd-book}
+      {Eric Evans}
+      {Domain-Driven Design: Tackling Complexity in the Heart of Software}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{elegant-objects-1}
+      {Yegor Bugayenko}
+      {Elegant Objects, vol. 1}
+    \columnbreak
+    \innoBook{elegant-objects-2}
+      {Yegor Bugayenko}
+      {Elegant Objects, vol. 2}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Where to publish:}\par
+  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Call to Action:}
+  Take \ff{yegor256/hangman} repository and rewrite it in true
+  object-oriented manner, submit a pull request with your changes.
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner[orange]{Still unresolved issues:}\par
+  \begin{itemize}
+    \item How to \ul{?} ...
+  \end{itemize}
+}
+
+\end{document}
