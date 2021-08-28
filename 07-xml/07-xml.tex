@@ -1,0 +1,150 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass{../slidedeck}
+\newcommand*\thetitle{XML}
+\newcommand*\thesubtitle{vs JSON, YAML, TOML, etc.}
+\begin{document}
+
+\innoTitlePage{7}
+
+\sdTocPrint
+
+\sdToc{XML}{Extensible Markup Language (XML)}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{Library in XML}
+  \sdSnippet{library.xml}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Namespaces}
+  \sdSnippet{namespaces.xml}
+}
+
+\sdPrintAndFlush[2]{
+  \sdBanner{Escaping}
+  \sdSnippet{escaping.xml}
+}
+
+\sdPrintAndFlush[3]{
+  \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based_standards}
+  \sdBanner{XML Based Formats/Protocols}
+  SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
+  Open Office XML, XMPP, \\
+  SyncML, RDF, XMI, XMIR :)
+}
+
+\sdToc{XSD}{XML Schema Definition (XSD)}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{Schema for the \ff{library.xml}}
+  \sdSnippet[\footnotesize]{library.xsd}
+}
+
+\sdToc{XPath}{XML Path Language (XPath)}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{XPath Expressions to Find Some Books}
+  \ff{<library><book id=42><author>David West</></></>}\par
+  \vspace*{12pt}
+  \ff{/library/book[@id='42']}\par
+  \ff{//book[@id='42']}\par
+  \ff{//book[first()]}\par
+  \ff{//book[author='David West']}\par
+  \ff{//book[author[text()='David West']]}
+}
+
+\sdToc{XSLT}{XSL Transformations (XSLT)}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{XSL Transformation for \ff{library.xml}}
+  \sdSnippet[\footnotesize]{library.xsl}
+}
+
+\sdToc{JSON}{JavaScript Object Notation (JSON)}
+
+\sdPrintAndFlush[4]{
+  \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
+  \sdBanner{JSON for the Library}
+  \sdSnippet{library.json}
+}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{JSON to JavaScript Object and Backwards}
+  \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
+  \ff{JSON.stringify(\{age: 25\});}
+}
+
+\sdToc{YAML}{Yet Another Markup Language (YAML)}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{YAML for the Library}
+  \sdSnippet{library.yml}
+}
+
+\sdToc{TOML}{TOML}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{TOML for the Library}
+  \sdSnippet{library.toml}
+}
+
+
+\innoBVC
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{xml-nutshell}
+      {\nospell{Elliotte Rusty Harold} et al.}
+      {XML in a Nutshell, Third Edition}
+    \columnbreak
+    \innoBook{xslt}
+      {\nospell{Michael James Fitzgerald}}
+      {Learning XSLT: A Hands-On Introduction to XSLT and XPath}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Where to publish:}
+  ...
+}
+
+\sdPrintAndFlush[2]{
+  \sdBanner{Call to Action:}
+  In your application, make sure your data is represented in
+  XML, at least in one place, and being transformed by XSLT.
+
+  Design your own data format.
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner[orange]{Still unresolved issues:}
+  \begin{itemize}
+    \item How to \ul{prove} certain patterns are anti-patterns?
+    \item How to \ul{find} methods for automated refactoring?
+    \item How to \ul{guarantee} validity during refactoring?
+    \item How to \ul{mine} patterns from code?
+  \end{itemize}
+}
+
+\end{document}

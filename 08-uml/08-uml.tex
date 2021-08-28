@@ -1,0 +1,144 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass{../slidedeck}
+\newcommand*\thetitle{UML}
+\newcommand*\thesubtitle{and XMI, OCL, MOF, etc.}
+\begin{document}
+
+\innoTitlePage{7}
+
+\sdPrintAndFlush[1]{\sdCite{iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}
+
+\sdTocPrint
+
+\sdToc{Class}{Class Diagram}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Generalization}
+  \sdPic{0.8}{generalization}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Composition}
+  \sdPic{0.8}{composition}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Association}
+  \sdPic{0.8}{association}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Dependency}
+  \sdPic{0.8}{dependency}
+}
+
+\sdToc{Components}{Component Diagram}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Components and Interfaces}
+  \sdPic{0.8}{component}
+}
+
+\sdToc{Nodes}{Deployment Diagram}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Nodes and Components}
+  \sdPic{0.8}{deployment}
+}
+
+\sdToc{Activity}{Activity Diagram}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Flow Charts}
+  \sdPic{0.8}{activity}
+}
+
+\sdToc{Sequence}{Sequence Diagram}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Components and Interfaces}
+  \sdPic{0.8}{component}
+}
+
+\sdToc{XMI}{XMI, OCL, QVT}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{XML Metadata Interchange (XMI)}
+  \sdPic{0.2}{xmi1}
+  \sdPic{0.9}{xmi2}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Object Constraint Language (OCL)}
+  \sdPic{0.9}{ocl}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Query/View/Transformation (QVT)}
+  \sdPic{0.9}{qvt}
+}
+
+
+\sdPrintAndFlush[1]{
+  Design Patterns and Anti-Patterns, Love and Hate (2016)\par
+  \sdQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
+  36 patterns (22 anti-patterns)
+}
+
+\innoBVC
+
+\sdPrintAndFlush[1]{
+  \begin{multicols}{2}
+    \innoBook{uml-book}
+      {Martin Fowler}
+      {UML Distilled}
+    \columnbreak
+    % \innoBook{..}
+    %   {..}
+    %   {..}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[1]{
+  \sdBanner{Where to publish:}
+  ...
+}
+
+\sdPrintAndFlush[2]{
+  \sdBanner{Call to Action:}
+  For your application, make one class, one component, one deployment,
+  and three sequence diagrams.
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner[orange]{Still unresolved issues:}
+  \begin{itemize}
+    \item How to \ul{prove} certain patterns are anti-patterns?
+    \item How to \ul{find} methods for automated refactoring?
+    \item How to \ul{guarantee} validity during refactoring?
+    \item How to \ul{mine} patterns from code?
+  \end{itemize}
+}
+
+\end{document}

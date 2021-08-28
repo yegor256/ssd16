@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="42">
+    <author>David West</author>
+    <title>Object Thinking</title>
+  </book>
+  <book id='43'>
+    <author>Martin Fowler</author>
+    <title>Refactoring</title>
+  </book>
+</library>

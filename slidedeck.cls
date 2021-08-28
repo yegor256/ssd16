@@ -314,15 +314,19 @@
 }
 \newcounter{sdMinutes}
 
-\newcommand\sdSnippet[1]{
+\newcommand\sdSnippet[2][]{
   \begin{samepage}
-    \small\verbatiminput{#1}
+    \small #1\verbatiminput{#2}
   \end{samepage}
 }
 
 \newcommand\sdPin[1]{
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north east] at (current page text area.north east) {#1};
+    \node[anchor=north east] at (current page text area.north east) {%
+      \begin{minipage}{\textwidth}%
+        \raggedleft{#1}%
+      \end{minipage}
+    };
   \end{tikzpicture}
 }
 
