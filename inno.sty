@@ -71,8 +71,19 @@ authors.\par}}
   \sdToc{B.V.C.}{Books, Venues, Call-to-Action}
 }
 
-\newcommand\innoPinQR[1]{
-  \sdPin{\sdQR[1in]{#1}}
+\newcommand\innoPinQR[1]{%
+  \sdPin{%
+    \begin{minipage}{1in}
+    \begin{sloppypar}
+      \raggedleft
+      \catcode`\/ =\active
+      \def / {/ }
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{#1}
+      \\
+      \sdQR[1in]{#1}%
+    \end{sloppypar}
+    \end{minipage}
+  }%
 }
 
 \endinput

@@ -46,8 +46,8 @@
   \sdSnippet{escaping.xml}
 }
 
-\sdPrintAndFlush[3]{
-  \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based_standards}
+\sdPrintAndFlush[4]{
+  \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
   \sdBanner{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
   Open Office XML, XMPP, \\
@@ -83,32 +83,35 @@
 
 \sdToc{JSON}{JavaScript Object Notation (JSON)}
 
-\sdPrintAndFlush[4]{
+\sdPrintAndFlush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \sdBanner{JSON for the Library}
   \sdSnippet{library.json}
 }
 
-\sdPrintAndFlush[4]{
+\sdPrintAndFlush[2]{
   \sdBanner{JSON to JavaScript Object and Backwards}
   \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
   \ff{JSON.stringify(\{age: 25\});}
 }
 
-\sdToc{YAML}{Yet Another Markup Language (YAML)}
+\sdToc{Others}{YAML, TOML, CSV}
 
-\sdPrintAndFlush[4]{
-  \sdBanner{YAML for the Library}
+\sdPrintAndFlush[2]{
+  \sdBanner{Yet Another Markup Language (YAML)}
   \sdSnippet{library.yml}
 }
 
-\sdToc{TOML}{TOML}
-
-\sdPrintAndFlush[4]{
-  \sdBanner{TOML for the Library}
+\sdPrintAndFlush[2]{
+  \sdBanner{TOML}
   \sdSnippet{library.toml}
 }
 
+\sdPrintAndFlush[2]{
+  \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
+  \sdBanner{Comma-Separated Values (CSV)}
+  \sdSnippet{library.csv}
+}
 
 \innoBVC
 
@@ -124,11 +127,6 @@
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
-  \sdBanner{Where to publish:}
-  ...
-}
-
 \sdPrintAndFlush[2]{
   \sdBanner{Call to Action:}
   In your application, make sure your data is represented in
@@ -140,10 +138,10 @@
 \sdPrintAndFlush[3]{
   \sdBanner[orange]{Still unresolved issues:}
   \begin{itemize}
-    \item How to \ul{prove} certain patterns are anti-patterns?
-    \item How to \ul{find} methods for automated refactoring?
-    \item How to \ul{guarantee} validity during refactoring?
-    \item How to \ul{mine} patterns from code?
+    \item How to \ul{map} XML/JSON to objects?
+    \item How to \ul{print} object to XML/JSON?
+    \item How to \ul{create} a common binary format?
+    \item How to \ul{restore} the popularity of XSLT?
   \end{itemize}
 }
 
