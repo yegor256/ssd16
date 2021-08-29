@@ -23,6 +23,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{inno}[00.00.0000 0.0.0 Innopolis]
 
+\RequirePackage{seqsplit}
+
 \newcommand\sdDisclaimer{{\color{sd-grey}\ttfamily\footnotesize All visual and text materials presented in
 this slidedeck are either originally made by the author or taken from public
 Internet sources, such as website. Copyright belongs to their respected
@@ -73,13 +75,11 @@ authors.\par}}
 
 \newcommand\innoPinQR[1]{%
   \sdPin{%
-    \begin{minipage}{1in}
-    \begin{sloppypar}
-      \raggedleft
-      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{#1}
-      \\
-      \sdQR[1in]{#1}%
-    \end{sloppypar}
+    \begin{minipage}{1.4in}
+      \raggedleft%
+      \sdQR[1in]{#1}
+      \\[3pt]
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}\\
     \end{minipage}
   }%
 }
