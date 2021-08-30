@@ -27,7 +27,7 @@
 
 \innoTitlePage{4}
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \sdBanner[red]{Before:}
   Structured Programming\br
   C, Pascal, FORTRAN, ALGOL\br
@@ -42,11 +42,8 @@
 \sdTocPrint
 
 \sdToc{\nospell{Booch}}{Object Model by \nospell{Grady Booch}}
-\sdMenu{Abstraction}
-\sdMenu{Encapsulation}
-\sdMenu{Modularity}
-\sdMenu{Hierarchy}
 
+\sdStoc{Abstraction}
 \sdPrintAndFlush[3]{\sdPic{0.8}{oop-vs-pp}}
 
 \sdPrintAndFlush[3]{
@@ -74,7 +71,7 @@
 
 \sdPrintAndFlush[2]{\sdPic{0.4}{java-abstraction2}}
 
-\sdMenuNext
+\sdStoc{Encapsulation}
 \sdPrintAndFlush[3]{
   \sdBanner{Encapsulation}
   \sdPic{0.7}{encapsulation}
@@ -90,13 +87,13 @@
 \sdPrint{\sdPic{0.4}{naked2}}
 \sdFlush[5]
 
-\sdMenuNext
+\sdStoc{Modularity}
 \sdPrintAndFlush[3]{
   \sdBanner{Modularity}
   \sdPic{0.7}{modularity}
 }
 
-\sdMenuNext
+\sdStoc{Hierarchy}
 \sdPrintAndFlush[3]{
   \sdBanner{Hierarchy}
   \sdPic{0.7}{hierarchy}
@@ -116,15 +113,11 @@
 
 
 \sdToc{SOLID}{SOLID Principles by Uncle Bob}
-\sdMenu{SRP}
-\sdMenu{OCP}
-\sdMenu{LSP}
-\sdMenu{ISP}
-\sdMenu{DIP}
 
-\sdPrintAndFlush[1]{\sdCite{../03-rup/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\sdStoc{SRP}
+\sdPrintAndFlush{\sdCite{../03-rup/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \textbf{SOLID} principles:
   \begin{itemize}
     \item \nospell{\textbf{S}ingle} Responsibility Principle
@@ -135,7 +128,7 @@
   \end{itemize}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \sdPic{0.2}{uncle-bob}\par
   ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia\par
   \ff{https://www.cleancoder.com}\par
@@ -157,8 +150,8 @@
   \sdPic{0.7}{srp}
 }
 
-\sdMenuNext
-\sdPrintAndFlush[1]{
+\sdStoc{OCP}
+\sdPrintAndFlush{
   \sdBanner{Open-Close Principle (OCP)}\par
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
 }
@@ -168,7 +161,7 @@
   \sdPic{0.7}{ocp}
 }
 
-\sdMenuNext
+\sdStoc{LSP}
 \sdPrintAndFlush[3]{
   \sdBanner{\nospell{Liskov} Substitution Principle (LSP)}\par
   \small
@@ -182,8 +175,8 @@
   \sdPic{0.7}{duck}
 }
 
-\sdMenuNext
-\sdPrintAndFlush[1]{
+\sdStoc{ISP}
+\sdPrintAndFlush{
   \sdBanner{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
 }
@@ -193,8 +186,8 @@
   \sdPic{0.6}{isp}
 }
 
-\sdMenuNext
-\sdPrintAndFlush[1]{
+\sdStoc{DIP}
+\sdPrintAndFlush{
   \sdBanner{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
 }
@@ -206,7 +199,7 @@
 
 \sdToc{Contracts}{Design by Contract by Bertrand Meyer}
 
-\sdPrintAndFlush[1]{\sdPic{0.5}{contracts}}
+\sdPrintAndFlush{\sdPic{0.5}{contracts}}
 
 \sdToc{DRY}{Don't Repeat Yourself (DRY)}
 
@@ -231,7 +224,7 @@
   (c) Uncle Bob
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \sdPic{0.8}{issues}\par
     \columnbreak
@@ -242,7 +235,7 @@
 
 \innoBVC
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{clean-code}
       {Robert C. Martin}
@@ -254,7 +247,7 @@
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{stroustrup}
       {\nospell{Bjarne Stroustrup}}
@@ -266,7 +259,7 @@
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \sdBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }

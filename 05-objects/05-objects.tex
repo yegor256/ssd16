@@ -27,46 +27,122 @@
 
 \innoTitlePage{5}
 
-\sdPrintAndFlush[1]{\sdQuote{edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{Edsger W. Dijkstra (1989)}}
+\sdPrintAndFlush{\sdQuote{edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{\nospell{Edsger W. Dijkstra} (1989)}}
 
-\sdPrintAndFlush[1]{\sdQuote{alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{Alan Kay (1997)}}
+\sdPrintAndFlush{\sdQuote{alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{\nospell{Alan Kay} (1997)}}
 
-\sdPrintAndFlush[1]{\sdQuote{paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{Paul Graham (2003)}}
+\sdPrintAndFlush{\sdQuote{paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{\nospell{Paul Graham} (2003)}}
 
-\sdPrintAndFlush[1]{\sdQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{Linus Torvalds (2007)}}
+\sdPrintAndFlush{\sdQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
 
 \sdTocPrint
 
+\sdToc{Theory}{The Philosophy of OOP}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{The Era of GOTO}
+  \sdPic{0.7}{basic}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Structured Programming}
+  \begin{multicols}{2}
+    \sdPic{0.9}{pascal}\par
+    \columnbreak
+    \sdPic{0.7}{flowchart}\par
+  \end{multicols}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Procedural Programming}
+  \sdPic{0.5}{calls}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Object-Oriented Programming ... Not!}
+  \sdPic{0.5}{oop-bad}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Spaghetti OOP Code}
+  \sdPic{0.8}{rectangles1}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{OOP Done Right}
+  \sdPic{0.6}{oop-good}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Elegant OOP Code}
+  \sdPic{0.8}{rectangles2}
+}
+
+\sdToc{Object}{What is an Object?}
+
+\sdPrintAndFlush{\sdCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}}
+
+\sdPrintAndFlush{\sdCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}}
+
+\sdPrintAndFlush{\sdCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}}
+
+\sdPrintAndFlush{\sdCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}}
+
+\sdPrintAndFlush{\sdCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}}
+
+\sdPrintAndFlush{\sdCite{object-thinking}{An object is the equivalent of the quanta from which the universe
+is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
+
+\sdPrintAndFlush[3]{
+  \small
+  \begin{multicols}{2}
+  \emph{Object-Oriented Lies}\\
+  JPoint Student Day\\
+  Moscow, Russia, 22-24 April 2016\\
+  \sdQR[1in]{https://www.youtube.com/watch?v=F4N25kZ2zQU}
+
+  \emph{Java vs. OOP}\\
+  JavaDay 2016 \\
+  Minsk, Belarus, 11~June~2016\\
+  \sdQR[1in]{https://www.youtube.com/watch?v=6hOBfjJ2bpw}
+
+  \columnbreak
+
+  \emph{Java vs. OOP}\\
+  JavaDay Kyiv 2016 \\
+  Kyiv, Ukraine, 15 October 2016\\
+  \sdQR[1in]{https://www.youtube.com/watch?v=cGcCcxx4xrg}
+
+  \emph{What's Wrong With OOP?}\\
+  RigaDevDays 2017\\
+  Riga, Latvia, 15 May 2017\\
+  \sdQR[1in]{https://www.youtube.com/watch?v=K_QEOtYVQ7A}
+  \end{multicols}
+}
+
 \sdToc{Status Quo}
-  - frameworks
-  - example of code
-  - consequences
+
 \sdToc{Objects are Alive}
-
-\sdPrintAndFlush[3]{\sdPic{0.7}{basic}}
-
-\sdPrintAndFlush[3]{\sdPic{0.6}{flowchart}}
 
 \sdPrintAndFlush[2]{\sdBanner{yegor256/hangman}}
 
 \sdPrintAndFlush[2]{\sdBanner{elegantobjects.org}}
 
-
 \innoBVC
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{object-thinking}
       {David West}
       {Object Thinking}
     \columnbreak
-    \innoBook{ddd-book}
+    \innoBook{ddd}
       {Eric Evans}
       {Domain-Driven Design: Tackling Complexity in the Heart of Software}
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{elegant-objects-1}
       {Yegor Bugayenko}
@@ -78,7 +154,7 @@
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \sdBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications
 }

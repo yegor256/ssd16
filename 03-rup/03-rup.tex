@@ -87,27 +87,23 @@
 }
 
 \sdToc{Agile \& Co.}{Agile, Kanban, Scrum, XP}
-\sdMenu{Agile}
-\sdMenu{Kanban}
-\sdMenu{Scrum}
-\sdMenu{XP}
-\sdMenu{Cost of Bugs}
 
+\sdStoc{Agile}
 \sdPrintAndFlush[2]{\sdCite{agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{\emph{Agile Software Development. Principles, Patterns, and Practices} Robert Martin}}
 
 \sdPrintAndFlush[2]{\sdPic{0.7}{agile}}
 
-\sdMenuNext
+\sdStoc{Kanban}
 \sdPrintAndFlush[2]{\sdPic{0.7}{kanban}}
 
-\sdMenuNext
+\sdStoc{Scrum}
 \sdPrintAndFlush[2]{
   \sdBanner{Scrum Framework}
   \sdPic{0.8}{scrum}
 }
 
-\sdMenuNext
-\sdPrintAndFlush[1]{\sdCite{xp}{We will continually refine the design of the system, starting from a very simple
+\sdStoc{XP}
+\sdPrintAndFlush{\sdCite{xp}{We will continually refine the design of the system, starting from a very simple
 beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extreme Programming Explained: Embrace Change}, Kent Beck}}
 
 \sdPrintAndFlush[2]{
@@ -115,14 +111,12 @@ beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extr
   \sdPic{0.5}{xp}
 }
 
-\sdMenuNext
+\sdStoc{Cost of Bugs}
 \sdPrintAndFlush[2]{\sdPic{0.7}{cost-of-bug}}
 
 \sdToc{Qualities}{Qualities of Good Design}
-\sdMenu{Complexity}
-\sdMenu{Duplication}
-\sdMenu{Immobility}
 
+\sdStoc{Complexity}
 \sdPrintAndFlush[4]{
   \sdBanner{It must be simple}\par
   \small
@@ -143,13 +137,13 @@ beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extr
   \sdQR{https://www.yegor256.com/2015/06/29/simple-diagrams.html}
 }
 
-\sdMenuNext
+\sdStoc{Duplication}
 \sdPrintAndFlush[3]{
   \sdBanner{It must not repeat itself}\par
   ``When there is \ul{redundant code} in the system, the job of changing the system can become arduous. Bugs found in such a repeating unit have to be fixed in every repetition. However, since each repetition is slightly different from every other, the fix is not always the same.'' -- Robert Martin
 }
 
-\sdMenuNext
+\sdStoc{Immobility}
 \sdPrintAndFlush[3]{
   \sdBanner{It must be modular}
   ``A design is \ul{immobile} when it contains parts that could be useful in other systems, but the effort and risk involved with separating those parts from the original system are too great.'' -- Robert Martin\par
@@ -182,7 +176,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extr
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{brooks}
       {Frederick Brooks Jr.}
@@ -194,7 +188,7 @@ beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extr
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \sdBanner{Where to publish:}\par
   IEEE International Conference on Software Engineering (ICSE)
 }

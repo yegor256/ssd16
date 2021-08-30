@@ -27,27 +27,43 @@
 
 \innoTitlePage{7}
 
-\sdPrintAndFlush[1]{\sdCite{iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
+\sdPrintAndFlush{\sdCite{iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
 
 \sdTocPrint
 
 \sdToc{Class}{Class Diagram}
 
+\sdStoc{Classes}
+\sdPrintAndFlush[4]{
+  \sdBanner{Classes}
+  \sdPic{0.6}{classes}
+}
+
+\sdStoc{Generalization}
 \sdPrintAndFlush[3]{
   \sdBanner{Generalization}
   \sdPic{0.8}{generalization}
 }
 
+\sdStoc{Composition}
 \sdPrintAndFlush[3]{
   \sdBanner{Composition}
   \sdPic{0.7}{composition}
 }
 
+\sdStoc{Aggregation}
+\sdPrintAndFlush[3]{
+  \sdBanner{Aggregation}
+  \sdPic{0.7}{aggregation}
+}
+
+\sdStoc{Association}
 \sdPrintAndFlush[3]{
   \sdBanner{Association}
   \sdPic{0.8}{association}
 }
 
+\sdStoc{Dependency}
 \sdPrintAndFlush[3]{
   \sdBanner{Dependency}
   \sdPic{0.7}{dependency}
@@ -55,58 +71,40 @@
 
 \sdToc{Other}{Some Other Diagrams}
 
-\sdPrintAndFlush[3]{
+\sdStoc{UC}
+\sdPrintAndFlush[6]{
+  \sdBanner{Use Case Diagram}
+  \sdPic{0.7}{usecases}
+}
+
+\sdStoc{Component}
+\sdPrintAndFlush[6]{
   \sdBanner{Component Diagram}
   \sdPic{0.6}{component}
 }
 
-\sdPrintAndFlush[3]{
+\sdStoc{Deployment}
+\sdPrintAndFlush[6]{
   \sdBanner{Deployment Diagram}
   \sdPic{0.7}{deployment}
 }
 
-\sdPrintAndFlush[3]{
+\sdStoc{Activity}
+\sdPrintAndFlush[6]{
   \sdBanner{Activity Diagram}
   \sdPic{0.7}{activity}
 }
 
-\sdPrintAndFlush[5]{
+\sdStoc{Sequence}
+\sdPrintAndFlush[6]{
   \sdBanner{Sequence Diagram}
   \sdPic{0.7}{sequence}
 }
 
 \sdToc{MDA}{MDA: MOF, XMI, OCL, QVT, fUML, ...}
 
-\sdPrintAndFlush[2]{
-  \sdBanner{Meta-Object Facility (MOF)}
-  \sdPic{0.7}{mof}\par
-  \small ``MOF is a Domain Specific Language (DSL) used to define metamodels,
-  just as EBNF is a DSL for defining grammars''
-  --- \href{https://en.wikipedia.org/wiki/Meta-Object_Facility}{Wikipedia}
-}
-
-\sdPrintAndFlush[2]{
-  \sdBanner{XML Metadata Interchange (XMI)}
-  \sdPic{0.5}{xmi1}
-  \sdPic{0.7}{xmi2}
-}
-
-\sdPrintAndFlush[2]{
-  \sdBanner{Object Constraint Language (OCL)}
-  \sdPic{0.9}{ocl}
-}
-
-\sdPrintAndFlush[2]{
-  \sdBanner{Query/View/Transformation (QVT)}
-  \sdPic{0.8}{qvt}
-}
-
-\sdPrintAndFlush[2]{
-  \sdBanner{Executable UML, fUML, Alf}
-  \sdPic{0.7}{alf}
-}
-
-\sdPrintAndFlush[4]{
+\sdStoc{MDA}
+\sdPrintAndFlush[7]{
   \sdBanner{Model Driven Architecture (MDA)}
   \sdPic{0.6}{mda}\par
   \footnotesize Computation Independent Model (CIM),
@@ -114,9 +112,43 @@
   Platform Specific Model (PSM).
 }
 
+\sdStoc{MOF}
+\sdPrintAndFlush[4]{
+  \sdBanner{Meta-Object Facility (MOF)}
+  \sdPic{0.7}{mof}\par
+  \small ``MOF is a Domain Specific Language (DSL) used to define metamodels,
+  just as EBNF is a DSL for defining grammars''
+  --- \href{https://en.wikipedia.org/wiki/Meta-Object_Facility}{Wikipedia}
+}
+
+\sdStoc{XMI}
+\sdPrintAndFlush[5]{
+  \sdBanner{XML Metadata Interchange (XMI)}
+  \sdPic{0.5}{xmi1}
+  \sdPic{0.7}{xmi2}
+}
+
+\sdStoc{OCL}
+\sdPrintAndFlush[4]{
+  \sdBanner{Object Constraint Language (OCL)}
+  \sdPic{0.9}{ocl}
+}
+
+\sdStoc{QVT}
+\sdPrintAndFlush[4]{
+  \sdBanner{Query/View/Transformation (QVT)}
+  \sdPic{0.8}{qvt}
+}
+
+\sdStoc{fUML}
+\sdPrintAndFlush[4]{
+  \sdBanner{Executable UML, fUML, Alf}
+  \sdPic{0.7}{alf}
+}
+
 \innoBVC
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush[2]{
   \begin{multicols}{2}
     \innoBook{uml-book}
       {Martin Fowler}
@@ -128,19 +160,19 @@
   \end{multicols}
 }
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush[5]{
   \sdBanner{Where to go:}
   OMG Certified UML Professional 2 (OCUP 2)\par
   \sdPic{0.3}{ocup}
 }
 
-\sdPrintAndFlush[2]{
+\sdPrintAndFlush[4]{
   \sdBanner{Call to Action:}
   For your application, make one class, one component, one deployment,
   and three sequence diagrams.
 }
 
-\sdPrintAndFlush[3]{
+\sdPrintAndFlush[4]{
   \sdBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{reverse} code to a model?

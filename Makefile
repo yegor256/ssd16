@@ -37,6 +37,11 @@ copy:
 		cp .texqc $${d}
 	done
 
+static:
+	for d in $(DIRS); do
+		grep 's/\documentclass[static]{../slidedeck}//' *.tex
+	done
+
 clean:
 	for d in $(DIRS); do
 		cd $${d} && latexmk -C && cd ..

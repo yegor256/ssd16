@@ -54,17 +54,15 @@
   SyncML, RDF, XMI, XMIR :)
 }
 
-\sdToc{XSD}{XML Schema Definition (XSD)}
+\sdToc{XSD}{XSD, XPath, XSLT, XQuery, etc.}
 
 \sdPrintAndFlush[4]{
-  \sdBanner{Schema for the \ff{library.xml}}
+  \sdBanner{XSM Schema Definition}
   \sdSnippet[\footnotesize]{library.xsd}
 }
 
-\sdToc{XPath}{XML Path Language (XPath)}
-
 \sdPrintAndFlush[4]{
-  \sdBanner{XPath Expressions to Find Some Books}
+  \sdBanner{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</></></>}\par
   \vspace*{12pt}
   \ff{/library/book[@id='42']}\par
@@ -74,10 +72,8 @@
   \ff{//book[author[text()='David West']]}
 }
 
-\sdToc{XSLT}{XSL Transformations (XSLT)}
-
 \sdPrintAndFlush[4]{
-  \sdBanner{XSL Transformation for \ff{library.xml}}
+  \sdBanner{XSL Transformations (XSLT)}
   \sdSnippet[\footnotesize]{library.xsl}
 }
 
@@ -115,7 +111,7 @@
 
 \innoBVC
 
-\sdPrintAndFlush[1]{
+\sdPrintAndFlush{
   \begin{multicols}{2}
     \innoBook{xml-nutshell}
       {\nospell{Elliotte Rusty Harold} et al.}

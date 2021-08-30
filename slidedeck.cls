@@ -80,7 +80,7 @@
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \fancyhead[L]{
+  \fancyhead[L]{{
     \ifnum\value{page}=1\else%
       \ifx\sdCRUMBS\empty\else%
         \begin{textblock}{12}(1,1)%
@@ -88,10 +88,19 @@
           \begin{enumerate*}[label={},labelindent=0pt]
             \sdCRUMBS
           \end{enumerate*}
+          (\the\value{sdCRUMBScnt})
+          \expandafter\ifcsname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname
+            \expandafter\ifx\csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname\empty\else%
+              \newline\small
+              % \begin{enumerate*}[label={},labelindent=0pt]
+              %   % \csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname{}
+              % \end{enumerate*}
+            \fi
+          \fi
         \end{textblock}%
       \fi
     \fi
-  }
+  }}
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
@@ -120,22 +129,9 @@
   }
 
 \newcommand*\sdBODY{}
-\newcommand*\sdHOOKS{}
-\newcommand\sdFLUSH{\sdHOOKS\sdBODY\vspace*{0pt}\newpage}
+\newcommand\sdFLUSH{\sdBODY\vspace*{0pt}\newpage}
 \newcommand\sdFlush[1][1]{\sdFLUSH\renewcommand*\sdBODY{}\sdMins{#1}}
 \newcommand\sdClick{\ifstatic\else\sdFLUSH\fi}
-\newcommand\sdHook[2]{
-  \ifcsname sdHOOK#1\endcsname\else
-    \expandafter\newcommand\csname sdHOOK#1\endcsname{}
-  \fi
-  \expandafter\renewcommand\csname sdHOOK#1\endcsname{#2}
-  \gappto\sdHOOKS{\csname sdHOOK#1\endcsname}
-}
-\newcommand\sdHookDelete[1]{
-  \ifcsname sdHOOK#1\endcsname
-    \expandafter\renewcommand\csname sdHOOK#1\endcsname{}
-  \fi
-}
 
 \newcommand\br{\newline}
 
@@ -166,8 +162,8 @@
 }
 \makeatletter\newcommand\back{\@backslashchar}\makeatother
 \newcommand\sdToc[2]{
-  \sdMenuDelete
   \stepcounter{sdCRUMBScnt}
+  \setcounter{sdSTOCcnt}{0}
   \ifx\sdTOC\empty
     \ifnum\value{sdCRUMBScnt}=1\else%
       \appendtofile{\jobname.toc}{\back sdClick}
@@ -214,43 +210,25 @@
   }
 }
 
-\newif\ifmenuvisible\menuvisibletrue
-\newcommand*\sdMENU{}
-\newcounter{sdMENUcnt}
-\newcommand\sdMenu[1]{
-  \menuvisibletrue
-  \ifx\sdMENU\empty
-    \setcounter{sdMENUcnt}{1}
-    \sdHook{menu}{
-      \ifmenuvisible
-        \begin{textblock}{4}[0,1](1,14)%
-          \tikz{
-            \node[inner sep=0pt] (z) {
-              \begin{minipage}{0.9\textwidth}
-                \small\ttfamily
-                \begin{enumerate}[label={},labelindent=0pt]
-                  \sdMENU
-                \end{enumerate}
-              \end{minipage}
-            };
-            \path [draw=sd-white,line width=4pt] (z.north west) -- (z.south west);
-          }
-        \end{textblock}%
-      \fi
-    }
+\newcounter{sdSTOCcnt}
+\newcommand\sdStoc[1]{
+  \stepcounter{sdSTOCcnt}
+  \ifx\sdTOC\empty
+    \appendtofile{\jobname.toc}{\back sdSTOC{\the\value{sdCRUMBScnt}}{#1}}
   \fi
-  \gappto\sdMENU{
-    \item \ifnum\value{enumi}=\value{sdMENUcnt}
-      \ul{#1}
+}
+\newcommand\sdSTOC[2]{
+  \ifcsname sdSTOC\romannumeral#1\endcsname\else
+    \expandafter\newcommand\expandafter*\csname sdSTOC\romannumeral#1\endcsname{}
+  \fi
+  \expandafter\gappto\csname sdSTOC\romannumeral#1\endcsname{
+    \item \ifnum\value{enumi}=\value{sdSTOCcnt}
+      {\setulcolor{sd-blue}\color{sd-blue}\ul{#2}}
     \else
-      {#1}
+      #2
     \fi
   }
 }
-\newcommand\sdMenuNext{\stepcounter{sdMENUcnt}}
-\newcommand\sdMenuDelete{\sdHookDelete{menu}}
-\newcommand\sdMenuHide{\menuvisiblefalse}
-\newcommand\sdMenuShow{\menuvisibletrue}
 
 \newcommand\sdBanner[2][green]{
   \par
@@ -349,6 +327,7 @@
   \fi
   \raggedbottom%
   \raggedright%
+  \raggedcolumns%
   \setlength\topskip{0pt}%
   \setlength\headheight{32pt}%
   \setlength\footskip{32pt}%
