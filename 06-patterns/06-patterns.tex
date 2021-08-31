@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
+\documentclass[white]{../slidedeck}
 \newcommand*\thetitle{Patterns}
 \newcommand*\thesubtitle{Anti-Patterns and Refactoring}
 \begin{document}
@@ -55,11 +55,13 @@
 
 \sdToc{Anti}{Some Anti-Patterns}
 
+\sdStoc{GOTO}
 \sdPrintAndFlush[2]{
   \sdBanner{GOTO}
   \sdSnippet{goto.c}
 }
 
+\sdStoc{Numbers}
 \sdPrintAndFlush[2]{
   \sdBanner{Magic Numbers}
   \sdSnippet{magic.rb}
@@ -70,16 +72,19 @@
   \sdSnippet{magic2.rb}
 }
 
+\sdStoc{God}
 \sdPrintAndFlush[2]{
   \sdBanner{God Class}
   \sdPic{0.6}{god-class}
 }
 
+\sdStoc{Spaghetti}
 \sdPrintAndFlush[2]{
   \sdBanner{Spaghetti Code}
   \sdPic{0.5}{spaghetti}
 }
 
+\sdStoc{Ravioli}
 \sdPrintAndFlush[2]{
   \sdBanner{Lasagna and Ravioli}
   \sdPic{0.3}{ravioli}
@@ -104,6 +109,7 @@
   Traits and Mixins.
 }
 
+\sdStoc{DTO}
 \sdPrintAndFlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
   \sdBanner{Getters and Setters}
@@ -111,18 +117,21 @@
   \sdSnippet{dto.java}
 }
 
+\sdStoc{Utility}
 \sdPrintAndFlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \sdBanner{Utility Class}
   \sdSnippet{utility.java}
 }
 
+\sdStoc{Singleton}
 \sdPrintAndFlush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \sdBanner{Singleton}
   \sdSnippet{singleton.java}
 }
 
+\sdStoc{ORM}
 \sdPrintAndFlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
   \sdBanner{Object-Relational Mapping (ORM)}

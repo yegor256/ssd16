@@ -91,11 +91,11 @@
           \expandafter\ifcsname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname
             \expandafter\ifx\csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname\empty\else%
               \ifnum\value{sdCRUMBScnt}=0\else%
-                \\[3pt]
-                \quad\footnotesize%
-                \begin{enumerate*}[label={},labelindent=0pt]
+                \\[6pt]
+                \quad\footnotesize\color{gray}%
+                [\begin{enumerate*}[label={},labelindent=0pt]
                   \csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname{}
-                \end{enumerate*}
+                \end{enumerate*}]
               \fi
             \fi
           \fi
@@ -301,15 +301,13 @@
 }
 
 \newcommand\sdPin[1]{%
-  \sdPrint{
-    \begin{tikzpicture}[remember picture,overlay]%
-      \node[anchor=north east] at (current page text area.north east) {%
-        \begin{minipage}{\textwidth}%
-          \raggedleft{#1}%
-        \end{minipage}%
-      };%
-    \end{tikzpicture}%
-  }
+  \begin{tikzpicture}[remember picture,overlay]%
+    \node[anchor=north east] at (current page text area.north east) {%
+      \begin{minipage}{\textwidth}%
+        \raggedleft{#1}%
+      \end{minipage}%
+    };%
+  \end{tikzpicture}%
 }
 
 \newcommand\nospell[1]{#1}
