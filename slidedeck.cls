@@ -84,17 +84,19 @@
     \ifnum\value{page}=1\else%
       \ifx\sdCRUMBS\empty\else%
         \begin{textblock}{12}(1,1)%
-          \small\ttfamily
+          \small\ttfamily%
           \begin{enumerate*}[label={},labelindent=0pt]
             \sdCRUMBS
           \end{enumerate*}
-          (\the\value{sdCRUMBScnt})
           \expandafter\ifcsname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname
             \expandafter\ifx\csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname\empty\else%
-              \newline\small
-              % \begin{enumerate*}[label={},labelindent=0pt]
-              %   % \csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname{}
-              % \end{enumerate*}
+              \ifnum\value{sdCRUMBScnt}=0\else%
+                \\[3pt]
+                \quad\footnotesize%
+                \begin{enumerate*}[label={},labelindent=0pt]
+                  \csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname{}
+                \end{enumerate*}
+              \fi
             \fi
           \fi
         \end{textblock}%
