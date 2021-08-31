@@ -299,13 +299,15 @@
 }
 
 \newcommand\sdPin[1]{%
-  \begin{tikzpicture}[remember picture,overlay]%
-    \node[anchor=north east] at (current page text area.north east) {%
-      \begin{minipage}{\textwidth}%
-        \raggedleft{#1}%
-      \end{minipage}%
-    };%
-  \end{tikzpicture}%
+  \sdPrint{
+    \begin{tikzpicture}[remember picture,overlay]%
+      \node[anchor=north east] at (current page text area.north east) {%
+        \begin{minipage}{\textwidth}%
+          \raggedleft{#1}%
+        \end{minipage}%
+      };%
+    \end{tikzpicture}%
+  }
 }
 
 \newcommand\nospell[1]{#1}

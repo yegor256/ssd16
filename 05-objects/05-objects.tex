@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
+\documentclass[white]{../slidedeck}
 \newcommand*\thetitle{Object Thinking}
 \newcommand*\thesubtitle{and Domain Driven Design}
 \begin{document}
@@ -39,25 +39,29 @@
 
 \sdToc{Theory}{The Philosophy of OOP}
 
+\sdStoc{GOTO}
 \sdPrintAndFlush[3]{
   \sdBanner{The Era of GOTO}
   \sdPic{0.7}{basic}
 }
 
+\sdStoc{IF/THEN}
 \sdPrintAndFlush[3]{
   \sdBanner{Structured Programming}
   \begin{multicols}{2}
-    \sdPic{0.9}{pascal}\par
-    \columnbreak
-    \sdPic{0.7}{flowchart}\par
+    \sdPic{0.9}{pascal}
+    \par\columnbreak
+    \sdPic{0.7}{flowchart}
   \end{multicols}
 }
 
+\sdStoc{CALL}
 \sdPrintAndFlush[3]{
   \sdBanner{Procedural Programming}
   \sdPic{0.5}{calls}
 }
 
+\sdStoc{OOP$_1$}
 \sdPrintAndFlush[3]{
   \sdBanner{Object-Oriented Programming ... Not!}
   \sdPic{0.5}{oop-bad}
@@ -68,6 +72,7 @@
   \sdPic{0.8}{rectangles1}
 }
 
+\sdStoc{OOP$_2$}
 \sdPrintAndFlush[3]{
   \sdBanner{OOP Done Right}
   \sdPic{0.6}{oop-good}
@@ -80,18 +85,87 @@
 
 \sdToc{Object}{What is an Object?}
 
+\sdStoc{C++}
 \sdPrintAndFlush{\sdCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}}
 
+\sdStoc{Wiki}
 \sdPrintAndFlush{\sdCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}}
 
+\sdStoc{Smalltalk}
 \sdPrintAndFlush{\sdCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}}
 
+\sdStoc{Java}
 \sdPrintAndFlush{\sdCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}}
 
+\sdStoc{\nospell{Eckel}}
 \sdPrintAndFlush{\sdCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}}
 
+\sdStoc{West}
 \sdPrintAndFlush{\sdCite{object-thinking}{An object is the equivalent of the quanta from which the universe
 is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
+
+\sdToc{Evil}{Three Most Evil Parts of OOP}
+
+\sdStoc{Static}
+\sdPrintAndFlush[5]{
+  \sdBanner{1. Static Methods}
+  \begin{multicols}{2}
+    \sdPic{0.9}{static1}
+    \par\columnbreak
+    \sdPic{0.9}{static2}
+  \end{multicols}
+}
+
+\sdStoc{Mutability}
+\sdPrintAndFlush[5]{
+  \sdBanner{2. Mutability vs. Immutability}
+  \begin{multicols}{2}
+    \sdPic{0.9}{mutable}
+    \par\columnbreak
+    \sdPic{0.9}{immutable}
+  \end{multicols}
+}
+
+\sdPrintAndFlush[3]{
+  \sdBanner{Benefits of Immutability}
+  \sdPic{0.8}{immutability-benefits}
+}
+
+\sdStoc{NULL}
+\sdPrintAndFlush[4]{
+  \sdBanner{3. NULL References}
+  \sdPic{0.8}{null}\par
+  \emph{Null References, The Billion Dollar Mistake}\\
+  presentation by \nospell{Tony Hoare},
+  \href{http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare}{watch here}.
+}
+
+\sdPrintAndFlush[4]{
+  \sdBanner{NULL Object}
+  \sdPic{0.8}{null-object}
+}
+
+\sdPrintAndFlush[5]{
+  \sdBanner{Fail Fast vs. Fail Safe}
+  \sdPic{0.7}{fail-fast}
+  \innoPinQR{https://www.yegor256.com/2015/08/25/fail-fast.html}
+}
+
+\sdToc{DDD}{Domain Driven Design}
+
+%...
+
+\sdToc{EO}{Elegant Objects}
+
+\innoPinQR{https://www.elegantobjects.org}
+\sdPrint{\sdBanner{Elegant Objects (EO)}}\sdClick
+\sdPrint{Started in 2014}\sdClick
+\sdPrint{Two books, 40+ speeches, 80+ blog posts}\sdClick
+\sdPrint{30+ frameworks and libraries}\sdClick
+\sdPrint{50+ fans registered}\sdClick
+\sdPrint{Six bloggers}\sdClick
+\sdPrint{Five ``Object Thinking'' Meetups}
+\sdFlush
 
 \sdPrintAndFlush[3]{
   \small
@@ -106,7 +180,7 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
   Minsk, Belarus, 11~June~2016\\
   \sdQR[1in]{https://www.youtube.com/watch?v=6hOBfjJ2bpw}
 
-  \columnbreak
+  \par\columnbreak
 
   \emph{Java vs. OOP}\\
   JavaDay Kyiv 2016 \\
@@ -120,34 +194,41 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
   \end{multicols}
 }
 
-\sdToc{Status Quo}
+\sdPrintAndFlush[5]{
+  \innoPinQR{https://www.eolang.org}
+  \sdBanner{EOLANG: Our New Programming Language}
+  \sdPic{0.5}{eo-sample}
+}
 
-\sdToc{Objects are Alive}
-
-\sdPrintAndFlush[2]{\sdBanner{yegor256/hangman}}
-
-\sdPrintAndFlush[2]{\sdBanner{elegantobjects.org}}
+\sdPrint{\sdBanner{If you want to help:}}
+\sdPrint{EO to JavaScript/Go/Rust/Ruby compilers}\sdClick
+\sdPrint{REPL for EO}\sdClick
+\sdPrint{Static analysis of EO code}\sdClick
+\sdPrint{EO integration with Java/C++}\sdClick
+\sdPrint{Automated refactoring of EO code}\sdClick
+\sdPrint{JetBrains plugin for EO}
+\sdFlush
 
 \innoBVC
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \begin{multicols}{2}
     \innoBook{object-thinking}
       {David West}
       {Object Thinking}
-    \columnbreak
+    \par\columnbreak
     \innoBook{ddd}
       {Eric Evans}
       {Domain-Driven Design: Tackling Complexity in the Heart of Software}
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\sdPrintAndFlush[3]{
   \begin{multicols}{2}
     \innoBook{elegant-objects-1}
       {Yegor Bugayenko}
       {Elegant Objects, vol. 1}
-    \columnbreak
+    \par\columnbreak
     \innoBook{elegant-objects-2}
       {Yegor Bugayenko}
       {Elegant Objects, vol. 2}
@@ -156,7 +237,9 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
 
 \sdPrintAndFlush{
   \sdBanner{Where to publish:}\par
-  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications
+  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
+  PLDI\par
+  POPL
 }
 
 \sdPrintAndFlush[3]{
@@ -168,7 +251,10 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
 \sdPrintAndFlush[3]{
   \sdBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
-    \item How to \ul{?} ...
+    \item How to \ul{motivate} coders for better OO practices?
+    \item How to \ul{create} better OO programming languages?
+    \item How to \ul{catch} bad OO practices automatically?
+    \item How to \ul{prove} some OO practices are bad?
   \end{itemize}
 }
 

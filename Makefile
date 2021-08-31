@@ -39,7 +39,11 @@ copy:
 
 static:
 	for d in $(DIRS); do
-		grep 's/\documentclass[static]{../slidedeck}//' *.tex
+		cd $${d}
+		for f in $$(ls *.tex); do
+			gsed -i "s/documentclass\\.+{/x/g" $${f}
+		done
+		cd ..
 	done
 
 clean:
