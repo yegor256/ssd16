@@ -1,3 +1,5 @@
+<img src="innopolis-logo.svg" height="32px"/>
+
 There are slides for my lectures about Software Systems Design,
 which were presented to 3rd year BSc students at Innopolis University
 in 2021. Videos are in [this YouTube playlist](https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM).
