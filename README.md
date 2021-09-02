@@ -21,3 +21,8 @@ LaTeX,
 and
 [`texqc`](https://rubygems.org/gems/texqc)
 installed.
+
+**Disclaimer**: All visual and text materials presented in
+this slidedeck are either originally made by the author or taken from public
+Internet sources, such as website. Copyright belongs to their respected
+authors.
