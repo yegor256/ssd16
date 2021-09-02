@@ -23,7 +23,7 @@
 .SHELLFLAGS = -e -o pipefail -c
 .ONESHELL:
 
-DIRS := $(wildcard */.)
+DIRS := $(wildcard [0-9][0-9]-*/.)
 
 all:
 	for d in $(DIRS); do

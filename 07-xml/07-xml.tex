@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
+\documentclass[white]{../slidedeck}
 \newcommand*\thetitle{XML}
 \newcommand*\thesubtitle{vs JSON, YAML, TOML, etc.}
 \begin{document}
@@ -57,13 +57,13 @@
 \sdToc{XSD}{XSD, XPath, XSLT, XQuery, etc.}
 
 \sdPrintAndFlush[4]{
-  \sdBanner{XSM Schema Definition}
+  \sdBanner{XML Schema Definition (XSD)}
   \sdSnippet[\footnotesize]{library.xsd}
 }
 
 \sdPrintAndFlush[4]{
   \sdBanner{XML Path Language (XPath)}
-  \ff{<library><book id=42><author>David West</></></>}\par
+  \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
   \ff{/library/book[@id='42']}\par
   \ff{//book[@id='42']}\par

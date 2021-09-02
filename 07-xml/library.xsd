@@ -7,10 +7,10 @@
     <xs:attribute name="id" type="xs:decimal"/>
   </xs:complexType>
   <xs:element name="library">
-  <xs:complexType name="book">
-    <xs:sequence>
-      <xs:element name="book" type="book" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" type="book" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
 </xs:schema>
