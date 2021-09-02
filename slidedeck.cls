@@ -23,8 +23,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{slidedeck}[00.00.0000 0.0.0 Slide Deck]
 
-\RequirePackage{../inno}
-
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
   \definecolor{sd-red}{HTML}{ED474A}
@@ -115,20 +113,26 @@
       \fi
     \fi
   }
+
+\newcommand\sdLeft[1]{
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
-        {\color{sd-grey}\footnotesize\ttfamily \thetitle{} \thesubtitle{}}
+        {\color{sd-grey}\footnotesize\ttfamily #1}
       \end{textblock}%
     \fi
   }
+}
+
+\newcommand\sdRight[1]{
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
-        {\color{sd-grey}\footnotesize\ttfamily \theauthor{}}
+        {\color{sd-grey}\footnotesize\ttfamily #1}
       \end{textblock}%
     \fi
   }
+}
 
 \newcommand*\sdBODY{}
 \newcommand\sdFLUSH{\sdBODY\vspace*{0pt}\newpage}
@@ -319,8 +323,6 @@
 \renewcommand\Large{\fontsize{42pt}{42pt}\selectfont}
 \renewcommand\LARGE{\fontsize{52pt}{56pt}\selectfont}
 \renewcommand\Huge{\fontsize{92pt}{104pt}\selectfont}
-
-\newcommand*\theauthor{@yegor256}
 
 \AtBeginDocument{%
   \ifwhite\else

@@ -1,5 +1,5 @@
-$latex = 'latex  %O  --shell-escape %S';
-$pdflatex = 'pdflatex  %O  --shell-escape %S';
+$latex = 'latex %O --interaction=nonstopmode --shell-escape %S ';
+$pdflatex = 'pdflatex %O  --interaction=nonstopmode --shell-escape %S';
 
 $clean_ext = 'toc crumbs';
 
