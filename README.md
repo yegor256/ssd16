@@ -18,7 +18,7 @@ $ make clean
 ```
 
 You need to have
-LaTeX,
+[LaTeX](https://en.wikipedia.org/wiki/LaTeX),
 [`aspell`](http://aspell.net/),
 [`texsc`](https://rubygems.org/gems/texsc),
 and
