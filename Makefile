@@ -37,14 +37,14 @@ copy:
 		cp .texqc $${d}
 	done
 
-static:
-	for d in $(DIRS); do
-		cd $${d}
-		for f in $$(ls *.tex); do
-			gsed -i "s/documentclass\\.+{/x/g" $${f}
-		done
-		cd ..
-	done
+# static:
+# 	for d in $(DIRS); do
+# 		cd $${d}
+# 		for f in $$(ls *.tex); do
+# 			sed -i "s/documentclass\\.+{/x/g" $${f}
+# 		done
+# 		cd ..
+# 	done
 
 clean:
 	for d in $(DIRS); do
