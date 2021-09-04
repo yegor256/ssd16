@@ -156,7 +156,7 @@
 }
 
 \newcommand*\sdTOC{}
-\newcommand\sdTocPrint{
+\newcommand\sectionPrint{
   \renewcommand*\sdTOC{}
   \sdPrint{
     \tikz{
@@ -182,8 +182,9 @@
   \sdFlush[1]
 }
 
-\newcommand\sdToc[2]{
-  \section[#1]{#2}
+\let\theoldsection\section
+\renewcommand\section[2]{
+  \theoldsection[#1]{#2}
   \sdPrintAndFlush{
     \sdMiddle{%
       {\ttfamily Chapter \#\the\value{section}:}
