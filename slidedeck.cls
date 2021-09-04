@@ -192,10 +192,6 @@
   }
 }
 
-\newcommand\sdStoc[1]{
-  \subsection{#1}
-}
-
 \newcommand\sdBanner[2][green]{
   \par
   {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{\color{sd-white} #2}}
