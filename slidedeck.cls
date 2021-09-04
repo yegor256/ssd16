@@ -156,7 +156,7 @@
 }
 
 \newcommand*\sdTOC{}
-\newcommand\sdTocPrint{
+\newcommand\sdToc{
   \renewcommand*\sdTOC{}
   \sdPrint{
     \tikz{
