@@ -71,36 +71,43 @@
   \usetikzlibrary{calc}
   \usetikzlibrary{shapes.arrows}
 \RequirePackage{lastpage}
-\RequirePackage{etoolbox}
 \RequirePackage[absolute]{textpos}
   \TPGrid{16}{16}
+
+\renewcommand\section[1]{\stepcounter{section}}
+\renewcommand\subsection[1]{\stepcounter{subsection}}
+\RequirePackage{/code/crumbs/crumbs}
+
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \fancyhead[L]{{
-    \ifnum\value{page}=1\else%
-      \ifx\sdCRUMBS\empty\else%
-        \begin{textblock}{12}(1,1)%
-          \small\ttfamily%
-          \begin{enumerate*}[label={},labelindent=0pt]
-            \sdCRUMBS
-          \end{enumerate*}
-          \expandafter\ifcsname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname
-            \expandafter\ifx\csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname\empty\else%
-              \ifnum\value{sdCRUMBScnt}=0\else%
-                \\[6pt]
-                \quad\footnotesize\color{gray}%
-                [\begin{enumerate*}[label={},labelindent=0pt]
-                  \csname sdSTOC\romannumeral\the\value{sdCRUMBScnt}\endcsname{}
-                \end{enumerate*}]
-              \fi
-            \fi
-          \fi
-        \end{textblock}%
-      \fi
+  \renewcommand\crumb[2]{
+    \ifnum\value{crumbi}=\value{section}
+      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
+    \else
+      #1
     \fi
-  }}
+  }
+  \renewcommand\subcrumb[2]{
+    \ifnum\value{subcrumbi}=\value{subsection}
+      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
+    \else
+      #1
+    \fi
+  }
+  \fancyhead[L]{
+    \ifx\crumbs\empty\else
+      \begin{textblock}{12}(1,1)%
+        \small\ttfamily%
+        \ifnum\value{section}=0\else
+          \crumbs
+          \\[6pt]
+          \quad\footnotesize\color{gray}\subcrumbs
+        \fi
+      \end{textblock}%
+    \fi
+  }
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
@@ -148,92 +155,45 @@
   {\sdBanner{\large #2}}
 }
 
-% see https://tex.stackexchange.com/a/12414/1449
-\RequirePackage{catchfile}
-  \newwrite\appendwrite
-  \newcommand*\appendtofile[2]{%
-      \begingroup
-      \IfFileExists{#1}%
-        {\CatchFileDef{\filecontent}{#1}{\endlinechar=`^^J\catcode\endlinechar=12\relax}}% keep existing end-of-lines
-        {\let\filecontent\empty}%
-      \immediate\openout\appendwrite=#1\relax
-      \immediate\write\appendwrite{\unexpanded\expandafter{\filecontent} #2}%
-      \immediate\closeout\appendwrite
-      \endgroup
-  }
+\newcommand*\sdTOC{}
 \newcommand\sdTocPrint{
-  \IfFileExists{\jobname.toc}{\input{\jobname.toc}}{\sdPrint{Table of Contents}}
-  \IfFileExists{\jobname.crumbs}{\input{\jobname.crumbs}}{}
+  \renewcommand*\sdTOC{}
+  \sdPrint{
+    \tikz{
+      \node (z) {
+        \begin{varwidth}{\textwidth}
+          \ifx\sdTOC\empty\else
+            \begin{itemize}[label={}]
+              \sdTOC
+            \end{itemize}
+          \fi
+        \end{varwidth}
+      };
+      \path [draw=sd-blue,line width=4pt] (z.north west) -- (z.south west);
+    }
+  }
+  \begin{@empty}
+    \renewcommand\crumb[2]{
+      \ifx\sdTOC\empty\else\sdClick\fi
+      \gappto\sdTOC{\item ##2}
+    }
+    \crumbs
+  \end{@empty}
   \sdFlush[1]
 }
-\makeatletter\newcommand\back{\@backslashchar}\makeatother
+
 \newcommand\sdToc[2]{
-  \stepcounter{sdCRUMBScnt}
-  \setcounter{sdSTOCcnt}{0}
-  \ifx\sdTOC\empty
-    \ifnum\value{sdCRUMBScnt}=1\else%
-      \appendtofile{\jobname.toc}{\back sdClick}
-    \fi
-    \appendtofile{\jobname.toc}{\back sdTOCITEM{#2}}
-  \fi
-  \ifx\sdCRUMBS\empty
-    \appendtofile{\jobname.crumbs}{\back sdCRUMBSITEM{#1}}
-  \fi
+  \section[#1]{#2}
   \sdPrintAndFlush{
     \sdMiddle{%
-      {\ttfamily Chapter \#\thesdCRUMBScnt:}
+      {\ttfamily Chapter \#\the\value{section}:}
       \sdBanner[blue]{\Large #2}
     }
   }
 }
-\newcommand*\sdTOC{}
-\newcommand\sdTOCITEM[1]{
-  \ifx\sdTOC\empty
-    \gappto\sdBODY{
-      \tikz{
-        \node (z) {
-          \begin{varwidth}{\textwidth}
-            \begin{itemize}[label={}]
-              \sdTOC
-            \end{itemize}
-          \end{varwidth}
-        };
-        \path [draw=sd-blue,line width=4pt] (z.north west) -- (z.south west);
-      }
-    }
-  \fi
-  \gappto\sdTOC{\item #1}
-}
-\newcommand*\sdCRUMBS{}
-\newcounter{sdCRUMBScnt}
-\newcommand\sdCRUMBSITEM[1]{
-  \gappto\sdCRUMBS{
-    \item \ifnum\value{enumi}=\value{sdCRUMBScnt}
-      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
-    \else
-      #1
-    \fi
-  }
-}
 
-\newcounter{sdSTOCcnt}
 \newcommand\sdStoc[1]{
-  \stepcounter{sdSTOCcnt}
-  \ifx\sdTOC\empty
-    \appendtofile{\jobname.toc}{\back sdSTOC{\the\value{sdCRUMBScnt}}{#1}}
-  \fi
-}
-\newcommand\sdSTOC[2]{
-  \ifcsname sdSTOC\romannumeral#1\endcsname\else
-    \expandafter\newcommand\expandafter*\csname sdSTOC\romannumeral#1\endcsname{}
-  \fi
-  \expandafter\gappto\csname sdSTOC\romannumeral#1\endcsname{
-    \item \ifnum\value{enumi}=\value{sdSTOCcnt}
-      {\setulcolor{sd-blue}\color{sd-blue}\ul{#2}}
-    \else
-      #2
-    \fi
-  }
+  \subsection{#1}
 }
 
 \newcommand\sdBanner[2][green]{
