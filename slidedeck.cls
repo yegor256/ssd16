@@ -50,6 +50,7 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
+\RequirePackage[fontsize=24pt]{scrextend} % to make fonts larger
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
@@ -103,7 +104,7 @@
         \ifnum\value{section}=0\else
           \crumbs
           \\[6pt]
-          \quad\footnotesize\color{gray}\subcrumbs
+          \quad\scriptsize\color{gray}\subcrumbs
         \fi
       \end{textblock}%
     \fi
@@ -115,7 +116,7 @@
       \end{textblock}%
       \ifstatic\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
-          \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\footnotesize\ttfamily\thesdMinutes{}};}
+          \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\scriptsize\ttfamily\thesdMinutes{}};}
         \end{textblock}%
       \fi
     \fi
@@ -125,7 +126,7 @@
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
-        {\color{sd-grey}\footnotesize\ttfamily #1}
+        {\color{sd-grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
@@ -135,7 +136,7 @@
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
-        {\color{sd-grey}\footnotesize\ttfamily #1}
+        {\color{sd-grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
@@ -187,15 +188,15 @@
   \theoldsection[#1]{#2}
   \sdPrintAndFlush{
     \sdMiddle{%
-      {\ttfamily Chapter \#\the\value{section}:}
-      \sdBanner[blue]{\Large #2}
+      {\large\ttfamily Chapter \#\the\value{section}:}
+      \sdBanner[blue]{\LARGE #2}
     }
   }
 }
 
 \newcommand\sdBanner[2][green]{
   \par
-  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{\color{sd-white} #2}}
+  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{\color{sd-white}\large #2}}
   \par
 }
 
@@ -272,14 +273,6 @@
 }
 
 \newcommand\nospell[1]{#1}
-
-\renewcommand\normalsize{\fontsize{28pt}{32pt}\selectfont}
-\renewcommand\small{\fontsize{22pt}{24pt}\selectfont}
-\renewcommand\footnotesize{\fontsize{16pt}{20pt}\selectfont}
-\renewcommand\large{\fontsize{32pt}{36pt}\selectfont}
-\renewcommand\Large{\fontsize{42pt}{42pt}\selectfont}
-\renewcommand\LARGE{\fontsize{52pt}{56pt}\selectfont}
-\renewcommand\Huge{\fontsize{92pt}{104pt}\selectfont}
 
 \AtBeginDocument{%
   \ifwhite\else
