@@ -50,7 +50,8 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
-\RequirePackage[fontsize=24pt]{scrextend} % to make fonts larger
+\RequirePackage[fontsize=24pt]{fontsize}
+% \RequirePackage[fontsize=24pt]{scrextend} % to make fonts larger
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
