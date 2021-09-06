@@ -31,9 +31,9 @@
 
 \sdPlush[2]{\sdCite{freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
 
-\sdToc\sdFlush
+\sdToc
 
-\section{Interiors}{Software vs. Interiors}
+\section[Interiors]{Software vs. Interiors}
 
 \sdPlush[3]{
   \begin{multicols}{2}
@@ -63,14 +63,14 @@
 
 \innoThought[2]{A good documentation \br is a \ul{precursor} to a good design.}
 
-\section{SDD}{SDD at IEEE 1016}
+\section[SDD]{SDD at IEEE 1016}
 
 \sdPrint{\sdCite{ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}\sdClick
 \sdPrint{\sdBanner[red]{Inactive-Reserved on March 2020}}
 \sdFlush[3]
 
-\subsection{Glossary}
 \sdPlush[4]{
+  \subsection{Glossary}
   A \ul{request} is data package sent from a \ul{client} to a \ul{server}.\br
   A \ul{client} is a computer with a web browser.\br
   A \ul{server} is a computer with a software installed.\par
@@ -91,17 +91,25 @@
   \end{multicols}
 }
 
-\subsection{Stakeholders}
-\sdPlush[3]{\sdCite{pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}}
+\sdPlush[3]{
+  \subsection{Stakeholders}
+  \sdCite{pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
+}
 
-\subsection{Concerns}
-\sdPlush[2]{Functional \br and \br Non-Functional Requirements}
+\sdPlush[2]{
+  \subsection{Concerns}
+  Functional \br and \br Non-Functional Requirements
+}
 
-\subsection{Viewpoints}
-\sdPlush[4]{\sdPic{0.6}{viewpoint}}
+\sdPlush[4]{
+  \subsection{Viewpoints}
+  \sdPic{0.6}{viewpoint}
+}
 
-\subsection{Elements}
-\sdPlush[2]{\sdPic{0.5}{element}}
+\sdPlush[2]{
+  \subsection{Elements}
+  \sdPic{0.5}{element}
+}
 
 \subsection{Rationale}
 \sdPrint{\sdBanner{\large Why MongoDB, why not MySQL?}}\sdClick
@@ -116,21 +124,21 @@
 
 \innoThought[3]{Don't expect them to trust \ul{you}, \br make them trust your \ul{decisions}.}
 
-\section{RUP}{SAD at RUP}
+\section[RUP]{SAD at RUP}
 
 \sdPlush[4]{\sdCite{rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
 
-\section{CMMI}{TS at CMMI}
+\section[CMMI]{TS at CMMI}
 
 \sdPlush[4]{\sdCite{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
 
-\section{SWEBOK}{SWEBOK}
+\section[SWEBOK]{SWEBOK}
 
 \sdPlush[4]{\sdCite{swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
 
 \innoThought[3]{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}
 
-\section{README}{README}
+\section[README]{README}
 
 \sdPlush[4]{
   \begin{multicols}{2}

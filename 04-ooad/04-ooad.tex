@@ -41,12 +41,14 @@
   RUP
 }
 
-\sdToc\sdFlush
+\sdToc
 
-\section{\nospell{Booch}}{Object Model by \nospell{Grady Booch}}
+\section[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
 
-\subsection{Abstraction}
-\sdPlush[3]{\sdPic{0.8}{oop-vs-pp}}
+\sdPlush[3]{
+  \subsection{Abstraction}
+  \sdPic{0.8}{oop-vs-pp}
+}
 
 \sdPlush[3]{
   \sdBanner{\ul{Some} Principles of OOP}\par
@@ -73,9 +75,8 @@
 
 \sdPlush[2]{\sdPic{0.4}{java-abstraction2}}
 
-\subsection{Encapsulation}
 \sdPlush[3]{
-  \sdBanner{Encapsulation}
+  \subsection{Encapsulation}
   \sdPic{0.7}{encapsulation}
 }
 
@@ -89,15 +90,13 @@
 \sdPrint{\sdPic{0.4}{naked2}}
 \sdFlush[5]
 
-\subsection{Modularity}
 \sdPlush[3]{
-  \sdBanner{Modularity}
+  \subsection{Modularity}
   \sdPic{0.7}{modularity}
 }
 
-\subsection{Hierarchy}
 \sdPlush[3]{
-  \sdBanner{Hierarchy}
+  \subsection{Hierarchy}
   \sdPic{0.7}{hierarchy}
 }
 
@@ -114,9 +113,8 @@
 }
 
 
-\section{SOLID}{SOLID Principles by Uncle Bob}
+\section[SOLID]{SOLID Principles by Uncle Bob}
 
-\subsection{SRP}
 \sdPlush{\sdCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
 \sdPlush{
@@ -138,7 +136,7 @@
 }
 
 \sdPlush[3]{
-  \sdBanner{Single Responsibility Principle (SRP)}\par
+  \subsection[SRP]{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
   ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
@@ -147,25 +145,20 @@
   \sdQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
 }
 
-\sdPlush[2]{
-  \sdBanner{SRP}
-  \sdPic{0.7}{srp}
-}
+\sdPlush[2]{\sdPic{0.7}{srp}}
 
-\subsection{OCP}
 \sdPlush{
-  \sdBanner{Open-Close Principle (OCP)}\par
+  \subsection[OCP]{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
 }
 
 \sdPlush[3]{
-  \sdBanner{OCP}
+  \subsection{OCP}
   \sdPic{0.7}{ocp}
 }
 
-\subsection{LSP}
 \sdPlush[3]{
-  \sdBanner{\nospell{Liskov} Substitution Principle (LSP)}\par
+  \subsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
   \sdPic{0.3}{lsp}\par
@@ -173,45 +166,37 @@
 }
 
 \sdPlush[3]{
-  \sdBanner{Duck Typing}
+  \subsection[Duck]{Duck Typing}
   \sdPic{0.7}{duck}
 }
 
-\subsection{ISP}
 \sdPlush{
-  \sdBanner{Interface Segregation Principle (ISP)}\par
+  \subsection[ISP]{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
 }
 
-\sdPlush[3]{
-  \sdBanner{ISP}
-  \sdPic{0.6}{isp}
-}
+\sdPlush[3]{\sdPic{0.6}{isp}}
 
-\subsection{DIP}
 \sdPlush{
-  \sdBanner{Dependency Inversion Principle (DIP)}\par
+  \subsection[DIP]{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
 }
 
-\sdPlush[3]{
-  \sdBanner{DIP}
-  \sdPic{0.7}{dip}
-}
+\sdPlush[3]{\sdPic{0.7}{dip}}
 
-\section{Contracts}{Design by Contract by Bertrand Meyer}
+\section[Contracts]{Design by Contract by Bertrand Meyer}
 
 \sdPlush{\sdPic{0.5}{contracts}}
 
-\section{DRY}{Don't Repeat Yourself (DRY)}
+\section[DRY]{Don't Repeat Yourself (DRY)}
 
 \sdPlush[3]{\sdPic{0.5}{dry}}
 
-\section{YAGNI}{You Ain't Gonna Need It (YAGNI)}
+\section[YAGNI]{You Ain't Gonna Need It (YAGNI)}
 
 \sdPlush[3]{\sdPic{0.7}{yagni}}
 
-\section{IoC}{Inversion of Control}
+\section[IoC]{Inversion of Control}
 
 \sdPlush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
@@ -219,7 +204,7 @@
   \sdPic{0.6}{ioc}
 }
 
-\section{FP}{OOP vs. Functional Programming}
+\section[FP]{OOP vs. Functional Programming}
 
 \sdPlush[3]{
   \sdPic{0.8}{oop-vs-fp}\br

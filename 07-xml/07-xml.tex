@@ -29,42 +29,42 @@
 
 \innoTitlePage{7}
 
-\sdToc\sdFlush
+\sdToc
 
-\section{XML}{Extensible Markup Language (XML)}
+\section[XML]{Extensible Markup Language (XML)}
 
 \sdPlush[4]{
-  \sdBanner{Library in XML}
+  \subsection[XML]{Library in XML}
   \sdSnippet{library.xml}
 }
 
 \sdPlush[3]{
-  \sdBanner{Namespaces}
+  \subsection{Namespaces}
   \sdSnippet{namespaces.xml}
 }
 
 \sdPlush[2]{
-  \sdBanner{Escaping}
+  \subsection{Escaping}
   \sdSnippet{escaping.xml}
 }
 
 \sdPlush[4]{
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
-  \sdBanner{XML Based Formats/Protocols}
+  \subsection[Formats]{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
   Open Office XML, XMPP, \\
   SyncML, RDF, XMI, XMIR :)
 }
 
-\section{XSD}{XSD, XPath, XSLT, XQuery, etc.}
+\section[XSD]{XSD, XPath, XSLT, XQuery, etc.}
 
 \sdPlush[4]{
-  \sdBanner{XML Schema Definition (XSD)}
+  \subsection[XSD]{XML Schema Definition (XSD)}
   \sdSnippet[\footnotesize]{library.xsd}
 }
 
 \sdPlush[4]{
-  \sdBanner{XML Path Language (XPath)}
+  \subsection[XPath]{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
   \ff{/library/book[@id='42']}\par
@@ -75,15 +75,15 @@
 }
 
 \sdPlush[4]{
-  \sdBanner{XSL Transformations (XSLT)}
+  \subsection[XSL]{XSL Transformations (XSLT)}
   \sdSnippet[\footnotesize]{library.xsl}
 }
 
-\section{JSON}{JavaScript Object Notation (JSON)}
+\section[JSON]{JavaScript Object Notation (JSON)}
 
 \sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
-  \sdBanner{JSON for the Library}
+  \subsection[JSON]{JSON for the Library}
   \sdSnippet{library.json}
 }
 
@@ -93,21 +93,21 @@
   \ff{JSON.stringify(\{age: 25\});}
 }
 
-\section{Others}{YAML, TOML, CSV}
+\section[Others]{YAML, TOML, CSV}
 
 \sdPlush[2]{
-  \sdBanner{Yet Another Markup Language (YAML)}
+  \subsection[YAML]{Yet Another Markup Language (YAML)}
   \sdSnippet{library.yml}
 }
 
 \sdPlush[2]{
-  \sdBanner{TOML}
+  \subsection{TOML}
   \sdSnippet{library.toml}
 }
 
 \sdPlush[2]{
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
-  \sdBanner{Comma-Separated Values (CSV)}
+  \subsection[CSV]{Comma-Separated Values (CSV)}
   \sdSnippet{library.csv}
 }
 
@@ -128,8 +128,7 @@
 \sdPlush[2]{
   \sdBanner{Call to Action:}
   In your application, make sure your data is represented in
-  XML, at least in one place, and being transformed by XSLT.
-
+  XML, at least in one place, and being transformed by XSLT.\par
   Design your own data format.
 }
 

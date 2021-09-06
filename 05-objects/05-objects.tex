@@ -21,10 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage{../slides}
+\usepackage{../inno}
 \newcommand*\thetitle{Object Thinking}
 \newcommand*\thesubtitle{and Domain Driven Design}
-\usepackage{../inno}
 \begin{document}
 
 \innoTitlePage{5}
@@ -37,19 +36,17 @@
 
 \sdPlush{\sdQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
 
-\sdToc\sdFlush
+\sdToc
 
-\section{Theory}{The Philosophy of OOP}
+\section[Theory]{The Philosophy of OOP}
 
-\subsection{GOTO}
 \sdPlush[3]{
-  \sdBanner{The Era of GOTO}
+  \subsection[GOTO]{The Era of GOTO}
   \sdPic{0.7}{basic}
 }
 
-\subsection{IF/THEN}
 \sdPlush[3]{
-  \sdBanner{Structured Programming}
+  \subsection[IF/THEN]{Structured Programming}
   \begin{multicols}{2}
     \sdPic{0.9}{pascal}
     \par\columnbreak
@@ -57,15 +54,13 @@
   \end{multicols}
 }
 
-\subsection{CALL}
 \sdPlush[3]{
-  \sdBanner{Procedural Programming}
+  \subsection[CALL]{Procedural Programming}
   \sdPic{0.5}{calls}
 }
 
-\subsection{OOP$_1$}
 \sdPlush[3]{
-  \sdBanner{Object-Oriented Programming ... Not!}
+  \subsection[OOP$_1$]{Object-Oriented Programming ... Not!}
   \sdPic{0.5}{oop-bad}
 }
 
@@ -74,10 +69,9 @@
   \sdPic{0.8}{rectangles1}
 }
 
-\subsection{OOP$_2$}
 \sdPlush[3]{
-  \sdBanner{OOP Done Right}
-  \sdPic{0.6}{oop-good}
+  \subsection[OOP$_2$]{OOP Done Right}
+  \sdPic{0.5}{oop-good}
 }
 
 \sdPlush[3]{
@@ -85,49 +79,54 @@
   \sdPic{0.8}{rectangles2}
 }
 
-\section{Object}{What is an Object?}
+\section[Object]{What is an Object?}
 
-\subsection{C++}
-\sdPlush{\sdCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}}
-
-\subsection{Wiki}
-\sdPlush{\sdCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}}
-
-\subsection{Smalltalk}
-\sdPlush{\sdCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}}
-
-\subsection{Java}
-\sdPlush{\sdCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}}
-
-\subsection{\nospell{Eckel}}
-\sdPlush{\sdCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}}
-
-\subsection{West}
-\sdPlush{\sdCite{object-thinking}{An object is the equivalent of the quanta from which the universe
-is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
-
-\section{Evil}{Three Most Evil Parts of OOP}
-
-\subsection{Static}
-\sdPlush[5]{
-  \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \sdBanner{1. Static Methods}
-  \begin{multicols}{2}
-    \sdPic{0.9}{static1}
-    \par\columnbreak
-    \sdPic{0.9}{static2}
-  \end{multicols}
+\sdPlush{
+  \subsection{C++}
+  \sdCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
 }
 
-\subsection{Mutability}
+\sdPlush{
+  \subsection{Wiki}
+  \sdCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
+}
+
+\sdPlush{
+  \subsection{Smalltalk}
+  \sdCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
+}
+
+\sdPlush{
+  \subsection{Java}
+  \sdCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
+}
+
+\sdPlush{
+  \subsection{\nospell{Eckel}}
+  \sdCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
+}
+
+\sdPlush{
+  \subsection{West}
+  \sdCite{object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
+}
+
+\section[Evil]{Three Most Evil Parts of OOP}
+
+\sdPlush[5]{
+  \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
+  \subsection[Static]{1. Static Methods}
+  \sdPic{0.5}{static1}
+  \par
+  \sdPic{0.5}{static2}
+}
+
 \sdPlush[5]{
   \innoPinQR{https://www.yegor256.com/2014/11/07/how-immutability-helps.html}
-  \sdBanner{2. Mutability vs. Immutability}
-  \begin{multicols}{2}
-    \sdPic{0.9}{mutable}
-    \par\columnbreak
-    \sdPic{0.9}{immutable}
-  \end{multicols}
+  \subsection[Mutability]{2. Mutability vs. Immutability}
+  \sdPic{0.5}{mutable}
+  \par
+  \sdPic{0.4}{immutable}
 }
 
 \sdPlush[3]{
@@ -136,10 +135,9 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
   \sdPic{0.8}{immutability-benefits}
 }
 
-\subsection{NULL}
 \sdPlush[4]{
   \innoPinQR{https://www.yegor256.com/2014/05/13/why-null-is-bad.html}
-  \sdBanner{3. NULL References}
+  \subsection[NULL]{3. NULL References}
   \sdPic{0.8}{null}\par
   \emph{Null References, The Billion Dollar Mistake}\\
   presentation by \nospell{Tony Hoare},
@@ -157,14 +155,14 @@ is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}}
   \sdPic{0.7}{fail-fast}
 }
 
-\section{DDD}{Domain Driven Design}
+\section[DDD]{Domain Driven Design}
 
 \sdPlush[4]{
   \sdBanner{Names of Objects Done Right}
   \sdPic{0.6}{ddd}
 }
 
-\section{EO}{Elegant Objects}
+\section[EO]{Elegant Objects}
 
 \sdPrint{\innoPinQR{https://www.elegantobjects.org}}
 \sdPrint{\sdBanner{Elegant Objects (EO)}}\sdClick

@@ -33,9 +33,9 @@
 
 \sdPlush[2]{\sdQuote{paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
 
-\sdToc\sdFlush
+\sdToc
 
-\section{Patterns}{Some Patterns}
+\section[Patterns]{Some Patterns}
 
 \sdPlush{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
@@ -45,27 +45,25 @@
 
 \sdPlush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
-  \sdBanner{Adapter, Facade, Proxy, Decorator, Bridge}
+  \subsection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
   \sdSnippet[\footnotesize]{adapter.java}
 }
 
 \sdPlush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
-  \sdBanner{Resource Acquisition Is Initialization (RAII)}
+  \subsection[RAII]{Resource Acquisition Is Initialization (RAII)}
   \sdSnippet[\footnotesize]{raii.cpp}
 }
 
-\section{Anti}{Some Anti-Patterns}
+\section[Anti]{Some Anti-Patterns}
 
-\subsection{GOTO}
 \sdPlush[2]{
-  \sdBanner{GOTO}
+  \subsection{GOTO}
   \sdSnippet[\footnotesize]{goto.c}
 }
 
-\subsection{Numbers}
 \sdPlush[2]{
-  \sdBanner{Magic Numbers}
+  \subsection[Numbers]{Magic Numbers}
   \sdSnippet{magic.rb}
 }
 
@@ -74,25 +72,22 @@
   \sdSnippet{magic2.rb}
 }
 
-\subsection{God}
 \sdPlush[2]{
-  \sdBanner{God Class}
+  \subsection[God]{God Class}
   \sdPic{0.6}{god-class}
 }
 
-\subsection{Spaghetti}
 \sdPlush[2]{
-  \sdBanner{Spaghetti Code}
+  \subsection[Spaghetti]{Spaghetti Code}
   \sdPic{0.4}{spaghetti}
 }
 
-\subsection{Ravioli}
 \sdPlush[2]{
-  \sdBanner{Lasagna and Ravioli}
+  \subsection[Lasagna]{Lasagna and Ravioli}
   \sdPic{0.3}{ravioli}
 }
 
-\section{Anti-OOP}{Anti-OOP Patterns}
+\section[Anti-OOP]{Anti-OOP Patterns}
 
 \sdPlush[2]{
   Anti-Patterns in OOP (2014)\par
@@ -111,36 +106,32 @@
   Traits and Mixins.
 }
 
-\subsection{DTO}
 \sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
+  \subsection[DTO]{Data Transfer Object (DTO)}
   \sdBanner{Getters and Setters}
-  \sdBanner{Data Transfer Object (DTO)}
   \sdSnippet{dto.java}
 }
 
-\subsection{Utility}
 \sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \sdBanner{Utility Class}
+  \subsection[Utility]{Utility Class}
   \sdSnippet{utility.java}
 }
 
-\subsection{Singleton}
 \sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
-  \sdBanner{Singleton}
+  \subsection{Singleton}
   \sdSnippet{singleton.java}
 }
 
-\subsection{ORM}
 \sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
-  \sdBanner{Object-Relational Mapping (ORM)}
+  \subsection[ORM]{Object-Relational Mapping (ORM)}
   \sdSnippet{orm.java}
 }
 
-\section{Refactorings}{Some Refactorings}
+\section[Refactorings]{Some Refactorings}
 
 \sdPlush[2]{\sdCite{fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 

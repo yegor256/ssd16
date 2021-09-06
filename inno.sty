@@ -80,8 +80,6 @@
 \renewcommand\subsection[1]{\stepcounter{subsection}}
 \RequirePackage{/code/crumbs/crumbs}
 
-\RequirePackage{../slides}
-
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
@@ -183,17 +181,24 @@
     }
     \crumbs
   \end{@empty}
+  \sdFlush
 }
 
-\let\theoldsection\section
-\renewcommand\section[2]{
-  \theoldsection[#1]{#2}
+\NewCommandCopy\innooldsection\section
+\renewcommand\section[2][]{
+  \innooldsection[#1]{#2}
   \sdPlush{
     \sdMiddle{%
       {\large\ttfamily Chapter \#\the\value{section}:}
       \sdBanner[blue]{\LARGE #2}
     }
   }
+}
+
+\NewCommandCopy\theoldsubsection\subsection
+\renewcommand\subsection[2][]{
+  \theoldsubsection[#1]{#2}
+  \sdBanner[orange]{\Large #2}
 }
 
 \newcommand\sdPic[2]{
@@ -291,7 +296,7 @@ authors.\par}}
 }
 
 \newcommand\innoBVC{
-  \section{B.V.C.}{Books, Venues, Call-to-Action}
+  \section[B.V.C.]{Books, Venues, Call-to-Action}
 }
 
 \newcommand\innoPinQR[1]{%
