@@ -248,6 +248,7 @@
   \begin{tikzpicture}[remember picture,overlay]%
     \node[anchor=north east] at (current page text area.north east) {%
       \begin{minipage}{0.5\textwidth}%
+        \vspace{1in}%
         \raggedleft{#1}%
       \end{minipage}%
     };%
@@ -324,7 +325,8 @@ authors.\par}}
   \setlength\parindent{0pt}%
   \setlength\parskip{18pt}%
   \setlength\columnsep{32pt}%
-  \normalsize
+  \normalsize%
+  \sffamily%
 }
 
 \innoLeft{\thetitle{} \thesubtitle}
