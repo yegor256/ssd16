@@ -21,7 +21,7 @@
 % SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{slidedeck}[00.00.0000 0.0.0 Slide Deck]
+\ProvidesPackage{slidedeck}[00.00.0000 0.0.0 Slide Deck]
 
 \RequirePackage{xcolor}
   \definecolor{sd-white}{HTML}{EEEEEE}
@@ -33,15 +33,10 @@
   \definecolor{sd-blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
 
-\newif\ifwhite
-\DeclareOption{white}{\whitetrue}
 \newif\ifstatic
 \DeclareOption{static}{\statictrue}
 \ProcessOptions\relax
 
-\LoadClass{article}
-\RequirePackage{geometry}
-  \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
 \RequirePackage[T1]{fontenc}
@@ -50,8 +45,7 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
-\RequirePackage[fontsize=24pt]{fontsize}
-% \RequirePackage[fontsize=24pt]{scrextend} % to make fonts larger
+\RequirePackage[fontsize=24pt]{fontsize} % to make fonts larger
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
@@ -73,8 +67,6 @@
   \usetikzlibrary{calc}
   \usetikzlibrary{shapes.arrows}
 \RequirePackage{lastpage}
-\RequirePackage[absolute]{textpos}
-  \TPGrid{16}{16}
 
 \renewcommand\section[1]{\stepcounter{section}}
 \renewcommand\subsection[1]{\stepcounter{subsection}}
@@ -101,11 +93,10 @@
   \fancyhead[L]{
     \ifx\crumbs\empty\else
       \begin{textblock}{12}(1,1)%
-        \small\ttfamily%
         \ifnum\value{section}=0\else
-          \crumbs
+          {\small\ttfamily\crumbs}
           \\[6pt]
-          \quad\scriptsize\color{gray}\subcrumbs
+          {\quad\scriptsize\ttfamily\color{gray}\subcrumbs}
         \fi
       \end{textblock}%
     \fi
@@ -113,7 +104,7 @@
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
-        \ttfamily {\thepage{}}{\small{\color{sd-grey}/\pageref{LastPage}}}
+        {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{sd-grey}/\pageref{LastPage}}}}
       \end{textblock}%
       \ifstatic\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
@@ -257,16 +248,16 @@
 }
 \newcounter{sdMinutes}
 
-\newcommand\sdSnippet[2][]{
+\newcommand\sdSnippet[2][\small]{
   \begin{samepage}
-    \small #1\verbatiminput{#2}
+    #1\verbatiminput{#2}
   \end{samepage}
 }
 
 \newcommand\sdPin[1]{%
   \begin{tikzpicture}[remember picture,overlay]%
     \node[anchor=north east] at (current page text area.north east) {%
-      \begin{minipage}{\textwidth}%
+      \begin{minipage}{0.5\textwidth}%
         \raggedleft{#1}%
       \end{minipage}%
     };%

@@ -20,7 +20,8 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[static]{../slidedeck}
+\documentclass{article}
+\usepackage{../slidedeck}
 \newcommand*\thetitle{Patterns}
 \newcommand*\thesubtitle{Anti-Patterns and Refactoring}
 \usepackage{../inno}
@@ -45,13 +46,13 @@
 \sdPrintAndFlush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
   \sdBanner{Adapter, Facade, Proxy, Decorator, Bridge}
-  \sdSnippet{adapter.java}
+  \sdSnippet[\footnotesize]{adapter.java}
 }
 
 \sdPrintAndFlush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
   \sdBanner{Resource Acquisition Is Initialization (RAII)}
-  \sdSnippet{raii.cpp}
+  \sdSnippet[\footnotesize]{raii.cpp}
 }
 
 \section{Anti}{Some Anti-Patterns}
@@ -59,7 +60,7 @@
 \subsection{GOTO}
 \sdPrintAndFlush[2]{
   \sdBanner{GOTO}
-  \sdSnippet{goto.c}
+  \sdSnippet[\footnotesize]{goto.c}
 }
 
 \subsection{Numbers}
@@ -82,7 +83,7 @@
 \subsection{Spaghetti}
 \sdPrintAndFlush[2]{
   \sdBanner{Spaghetti Code}
-  \sdPic{0.5}{spaghetti}
+  \sdPic{0.4}{spaghetti}
 }
 
 \subsection{Ravioli}
@@ -146,7 +147,7 @@
 \sdPrintAndFlush[3]{
   \sdPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
   \sdBanner{Extract Method}
-  \sdSnippet{extract.rb}
+  \sdSnippet[\footnotesize]{extract.rb}
 }
 
 \innoBVC

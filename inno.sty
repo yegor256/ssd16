@@ -23,6 +23,15 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{inno}[00.00.0000 0.0.0 Innopolis]
 
+\newif\ifwhite
+\DeclareOption{white}{\whitetrue}
+\ProcessOptions\relax
+
+\RequirePackage{geometry}
+  \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
+\RequirePackage[absolute]{textpos}
+  \TPGrid{16}{16}
+
 \sdLeft{\thetitle{} \thesubtitle}
 \sdRight{@yegor256}
 
