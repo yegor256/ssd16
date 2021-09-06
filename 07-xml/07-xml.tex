@@ -32,22 +32,22 @@
 \sdToc\sdFlush
 \section{XML}{Extensible Markup Language (XML)}
 
-\Plush[4]{
+\sdPlush[4]{
   \sdBanner{Library in XML}
   \sdSnippet{library.xml}
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Namespaces}
   \sdSnippet{namespaces.xml}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{Escaping}
   \sdSnippet{escaping.xml}
 }
 
-\Plush[4]{
+\sdPlush[4]{
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
   \sdBanner{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
@@ -57,12 +57,12 @@
 
 \section{XSD}{XSD, XPath, XSLT, XQuery, etc.}
 
-\Plush[4]{
+\sdPlush[4]{
   \sdBanner{XML Schema Definition (XSD)}
   \sdSnippet[\footnotesize]{library.xsd}
 }
 
-\Plush[4]{
+\sdPlush[4]{
   \sdBanner{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
@@ -73,20 +73,20 @@
   \ff{//book[author[text()='David West']]}
 }
 
-\Plush[4]{
+\sdPlush[4]{
   \sdBanner{XSL Transformations (XSLT)}
   \sdSnippet[\footnotesize]{library.xsl}
 }
 
 \section{JSON}{JavaScript Object Notation (JSON)}
 
-\Plush[3]{
+\sdPlush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \sdBanner{JSON for the Library}
   \sdSnippet{library.json}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{JSON to JavaScript Object and Backwards}
   \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
   \ff{JSON.stringify(\{age: 25\});}
@@ -94,17 +94,17 @@
 
 \section{Others}{YAML, TOML, CSV}
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{Yet Another Markup Language (YAML)}
   \sdSnippet{library.yml}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{TOML}
   \sdSnippet{library.toml}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
   \sdBanner{Comma-Separated Values (CSV)}
   \sdSnippet{library.csv}
@@ -112,7 +112,7 @@
 
 \innoBVC
 
-\Plush{
+\sdPlush{
   \begin{multicols}{2}
     \innoBook{xml-nutshell}
       {\nospell{Elliotte Rusty Harold} et al.}
@@ -124,7 +124,7 @@
   \end{multicols}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{Call to Action:}
   In your application, make sure your data is represented in
   XML, at least in one place, and being transformed by XSLT.
@@ -132,7 +132,7 @@
   Design your own data format.
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{map} XML/JSON to objects?

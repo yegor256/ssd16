@@ -188,7 +188,7 @@
 \let\theoldsection\section
 \renewcommand\section[2]{
   \theoldsection[#1]{#2}
-  \Plush{
+  \sdPlush{
     \sdMiddle{%
       {\large\ttfamily Chapter \#\the\value{section}:}
       \sdBanner[blue]{\LARGE #2}
@@ -257,7 +257,7 @@ Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
 
 \newcommand\innoTitlePage[1]{
-  \Plush[2]{
+  \sdPlush[2]{
     \sdTitle{\thetitle}{\thesubtitle}\par
     {\scshape Yegor Bugayenko}\par
     Lecture \##1 out of 16 \br
@@ -275,7 +275,7 @@ authors.\par}}
 }
 
 \newcommand\innoThought[2][1]{
-  \Plush[#1]{
+  \sdPlush[#1]{
     \sdMiddle{
       \tikz{
         \node [inner sep=18pt] (z) {

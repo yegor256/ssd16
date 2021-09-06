@@ -29,7 +29,7 @@
 
 \innoTitlePage{4}
 
-\Plush{
+\sdPlush{
   \sdBanner[red]{Before:}
   Structured Programming\br
   C, Pascal, FORTRAN, ALGOL\br
@@ -45,9 +45,9 @@
 \section{\nospell{Booch}}{Object Model by \nospell{Grady Booch}}
 
 \subsection{Abstraction}
-\Plush[3]{\sdPic{0.8}{oop-vs-pp}}
+\sdPlush[3]{\sdPic{0.8}{oop-vs-pp}}
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{\ul{Some} Principles of OOP}\par
   \begin{multicols}{2}
     Abstraction\br
@@ -65,20 +65,20 @@
   \end{multicols}
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Abstraction \& Polymorphism}
   \sdPic{0.6}{java-abstraction}
 }
 
-\Plush[2]{\sdPic{0.4}{java-abstraction2}}
+\sdPlush[2]{\sdPic{0.4}{java-abstraction2}}
 
 \subsection{Encapsulation}
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Encapsulation}
   \sdPic{0.7}{encapsulation}
 }
 
-\Plush[2]{\sdPic{0.7}{encapsulation2}}
+\sdPlush[2]{\sdPic{0.7}{encapsulation2}}
 
 \sdPrint{
   ``Encapsulation Covers Up Naked Data'' (2016)\par
@@ -89,23 +89,23 @@
 \sdFlush[5]
 
 \subsection{Modularity}
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Modularity}
   \sdPic{0.7}{modularity}
 }
 
 \subsection{Hierarchy}
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Hierarchy}
   \sdPic{0.7}{hierarchy}
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Inheritance vs. Composition}
   \sdPic{0.5}{inheritance-versus-composition}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   ``Prefer composition over inheritance?'' (2008) at StackOverflow\br
   \sdQR[1.5in]{https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance}\par
   ``Inheritance Is a Procedural Technique for Code Reuse'' (2016)\br
@@ -116,9 +116,9 @@
 \section{SOLID}{SOLID Principles by Uncle Bob}
 
 \subsection{SRP}
-\Plush{\sdCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\sdPlush{\sdCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\Plush{
+\sdPlush{
   \textbf{SOLID} principles:
   \begin{itemize}
     \item \nospell{\textbf{S}ingle} Responsibility Principle
@@ -129,14 +129,14 @@
   \end{itemize}
 }
 
-\Plush{
+\sdPlush{
   \sdPic{0.2}{../images/people/robert-martin}\par
   ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia\par
   \ff{https://www.cleancoder.com}\par
   \ff{@unclebobmartin} on Twitter
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Single Responsibility Principle (SRP)}\par
   \small
   ``A class should have only one reason to change.''\par
@@ -146,24 +146,24 @@
   \sdQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
 }
 
-\Plush[2]{
+\sdPlush[2]{
   \sdBanner{SRP}
   \sdPic{0.7}{srp}
 }
 
 \subsection{OCP}
-\Plush{
+\sdPlush{
   \sdBanner{Open-Close Principle (OCP)}\par
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{OCP}
   \sdPic{0.7}{ocp}
 }
 
 \subsection{LSP}
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{\nospell{Liskov} Substitution Principle (LSP)}\par
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
@@ -171,48 +171,48 @@
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Duck Typing}
   \sdPic{0.7}{duck}
 }
 
 \subsection{ISP}
-\Plush{
+\sdPlush{
   \sdBanner{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{ISP}
   \sdPic{0.6}{isp}
 }
 
 \subsection{DIP}
-\Plush{
+\sdPlush{
   \sdBanner{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{DIP}
   \sdPic{0.7}{dip}
 }
 
 \section{Contracts}{Design by Contract by Bertrand Meyer}
 
-\Plush{\sdPic{0.5}{contracts}}
+\sdPlush{\sdPic{0.5}{contracts}}
 
 \section{DRY}{Don't Repeat Yourself (DRY)}
 
-\Plush[3]{\sdPic{0.5}{dry}}
+\sdPlush[3]{\sdPic{0.5}{dry}}
 
 \section{YAGNI}{You Ain't Gonna Need It (YAGNI)}
 
-\Plush[3]{\sdPic{0.7}{yagni}}
+\sdPlush[3]{\sdPic{0.7}{yagni}}
 
 \section{IoC}{Inversion of Control}
 
-\Plush[4]{
+\sdPlush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
   \sdQR[0.75in]{https://www.yegor256.com/2017/05/10/inversion-of-control.html}\par
   \sdPic{0.6}{ioc}
@@ -220,12 +220,12 @@
 
 \section{FP}{OOP vs. Functional Programming}
 
-\Plush[3]{
+\sdPlush[3]{
   \sdPic{0.8}{oop-vs-fp}\br
   (c) Uncle Bob
 }
 
-\Plush{
+\sdPlush{
   \begin{multicols}{2}
     \sdPic{0.8}{issues}
     \par\columnbreak
@@ -236,7 +236,7 @@
 
 \innoBVC
 
-\Plush{
+\sdPlush{
   \begin{multicols}{2}
     \innoBook{clean-code}
       {Robert C. Martin}
@@ -248,7 +248,7 @@
   \end{multicols}
 }
 
-\Plush{
+\sdPlush{
   \begin{multicols}{2}
     \innoBook{stroustrup}
       {\nospell{Bjarne Stroustrup}}
@@ -260,18 +260,18 @@
   \end{multicols}
 }
 
-\Plush{
+\sdPlush{
   \sdBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner{Call to Action:}
   Analyze one of the apps you've written recently and find out
   which design principles you've used and where.
 }
 
-\Plush[3]{
+\sdPlush[3]{
   \sdBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{fix} object-oriented programming?
