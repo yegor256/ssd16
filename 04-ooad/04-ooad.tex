@@ -29,29 +29,29 @@
 
 \innoTitlePage{4}
 
-\sdPlush{
-  \sdBanner[red]{Before:}
+\innoPlush{
+  \innoBanner[red]{Before:}
   Structured Programming\br
   C, Pascal, FORTRAN, ALGOL\br
   CASE\br
   Waterfall
-  \sdBanner{After:}
+  \innoBanner{After:}
   Object-Oriented Programming\br
   C++, Object Pascal, Java\br
   RUP
 }
 
-\sdToc
+\innoToc
 
 \section[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection{Abstraction}
-  \sdPic{0.8}{oop-vs-pp}
+  \innoPic{0.8}{oop-vs-pp}
 }
 
-\sdPlush[3]{
-  \sdBanner{\ul{Some} Principles of OOP}\par
+\innoPlush[3]{
+  \innoBanner{\ul{Some} Principles of OOP}\par
   \begin{multicols}{2}
     Abstraction\br
     Encapsulation\br
@@ -68,56 +68,56 @@
   \end{multicols}
 }
 
-\sdPlush[3]{
-  \sdBanner{Abstraction \& Polymorphism}
-  \sdPic{0.6}{java-abstraction}
+\innoPlush[3]{
+  \innoBanner{Abstraction \& Polymorphism}
+  \innoPic{0.6}{java-abstraction}
 }
 
-\sdPlush[2]{\sdPic{0.4}{java-abstraction2}}
+\innoPlush[2]{\innoPic{0.4}{java-abstraction2}}
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection{Encapsulation}
-  \sdPic{0.7}{encapsulation}
+  \innoPic{0.7}{encapsulation}
 }
 
-\sdPlush[2]{\sdPic{0.7}{encapsulation2}}
+\innoPlush[2]{\innoPic{0.7}{encapsulation2}}
 
-\sdPrint{
+\innoPrint{
   ``Encapsulation Covers Up Naked Data'' (2016)\par
-  \sdQR[1in]{https://www.yegor256.com/2016/11/21/naked-data.html}
-}\sdClick
-\sdPrint{\sdPic{0.4}{naked1}}\sdClick
-\sdPrint{\sdPic{0.4}{naked2}}
-\sdFlush[5]
+  \innoQR[1in]{https://www.yegor256.com/2016/11/21/naked-data.html}
+}\innoClick
+\innoPrint{\innoPic{0.4}{naked1}}\innoClick
+\innoPrint{\innoPic{0.4}{naked2}}
+\innoFlush[5]
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection{Modularity}
-  \sdPic{0.7}{modularity}
+  \innoPic{0.7}{modularity}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection{Hierarchy}
-  \sdPic{0.7}{hierarchy}
+  \innoPic{0.7}{hierarchy}
 }
 
-\sdPlush[3]{
-  \sdBanner{Inheritance vs. Composition}
-  \sdPic{0.5}{inheritance-versus-composition}
+\innoPlush[3]{
+  \innoBanner{Inheritance vs. Composition}
+  \innoPic{0.5}{inheritance-versus-composition}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   ``Prefer composition over inheritance?'' (2008) at StackOverflow\br
-  \sdQR[1.5in]{https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance}\par
+  \innoQR[1.5in]{https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance}\par
   ``Inheritance Is a Procedural Technique for Code Reuse'' (2016)\br
-  \sdQR[1.5in]{https://www.yegor256.com/2016/09/13/inheritance-is-procedural.html}
+  \innoQR[1.5in]{https://www.yegor256.com/2016/09/13/inheritance-is-procedural.html}
 }
 
 
 \section[SOLID]{SOLID Principles by Uncle Bob}
 
-\sdPlush{\sdCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\innoPlush{\innoCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\sdPlush{
+\innoPlush{
   \textbf{SOLID} principles:
   \begin{itemize}
     \item \nospell{\textbf{S}ingle} Responsibility Principle
@@ -128,98 +128,98 @@
   \end{itemize}
 }
 
-\sdPlush{
-  \sdPic{0.2}{../images/people/robert-martin}\par
+\innoPlush{
+  \innoPic{0.2}{../images/people/robert-martin}\par
   ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia\par
   \ff{https://www.cleancoder.com}\par
   \ff{@unclebobmartin} on Twitter
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[SRP]{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
   ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
   ``Each module should be responsible for each role.''\par
   ``SRP is a Hoax'' (2017) \br
-  \sdQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
+  \innoQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
 }
 
-\sdPlush[2]{\sdPic{0.7}{srp}}
+\innoPlush[2]{\innoPic{0.7}{srp}}
 
-\sdPlush{
+\innoPlush{
   \subsection[OCP]{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
   \par
-  \sdPic{0.5}{ocp}
+  \innoPic{0.5}{ocp}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
-  \sdPic{0.3}{lsp}\par
+  \innoPic{0.3}{lsp}\par
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[Duck]{Duck Typing}
-  \sdPic{0.7}{duck}
+  \innoPic{0.7}{duck}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection[ISP]{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
   \par
-  \sdPic{0.5}{isp}
+  \innoPic{0.5}{isp}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection[DIP]{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
   \par
-  \sdPic{0.7}{dip}
+  \innoPic{0.7}{dip}
 }
 
 \section[Contracts]{Design by Contract by Bertrand Meyer}
 
-\sdPlush{\sdPic{0.5}{contracts}}
+\innoPlush{\innoPic{0.5}{contracts}}
 
 \section[DRY]{Don't Repeat Yourself (DRY)}
 
-\sdPlush[3]{\sdPic{0.5}{dry}}
+\innoPlush[3]{\innoPic{0.5}{dry}}
 
 \section[YAGNI]{You Ain't Gonna Need It (YAGNI)}
 
-\sdPlush[3]{\sdPic{0.7}{yagni}}
+\innoPlush[3]{\innoPic{0.7}{yagni}}
 
 \section[IoC]{Inversion of Control}
 
-\sdPlush[4]{
+\innoPlush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
-  \sdQR[0.75in]{https://www.yegor256.com/2017/05/10/inversion-of-control.html}\par
-  \sdPic{0.6}{ioc}
+  \innoQR[0.75in]{https://www.yegor256.com/2017/05/10/inversion-of-control.html}\par
+  \innoPic{0.6}{ioc}
 }
 
 \section[FP]{OOP vs. Functional Programming}
 
-\sdPlush[3]{
-  \sdPic{0.8}{oop-vs-fp}\br
+\innoPlush[3]{
+  \innoPic{0.8}{oop-vs-fp}\br
   (c) Uncle Bob
 }
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
-    \sdPic{0.8}{issues}
+    \innoPic{0.8}{issues}
     \par\columnbreak
     ``What's Wrong With Object-Oriented Programming?'' (2016)\par
-    \sdQR{https://www.yegor256.com/2016/08/15/what-is-wrong-object-oriented-programming.html}
+    \innoQR{https://www.yegor256.com/2016/08/15/what-is-wrong-object-oriented-programming.html}
   \end{multicols}
 }
 
 \innoBVC
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{clean-code}
       {Robert C. Martin}
@@ -231,7 +231,7 @@
   \end{multicols}
 }
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{stroustrup}
       {\nospell{Bjarne Stroustrup}}
@@ -243,19 +243,19 @@
   \end{multicols}
 }
 
-\sdPlush{
-  \sdBanner{Where to publish:}\par
+\innoPlush{
+  \innoBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
-\sdPlush[3]{
-  \sdBanner{Call to Action:}
+\innoPlush[3]{
+  \innoBanner{Call to Action:}
   Analyze one of the apps you've written recently and find out
   which design principles you've used and where.
 }
 
-\sdPlush[3]{
-  \sdBanner[orange]{Still unresolved issues:}\par
+\innoPlush[3]{
+  \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{fix} object-oriented programming?
     \item How to \ul{enforce} it automatically?

@@ -28,197 +28,197 @@
 
 \innoTitlePage{5}
 
-\sdPlush{\sdQuote{edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{\nospell{Edsger W. Dijkstra} (1989)}}
+\innoPlush{\innoQuote{edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{\nospell{Edsger W. Dijkstra} (1989)}}
 
-\sdPlush{\sdQuote{alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{\nospell{Alan Kay} (1997)}}
+\innoPlush{\innoQuote{alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{\nospell{Alan Kay} (1997)}}
 
-\sdPlush{\sdQuote{paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{\nospell{Paul Graham} (2003)}}
+\innoPlush{\innoQuote{paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{\nospell{Paul Graham} (2003)}}
 
-\sdPlush{\sdQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
+\innoPlush{\innoQuote{linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
 
-\sdToc
+\innoToc
 
 \section[Theory]{The Philosophy of OOP}
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[GOTO]{The Era of GOTO}
-  \sdPic{0.7}{basic}
+  \innoPic{0.7}{basic}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[IF/THEN]{Structured Programming}
   \begin{multicols}{2}
-    \sdPic{0.9}{pascal}
+    \innoPic{0.9}{pascal}
     \par\columnbreak
-    \sdPic{0.7}{flowchart}
+    \innoPic{0.7}{flowchart}
   \end{multicols}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[CALL]{Procedural Programming}
-  \sdPic{0.5}{calls}
+  \innoPic{0.5}{calls}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[OOP$_1$]{Object-Oriented Programming ... Not!}
-  \sdPic{0.5}{oop-bad}
+  \innoPic{0.5}{oop-bad}
 }
 
-\sdPlush[3]{
-  \sdBanner{Spaghetti OOP Code}
-  \sdPic{0.8}{rectangles1}
+\innoPlush[3]{
+  \innoBanner{Spaghetti OOP Code}
+  \innoPic{0.8}{rectangles1}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection[OOP$_2$]{OOP Done Right}
-  \sdPic{0.5}{oop-good}
+  \innoPic{0.5}{oop-good}
 }
 
-\sdPlush[3]{
-  \sdBanner{Elegant OOP Code}
-  \sdPic{0.8}{rectangles2}
+\innoPlush[3]{
+  \innoBanner{Elegant OOP Code}
+  \innoPic{0.8}{rectangles2}
 }
 
 \section[Object]{What is an Object?}
 
-\sdPlush{
+\innoPlush{
   \subsection{C++}
-  \sdCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
+  \innoCite{stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection{Wiki}
-  \sdCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
+  \innoCite{wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection{Smalltalk}
-  \sdCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
+  \innoCite{smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection{Java}
-  \sdCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
+  \innoCite{java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection{\nospell{Eckel}}
-  \sdCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
+  \innoCite{eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
 }
 
-\sdPlush{
+\innoPlush{
   \subsection{West}
-  \sdCite{object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
+  \innoCite{object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
 }
 
 \section[Evil]{Three Most Evil Parts of OOP}
 
-\sdPlush[5]{
+\innoPlush[5]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \subsection[Static]{1. Static Methods}
-  \sdPic{0.5}{static1}
+  \innoPic{0.5}{static1}
   \par
-  \sdPic{0.5}{static2}
+  \innoPic{0.5}{static2}
 }
 
-\sdPlush[5]{
+\innoPlush[5]{
   \innoPinQR{https://www.yegor256.com/2014/11/07/how-immutability-helps.html}
   \subsection[Mutability]{2. Mutability vs. Immutability}
-  \sdPic{0.5}{mutable}
+  \innoPic{0.5}{mutable}
   \par
-  \sdPic{0.4}{immutable}
+  \innoPic{0.4}{immutable}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html}
-  \sdBanner{Benefits of Immutability}
-  \sdPic{0.8}{immutability-benefits}
+  \innoBanner{Benefits of Immutability}
+  \innoPic{0.8}{immutability-benefits}
 }
 
-\sdPlush[4]{
+\innoPlush[4]{
   \innoPinQR{https://www.yegor256.com/2014/05/13/why-null-is-bad.html}
   \subsection[NULL]{3. NULL References}
-  \sdPic{0.8}{null}\par
+  \innoPic{0.8}{null}\par
   \emph{Null References, The Billion Dollar Mistake}\\
   presentation by \nospell{Tony Hoare},
   \href{http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare}{watch here}.
 }
 
-\sdPlush[3]{
-  \sdBanner{NULL Object}
-  \sdPic{0.8}{null-object}
+\innoPlush[3]{
+  \innoBanner{NULL Object}
+  \innoPic{0.8}{null-object}
 }
 
-\sdPlush[7]{
+\innoPlush[7]{
   \innoPinQR{https://www.yegor256.com/2015/08/25/fail-fast.html}
-  \sdBanner{Fail Fast vs. Fail Safe}
-  \sdPic{0.7}{fail-fast}
+  \innoBanner{Fail Fast vs. Fail Safe}
+  \innoPic{0.7}{fail-fast}
 }
 
 \section[DDD]{Domain Driven Design}
 
-\sdPlush[4]{
-  \sdBanner{Names of Objects Done Right}
-  \sdPic{0.6}{ddd}
+\innoPlush[4]{
+  \innoBanner{Names of Objects Done Right}
+  \innoPic{0.6}{ddd}
 }
 
 \section[EO]{Elegant Objects}
 
-\sdPrint{\innoPinQR{https://www.elegantobjects.org}}
-\sdPrint{\sdBanner{Elegant Objects (EO)}}\sdClick
-\sdPrint{Started in 2014}\sdClick
-\sdPrint{Two books, 40+ speeches, 80+ blog posts}\sdClick
-\sdPrint{30+ frameworks and libraries}\sdClick
-\sdPrint{50+ fans registered}\sdClick
-\sdPrint{Six bloggers\\\small e.g. \nospell{pragmaticobjects.com}, \nospell{g4s8.wtf}, \nospell{amihaiemil.com}}\sdClick
-\sdPrint{Five ``Object Thinking'' Meetups}
-\sdFlush
+\innoPrint{\innoPinQR{https://www.elegantobjects.org}}
+\innoPrint{\innoBanner{Elegant Objects (EO)}}\innoClick
+\innoPrint{Started in 2014}\innoClick
+\innoPrint{Two books, 40+ speeches, 80+ blog posts}\innoClick
+\innoPrint{30+ frameworks and libraries}\innoClick
+\innoPrint{50+ fans registered}\innoClick
+\innoPrint{Six bloggers\\\small e.g. \nospell{pragmaticobjects.com}, \nospell{g4s8.wtf}, \nospell{amihaiemil.com}}\innoClick
+\innoPrint{Five ``Object Thinking'' Meetups}
+\innoFlush
 
-\sdPlush[3]{
+\innoPlush[3]{
   \small
   \begin{multicols}{2}
   \emph{Object-Oriented Lies}\\
   JPoint Student Day\\
   Moscow, Russia, 22-24 April 2016\\
-  \sdQR[1in]{https://www.youtube.com/watch?v=F4N25kZ2zQU}
+  \innoQR[1in]{https://www.youtube.com/watch?v=F4N25kZ2zQU}
 
   \emph{Java vs. OOP}\\
   JavaDay 2016 \\
   Minsk, Belarus, 11~June~2016\\
-  \sdQR[1in]{https://www.youtube.com/watch?v=6hOBfjJ2bpw}
+  \innoQR[1in]{https://www.youtube.com/watch?v=6hOBfjJ2bpw}
 
   \par\columnbreak
 
   \emph{Java vs. OOP}\\
   JavaDay Kyiv 2016 \\
   Kyiv, Ukraine, 15 October 2016\\
-  \sdQR[1in]{https://www.youtube.com/watch?v=cGcCcxx4xrg}
+  \innoQR[1in]{https://www.youtube.com/watch?v=cGcCcxx4xrg}
 
   \emph{What's Wrong With OOP?}\\
   RigaDevDays 2017\\
   Riga, Latvia, 15 May 2017\\
-  \sdQR[1in]{https://www.youtube.com/watch?v=K_QEOtYVQ7A}
+  \innoQR[1in]{https://www.youtube.com/watch?v=K_QEOtYVQ7A}
   \end{multicols}
 }
 
-\sdPlush[5]{
+\innoPlush[5]{
   \innoPinQR{https://www.eolang.org}
-  \sdBanner{EOLANG: Our New Programming Language}
-  \sdPic{0.5}{eo-sample}
+  \innoBanner{EOLANG: Our New Programming Language}
+  \innoPic{0.5}{eo-sample}
 }
 
-\sdPrint{\sdBanner{If you want to help:}}
-\sdPrint{EO to JavaScript/Go/Rust/Ruby compilers}\sdClick
-\sdPrint{REPL for EO}\sdClick
-\sdPrint{Static analysis of EO code}\sdClick
-\sdPrint{EO integration with Java/C++}\sdClick
-\sdPrint{Automated refactoring of EO code}\sdClick
-\sdPrint{JetBrains plugin for EO}
-\sdFlush
+\innoPrint{\innoBanner{If you want to help:}}
+\innoPrint{EO to JavaScript/Go/Rust/Ruby compilers}\innoClick
+\innoPrint{REPL for EO}\innoClick
+\innoPrint{Static analysis of EO code}\innoClick
+\innoPrint{EO integration with Java/C++}\innoClick
+\innoPrint{Automated refactoring of EO code}\innoClick
+\innoPrint{JetBrains plugin for EO}
+\innoFlush
 
 \innoBVC
 
-\sdPlush[3]{
+\innoPlush[3]{
   \begin{multicols}{2}
     \innoBook{object-thinking}
       {David West}
@@ -230,7 +230,7 @@
   \end{multicols}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \begin{multicols}{2}
     \innoBook{elegant-objects-1}
       {Yegor Bugayenko}
@@ -242,21 +242,21 @@
   \end{multicols}
 }
 
-\sdPlush{
-  \sdBanner{Where to publish:}\par
+\innoPlush{
+  \innoBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
   PLDI: ACM SIGPLAN Conference on Programming Language Design and Implementation\par
   POPL: The Annual Symposium on Principles of Programming Languages
 }
 
-\sdPlush[3]{
-  \sdBanner{Call to Action:}
+\innoPlush[3]{
+  \innoBanner{Call to Action:}
   Take \ff{yegor256/hangman} repository and rewrite it in true
   object-oriented manner, submit a pull request with your changes.
 }
 
-\sdPlush[3]{
-  \sdBanner[orange]{Still unresolved issues:}\par
+\innoPlush[3]{
+  \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{motivate} coders for better OO practices?
     \item How to \ul{create} better OO programming languages?

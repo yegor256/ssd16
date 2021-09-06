@@ -32,13 +32,13 @@
 
 \RequirePackage{seqsplit}
 \RequirePackage{xcolor}
-  \definecolor{sd-white}{HTML}{EEEEEE}
-  \definecolor{sd-red}{HTML}{ED474A}
-  \definecolor{sd-orange}{HTML}{F06543}
-  \definecolor{sd-black}{HTML}{232527}
-  \definecolor{sd-grey}{HTML}{C0BCB5}
-  \definecolor{sd-green}{HTML}{5C946E}
-  \definecolor{sd-blue}{HTML}{5299D3}
+  \definecolor{inno-white}{HTML}{EEEEEE}
+  \definecolor{inno-red}{HTML}{ED474A}
+  \definecolor{inno-orange}{HTML}{F06543}
+  \definecolor{inno-black}{HTML}{232527}
+  \definecolor{inno-grey}{HTML}{C0BCB5}
+  \definecolor{inno-green}{HTML}{5C946E}
+  \definecolor{inno-blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
 
 \newif\ifwhite
@@ -86,14 +86,14 @@
   \fancyhf{}
   \renewcommand\crumb[2]{
     \ifnum\value{crumbi}=\value{section}
-      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
+      {\setulcolor{inno-blue}\color{inno-blue}\ul{#1}}
     \else
       #1
     \fi
   }
   \renewcommand\subcrumb[2]{
     \ifnum\value{subcrumbi}=\value{subsection}
-      {\setulcolor{sd-blue}\color{sd-blue}\ul{#1}}
+      {\setulcolor{inno-blue}\color{inno-blue}\ul{#1}}
     \else
       #1
     \fi
@@ -112,31 +112,31 @@
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
-        {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{sd-grey}/\pageref{LastPage}}}}
+        {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{inno-grey}/\pageref{LastPage}}}}
       \end{textblock}%
       \ifstatic\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
-          \tikz{\node[inner sep=2pt,circle,draw=sd-grey]{\color{sd-grey}\scriptsize\ttfamily\thesdMinutes{}};}
+          \tikz{\node[inner sep=2pt,circle,draw=inno-grey]{\color{inno-grey}\scriptsize\ttfamily\thesdMinutes{}};}
         \end{textblock}%
       \fi
     \fi
   }
 
-\newcommand\sdLeft[1]{
+\newcommand\innoLeft[1]{
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
-        {\color{sd-grey}\scriptsize\ttfamily #1}
+        {\color{inno-grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
 }
 
-\newcommand\sdRight[1]{
+\newcommand\innoRight[1]{
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
-        {\color{sd-grey}\scriptsize\ttfamily #1}
+        {\color{inno-grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
@@ -144,53 +144,53 @@
 
 \newcommand\br{\newline}
 
-\newcommand\sdMiddle[1]{\vspace*{\fill}#1\vspace*{\fill}}
+\newcommand\innoMiddle[1]{\vspace*{\fill}#1\vspace*{\fill}}
 
-\newcommand\sdBanner[2][green]{
+\newcommand\innoBanner[2][green]{
   \par
-  {\setlength{\fboxsep}{6pt}\colorbox{sd-#1}{\color{sd-white}\large #2}}
+  {\setlength{\fboxsep}{6pt}\colorbox{inno-#1}{\color{inno-white}\large #2}}
   \par
 }
 
-\newcommand\sdTitle[2]{
-  {\sdBanner{\Huge #1}}
-  {\sdBanner{\large #2}}
+\newcommand\innoTitle[2]{
+  {\innoBanner{\Huge #1}}
+  {\innoBanner{\large #2}}
 }
 
-\newcommand*\sdTOC{}
-\newcommand\sdToc{
-  \renewcommand*\sdTOC{}
-  \sdPrint{
+\newcommand*\innoTOC{}
+\newcommand\innoToc{
+  \renewcommand*\innoTOC{}
+  \innoPrint{
     \tikz{
       \node (z) {
         \begin{varwidth}{\textwidth}
-          \ifx\sdTOC\empty\else
+          \ifx\innoTOC\empty\else
             \begin{itemize}[label={}]
-              \sdTOC
+              \innoTOC
             \end{itemize}
           \fi
         \end{varwidth}
       };
-      \path [draw=sd-blue,line width=4pt] (z.north west) -- (z.south west);
+      \path [draw=inno-blue,line width=4pt] (z.north west) -- (z.south west);
     }
   }
   \begin{@empty}
     \renewcommand\crumb[2]{
-      \ifx\sdTOC\empty\else\sdClick\fi
-      \gappto\sdTOC{\item ##2}
+      \ifx\innoTOC\empty\else\innoClick\fi
+      \gappto\innoTOC{\item ##2}
     }
     \crumbs
   \end{@empty}
-  \sdFlush
+  \innoFlush
 }
 
 \NewCommandCopy\innooldsection\section
 \renewcommand\section[2][]{
   \innooldsection[#1]{#2}
-  \sdPlush{
-    \sdMiddle{%
+  \innoPlush{
+    \innoMiddle{%
       {\large\ttfamily Chapter \#\the\value{section}:}
-      \sdBanner[blue]{\LARGE #2}
+      \innoBanner[blue]{\LARGE #2}
     }
   }
 }
@@ -198,22 +198,22 @@
 \NewCommandCopy\theoldsubsection\subsection
 \renewcommand\subsection[2][]{
   \theoldsubsection[#1]{#2}
-  \sdBanner[orange]{\Large #2}
+  \innoBanner[orange]{\Large #2}
 }
 
-\newcommand\sdPic[2]{
+\newcommand\innoPic[2]{
   {%
     \setlength{\fboxsep}{0pt}%
     \setlength{\fboxrule}{1pt}%
-    \fcolorbox{sd-grey}{sd-white}{%
+    \fcolorbox{inno-grey}{inno-white}{%
       \includegraphics[width=#1\columnwidth]{#2}%
     }%
   }
 }
 
-\newcommand\sdQR[2][2in]{
+\newcommand\innoQR[2][2in]{
   \tikz{%
-    \node[draw=sd-white]{%
+    \node[draw=inno-white]{%
       \href{#2}{%
         \qrcode[height=#1]{#2}%
       }%
@@ -221,9 +221,9 @@
   }
 }
 
-\newcommand\sdCite[3]{
+\newcommand\innoCite[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-    \raisebox{\dimexpr-\height+\ht\strutbox}{\sdPic{0.25}{../images/books/#1}}
+    \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{../images/books/#1}}
     &
     ``#2''
     \def\param{#3}%
@@ -236,15 +236,15 @@
   \end{tabularx}
 }
 
-\newcommand\sdQuote[3]{\sdCite{../people/#1}{#2}{#3}}
+\newcommand\innoQuote[3]{\innoCite{../people/#1}{#2}{#3}}
 
-\newcommand\sdSnippet[2][\small]{
+\newcommand\innoSnippet[2][\small]{
   \begin{samepage}
     #1\verbatiminput{#2}
   \end{samepage}
 }
 
-\newcommand\sdPin[1]{%
+\newcommand\innoPin[1]{%
   \begin{tikzpicture}[remember picture,overlay]%
     \node[anchor=north east] at (current page text area.north east) {%
       \begin{minipage}{0.5\textwidth}%
@@ -256,18 +256,18 @@
 
 \newcommand\nospell[1]{#1}
 
-\newcommand\sdDisclaimer{{\color{sd-grey}\ttfamily\footnotesize All visual and text materials presented in
+\newcommand\innoDisclaimer{{\color{inno-grey}\ttfamily\footnotesize All visual and text materials presented in
 this slidedeck are either originally made by the author or taken from public
 Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
 
 \newcommand\innoTitlePage[1]{
-  \sdPlush[2]{
-    \sdTitle{\thetitle}{\thesubtitle}\par
+  \innoPlush[2]{
+    \innoTitle{\thetitle}{\thesubtitle}\par
     {\scshape Yegor Bugayenko}\par
     Lecture \##1 out of 16 \br
     90 minutes\par
-    \sdDisclaimer{}
+    \innoDisclaimer{}
   }
 }
 
@@ -275,13 +275,13 @@ authors.\par}}
 % 2: author
 % 3: title
 \newcommand\innoBook[3]{
-  \sdPic{0.4}{../images/books/#1} \br ``#3'' by {\scshape #2}
+  \innoPic{0.4}{../images/books/#1} \br ``#3'' by {\scshape #2}
 
 }
 
 \newcommand\innoThought[2][1]{
-  \sdPlush[#1]{
-    \sdMiddle{
+  \innoPlush[#1]{
+    \innoMiddle{
       \tikz{
         \node [inner sep=18pt] (z) {
           \begin{varwidth}{0.8\textwidth}
@@ -289,7 +289,7 @@ authors.\par}}
             #2
           \end{varwidth}
         };
-        \path [draw=sd-green,line width=8pt] (z.north west) -- (z.south west);
+        \path [draw=inno-green,line width=8pt] (z.north west) -- (z.south west);
       }
     }
   }
@@ -300,10 +300,10 @@ authors.\par}}
 }
 
 \newcommand\innoPinQR[1]{%
-  \sdPin{%
+  \innoPin{%
     \begin{minipage}{1.4in}
       \raggedleft%
-      \sdQR[1in]{#1}
+      \innoQR[1in]{#1}
       \\[3pt]
       \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}\\
     \end{minipage}
@@ -312,8 +312,8 @@ authors.\par}}
 
 \AtBeginDocument{%
   \ifwhite\else
-    \pagecolor{sd-black}
-    \color{sd-white}
+    \pagecolor{inno-black}
+    \color{inno-white}
   \fi
   \raggedbottom%
   \raggedright%
@@ -327,7 +327,7 @@ authors.\par}}
   \normalsize
 }
 
-\sdLeft{\thetitle{} \thesubtitle}
-\sdRight{@yegor256}
+\innoLeft{\thetitle{} \thesubtitle}
+\innoRight{@yegor256}
 
 \endinput

@@ -29,26 +29,26 @@
 
 \innoTitlePage{7}
 
-\sdToc
+\innoToc
 
 \section[XML]{Extensible Markup Language (XML)}
 
-\sdPlush[4]{
+\innoPlush[4]{
   \subsection[XML]{Library in XML}
-  \sdSnippet{library.xml}
+  \innoSnippet{library.xml}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \subsection{Namespaces}
-  \sdSnippet{namespaces.xml}
+  \innoSnippet{namespaces.xml}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection{Escaping}
-  \sdSnippet{escaping.xml}
+  \innoSnippet{escaping.xml}
 }
 
-\sdPlush[4]{
+\innoPlush[4]{
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
   \subsection[Formats]{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
@@ -58,12 +58,12 @@
 
 \section[XSD]{XSD, XPath, XSLT, XQuery, etc.}
 
-\sdPlush[4]{
+\innoPlush[4]{
   \subsection[XSD]{XML Schema Definition (XSD)}
-  \sdSnippet[\scriptsize]{library.xsd}
+  \innoSnippet[\scriptsize]{library.xsd}
 }
 
-\sdPlush[4]{
+\innoPlush[4]{
   \subsection[XPath]{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
@@ -74,46 +74,46 @@
   \ff{//book[author[text()='David West']]}
 }
 
-\sdPlush[4]{
+\innoPlush[4]{
   \subsection[XSL]{XSL Transformations (XSLT)}
-  \sdSnippet[\scriptsize]{library.xsl}
+  \innoSnippet[\scriptsize]{library.xsl}
 }
 
 \section[JSON]{JavaScript Object Notation (JSON)}
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \subsection[JSON]{JSON for the Library}
-  \sdSnippet{library.json}
+  \innoSnippet{library.json}
 }
 
-\sdPlush[2]{
-  \sdBanner{JSON to JavaScript Object and Backwards}
+\innoPlush[2]{
+  \innoBanner{JSON to JavaScript Object and Backwards}
   \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
   \ff{JSON.stringify(\{age: 25\});}
 }
 
 \section[Others]{YAML, TOML, CSV}
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection[YAML]{Yet Another Markup Language (YAML)}
-  \sdSnippet{library.yml}
+  \innoSnippet{library.yml}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection{TOML}
-  \sdSnippet{library.toml}
+  \innoSnippet{library.toml}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
   \subsection[CSV]{Comma-Separated Values (CSV)}
-  \sdSnippet{library.csv}
+  \innoSnippet{library.csv}
 }
 
 \innoBVC
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{xml-nutshell}
       {\nospell{Elliotte Rusty Harold} et al.}
@@ -125,15 +125,15 @@
   \end{multicols}
 }
 
-\sdPlush[2]{
-  \sdBanner{Call to Action:}
+\innoPlush[2]{
+  \innoBanner{Call to Action:}
   In your application, make sure your data is represented in
   XML, at least in one place, and being transformed by XSLT.\par
   Design your own data format.
 }
 
-\sdPlush[3]{
-  \sdBanner[orange]{Still unresolved issues:}
+\innoPlush[3]{
+  \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{map} XML/JSON to objects?
     \item How to \ul{print} object to XML/JSON?

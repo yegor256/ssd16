@@ -29,29 +29,29 @@
 
 \innoTitlePage{2}
 
-\sdPlush[2]{\sdCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\innoPlush[2]{\innoCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\sdPlush[2]{\sdCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+\innoPlush[2]{\innoCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
 with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
-\sdToc
+\innoToc
 
 \section[UCs]{Use Cases (user stories)}
 
-\sdPlush[2]{
+\innoPlush[2]{
   \begin{multicols}{2}
-    \sdPic{0.4}{../images/people/ivar-jacobson}\br
+    \innoPic{0.4}{../images/people/ivar-jacobson}\br
     \nospell{Ivar Jacobson} \br
     in 1987
     \par\columnbreak
-    \sdPic{0.3}{../images/people/grady-booch}\br
+    \innoPic{0.3}{../images/people/grady-booch}\br
     \nospell{Grady Booch}\par
-    \sdPic{0.3}{../images/people/james-rumbaugh}\br
+    \innoPic{0.3}{../images/people/james-rumbaugh}\br
     \nospell{James Rumbaugh}
   \end{multicols}
   }
 
-\sdPlush[10]{\sdCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
+\innoPlush[10]{\innoCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
 \begin{ffcode}
 Use Case: Make a QR code
@@ -69,32 +69,32 @@ Extensions:
 \end{ffcode}
 \newpage
 
-\sdPlush[3]{
-  \sdBanner{Use Case Diagram}
-  \colorbox{sd-white}{\sdPic{0.5}{uc-diagram}}
+\innoPlush[3]{
+  \innoBanner{Use Case Diagram}
+  \colorbox{inno-white}{\innoPic{0.5}{uc-diagram}}
 }
 
 \section[FPA]{FPA \& IFPUG \& COSMIC}
 
-\sdPrint{\sdBanner{Function Point Analysis (FPA)}}
-\sdPrint{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\sdClick
-\sdPrint{International Function Point Users Group (IFPUG) is in charge}\sdClick
-\sdPrint{Regulated by ISO 20296}\sdClick
-\sdPrint{COSMIC is the modern version: ISO/IEC 14143}\sdClick
-\sdPrint{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\sdClick
-\sdPrint{Function Points (FPs) are used for estimates}
-\sdFlush[4]
+\innoPrint{\innoBanner{Function Point Analysis (FPA)}}
+\innoPrint{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\innoClick
+\innoPrint{International Function Point Users Group (IFPUG) is in charge}\innoClick
+\innoPrint{Regulated by ISO 20296}\innoClick
+\innoPrint{COSMIC is the modern version: ISO/IEC 14143}\innoClick
+\innoPrint{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\innoClick
+\innoPrint{Function Points (FPs) are used for estimates}
+\innoFlush[4]
 
-\sdPlush[2]{
-  \sdQR{https://en.wikipedia.org/wiki/Use_case_points}\par
+\innoPlush[2]{
+  \innoQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
 \section[Matrix]{Traceability Matrix}
 
-\sdPlush[5]{
-  \sdBanner{Traceability Matrix}\par
-  \colorbox{sd-white}{\sdPic{0.6}{matrix}}\par
+\innoPlush[5]{
+  \innoBanner{Traceability Matrix}\par
+  \colorbox{inno-white}{\innoPic{0.6}{matrix}}\par
   {\small Use Cases, Non-Functional Requirements, Test Cases,
   Classes, Packages, Servers, Containers, Components,
   Nodes, etc.}
@@ -102,28 +102,28 @@ Extensions:
 
 \section[V\&V]{Verification \& Validation}
 
-\sdPlush[3]{\sdCite{cmmi-vv}{Two different questions may be asked by a project team:
+\innoPlush[3]{\innoCite{cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
 \section[NFRs]{Non-Functional Requirements (NFRs)}
 
-\sdPrint{\sdBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
-\sdPrint{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\sdClick
-\sdPrint{Capacity: Clicks Per Second (CPS)}\sdClick
-\sdPrint{Recovery: Recovery Time Objective (RTO)}\sdClick
-\sdPrint{Maintainability: Mean Time To Repair (MTTR)}\sdClick
-\sdPrint{Usability: focus group surveys?}
-\sdFlush[8]
+\innoPrint{\innoBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
+\innoPrint{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\innoClick
+\innoPrint{Capacity: Clicks Per Second (CPS)}\innoClick
+\innoPrint{Recovery: Recovery Time Objective (RTO)}\innoClick
+\innoPrint{Maintainability: Mean Time To Repair (MTTR)}\innoClick
+\innoPrint{Usability: focus group surveys?}
+\innoFlush[8]
 
-\sdPlush[5]{
+\innoPlush[5]{
   \begin{multicols}{2}
-    \sdBanner[red]{Bad NFRs}\par
+    \innoBanner[red]{Bad NFRs}\par
     ``The software must be fast.''\par
     ``It must be easy to maintain.''\par
     ``The user interface must be attractive.''
     \par\columnbreak
     \small
-    \sdBanner{Good NFRs}
+    \innoBanner{Good NFRs}
     ``Being installed on a test server (see Annex A),
     the software must respond is less than 20ms
     on any request from UC1--UC7.''\par
@@ -134,10 +134,10 @@ Extensions:
   \end{multicols}
 }
 
-\sdPlush[9]{
+\innoPlush[9]{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
-    \sdQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
+    \innoQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
     \par\columnbreak
     \small
     \begin{itemize}
@@ -156,9 +156,9 @@ Extensions:
 
 \section[COCOMO]{Estimates and COCOMO II}
 
-\sdPlush[2]{\sdCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
+\innoPlush[2]{\innoCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
-\sdPlush[5]{
+\innoPlush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).\par
   Then, we find effort adjustment factor ($F$).\par
   Then, we find coefficients $a$, $b$, and $c$ using the table.\par
@@ -168,20 +168,20 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\sdPlush[5]{
-  \sdBanner{Cone of Uncertainty}
-  \sdPic{0.6}{cone}
+\innoPlush[5]{
+  \innoBanner{Cone of Uncertainty}
+  \innoPic{0.6}{cone}
 }
 
-\sdPlush[5]{
-  \sdQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
+\innoPlush[5]{
+  \innoQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
   ``How much for this software?'' they ask.\par
   ``The development will take forever and will consume all your money,'' we answer.
 }
 
 \innoBVC
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{wiegers}
       {\nospell{Karl Wiegers} et al.}
@@ -193,7 +193,7 @@ Extensions:
   \end{multicols}
 }
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{cockburn}
       {\nospell{Alistair Cockburn}}
@@ -205,20 +205,20 @@ Extensions:
   \end{multicols}
 }
 
-\sdPlush[2]{
-  \sdBanner{Where to publish:}\par
+\innoPlush[2]{
+  \innoBanner{Where to publish:}\par
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\sdPlush[3]{
-  \sdBanner{Call to Action:}\par
+\innoPlush[3]{
+  \innoBanner{Call to Action:}\par
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
-\sdPlush[4]{
-  \sdBanner[orange]{Still unresolved issues:}\par
+\innoPlush[4]{
+  \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?
     \item How to \ul{trace} them automatically?

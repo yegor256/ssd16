@@ -29,69 +29,69 @@
 
 \innoTitlePage{6}
 
-\sdPlush[2]{\sdCite{gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
+\innoPlush[2]{\innoCite{gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
 
-\sdPlush[2]{\sdQuote{paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
+\innoPlush[2]{\innoQuote{paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
 
-\sdToc
+\innoToc
 
 \section[Patterns]{Some Patterns}
 
-\sdPlush{
+\innoPlush{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
-  \sdQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
+  \innoQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
   36 patterns (22 anti-patterns)
 }
 
-\sdPlush[5]{
+\innoPlush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
   \subsection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
-  \sdSnippet[\footnotesize]{adapter.java}
+  \innoSnippet[\footnotesize]{adapter.java}
 }
 
-\sdPlush[5]{
+\innoPlush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
   \subsection[RAII]{Resource Acquisition Is Initialization (RAII)}
-  \sdSnippet[\footnotesize]{raii.cpp}
+  \innoSnippet[\footnotesize]{raii.cpp}
 }
 
 \section[Anti]{Some Anti-Patterns}
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection{GOTO}
-  \sdSnippet[\footnotesize]{goto.c}
+  \innoSnippet[\footnotesize]{goto.c}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection[Numbers]{Magic Numbers}
-  \sdSnippet{magic.rb}
+  \innoSnippet{magic.rb}
 }
 
-\sdPlush[2]{
-  \sdBanner{Magic Numbers ... Not!}
-  \sdSnippet{magic2.rb}
+\innoPlush[2]{
+  \innoBanner{Magic Numbers ... Not!}
+  \innoSnippet{magic2.rb}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection[God]{God Class}
-  \sdPic{0.6}{god-class}
+  \innoPic{0.6}{god-class}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection[Spaghetti]{Spaghetti Code}
-  \sdPic{0.4}{spaghetti}
+  \innoPic{0.4}{spaghetti}
 }
 
-\sdPlush[2]{
+\innoPlush[2]{
   \subsection[Lasagna]{Lasagna and Ravioli}
-  \sdPic{0.3}{ravioli}
+  \innoPic{0.3}{ravioli}
 }
 
 \section[Anti-OOP]{Anti-OOP Patterns}
 
-\sdPlush[2]{
+\innoPlush[2]{
   Anti-Patterns in OOP (2014)\par
-  \sdQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
+  \innoQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
   Eleven:
   NULL,
   Utility Classes,
@@ -106,44 +106,44 @@
   Traits and Mixins.
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
   \subsection[DTO]{Data Transfer Object (DTO)}
-  \sdBanner{Getters and Setters}
-  \sdSnippet{dto.java}
+  \innoBanner{Getters and Setters}
+  \innoSnippet{dto.java}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \subsection[Utility]{Utility Class}
-  \sdSnippet[\footnotesize]{utility.java}
+  \innoSnippet[\footnotesize]{utility.java}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \subsection{Singleton}
-  \sdSnippet{singleton.java}
+  \innoSnippet{singleton.java}
 }
 
-\sdPlush[3]{
+\innoPlush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
   \subsection[ORM]{Object-Relational Mapping (ORM)}
-  \sdSnippet{orm.java}
+  \innoSnippet{orm.java}
 }
 
 \section[Refactorings]{Some Refactorings}
 
-\sdPlush[2]{\sdCite{fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
+\innoPlush[2]{\innoCite{fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 
-\sdPlush[3]{
-  \sdPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
-  \sdBanner{Extract Method}
-  \sdSnippet[\footnotesize]{extract.rb}
+\innoPlush[3]{
+  \innoPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
+  \innoBanner{Extract Method}
+  \innoSnippet[\footnotesize]{extract.rb}
 }
 
 \innoBVC
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{feathers}
       {Michael Feathers}
@@ -155,7 +155,7 @@
   \end{multicols}
 }
 
-\sdPlush{
+\innoPlush{
   \begin{multicols}{2}
     \innoBook{gamma}
       {Erich Gamma et al.}
@@ -167,21 +167,21 @@
   \end{multicols}
 }
 
-\sdPlush{
-  \sdBanner{Where to publish:}
+\innoPlush{
+  \innoBanner{Where to publish:}
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
   International Conference on Code Quality (ICCQ),\br
   in cooperation with ACM SIGPLAN/SIGSOFT and IEEE
 }
 
-\sdPlush[2]{
-  \sdBanner{Call to Action:}
+\innoPlush[2]{
+  \innoBanner{Call to Action:}
   In your application demonstrate the usage of 4+ design patterns.
   Also, perform 4+ refactorings, each one in its own pull request.
 }
 
-\sdPlush[3]{
-  \sdBanner[orange]{Still unresolved issues:}
+\innoPlush[3]{
+  \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{prove} certain patterns are anti-patterns?
     \item How to \ul{find} methods for automated refactoring?
