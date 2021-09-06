@@ -29,15 +29,15 @@
 
 \innoTitlePage{2}
 
-\sdPrintAndFlush[2]{\sdCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\Plush[2]{\sdCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\sdPrintAndFlush[2]{\sdCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+\Plush[2]{\sdCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
 with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \sdToc\sdFlush
 \section{UCs}{Use Cases (user stories)}
 
-\sdPrintAndFlush[2]{
+\Plush[2]{
   \begin{multicols}{2}
     \sdPic{0.4}{../images/people/ivar-jacobson}\br
     \nospell{Ivar Jacobson} \br
@@ -50,7 +50,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
   \end{multicols}
   }
 
-\sdPrintAndFlush[3]{\sdCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
+\Plush[3]{\sdCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
 \begin{ffcode}
 Use Case: Make a QR code
@@ -68,7 +68,7 @@ Extensions:
 \end{ffcode}
 \sdMins{7}
 
-\sdPrintAndFlush[3]{
+\Plush[3]{
   \sdBanner{Use Case Diagram}\par
   \colorbox{sd-white}{\sdPic{0.5}{uc-diagram}}
 }
@@ -84,14 +84,14 @@ Extensions:
 \sdPrint{Function Points (FPs) are used for estimates}
 \sdFlush[4]
 
-\sdPrintAndFlush[2]{
+\Plush[2]{
   \sdQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
 \section{Matrix}{Traceability Matrix}
 
-\sdPrintAndFlush[5]{
+\Plush[5]{
   \sdBanner{Traceability Matrix}\par
   \colorbox{sd-white}{\sdPic{0.6}{matrix}}\par
   {\small Use Cases, Non-Functional Requirements, Test Cases,
@@ -101,7 +101,7 @@ Extensions:
 
 \section{V\&V}{Verification \& Validation}
 
-\sdPrintAndFlush[3]{\sdCite{cmmi-vv}{Two different questions may be asked by a project team:
+\Plush[3]{\sdCite{cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
 \section{NFRs}{Non-Functional Requirements (NFRs)}
@@ -114,7 +114,7 @@ Extensions:
 \sdPrint{Usability: focus group surveys?}
 \sdFlush[8]
 
-\sdPrintAndFlush[5]{
+\Plush[5]{
   \begin{multicols}{2}
     \sdBanner[red]{Bad NFRs}\par
     ``The software must be fast.''\par
@@ -133,7 +133,7 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush[9]{
+\Plush[9]{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
     \sdQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
@@ -155,9 +155,9 @@ Extensions:
 
 \section{COCOMO}{Estimates and COCOMO II}
 
-\sdPrintAndFlush[2]{\sdCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
+\Plush[2]{\sdCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
-\sdPrintAndFlush[5]{
+\Plush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).\par
   Then, we find effort adjustment factor ($F$).\par
   Then, we find coefficients $a$, $b$, and $c$ using the table.\par
@@ -167,12 +167,12 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\sdPrintAndFlush[5]{
+\Plush[5]{
   \sdBanner{Cone of Uncertainty}
   \sdPic{0.6}{cone}
 }
 
-\sdPrintAndFlush[5]{
+\Plush[5]{
   \sdQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
   ``How much for this software?'' they ask.\par
   ``The development will take forever and will consume all your money,'' we answer.
@@ -180,7 +180,7 @@ Extensions:
 
 \innoBVC
 
-\sdPrintAndFlush{
+\Plush{
   \begin{multicols}{2}
     \innoBook{wiegers}
       {\nospell{Karl Wiegers} et al.}
@@ -192,7 +192,7 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush{
+\Plush{
   \begin{multicols}{2}
     \innoBook{cockburn}
       {\nospell{Alistair Cockburn}}
@@ -204,19 +204,19 @@ Extensions:
   \end{multicols}
 }
 
-\sdPrintAndFlush[2]{
+\Plush[2]{
   \sdBanner{Where to publish:}\par
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\sdPrintAndFlush[3]{
+\Plush[3]{
   \sdBanner{Call to Action:}\par
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
-\sdPrintAndFlush[4]{
+\Plush[4]{
   \sdBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?

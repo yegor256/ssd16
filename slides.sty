@@ -30,15 +30,10 @@
 \RequirePackage{etoolbox}
 
 \newcommand*\sdBODY{}
-\newcommand\sdPrint[1]{
-  \gappto\sdBODY{{
-    #1
-    \par
-  }}
-}
+\newcommand\sdPrint[1]{\gappto\sdBODY{{#1\par}}}
 \newcommand\sdFLUSH{\sdBODY\vspace*{0pt}\newpage}
 \newcounter{sdMinutes}
-\newcommand\sdFlush[1][1]{
+\newcommand\sdFlush[1][1]{%
   \sdFLUSH\renewcommand*\sdBODY{}%
   \addtocounter{sdMinutes}{#1}%
 }
@@ -46,8 +41,6 @@
 
 % [1]: How many minutes to stay here
 % [1]: The content to print and flush
-\newcommand\sdPrintAndFlush[2][1]{
-  \sdPrint{#2}\sdFlush[#1]
-}
+\newcommand\Plush[2][1]{\sdPrint{#2}\sdFlush[#1]}
 
 \endinput
