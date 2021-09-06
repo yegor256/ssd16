@@ -20,50 +20,34 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass{article}
-\usepackage{../slides}
-\newcommand*\thetitle{Test-Driven}
-\newcommand*\thesubtitle{Development}
-\usepackage{../inno}
-\begin{document}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{slides}[00.00.0000 0.0.0 Slides]
 
-\innoTitlePage{13}
+\newif\ifstatic
+\DeclareOption{static}{\statictrue}
+\ProcessOptions\relax
 
-\sdToc\sdFlush
-\section{BDD}{Behavior Driven Development (BDD)}
+\RequirePackage{etoolbox}
 
-\section{B.V.C}{Books, Venues, Call-to-Action}
+\newcommand*\sdBODY{}
+\newcommand\sdPrint[1]{
+  \gappto\sdBODY{{
+    #1
+    \par
+  }}
+}
+\newcommand\sdFLUSH{\sdBODY\vspace*{0pt}\newpage}
+\newcounter{sdMinutes}
+\newcommand\sdFlush[1][1]{
+  \sdFLUSH\renewcommand*\sdBODY{}%
+  \addtocounter{sdMinutes}{#1}%
+}
+\newcommand\sdClick{\ifstatic\else\sdFLUSH\fi}
 
-% \sdPrintAndFlush{
-%   \begin{multicols}{2}
-%     \sdPic{0.4}{rup}\br
-%     ``A Practitioner's Guide to the RUP,'' \br Per Kroll et al.
-%     \par\columnbreak
-%     % \sdPic{0.4}{agile-martin}\br
-%     % ``Agile Software Development. Principles, Patterns, and Practices,'' \br Robert Martin
-%   \end{multicols}
-% }
-
-\sdPrintAndFlush{
-  \sdBanner{Where to publish:}
-
-  SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
+% [1]: How many minutes to stay here
+% [1]: The content to print and flush
+\newcommand\sdPrintAndFlush[2][1]{
+  \sdPrint{#2}\sdFlush[#1]
 }
 
-\sdPrintAndFlush{
-  \sdBanner{Call to Action:}
-
-  ...
-}
-
-\sdPrintAndFlush{
-  \sdBanner[orange]{Still unresolved issues:}
-  \begin{itemize}
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
-  \end{itemize}
-}
-
-\end{document}
+\endinput
