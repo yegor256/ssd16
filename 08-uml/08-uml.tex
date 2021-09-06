@@ -21,80 +21,79 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage{../slides}
+\usepackage{../inno}
 \newcommand*\thetitle{UML}
 \newcommand*\thesubtitle{and XMI, OCL, MOF, etc.}
-\usepackage{../inno}
 \begin{document}
 
 \innoTitlePage{7}
 
-\innoPlush{\innoCite{iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
+\plush{\innoCite{iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
 
 \innoToc
 
 \section[Class]{Class Diagram}
 
-\innoPlush[4]{
+\plush[4]{
   \subsection{Classes}
   \innoPic{0.6}{classes}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Generalization}
   \innoPic{0.8}{generalization}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Composition}
   \innoPic{0.7}{composition}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Aggregation}
   \innoPic{0.7}{aggregation}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Association}
   \innoPic{0.8}{association}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Dependency}
   \innoPic{0.7}{dependency}
 }
 
 \section[Other]{Some Other Diagrams}
 
-\innoPlush[6]{
+\plush[6]{
   \subsection[UC]{Use Case Diagram}
   \innoPic{0.7}{usecases}
 }
 
-\innoPlush[6]{
+\plush[6]{
   \subsection[Component]{Component Diagram}
   \innoPic{0.6}{component}
 }
 
-\innoPlush[6]{
+\plush[6]{
   \subsection[Deployment]{Deployment Diagram}
   \innoPic{0.7}{deployment}
 }
 
-\innoPlush[6]{
+\plush[6]{
   \subsection[Activity]{Activity Diagram}
   \innoPic{0.7}{activity}
 }
 
-\innoPlush[6]{
+\plush[6]{
   \subsection[Sequence]{Sequence Diagram}
   \innoPic{0.7}{sequence}
 }
 
 \section[MDA]{MDA: MOF, XMI, OCL, QVT, fUML, ...}
 
-\innoPlush[7]{
+\plush[7]{
   \subsection[MDA]{Model Driven Architecture (MDA)}
   \innoPic{0.5}{mda}\par
   \footnotesize Computation Independent Model (CIM),
@@ -102,7 +101,7 @@
   Platform Specific Model (PSM).
 }
 
-\innoPlush[4]{
+\plush[4]{
   \subsection[MOF]{Meta-Object Facility (MOF)}
   \innoPic{0.7}{mof}\par
   \small ``MOF is a Domain Specific Language (DSL) used to define metamodels,
@@ -110,30 +109,30 @@
   --- \href{https://en.wikipedia.org/wiki/Meta-Object_Facility}{Wikipedia}
 }
 
-\innoPlush[5]{
+\plush[5]{
   \subsection[XMI]{XML Metadata Interchange (XMI)}
   \innoPic{0.5}{xmi1}
   \innoPic{0.7}{xmi2}
 }
 
-\innoPlush[4]{
+\plush[4]{
   \subsection[OCL]{Object Constraint Language (OCL)}
   \innoPic{0.9}{ocl}
 }
 
-\innoPlush[4]{
+\plush[4]{
   \subsection[QVT]{Query/View/Transformation (QVT)}
   \innoPic{0.8}{qvt}
 }
 
-\innoPlush[4]{
+\plush[4]{
   \subsection[fUML]{Executable UML, fUML, Alf}
   \innoPic{0.7}{alf}
 }
 
 \innoBVC
 
-\innoPlush[2]{
+\plush[2]{
   \begin{multicols}{2}
     \innoBook{uml-book}
       {Martin Fowler}
@@ -145,19 +144,19 @@
   \end{multicols}
 }
 
-\innoPlush[5]{
+\plush[5]{
   \innoBanner{Where to go:}
   OMG Certified UML Professional 2 (OCUP 2)\par
   \innoPic{0.3}{ocup}
 }
 
-\innoPlush[4]{
+\plush[4]{
   \innoBanner{Call to Action:}
   For your application, make one class, one component, one deployment,
   and three sequence diagrams.
 }
 
-\innoPlush[4]{
+\plush[4]{
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{reverse} code to a model?

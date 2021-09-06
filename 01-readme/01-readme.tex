@@ -29,13 +29,13 @@
 
 \innoTitlePage{1}
 
-\innoPlush[2]{\innoCite{freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
+\plush[2]{\innoCite{freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
 
 \innoToc
 
 \section[Interiors]{Software vs. Interiors}
 
-\innoPlush[3]{
+\plush[3]{
   \begin{multicols}{2}
     \innoPic{0.7}{interior}\br
     Interior\par
@@ -49,7 +49,7 @@
   \end{multicols}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \begin{multicols}{2}
     \innoPic{0.8}{floor-plan}\br
     \textcolor{inno-red}{How to explain it?}\br
@@ -65,11 +65,11 @@
 
 \section[SDD]{SDD at IEEE 1016}
 
-\innoPrint{\innoCite{ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}\innoClick
-\innoPrint{\innoBanner[red]{Inactive-Reserved on March 2020}}
-\innoFlush[3]
+\print{\innoCite{ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}\click
+\print{\innoBanner[red]{Inactive-Reserved on March 2020}}
+\flush[3]
 
-\innoPlush[4]{
+\plush[4]{
   \subsection{Glossary}
   A \ul{request} is data package sent from a \ul{client} to a \ul{server}.\br
   A \ul{client} is a computer with a web browser.\br
@@ -80,7 +80,7 @@
 \innoThought[2]{If I don't understand you, \br it's your fault!}
 
 \subsection{Languages}
-\innoPlush[5]{
+\plush[5]{
   \begin{multicols}{2}
     \innoBanner[red]{NOT like this:}
     \innoPic{0.6}{bad-diagram}
@@ -91,56 +91,56 @@
   \end{multicols}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Stakeholders}
   \innoCite{pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
 }
 
-\innoPlush[2]{
+\plush[2]{
   \subsection{Concerns}
   Functional \br and \br Non-Functional Requirements
 }
 
-\innoPlush[4]{
+\plush[4]{
   \subsection{Viewpoints}
   \innoPic{0.6}{viewpoint}
 }
 
-\innoPlush[2]{
+\plush[2]{
   \subsection{Elements}
   \innoPic{0.5}{element}
 }
 
 \subsection{Rationale}
-\innoPrint{\innoBanner{\large Why MongoDB, why not MySQL?}}\innoClick
-\innoPrint{
+\print{\innoBanner{\large Why MongoDB, why not MySQL?}}\click
+\print{
   Multi-Criteria Decision Making (\nospell{MCDM})\\
   Architecture Trade-off Analysis Method (\nospell{ATAM})\\
   Decision Table\\
   Multi Factor Analysis\\
   Decision Matrix
 }
-\innoFlush[5]
+\flush[5]
 
 \innoThought[3]{Don't expect them to trust \ul{you}, \br make them trust your \ul{decisions}.}
 
 \section[RUP]{SAD at RUP}
 
-\innoPlush[4]{\innoCite{rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
+\plush[4]{\innoCite{rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
 
 \section[CMMI]{TS at CMMI}
 
-\innoPlush[4]{\innoCite{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
+\plush[4]{\innoCite{cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
 
 \section[SWEBOK]{SWEBOK}
 
-\innoPlush[4]{\innoCite{swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
+\plush[4]{\innoCite{swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
 
 \innoThought[3]{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}
 
 \section[README]{README}
 
-\innoPlush[4]{
+\plush[4]{
   \begin{multicols}{2}
     \innoPic{0.8}{markdown}
     \par\columnbreak
@@ -150,7 +150,7 @@
   \end{multicols}
 }
 
-\innoPlush[5]{
+\plush[5]{
   \innoPic{0.4}{mockups}\par
   UI mockups\par
   \ff{moqups.com}, \ff{balsamiq.com}, \ff{sketch.com}, \ff{dribbble.com}, etc.
@@ -160,7 +160,7 @@
 
 \innoBVC
 
-\innoPlush[2]{
+\plush[2]{
   \begin{multicols}{2}
     \innoBook{bass}
       {Len Bass et al.}
@@ -172,18 +172,18 @@
   \end{multicols}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Where to publish:}\par
   IEEE International Conference on Software Architecture (ICSA)
 }
 
-\innoPlush[4]{
+\plush[4]{
   \innoBanner{Call to Action:}\par
   Create and explain the design of a QR-code generator app in the
   README.md file in a new GitHub repository. Sample: www.4qrcode.com
 }
 
-\innoPlush[5]{
+\plush[5]{
   \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{synchronize} an SDD with the source code?

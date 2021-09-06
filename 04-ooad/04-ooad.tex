@@ -21,15 +21,14 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage{../slides}
+\usepackage{../inno}
 \newcommand*\thetitle{Object-Oriented}
 \newcommand*\thesubtitle{Analysis and Design}
-\usepackage{../inno}
 \begin{document}
 
 \innoTitlePage{4}
 
-\innoPlush{
+\plush{
   \innoBanner[red]{Before:}
   Structured Programming\br
   C, Pascal, FORTRAN, ALGOL\br
@@ -45,12 +44,12 @@
 
 \section[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Abstraction}
   \innoPic{0.8}{oop-vs-pp}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{\ul{Some} Principles of OOP}\par
   \begin{multicols}{2}
     Abstraction\br
@@ -68,44 +67,44 @@
   \end{multicols}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Abstraction \& Polymorphism}
   \innoPic{0.6}{java-abstraction}
 }
 
-\innoPlush[2]{\innoPic{0.4}{java-abstraction2}}
+\plush[2]{\innoPic{0.4}{java-abstraction2}}
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Encapsulation}
   \innoPic{0.7}{encapsulation}
 }
 
-\innoPlush[2]{\innoPic{0.7}{encapsulation2}}
+\plush[2]{\innoPic{0.7}{encapsulation2}}
 
-\innoPrint{
+\print{
   ``Encapsulation Covers Up Naked Data'' (2016)\par
   \innoQR[1in]{https://www.yegor256.com/2016/11/21/naked-data.html}
-}\innoClick
-\innoPrint{\innoPic{0.4}{naked1}}\innoClick
-\innoPrint{\innoPic{0.4}{naked2}}
-\innoFlush[5]
+}\click
+\print{\innoPic{0.4}{naked1}}\click
+\print{\innoPic{0.4}{naked2}}
+\flush[5]
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Modularity}
   \innoPic{0.7}{modularity}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection{Hierarchy}
   \innoPic{0.7}{hierarchy}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Inheritance vs. Composition}
   \innoPic{0.5}{inheritance-versus-composition}
 }
 
-\innoPlush[2]{
+\plush[2]{
   ``Prefer composition over inheritance?'' (2008) at StackOverflow\br
   \innoQR[1.5in]{https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance}\par
   ``Inheritance Is a Procedural Technique for Code Reuse'' (2016)\br
@@ -115,9 +114,9 @@
 
 \section[SOLID]{SOLID Principles by Uncle Bob}
 
-\innoPlush{\innoCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\plush{\innoCite{agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\innoPlush{
+\plush{
   \textbf{SOLID} principles:
   \begin{itemize}
     \item \nospell{\textbf{S}ingle} Responsibility Principle
@@ -128,14 +127,14 @@
   \end{itemize}
 }
 
-\innoPlush{
+\plush{
   \innoPic{0.2}{../images/people/robert-martin}\par
   ``Robert C. Martin is most recognized for developing many software design principles and for being a founder of the influential Agile Manifesto'' --- Wikipedia\par
   \ff{https://www.cleancoder.com}\par
   \ff{@unclebobmartin} on Twitter
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection[SRP]{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
@@ -145,16 +144,16 @@
   \innoQR[1in]{https://www.yegor256.com/2017/12/19/srp-is-hoax.html}
 }
 
-\innoPlush[2]{\innoPic{0.7}{srp}}
+\plush[2]{\innoPic{0.7}{srp}}
 
-\innoPlush{
+\plush{
   \subsection[OCP]{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
   \par
   \innoPic{0.5}{ocp}
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
@@ -162,19 +161,19 @@
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
-\innoPlush[3]{
+\plush[3]{
   \subsection[Duck]{Duck Typing}
   \innoPic{0.7}{duck}
 }
 
-\innoPlush{
+\plush{
   \subsection[ISP]{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
   \par
   \innoPic{0.5}{isp}
 }
 
-\innoPlush{
+\plush{
   \subsection[DIP]{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
   \par
@@ -183,19 +182,19 @@
 
 \section[Contracts]{Design by Contract by Bertrand Meyer}
 
-\innoPlush{\innoPic{0.5}{contracts}}
+\plush{\innoPic{0.5}{contracts}}
 
 \section[DRY]{Don't Repeat Yourself (DRY)}
 
-\innoPlush[3]{\innoPic{0.5}{dry}}
+\plush[3]{\innoPic{0.5}{dry}}
 
 \section[YAGNI]{You Ain't Gonna Need It (YAGNI)}
 
-\innoPlush[3]{\innoPic{0.7}{yagni}}
+\plush[3]{\innoPic{0.7}{yagni}}
 
 \section[IoC]{Inversion of Control}
 
-\innoPlush[4]{
+\plush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
   \innoQR[0.75in]{https://www.yegor256.com/2017/05/10/inversion-of-control.html}\par
   \innoPic{0.6}{ioc}
@@ -203,12 +202,12 @@
 
 \section[FP]{OOP vs. Functional Programming}
 
-\innoPlush[3]{
+\plush[3]{
   \innoPic{0.8}{oop-vs-fp}\br
   (c) Uncle Bob
 }
 
-\innoPlush{
+\plush{
   \begin{multicols}{2}
     \innoPic{0.8}{issues}
     \par\columnbreak
@@ -219,7 +218,7 @@
 
 \innoBVC
 
-\innoPlush{
+\plush{
   \begin{multicols}{2}
     \innoBook{clean-code}
       {Robert C. Martin}
@@ -231,7 +230,7 @@
   \end{multicols}
 }
 
-\innoPlush{
+\plush{
   \begin{multicols}{2}
     \innoBook{stroustrup}
       {\nospell{Bjarne Stroustrup}}
@@ -243,18 +242,18 @@
   \end{multicols}
 }
 
-\innoPlush{
+\plush{
   \innoBanner{Where to publish:}\par
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Call to Action:}
   Analyze one of the apps you've written recently and find out
   which design principles you've used and where.
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{fix} object-oriented programming?

@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{slidedeck}[00.00.0000 0.0.0 Slide Deck]
+\ProvidesPackage{slidedeck}[00.00.0000 0.0.0 Innopolis Slide Deck]
 
-\RequirePackage{../slides}
+\RequirePackage{/code/clicks/clicks}
 
 \RequirePackage{geometry}
   \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
@@ -116,7 +116,7 @@
       \end{textblock}%
       \ifstatic\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
-          \tikz{\node[inner sep=2pt,circle,draw=inno-grey]{\color{inno-grey}\scriptsize\ttfamily\thesdMinutes{}};}
+          \tikz{\node[inner sep=2pt,circle,draw=inno-grey]{\color{inno-grey}\scriptsize\ttfamily\theminutes{}};}
         \end{textblock}%
       \fi
     \fi
@@ -160,7 +160,7 @@
 \newcommand*\innoTOC{}
 \newcommand\innoToc{
   \renewcommand*\innoTOC{}
-  \innoPrint{
+  \print{
     \tikz{
       \node (z) {
         \begin{varwidth}{\textwidth}
@@ -176,18 +176,18 @@
   }
   \begin{@empty}
     \renewcommand\crumb[2]{
-      \ifx\innoTOC\empty\else\innoClick\fi
+      \ifx\innoTOC\empty\else\click\fi
       \gappto\innoTOC{\item ##2}
     }
     \crumbs
   \end{@empty}
-  \innoFlush
+  \flush
 }
 
 \NewCommandCopy\innooldsection\section
 \renewcommand\section[2][]{
   \innooldsection[#1]{#2}
-  \innoPlush{
+  \plush{
     \innoMiddle{%
       {\large\ttfamily Chapter \#\the\value{section}:}
       \innoBanner[blue]{\LARGE #2}
@@ -262,7 +262,7 @@ Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
 
 \newcommand\innoTitlePage[1]{
-  \innoPlush[2]{
+  \plush[2]{
     \innoTitle{\thetitle}{\thesubtitle}\par
     {\scshape Yegor Bugayenko}\par
     Lecture \##1 out of 16 \br
@@ -280,7 +280,7 @@ authors.\par}}
 }
 
 \newcommand\innoThought[2][1]{
-  \innoPlush[#1]{
+  \plush[#1]{
     \innoMiddle{
       \tikz{
         \node [inner sep=18pt] (z) {

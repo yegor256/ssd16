@@ -21,24 +21,23 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage{../slides}
+\usepackage{../inno}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
-\usepackage{../inno}
 \begin{document}
 
 \innoTitlePage{2}
 
-\innoPlush[2]{\innoCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\plush[2]{\innoCite{agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\innoPlush[2]{\innoCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+\plush[2]{\innoCite{code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
 with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \innoToc
 
 \section[UCs]{Use Cases (user stories)}
 
-\innoPlush[2]{
+\plush[2]{
   \begin{multicols}{2}
     \innoPic{0.4}{../images/people/ivar-jacobson}\br
     \nospell{Ivar Jacobson} \br
@@ -51,7 +50,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
   \end{multicols}
   }
 
-\innoPlush[10]{\innoCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
+\plush[10]{\innoCite{uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
 \begin{ffcode}
 Use Case: Make a QR code
@@ -69,30 +68,30 @@ Extensions:
 \end{ffcode}
 \newpage
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Use Case Diagram}
   \colorbox{inno-white}{\innoPic{0.5}{uc-diagram}}
 }
 
 \section[FPA]{FPA \& IFPUG \& COSMIC}
 
-\innoPrint{\innoBanner{Function Point Analysis (FPA)}}
-\innoPrint{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\innoClick
-\innoPrint{International Function Point Users Group (IFPUG) is in charge}\innoClick
-\innoPrint{Regulated by ISO 20296}\innoClick
-\innoPrint{COSMIC is the modern version: ISO/IEC 14143}\innoClick
-\innoPrint{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\innoClick
-\innoPrint{Function Points (FPs) are used for estimates}
-\innoFlush[4]
+\print{\innoBanner{Function Point Analysis (FPA)}}
+\print{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\click
+\print{International Function Point Users Group (IFPUG) is in charge}\click
+\print{Regulated by ISO 20296}\click
+\print{COSMIC is the modern version: ISO/IEC 14143}\click
+\print{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\click
+\print{Function Points (FPs) are used for estimates}
+\flush[4]
 
-\innoPlush[2]{
+\plush[2]{
   \innoQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
 \section[Matrix]{Traceability Matrix}
 
-\innoPlush[5]{
+\plush[5]{
   \innoBanner{Traceability Matrix}\par
   \colorbox{inno-white}{\innoPic{0.6}{matrix}}\par
   {\small Use Cases, Non-Functional Requirements, Test Cases,
@@ -102,20 +101,20 @@ Extensions:
 
 \section[V\&V]{Verification \& Validation}
 
-\innoPlush[3]{\innoCite{cmmi-vv}{Two different questions may be asked by a project team:
+\plush[3]{\innoCite{cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
 \section[NFRs]{Non-Functional Requirements (NFRs)}
 
-\innoPrint{\innoBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
-\innoPrint{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\innoClick
-\innoPrint{Capacity: Clicks Per Second (CPS)}\innoClick
-\innoPrint{Recovery: Recovery Time Objective (RTO)}\innoClick
-\innoPrint{Maintainability: Mean Time To Repair (MTTR)}\innoClick
-\innoPrint{Usability: focus group surveys?}
-\innoFlush[8]
+\print{\innoBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
+\print{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\click
+\print{Capacity: Clicks Per Second (CPS)}\click
+\print{Recovery: Recovery Time Objective (RTO)}\click
+\print{Maintainability: Mean Time To Repair (MTTR)}\click
+\print{Usability: focus group surveys?}
+\flush[8]
 
-\innoPlush[5]{
+\plush[5]{
   \begin{multicols}{2}
     \innoBanner[red]{Bad NFRs}\par
     ``The software must be fast.''\par
@@ -134,7 +133,7 @@ Extensions:
   \end{multicols}
 }
 
-\innoPlush[9]{
+\plush[9]{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
     \innoQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
@@ -156,9 +155,9 @@ Extensions:
 
 \section[COCOMO]{Estimates and COCOMO II}
 
-\innoPlush[2]{\innoCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
+\plush[2]{\innoCite{boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
-\innoPlush[5]{
+\plush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).\par
   Then, we find effort adjustment factor ($F$).\par
   Then, we find coefficients $a$, $b$, and $c$ using the table.\par
@@ -168,12 +167,12 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\innoPlush[5]{
+\plush[5]{
   \innoBanner{Cone of Uncertainty}
   \innoPic{0.6}{cone}
 }
 
-\innoPlush[5]{
+\plush[5]{
   \innoQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
   ``How much for this software?'' they ask.\par
   ``The development will take forever and will consume all your money,'' we answer.
@@ -181,7 +180,7 @@ Extensions:
 
 \innoBVC
 
-\innoPlush{
+\plush{
   \begin{multicols}{2}
     \innoBook{wiegers}
       {\nospell{Karl Wiegers} et al.}
@@ -193,7 +192,7 @@ Extensions:
   \end{multicols}
 }
 
-\innoPlush{
+\plush{
   \begin{multicols}{2}
     \innoBook{cockburn}
       {\nospell{Alistair Cockburn}}
@@ -205,19 +204,19 @@ Extensions:
   \end{multicols}
 }
 
-\innoPlush[2]{
+\plush[2]{
   \innoBanner{Where to publish:}\par
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\innoPlush[3]{
+\plush[3]{
   \innoBanner{Call to Action:}\par
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
-\innoPlush[4]{
+\plush[4]{
   \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?
