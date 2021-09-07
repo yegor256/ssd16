@@ -32,13 +32,13 @@
 
 \RequirePackage{seqsplit}
 \RequirePackage{xcolor}
-  \definecolor{inno-white}{HTML}{EEEEEE}
-  \definecolor{inno-red}{HTML}{ED474A}
-  \definecolor{inno-orange}{HTML}{F06543}
-  \definecolor{inno-black}{HTML}{232527}
-  \definecolor{inno-grey}{HTML}{C0BCB5}
-  \definecolor{inno-green}{HTML}{5C946E}
-  \definecolor{inno-blue}{HTML}{5299D3}
+  \definecolor{white}{HTML}{EEEEEE}
+  \definecolor{red}{HTML}{ED474A}
+  \definecolor{orange}{HTML}{F06543}
+  \definecolor{black}{HTML}{232527}
+  \definecolor{grey}{HTML}{C0BCB5}
+  \definecolor{green}{HTML}{5C946E}
+  \definecolor{blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
 
 \newif\ifwhite
@@ -86,14 +86,14 @@
   \fancyhf{}
   \renewcommand\crumb[2]{
     \ifnum\value{crumbi}=\value{section}
-      {\setulcolor{inno-blue}\color{inno-blue}\ul{#1}}
+      {\setulcolor{blue}\color{blue}\ul{#1}}
     \else
       #1
     \fi
   }
   \renewcommand\subcrumb[2]{
     \ifnum\value{subcrumbi}=\value{subsection}
-      {\setulcolor{inno-blue}\color{inno-blue}\ul{#1}}
+      {\setulcolor{blue}\color{blue}\ul{#1}}
     \else
       #1
     \fi
@@ -112,11 +112,11 @@
   \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
-        {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{inno-grey}/\pageref{LastPage}}}}
+        {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{grey}/\pageref{LastPage}}}}
       \end{textblock}%
       \ifstatic\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
-          \tikz{\node[inner sep=2pt,circle,draw=inno-grey]{\color{inno-grey}\scriptsize\ttfamily\theminutes{}};}
+          \tikz{\node[inner sep=2pt,circle,draw=grey]{\color{grey}\scriptsize\ttfamily\theminutes{}};}
         \end{textblock}%
       \fi
     \fi
@@ -126,7 +126,7 @@
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
-        {\color{inno-grey}\scriptsize\ttfamily #1}
+        {\color{grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
@@ -136,7 +136,7 @@
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
-        {\color{inno-grey}\scriptsize\ttfamily #1}
+        {\color{grey}\scriptsize\ttfamily #1}
       \end{textblock}%
     \fi
   }
@@ -148,7 +148,7 @@
 
 \newcommand\innoBanner[2][green]{
   \par
-  {\setlength{\fboxsep}{6pt}\colorbox{inno-#1}{\color{inno-white}\large #2}}
+  {\setlength{\fboxsep}{6pt}\colorbox{#1}{\color{white}\large #2}}
   \par
 }
 
@@ -171,7 +171,7 @@
           \fi
         \end{varwidth}
       };
-      \path [draw=inno-blue,line width=4pt] (z.north west) -- (z.south west);
+      \path [draw=blue,line width=4pt] (z.north west) -- (z.south west);
     }
   }
   \begin{@empty}
@@ -205,7 +205,7 @@
   {%
     \setlength{\fboxsep}{0pt}%
     \setlength{\fboxrule}{1pt}%
-    \fcolorbox{inno-grey}{inno-white}{%
+    \fcolorbox{grey}{white}{%
       \includegraphics[width=#1\columnwidth]{#2}%
     }%
   }
@@ -213,7 +213,7 @@
 
 \newcommand\innoQR[2][2in]{
   \tikz{%
-    \node[draw=inno-white]{%
+    \node[draw=white]{%
       \href{#2}{%
         \qrcode[height=#1]{#2}%
       }%
@@ -257,7 +257,7 @@
 
 \newcommand\nospell[1]{#1}
 
-\newcommand\innoDisclaimer{{\color{inno-grey}\ttfamily\footnotesize All visual and text materials presented in
+\newcommand\innoDisclaimer{{\color{grey}\ttfamily\footnotesize All visual and text materials presented in
 this slidedeck are either originally made by the author or taken from public
 Internet sources, such as website. Copyright belongs to their respected
 authors.\par}}
@@ -290,7 +290,7 @@ authors.\par}}
             #2
           \end{varwidth}
         };
-        \path [draw=inno-green,line width=8pt] (z.north west) -- (z.south west);
+        \path [draw=green,line width=8pt] (z.north west) -- (z.south west);
       }
     }
   }
@@ -313,8 +313,8 @@ authors.\par}}
 
 \AtBeginDocument{%
   \ifwhite\else
-    \pagecolor{inno-black}
-    \color{inno-white}
+    \pagecolor{black}
+    \color{white}
   \fi
   \raggedbottom%
   \raggedright%
