@@ -51,6 +51,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
+\RequirePackage{xstring}
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
 \RequirePackage[fontsize=24pt]{fontsize} % to make fonts larger
@@ -62,6 +63,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
+  \graphicspath{{../images/}}
 \RequirePackage{qrcode}
 \RequirePackage{soul}
 \RequirePackage{tikz}
@@ -211,19 +213,9 @@
   }
 }
 
-\newcommand\innoQR[2][2in]{
-  \tikz{%
-    \node[draw=white]{%
-      \href{#2}{%
-        \qrcode[height=#1]{#2}%
-      }%
-    }%
-  }
-}
-
 \newcommand\innoCite[3]{
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-    \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{../images/books/#1}}
+    \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{#1}}
     &
     ``#2''
     \def\param{#3}%
@@ -236,7 +228,15 @@
   \end{tabularx}
 }
 
-\newcommand\innoQuote[3]{\innoCite{../people/#1}{#2}{#3}}
+\newcommand\innoQR[2][2in]{
+  \tikz{%
+    \node[draw=white]{%
+      \href{#2}{%
+        \qrcode[height=#1]{#2}%
+      }%
+    }%
+  }
+}
 
 \newcommand\innoSnippet[2][\small]{
   \begin{samepage}
@@ -276,7 +276,7 @@ authors.\par}}
 % 2: author
 % 3: title
 \newcommand\innoBook[3]{
-  \innoPic{0.4}{../images/books/#1} \br ``#3'' by {\scshape #2}
+  \innoPic{0.4}{books/#1} \br ``#3'' by {\scshape #2}
 
 }
 
