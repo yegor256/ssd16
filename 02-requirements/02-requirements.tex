@@ -22,20 +22,22 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
 \begin{document}
 
 \innoTitlePage{2}
 
-\plush[2]{\innoCite{books/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\plush[2]{\innoQuote{books/agile-martin}{If you are lucky, you start a project with a clear picture of what you want the system to be. The design of the system is a vital image in your mind. If you are luckier still, the clarity of that design makes it to the first release.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
-\plush[2]{\innoCite{books/code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
+\plush[2]{\innoQuote{books/code-ahead}{It's the responsibility of a programmer to make sure the tasks he is working
 with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \innoToc
 
-\section[UCs]{Use Cases (user stories)}
+\innoSection[UCs]{Use Cases (user stories)}
 
 \plush[2]{
   \begin{multicols}{2}
@@ -50,7 +52,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
   \end{multicols}
   }
 
-\plush[10]{\innoCite{books/uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
+\plush[10]{\innoQuote{books/uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
 \begin{ffcode}
 Use Case: Make a QR code
@@ -73,7 +75,7 @@ Extensions:
   \colorbox{white}{\innoPic{0.5}{uc-diagram}}
 }
 
-\section[FPA]{FPA \& IFPUG \& COSMIC}
+\innoSection[FPA]{FPA \& IFPUG \& COSMIC}
 
 \print{\innoBanner{Function Point Analysis (FPA)}}
 \print{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\click
@@ -89,7 +91,7 @@ Extensions:
   Also, read about Use Case Points (UCP)
 }
 
-\section[Matrix]{Traceability Matrix}
+\innoSection[Matrix]{Traceability Matrix}
 
 \plush[5]{
   \innoBanner{Traceability Matrix}\par
@@ -99,12 +101,12 @@ Extensions:
   Nodes, etc.}
 }
 
-\section[V\&V]{Verification \& Validation}
+\innoSection[V\&V]{Verification \& Validation}
 
-\plush[3]{\innoCite{books/cmmi-vv}{Two different questions may be asked by a project team:
+\plush[3]{\innoQuote{books/cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
-\section[NFRs]{Non-Functional Requirements (NFRs)}
+\innoSection[NFRs]{Non-Functional Requirements (NFRs)}
 
 \print{\innoBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
 \print{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\click
@@ -153,9 +155,9 @@ Extensions:
   \end{multicols}
 }
 
-\section[COCOMO]{Estimates and COCOMO II}
+\innoSection[COCOMO]{Estimates and COCOMO II}
 
-\plush[2]{\innoCite{books/boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
+\plush[2]{\innoQuote{books/boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
 \plush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).\par

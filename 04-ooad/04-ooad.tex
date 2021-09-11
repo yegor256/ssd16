@@ -22,6 +22,8 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{Object-Oriented}
 \newcommand*\thesubtitle{Analysis and Design}
 \begin{document}
@@ -42,10 +44,10 @@
 
 \innoToc
 
-\section[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
+\innoSection[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
 
 \plush[3]{
-  \subsection{Abstraction}
+  \innoSubsection{Abstraction}
   \innoPic{0.8}{oop-vs-pp}
 }
 
@@ -75,7 +77,7 @@
 \plush[2]{\innoPic{0.4}{java-abstraction2}}
 
 \plush[3]{
-  \subsection{Encapsulation}
+  \innoSubsection{Encapsulation}
   \innoPic{0.7}{encapsulation}
 }
 
@@ -90,12 +92,12 @@
 \flush[5]
 
 \plush[3]{
-  \subsection{Modularity}
+  \innoSubsection{Modularity}
   \innoPic{0.7}{modularity}
 }
 
 \plush[3]{
-  \subsection{Hierarchy}
+  \innoSubsection{Hierarchy}
   \innoPic{0.7}{hierarchy}
 }
 
@@ -112,9 +114,9 @@
 }
 
 
-\section[SOLID]{SOLID Principles by Uncle Bob}
+\innoSection[SOLID]{SOLID Principles by Uncle Bob}
 
-\plush{\innoCite{books/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
+\plush{\innoQuote{books/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
 \plush{
   \textbf{SOLID} principles:
@@ -135,7 +137,7 @@
 }
 
 \plush[3]{
-  \subsection[SRP]{Single Responsibility Principle (SRP)}
+  \innoSubsection[SRP]{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
   ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
@@ -147,14 +149,14 @@
 \plush[2]{\innoPic{0.7}{srp}}
 
 \plush{
-  \subsection[OCP]{Open-Close Principle (OCP)}
+  \innoSubsection[OCP]{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
   \par
   \innoPic{0.5}{ocp}
 }
 
 \plush[3]{
-  \subsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
+  \innoSubsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
   \innoPic{0.3}{lsp}\par
@@ -162,37 +164,37 @@
 }
 
 \plush[3]{
-  \subsection[Duck]{Duck Typing}
+  \innoSubsection[Duck]{Duck Typing}
   \innoPic{0.7}{duck}
 }
 
 \plush{
-  \subsection[ISP]{Interface Segregation Principle (ISP)}\par
+  \innoSubsection[ISP]{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
   \par
   \innoPic{0.5}{isp}
 }
 
 \plush{
-  \subsection[DIP]{Dependency Inversion Principle (DIP)}\par
+  \innoSubsection[DIP]{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
   \par
   \innoPic{0.7}{dip}
 }
 
-\section[Contracts]{Design by Contract by Bertrand Meyer}
+\innoSection[Contracts]{Design by Contract by Bertrand Meyer}
 
 \plush{\innoPic{0.5}{contracts}}
 
-\section[DRY]{Don't Repeat Yourself (DRY)}
+\innoSection[DRY]{Don't Repeat Yourself (DRY)}
 
 \plush[3]{\innoPic{0.5}{dry}}
 
-\section[YAGNI]{You Ain't Gonna Need It (YAGNI)}
+\innoSection[YAGNI]{You Ain't Gonna Need It (YAGNI)}
 
 \plush[3]{\innoPic{0.7}{yagni}}
 
-\section[IoC]{Inversion of Control}
+\innoSection[IoC]{Inversion of Control}
 
 \plush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
@@ -200,7 +202,7 @@
   \innoPic{0.6}{ioc}
 }
 
-\section[FP]{OOP vs. Functional Programming}
+\innoSection[FP]{OOP vs. Functional Programming}
 
 \plush[3]{
   \innoPic{0.8}{oop-vs-fp}\br

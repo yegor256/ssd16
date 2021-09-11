@@ -22,79 +22,81 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{UML}
 \newcommand*\thesubtitle{and XMI, OCL, MOF, etc.}
 \begin{document}
 
 \innoTitlePage{7}
 
-\plush{\innoCite{books/iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
+\plush{\innoQuote{books/iso-19501}{The primary audience for this detailed description consists of the OMG, other standards organizations, tool builders, metamodelers, methodologists, and expert modelers. The authors assume familiarity with metamodeling and advanced object modeling. Readers looking for an introduction to the UML or object modeling should consider another source.}{\emph{ISO/IEC 19501:2005, Information technology --- Open Distributed Processing --- Unified Modeling Language (UML) Version 1.4.2}}}
 
 \innoToc
 
-\section[Class]{Class Diagram}
+\innoSection[Class]{Class Diagram}
 
 \plush[4]{
-  \subsection{Classes}
+  \innoSubsection{Classes}
   \innoPic{0.6}{classes}
 }
 
 \plush[3]{
-  \subsection{Generalization}
+  \innoSubsection{Generalization}
   \innoPic{0.8}{generalization}
 }
 
 \plush[3]{
-  \subsection{Composition}
+  \innoSubsection{Composition}
   \innoPic{0.7}{composition}
 }
 
 \plush[3]{
-  \subsection{Aggregation}
+  \innoSubsection{Aggregation}
   \innoPic{0.7}{aggregation}
 }
 
 \plush[3]{
-  \subsection{Association}
+  \innoSubsection{Association}
   \innoPic{0.8}{association}
 }
 
 \plush[3]{
-  \subsection{Dependency}
+  \innoSubsection{Dependency}
   \innoPic{0.7}{dependency}
 }
 
-\section[Other]{Some Other Diagrams}
+\innoSection[Other]{Some Other Diagrams}
 
 \plush[6]{
-  \subsection[UC]{Use Case Diagram}
+  \innoSubsection[UC]{Use Case Diagram}
   \innoPic{0.7}{usecases}
 }
 
 \plush[6]{
-  \subsection[Component]{Component Diagram}
+  \innoSubsection[Component]{Component Diagram}
   \innoPic{0.6}{component}
 }
 
 \plush[6]{
-  \subsection[Deployment]{Deployment Diagram}
+  \innoSubsection[Deployment]{Deployment Diagram}
   \innoPic{0.7}{deployment}
 }
 
 \plush[6]{
-  \subsection[Activity]{Activity Diagram}
+  \innoSubsection[Activity]{Activity Diagram}
   \innoPic{0.7}{activity}
 }
 
 \plush[6]{
-  \subsection[Sequence]{Sequence Diagram}
+  \innoSubsection[Sequence]{Sequence Diagram}
   \innoPic{0.7}{sequence}
 }
 
-\section[MDA]{MDA: MOF, XMI, OCL, QVT, fUML, ...}
+\innoSection[MDA]{MDA: MOF, XMI, OCL, QVT, fUML, ...}
 
 \plush[7]{
-  \subsection[MDA]{Model Driven Architecture (MDA)}
+  \innoSubsection[MDA]{Model Driven Architecture (MDA)}
   \innoPic{0.5}{mda}\par
   \footnotesize Computation Independent Model (CIM),
   Platform Independent Model (PIM),
@@ -102,7 +104,7 @@
 }
 
 \plush[4]{
-  \subsection[MOF]{Meta-Object Facility (MOF)}
+  \innoSubsection[MOF]{Meta-Object Facility (MOF)}
   \innoPic{0.7}{mof}\par
   \small ``MOF is a Domain Specific Language (DSL) used to define metamodels,
   just as EBNF is a DSL for defining grammars''
@@ -110,23 +112,23 @@
 }
 
 \plush[5]{
-  \subsection[XMI]{XML Metadata Interchange (XMI)}
+  \innoSubsection[XMI]{XML Metadata Interchange (XMI)}
   \innoPic{0.5}{xmi1}
   \innoPic{0.7}{xmi2}
 }
 
 \plush[4]{
-  \subsection[OCL]{Object Constraint Language (OCL)}
+  \innoSubsection[OCL]{Object Constraint Language (OCL)}
   \innoPic{0.9}{ocl}
 }
 
 \plush[4]{
-  \subsection[QVT]{Query/View/Transformation (QVT)}
+  \innoSubsection[QVT]{Query/View/Transformation (QVT)}
   \innoPic{0.8}{qvt}
 }
 
 \plush[4]{
-  \subsection[fUML]{Executable UML, fUML, Alf}
+  \innoSubsection[fUML]{Executable UML, fUML, Alf}
   \innoPic{0.7}{alf}
 }
 

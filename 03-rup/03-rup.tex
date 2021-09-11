@@ -22,6 +22,8 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{RUP}
 \newcommand*\thesubtitle{vs. Agile/XP}
 \begin{document}
@@ -30,7 +32,7 @@
 
 \innoToc
 
-\section[Methodologies]{Software Development Methodologies}
+\innoSection[Methodologies]{Software Development Methodologies}
 
 \print{\innoBanner{Methodologies:}}\click
 \print{Waterfall / SDLC}\click
@@ -44,7 +46,7 @@
 
 \plush[2]{\innoPic{0.8}{sdlc}}
 
-\section[RUP \& Co.]{Rational Unified Process (RUP) \& Co.}
+\innoSection[RUP \& Co.]{Rational Unified Process (RUP) \& Co.}
 
 \plush[5]{
   Iterative \& Incremental\par
@@ -87,39 +89,39 @@
   \end{multicols}
 }
 
-\section[Agile \& Co.]{Agile, Kanban, Scrum, XP}
+\innoSection[Agile \& Co.]{Agile, Kanban, Scrum, XP}
 
-\subsection{Agile}
-\plush[2]{\innoCite{books/agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{\emph{Agile Software Development. Principles, Patterns, and Practices} Robert Martin}}
+\innoSubsection{Agile}
+\plush[2]{\innoQuote{books/agile-martin}{In an agile team, the big picture evolves along with the software. With each iteration, the team improves the design of the system so that it is as good as it can be for the system as it is now. The team does not spend very much time looking ahead to future requirements and needs.}{\emph{Agile Software Development. Principles, Patterns, and Practices} Robert Martin}}
 
 \plush[2]{\innoPic{0.7}{agile}}
 
 \plush[2]{
-  \subsection{Kanban}
+  \innoSubsection{Kanban}
   \innoPic{0.7}{kanban}
 }
 
 \plush[2]{
-  \subsection[Scrum]{Scrum Framework}
+  \innoSubsection[Scrum]{Scrum Framework}
   \innoPic{0.8}{scrum}
 }
 
-\plush{\innoCite{books/xp}{We will continually refine the design of the system, starting from a very simple beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extreme Programming Explained: Embrace Change}, Kent Beck}}
+\plush{\innoQuote{books/xp}{We will continually refine the design of the system, starting from a very simple beginning. We will remove any flexibility that doesn't prove useful.}{\emph{Extreme Programming Explained: Embrace Change}, Kent Beck}}
 
 \plush[2]{
-  \subsection[XP]{eXtreme Programming (XP)}
+  \innoSubsection[XP]{eXtreme Programming (XP)}
   \innoPic{0.5}{xp}
 }
 
 \plush[2]{
-  \subsection[COST]{Cost of Bugs}
+  \innoSubsection[COST]{Cost of Bugs}
   \innoPic{0.7}{cost-of-bug}
 }
 
-\section[Qualities]{Qualities of Good Design}
+\innoSection[Qualities]{Qualities of Good Design}
 
 \plush[4]{
-  \subsection[Complexity]{It must be simple}
+  \innoSubsection[Complexity]{It must be simple}
   \small
   ``We should make the smallest possible \ul{investment} in the design before getting payback for it'' -- Kent Beck\par
   ``A design contains \ul{needless complexity} when it contains elements that aren't currently useful. This frequently happens when developers anticipate changes to the requirements, and put facilities in the software to deal with those potential changes.'' -- Robert Martin\par
@@ -139,12 +141,12 @@
 }
 
 \plush[3]{
-  \subsection[Duplication]{It must not repeat itself}
+  \innoSubsection[Duplication]{It must not repeat itself}
   ``When there is \ul{redundant code} in the system, the job of changing the system can become arduous. Bugs found in such a repeating unit have to be fixed in every repetition. However, since each repetition is slightly different from every other, the fix is not always the same.'' -- Robert Martin
 }
 
 \plush[3]{
-  \subsection[Immobility]{It must be modular}
+  \innoSubsection[Immobility]{It must be modular}
   ``A design is \ul{immobile} when it contains parts that could be useful in other systems, but the effort and risk involved with separating those parts from the original system are too great.'' -- Robert Martin\par
   ``A design is rigid if a single change causes a cascade of subsequent changes in dependent modules. The more modules that must be changed, the more \ul{rigid} the design.'' -- Robert Martin
 }

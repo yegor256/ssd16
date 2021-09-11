@@ -25,9 +25,16 @@
 
 DIRS := $(wildcard [0-9][0-9]-*/.)
 
-all:
+all: latexmk lacheck
+
+latexmk:
 	for d in $(DIRS); do
 		cd $${d} && latexmk -pdf && cd ..
+	done
+
+lacheck:
+	for d in $(DIRS); do
+		cd $${d} && lacheck *.tex && cd ..
 	done
 
 copy:

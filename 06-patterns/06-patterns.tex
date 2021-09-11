@@ -22,19 +22,21 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{Patterns}
 \newcommand*\thesubtitle{Anti-Patterns and Refactoring}
 \begin{document}
 
-\innoTitlePage{6}
+\plush{\innoTitlePage{6}}
 
-\plush[2]{\innoCite{books/gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
+\plush[2]{\innoQuote{books/gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
 
-\plush[2]{\innoCite{people/paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
+\plush[2]{\innoQuote{people/paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
 
 \innoToc
 
-\section[Patterns]{Some Patterns}
+\innoSection[Patterns]{Some Patterns}
 
 \plush{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
@@ -44,25 +46,25 @@
 
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
-  \subsection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
+  \innoSubsection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
   \innoSnippet[\footnotesize]{adapter.java}
 }
 
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
-  \subsection[RAII]{Resource Acquisition Is Initialization (RAII)}
+  \innoSubsection[RAII]{Resource Acquisition Is Initialization (RAII)}
   \innoSnippet[\footnotesize]{raii.cpp}
 }
 
-\section[Anti]{Some Anti-Patterns}
+\innoSection[Anti]{Some Anti-Patterns}
 
 \plush[2]{
-  \subsection{GOTO}
+  \innoSubsection{GOTO}
   \innoSnippet[\footnotesize]{goto.c}
 }
 
 \plush[2]{
-  \subsection[Numbers]{Magic Numbers}
+  \innoSubsection[Numbers]{Magic Numbers}
   \innoSnippet{magic.rb}
 }
 
@@ -72,21 +74,21 @@
 }
 
 \plush[2]{
-  \subsection[God]{God Class}
+  \innoSubsection[God]{God Class}
   \innoPic{0.6}{god-class}
 }
 
 \plush[2]{
-  \subsection[Spaghetti]{Spaghetti Code}
+  \innoSubsection[Spaghetti]{Spaghetti Code}
   \innoPic{0.4}{spaghetti}
 }
 
 \plush[2]{
-  \subsection[Lasagna]{Lasagna and Ravioli}
+  \innoSubsection[Lasagna]{Lasagna and Ravioli}
   \innoPic{0.3}{ravioli}
 }
 
-\section[Anti-OOP]{Anti-OOP Patterns}
+\innoSection[Anti-OOP]{Anti-OOP Patterns}
 
 \plush[2]{
   Anti-Patterns in OOP (2014)\par
@@ -107,32 +109,32 @@
 
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
-  \subsection[DTO]{Data Transfer Object (DTO)}
+  \innoSubsection[DTO]{Data Transfer Object (DTO)}
   \innoBanner{Getters and Setters}
   \innoSnippet{dto.java}
 }
 
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \subsection[Utility]{Utility Class}
+  \innoSubsection[Utility]{Utility Class}
   \innoSnippet[\footnotesize]{utility.java}
 }
 
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
-  \subsection{Singleton}
+  \innoSubsection{Singleton}
   \innoSnippet{singleton.java}
 }
 
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
-  \subsection[ORM]{Object-Relational Mapping (ORM)}
+  \innoSubsection[ORM]{Object-Relational Mapping (ORM)}
   \innoSnippet{orm.java}
 }
 
-\section[Refactorings]{Some Refactorings}
+\innoSection[Refactorings]{Some Refactorings}
 
-\plush[2]{\innoCite{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
+\plush[2]{\innoQuote{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 
 \plush[3]{
   \innoPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}

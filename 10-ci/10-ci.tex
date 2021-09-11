@@ -1,0 +1,125 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass{article}
+\usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
+\newcommand*\thetitle{Continuous Delivery}
+\newcommand*\thesubtitle{and its design}
+\begin{document}
+
+\innoTitlePage{10}
+
+\innoToc
+
+\innoSection[CI]{Continuous Integration}
+
+\plick{\innoBanner{How Continuous Integration (CI) works:}}
+\plick{\innoPic{0.8}{ci}}
+\plush{\innoBanner{It doesn't work :(}}
+
+\plush{\innoQuote{cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
+
+\plick{\innoBanner{Pre-Flight Builds}}
+\plick{\innoPic{0.8}{preflight}}
+\plush{Master branch is ``read-only''!}
+
+\innoSection[CD]{Continuous Delivery}
+
+\plush{
+  \innoPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
+  \innoPic{0.8}{cd}
+  Joker Conf 2018, \emph{Quality vs Quantity}, in Russian
+}
+
+\plush{\innoQuote{release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
+
+\plick{\innoSubsetion[Wall]{Quality Wall}}
+\plick{Linters}
+\plick{Static analyzers}
+\plick{Unit tests}
+\plick{Integration tests}
+\plick{Test coverage control}
+\plick{Mutation coverage control}
+\plush{Manual code review(s)}
+
+\plick{\innoSubsetion[Targets]{Target Platforms}}
+\plick{Static web site: GitHub Pages}
+\plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
+\plick{Small web app: Heroku or Dokku}
+\plick{Bigger web app: AWS Elastic Beanstalk}
+\plush{Mobile app: TestFlight}
+
+\plick{\innoSubsection[Versions]{Versioning}}
+\plick{snapshot, alpha, beta, final}
+\plick{semver.org: 1.4.17}
+\plush{0ver.org: 0.43.3}
+
+\plick{\innoSubsection[Tools]{CI/CD Tools}}
+\plick{Jenkins}
+\plick{1000+ Hosted Services like Travis}
+\plick{GitHub Actions}
+\plush{Rultor.com}
+
+\plush{
+  \innoSubsetion[Blue/Green]{Blue/Green Deployment}
+  \innoPic{0.8}{bluegreen}\par
+  May not work with databases :(
+}
+
+\innoSection[GitHub]{Open Source in GitHub}
+
+\plush{
+  \begin{multicols}{2}
+    \innoPic{0.9}{github1}
+    \par\columnbreak
+    \innoPic{0.9}{github2}
+  \end{multicols}
+\plush{}
+
+\innoBVC
+
+\plush[2]{
+  \begin{multicols}{2}
+    \innoBook{cd}
+      {\nospell{Jez Humble} et al.}
+      {Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}
+    \par\columnbreak
+    \innoBook{mda-explained}
+      {\nospell{Michael T. Nygard}}
+      {Release It!: Design and Deploy Production-Ready Software}
+  \end{multicols}
+}
+
+\plush[5]{
+  \innoBanner{Where to go:}
+  Collect 1000 stars on GitHub for your product.
+}
+
+\plush[4]{
+  \innoBanner{Call to Action:}
+  Setup continuous delivery pipeline in your application so that
+  it is released to production automatically on each commit to \ff{master} branch.
+}
+
+\end{document}

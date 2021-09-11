@@ -2,7 +2,7 @@
 --ignore=href,ffcode
 --ignore=ff,nospell,citet,citep
 --ignore=innoPic:pp
---ignore=innoCite:p
+--ignore=innoQuote:p
 --ignore=innoQuote:p
 --ignore=innoSnippet:p
 --ignore=innoBook:p

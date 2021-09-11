@@ -21,16 +21,18 @@
 % SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{slidedeck}[00.00.0000 0.0.0 Innopolis Slide Deck]
+\ProvidesPackage{inno}[00.00.0000 0.0.0 Innopolis Style]
 
-\RequirePackage{/code/clicks/clicks}
+\newif\ifwhite
+\DeclareOption{white}{\whitetrue}
+\ProcessOptions\relax
 
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{geometry}
   \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \RequirePackage[absolute]{textpos}
   \TPGrid{16}{16}
-
-\RequirePackage{seqsplit}
 \RequirePackage{xcolor}
   \definecolor{white}{HTML}{EEEEEE}
   \definecolor{red}{HTML}{ED474A}
@@ -40,18 +42,10 @@
   \definecolor{green}{HTML}{5C946E}
   \definecolor{blue}{HTML}{5299D3}
 \RequirePackage{pagecolor}
-
-\newif\ifwhite
-\DeclareOption{white}{\whitetrue}
-\ProcessOptions\relax
-
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
-\RequirePackage{xstring}
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
 \RequirePackage[fontsize=24pt]{fontsize} % to make fonts larger
@@ -62,9 +56,6 @@
 \RequirePackage{changepage}
 \RequirePackage{tabularx}
 \RequirePackage{amsmath}
-\RequirePackage{graphicx}
-  \graphicspath{{../images/}}
-\RequirePackage{qrcode}
 \RequirePackage{soul}
 \RequirePackage{tikz}
   \RequirePackage{tikzpagenodes}
@@ -78,8 +69,6 @@
   \usetikzlibrary{shapes.arrows}
 \RequirePackage{lastpage}
 
-\renewcommand\section[1]{\stepcounter{section}}
-\renewcommand\subsection[1]{\stepcounter{subsection}}
 \RequirePackage{/code/crumbs/crumbs}
 
 \RequirePackage{fancyhdr}
@@ -116,7 +105,7 @@
       \begin{textblock}{4}[1,0](15,1)%
         {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{grey}/\pageref{LastPage}}}}
       \end{textblock}%
-      \ifstatic\else%
+      \ifnum\value{minutes}=0\else%
         \begin{textblock}{1}[1,0](15.8,0.2)%
           \tikz{\node[inner sep=2pt,circle,draw=grey]{\color{grey}\scriptsize\ttfamily\theminutes{}};}
         \end{textblock}%
@@ -124,7 +113,7 @@
     \fi
   }
 
-\newcommand\innoLeft[1]{
+\newcommand\innoLeft[1]{%
   \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
@@ -134,7 +123,7 @@
   }
 }
 
-\newcommand\innoRight[1]{
+\newcommand\innoRight[1]{%
   \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
@@ -142,173 +131,6 @@
       \end{textblock}%
     \fi
   }
-}
-
-\newcommand\br{\newline}
-
-\newcommand\innoMiddle[1]{\vspace*{\fill}#1\vspace*{\fill}}
-
-\newcommand\innoBanner[2][green]{
-  \par
-  {\setlength{\fboxsep}{6pt}\colorbox{#1}{\color{white}\large #2}}
-  \par
-}
-
-\newcommand\innoTitle[2]{
-  {\innoBanner{\Huge #1}}
-  {\innoBanner{\large #2}}
-}
-
-\newcommand*\innoTOC{}
-\newcommand\innoToc{
-  \renewcommand*\innoTOC{}
-  \print{
-    \tikz{
-      \node (z) {
-        \begin{varwidth}{\textwidth}
-          \ifx\innoTOC\empty\else
-            \begin{itemize}[label={}]
-              \innoTOC
-            \end{itemize}
-          \fi
-        \end{varwidth}
-      };
-      \path [draw=blue,line width=4pt] (z.north west) -- (z.south west);
-    }
-  }
-  \begin{@empty}
-    \renewcommand\crumb[2]{
-      \ifx\innoTOC\empty\else\click\fi
-      \gappto\innoTOC{\item ##2}
-    }
-    \crumbs
-  \end{@empty}
-  \flush
-}
-
-\NewCommandCopy\innooldsection\section
-\renewcommand\section[2][]{
-  \innooldsection[#1]{#2}
-  \plush{
-    \innoMiddle{%
-      {\large\ttfamily Chapter \#\the\value{section}:}
-      \innoBanner[blue]{\LARGE #2}
-    }
-  }
-}
-
-\NewCommandCopy\theoldsubsection\subsection
-\renewcommand\subsection[2][]{
-  \theoldsubsection[#1]{#2}
-  \innoBanner[orange]{\Large #2}
-}
-
-\newcommand\innoPic[2]{
-  {%
-    \setlength{\fboxsep}{0pt}%
-    \setlength{\fboxrule}{1pt}%
-    \fcolorbox{grey}{white}{%
-      \includegraphics[width=#1\columnwidth]{#2}%
-    }%
-  }
-}
-
-\newcommand\innoCite[3]{
-  \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
-    \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{#1}}
-    &
-    ``#2''
-    \def\param{#3}%
-    \ifx\param\empty\else
-      \newline\newline
-      \small
-      --- #3
-    \fi
-    \\
-  \end{tabularx}
-}
-
-\newcommand\innoQR[2][2in]{
-  \tikz{%
-    \node[draw=white]{%
-      \href{#2}{%
-        \qrcode[height=#1]{#2}%
-      }%
-    }%
-  }
-}
-
-\newcommand\innoSnippet[2][\small]{
-  \begin{samepage}
-    #1\verbatiminput{#2}
-  \end{samepage}
-}
-
-\newcommand\innoPin[1]{%
-  \begin{tikzpicture}[remember picture,overlay]%
-    \node[anchor=north east] at (current page text area.north east) {%
-      \begin{minipage}{0.5\textwidth}%
-        \vspace{1in}%
-        \raggedleft{#1}%
-      \end{minipage}%
-    };%
-  \end{tikzpicture}%
-}
-
-\newcommand\nospell[1]{#1}
-
-\newcommand\innoDisclaimer{{\color{grey}\ttfamily\footnotesize All visual and text materials presented in
-this slidedeck are either originally made by the author or taken from public
-Internet sources, such as website. Copyright belongs to their respected
-authors.\par}}
-
-\newcommand\innoTitlePage[1]{
-  \plush[2]{
-    \innoTitle{\thetitle}{\thesubtitle}\par
-    {\scshape Yegor Bugayenko}\par
-    Lecture \##1 out of 16 \br
-    90 minutes\par
-    \innoDisclaimer{}
-  }
-}
-
-% 1: cover file
-% 2: author
-% 3: title
-\newcommand\innoBook[3]{
-  \innoPic{0.4}{books/#1} \br ``#3'' by {\scshape #2}
-
-}
-
-\newcommand\innoThought[2][1]{
-  \plush[#1]{
-    \innoMiddle{
-      \tikz{
-        \node [inner sep=18pt] (z) {
-          \begin{varwidth}{0.8\textwidth}
-            \Large
-            #2
-          \end{varwidth}
-        };
-        \path [draw=green,line width=8pt] (z.north west) -- (z.south west);
-      }
-    }
-  }
-}
-
-\newcommand\innoBVC{
-  \section[B.V.C.]{Books, Venues, Call-to-Action}
-}
-
-\newcommand\innoPinQR[1]{%
-  \innoPin{%
-    \begin{minipage}{1.4in}
-      \raggedleft%
-      \innoQR[1in]{#1}
-      \\[3pt]
-      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}\\
-    \end{minipage}
-  }%
 }
 
 \AtBeginDocument{%
@@ -328,8 +150,5 @@ authors.\par}}
   \normalsize%
   \sffamily%
 }
-
-\innoLeft{\thetitle{} \thesubtitle}
-\innoRight{@yegor256}
 
 \endinput

@@ -22,31 +22,33 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{Object Thinking}
 \newcommand*\thesubtitle{and Domain Driven Design}
 \begin{document}
 
-\innoTitlePage{5}
+\plush{\innoTitlePage{5}}
 
-\plush{\innoCite{people/edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{\nospell{Edsger W. Dijkstra} (1989)}}
+\plush{\innoQuote{people/edsger-dijkstra}{Object-oriented programs are offered as alternatives to correct ones}{\nospell{Edsger W. Dijkstra} (1989)}}
 
-\plush{\innoCite{people/alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{\nospell{Alan Kay} (1997)}}
+\plush{\innoQuote{people/alan-kay}{I invented the term \emph{object-oriented}, and I can tell you I did not have C++ in mind}{\nospell{Alan Kay} (1997)}}
 
-\plush{\innoCite{people/paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{\nospell{Paul Graham} (2003)}}
+\plush{\innoQuote{people/paul-graham}{Object-oriented programming offers a sustainable way to write spaghetti code}{\nospell{Paul Graham} (2003)}}
 
-\plush{\innoCite{people/linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
+\plush{\innoQuote{people/linus-torvalds}{C++ is a horrible language. C++ leads to really, really bad design choices. ... idiotic object model crap.}{\nospell{Linus Torvalds} (2007)}}
 
 \innoToc
 
-\section[Theory]{The Philosophy of OOP}
+\innoSection[Theory]{The Philosophy of OOP}
 
 \plush[3]{
-  \subsection[GOTO]{The Era of GOTO}
+  \innoSubsection[GOTO]{The Era of GOTO}
   \innoPic{0.7}{basic}
 }
 
 \plush[3]{
-  \subsection[IF/THEN]{Structured Programming}
+  \innoSubsection[IF/THEN]{Structured Programming}
   \begin{multicols}{2}
     \innoPic{0.9}{pascal}
     \par\columnbreak
@@ -55,12 +57,12 @@
 }
 
 \plush[3]{
-  \subsection[CALL]{Procedural Programming}
+  \innoSubsection[CALL]{Procedural Programming}
   \innoPic{0.5}{calls}
 }
 
 \plush[3]{
-  \subsection[OOP$_1$]{Object-Oriented Programming ... Not!}
+  \innoSubsection[OOP$_1$]{Object-Oriented Programming ... Not!}
   \innoPic{0.5}{oop-bad}
 }
 
@@ -70,7 +72,7 @@
 }
 
 \plush[3]{
-  \subsection[OOP$_2$]{OOP Done Right}
+  \innoSubsection[OOP$_2$]{OOP Done Right}
   \innoPic{0.5}{oop-good}
 }
 
@@ -79,43 +81,43 @@
   \innoPic{0.8}{rectangles2}
 }
 
-\section[Object]{What is an Object?}
+\innoSection[Object]{What is an Object?}
 
 \plush{
-  \subsection{C++}
-  \innoCite{books/stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
+  \innoSubsection{C++}
+  \innoQuote{books/stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
 }
 
 \plush{
-  \subsection{Wiki}
-  \innoCite{books/wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
+  \innoSubsection{Wiki}
+  \innoQuote{books/wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
 }
 
 \plush{
-  \subsection{Smalltalk}
-  \innoCite{books/smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
+  \innoSubsection{Smalltalk}
+  \innoQuote{books/smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
 }
 
 \plush{
-  \subsection{Java}
-  \innoCite{books/java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
+  \innoSubsection{Java}
+  \innoQuote{books/java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
 }
 
 \plush{
-  \subsection{\nospell{Eckel}}
-  \innoCite{books/eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
+  \innoSubsection{\nospell{Eckel}}
+  \innoQuote{books/eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
 }
 
 \plush{
-  \subsection{West}
-  \innoCite{books/object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
+  \innoSubsection{West}
+  \innoQuote{books/object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
 }
 
-\section[Evil]{Three Most Evil Parts of OOP}
+\innoSection[Evil]{Three Most Evil Parts of OOP}
 
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \subsection[Static]{1. Static Methods}
+  \innoSubsection[Static]{1. Static Methods}
   \innoPic{0.5}{static1}
   \par
   \innoPic{0.5}{static2}
@@ -123,7 +125,7 @@
 
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2014/11/07/how-immutability-helps.html}
-  \subsection[Mutability]{2. Mutability vs. Immutability}
+  \innoSubsection[Mutability]{2. Mutability vs. Immutability}
   \innoPic{0.5}{mutable}
   \par
   \innoPic{0.4}{immutable}
@@ -137,7 +139,7 @@
 
 \plush[4]{
   \innoPinQR{https://www.yegor256.com/2014/05/13/why-null-is-bad.html}
-  \subsection[NULL]{3. NULL References}
+  \innoSubsection[NULL]{3. NULL References}
   \innoPic{0.8}{null}\par
   \emph{Null References, The Billion Dollar Mistake}\\
   presentation by \nospell{Tony Hoare},
@@ -155,14 +157,14 @@
   \innoPic{0.7}{fail-fast}
 }
 
-\section[DDD]{Domain Driven Design}
+\innoSection[DDD]{Domain Driven Design}
 
 \plush[4]{
   \innoBanner{Names of Objects Done Right}
   \innoPic{0.6}{ddd}
 }
 
-\section[EO]{Elegant Objects}
+\innoSection[EO]{Elegant Objects}
 
 \print{\innoPinQR{https://www.elegantobjects.org}}
 \print{\innoBanner{Elegant Objects (EO)}}\click

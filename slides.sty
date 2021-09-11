@@ -1,0 +1,169 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{slides}[00.00.0000 0.0.0 Slides]
+
+\RequirePackage{varwidth}
+\RequirePackage{lastpage}
+\RequirePackage{qrcode}
+\RequirePackage{tikz}
+  \RequirePackage{tikzpagenodes}
+\RequirePackage{/code/crumbs/crumbs}
+
+\newcommand\br{\newline}
+
+\newcommand\innoMiddle[1]{%
+  \vspace*{\fill}#1\vspace*{\fill}%
+}
+
+\newcommand\innoBanner[2][green]{%
+  \par
+  {\setlength{\fboxsep}{6pt}\colorbox{#1}{\color{white}\large #2}}
+  \par
+}
+
+\newcommand\innoSection[2][]{%
+  % \innoMiddle{%
+  %   {\large\ttfamily Chapter \#\the\value{section}:}
+  %   \section[#1]{#2}
+  % }
+  \innoMiddle{%
+    {\large\ttfamily Chapter \#\the\value{section}:}
+    \innoBanner[blue]{\section[#1]{#2}}
+  }
+}
+
+\newcommand\innoSubsection[2][]{%
+  \subsection[#1]{#2}
+  % \innoBanner[orange]{\subsection[#1]{#2}}
+}
+
+\newcommand\innoHeader[1]{%
+  \innoBanner[orange]{\LARGE #1}
+  \vspace*{0.5in}
+}
+
+\newcommand\innoTitle[2]{
+  {\innoBanner{\Huge #1}}
+  {\innoBanner{\large #2}}
+}
+
+\newcommand*\innoTOC{}
+\newcommand\innoToc{
+  \renewcommand*\innoTOC{}
+  \print{
+    \tikz{
+      \node (z) {
+        \begin{varwidth}{\textwidth}
+          \ifx\innoTOC\empty\else
+            \begin{itemize}[label={}]
+              \innoTOC
+            \end{itemize}
+          \fi
+        \end{varwidth}
+      };
+      \path [draw=blue,line width=4pt] (z.north west) -- (z.south west);
+    }
+  }
+  \begin{@empty}
+    \renewcommand\crumb[2]{
+      \ifx\innoTOC\empty\else\click\fi
+      \gappto\innoTOC{\item ##2}
+    }
+    \crumbs
+  \end{@empty}
+  \flush
+}
+
+\newcommand\innoQuote[3]{
+  \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
+    \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{#1}}
+    &
+    ``#2''
+    \def\param{#3}%
+    \ifx\param\empty\else
+      \newline\newline
+      \small
+      --- #3
+    \fi
+    \\
+  \end{tabularx}
+}
+
+\newcommand\innoPic[2]{
+  {%
+    \setlength{\fboxsep}{0pt}%
+    \setlength{\fboxrule}{1pt}%
+    \fcolorbox{gray}{white}{%
+      \includegraphics[width=#1\columnwidth]{#2}%
+    }%
+  }
+}
+
+\newcommand\innoPin[1]{%
+  \begin{tikzpicture}[remember picture,overlay]%
+    \node[anchor=north east] at (current page text area.north east) {%
+      \begin{minipage}{0.5\textwidth}%
+        \vspace{1in}%
+        \raggedleft{#1}%
+      \end{minipage}%
+    };%
+  \end{tikzpicture}%
+}
+
+\newcommand\innoThought[1]{
+  \innoMiddle{
+    \tikz{
+      \node [inner sep=18pt] (z) {
+        \begin{varwidth}{0.8\textwidth}
+          \Large
+          #1
+        \end{varwidth}
+      };
+      \path [draw=green,line width=8pt] (z.north west) -- (z.south west);
+    }
+  }
+}
+
+\newcommand\innoQR[2][2in]{
+  \tikz{%
+    \node[draw=white]{%
+      \href{#2}{%
+        \qrcode[height=#1]{#2}%
+      }%
+    }%
+  }
+}
+
+\newcommand\innoPinQR[1]{%
+  \innoPin{%
+    \begin{minipage}{1.4in}
+      \raggedleft%
+      \innoQR[1in]{#1}
+      \\[3pt]
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}\\
+    \end{minipage}
+  }%
+}
+
+\endinput

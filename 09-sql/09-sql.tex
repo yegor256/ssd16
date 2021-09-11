@@ -1,0 +1,210 @@
+% (The MIT License)
+%
+% Copyright (c) 2021 Yegor Bugayenko
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the 'Software'), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass{article}
+\usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
+\newcommand*\thetitle{IDEF}
+\newcommand*\thesubtitle{and SQL/NoSQL Databases}
+\begin{document}
+
+\innoTitlePage{9}
+
+\innoToc
+
+\plush{\innoSection[Types]{Types of Databases}}
+
+\plush{
+  \innoSubsection[Navigational]{Navitational Databases}
+  \innoPic{0.8}{navigational}\par
+  E.g. Integrated Data Store (IDS)
+}
+
+\plush{
+  \innoSubsection[Hierarchical]{Hierarchical Databases}
+  \innoPic{0.5}{hierarchical}\par
+  E.g. IBM Information Management System (IMS)
+}
+
+\plush{
+  \innoSubsection[Relational]{Relational Databases (SQL)}
+  \innoPic{0.5}{relational}\par
+  E.g. Oracle Database
+}
+
+\plush{
+  \innoSubsection[Object]{Object Databases}
+  \innoPic{0.5}{object}\par
+  E.g. ObjectStore
+}
+
+\plush{
+  \innoSubsection[Key-Value]{Key-Value Databases}
+  \innoPic{0.5}{key-value}\par
+  \innoPic{0.5}{dynamo}\par
+  E.g. Redis, AWS DynamoDB
+}
+
+\plush{
+  \innoSubsection[Graph]{Columnar Databases}
+  \innoPic{0.5}{columnar}\par
+  E.g. ClickHouse by Yandex\par
+  Read also about Online Analytical Processing (OLAP)
+}
+
+\plush{
+  \innoSubsection[NoSQL]{Document Databases (a.k.a. NoSQL)}
+  \innoPic{0.5}{document}\par
+  E.g. MongoDB
+}
+
+\plush{
+  \innoSubsection[XML]{XML Databases}
+  \innoPic{0.5}{xml}\par
+  E.g. eXist
+}
+
+\plush{
+  \innoSubsection[S3]{AWS S3}
+  \innoPic{0.9}{s3}\par
+}
+
+\plush{
+  \innoSubsection[Graph]{Graph Databases}
+  \innoPic{0.5}{graph}\par
+  E.g. Neo4j
+}
+
+\plush{
+  \innoSubsection[NewSQL]{NewSQL}
+  ``NewSQL is a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system'' --- Wikipedia\par
+  E.g. VoltDB
+}
+
+\plush{
+  \innoSubsection[Big Data]{Big Data}
+  \innoPic{0.8}{hadoop}\par
+  E.g. Hadoop
+}
+
+\plush{\innoSection[ER]{IDEF1X, ER Model, UML}}
+
+\plush{
+  \innoSubsection[IDEF1X]{IDEF1X Model for Databases}
+  \innoPic{0.5}{idef1x-diagram}
+}
+
+\plush{
+  \innoSubsection[UML]{UML Class Diagram as Database Model}
+  \innoPic{0.5}{uml}
+}
+
+\plush{
+  \innoSubsection[ER]{Entity-Relationship (ER) Model}
+  \innoPic{0.5}{er-diagram}
+}
+
+\plush{\innoSection[Properties]{Properties of Databases}}
+
+\plick{\innoSubsection{ACID}}
+\plick{\textbf{\large A}tomicity: everything or nothing}
+\plick{\textbf{\large C}onsistency: invariants are in place}
+\plick{\textbf{\large I}solation: concurrent or sequential}
+\plush{\textbf{\large D}urability: completed txns $\rightarrow$ non-volatile memory}
+
+\plick{\innoSubsection[Speed]{Performance}}
+\plick{Queries Profiling \& Optimization}
+\plick{Denormalization}
+\plush{Caching}
+
+\plick{\innoSubsection[Scale]{Scalability}}
+\plick{Vertical vs. Horizontal Scalability}
+\plick{Sharding vs. Master-Slave Replication}
+\plush{\innoPic{0.8}{sharding}}
+
+\plick{\innoSubsection[Libraries]{Application Layer Support}}
+\plick{Is it open source?}
+\plick{How mature is the library?}
+\plick{Is it a thin driver or ORM-ish framework?}
+\plick{How many languages are supported?}
+\plick{Are there alternatives?}
+\plush{Is the API open?}
+
+\plick{\innoSubsection[Versions]{Schema Version Control}}
+\plick{
+  \innoPic{0.8}{0rsk}
+  \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}
+}
+\plush{Liquibase, Flyway, Mongobee, Mongock, etc.}
+
+\plush{
+  \innoSubsection[Integrity]{Integrity: Primary and Foreign Keys}
+  \innoPic{0.8}{keys}
+}
+
+\plick{\innoSubsection[Resilience]{Resilience}}
+\plick{\innoPic{0.8}{mongo-failure}}
+\plush{Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.}
+
+\plick{\innoSubsection[Liability]{Liability: Who Pays for Losses?}}
+\plush{AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND LICENSORS WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."}
+
+\plick{\innoSubsection[Durability]{Durability: Can We Loose Data?}}
+\plush{\href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''}
+
+\innoBVC
+
+\plush[2]{
+  \begin{multicols}{2}
+    \innoBook{date}
+      {C.J. Date}
+      {An Introduction to Database Systems, 8th Edition}
+    \par\columnbreak
+    \innoBook{nosql-distilled}
+      {\nospell{Pramod Sadalage} et al.}
+      {NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence}
+  \end{multicols}
+}
+
+\plush[5]{
+  \innoBanner{Where to go:}
+  ACM SIGMOD/PODS Conference.
+}
+
+\plush[4]{
+  \innoBanner{Call to Action:}
+  Design a relational persistence layer in your app and then
+  make it NoSQL; compare pros and cons.
+}
+
+\plush[4]{
+  \innoBanner[orange]{Still unresolved issues:}
+  \begin{itemize}
+    \item How to \ul{guarantee} 100\% durability, etc.?
+    \item How to \ul{optimize} database schema automatically?
+    \item How to \ul{generate} optimal schema automatically?
+    \item How to \ul{make} object databases popular?
+  \end{itemize}
+}
+
+\end{document}

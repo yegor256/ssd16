@@ -22,48 +22,50 @@
 
 \documentclass{article}
 \usepackage{../inno}
+\usepackage{../slides}
+\usepackage{../ssd}
 \newcommand*\thetitle{XML}
 \newcommand*\thesubtitle{vs JSON, YAML, TOML, etc.}
 \begin{document}
 
-\innoTitlePage{7}
+\plush{\innoTitlePage{7}}
 
 \innoToc
 
-\section[XML]{Extensible Markup Language (XML)}
+\innoSection[XML]{Extensible Markup Language (XML)}
 
 \plush[4]{
-  \subsection[XML]{Library in XML}
+  \innoSubsection[XML]{Library in XML}
   \innoSnippet{library.xml}
 }
 
 \plush[3]{
-  \subsection{Namespaces}
+  \innoSubsection{Namespaces}
   \innoSnippet{namespaces.xml}
 }
 
 \plush[2]{
-  \subsection{Escaping}
+  \innoSubsection{Escaping}
   \innoSnippet{escaping.xml}
 }
 
 \plush[4]{
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
-  \subsection[Formats]{XML Based Formats/Protocols}
+  \innoSubsection[Formats]{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
   Open Office XML, XMPP, \\
   SyncML, RDF, XMI, XMIR :)
 }
 
-\section[XSD]{XSD, XPath, XSLT, XQuery, etc.}
+\innoSection[XSD]{XSD, XPath, XSLT, XQuery, etc.}
 
 \plush[4]{
-  \subsection[XSD]{XML Schema Definition (XSD)}
+  \innoSubsection[XSD]{XML Schema Definition (XSD)}
   \innoSnippet[\scriptsize]{library.xsd}
 }
 
 \plush[4]{
-  \subsection[XPath]{XML Path Language (XPath)}
+  \innoSubsection[XPath]{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
   \ff{/library/book[@id='42']}\par
@@ -74,15 +76,15 @@
 }
 
 \plush[4]{
-  \subsection[XSL]{XSL Transformations (XSLT)}
+  \innoSubsection[XSL]{XSL Transformations (XSLT)}
   \innoSnippet[\scriptsize]{library.xsl}
 }
 
-\section[JSON]{JavaScript Object Notation (JSON)}
+\innoSection[JSON]{JavaScript Object Notation (JSON)}
 
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
-  \subsection[JSON]{JSON for the Library}
+  \innoSubsection[JSON]{JSON for the Library}
   \innoSnippet{library.json}
 }
 
@@ -92,21 +94,21 @@
   \ff{JSON.stringify(\{age: 25\});}
 }
 
-\section[Others]{YAML, TOML, CSV}
+\innoSection[Others]{YAML, TOML, CSV}
 
 \plush[2]{
-  \subsection[YAML]{Yet Another Markup Language (YAML)}
+  \innoSubsection[YAML]{Yet Another Markup Language (YAML)}
   \innoSnippet{library.yml}
 }
 
 \plush[2]{
-  \subsection{TOML}
+  \innoSubsection{TOML}
   \innoSnippet{library.toml}
 }
 
 \plush[2]{
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
-  \subsection[CSV]{Comma-Separated Values (CSV)}
+  \innoSubsection[CSV]{Comma-Separated Values (CSV)}
   \innoSnippet{library.csv}
 }
 
