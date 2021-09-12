@@ -35,35 +35,35 @@
 \plush{\innoChapter[Types]{Types of Databases}}
 
 \subcrumbection{Navi}
-\plush{
+\plush[2]{%
   \innoSection{Navigational Databases}
   \innoPic{0.8}{navigational}\par
   E.g. Integrated Data Store (IDS)
 }
 
-\subcrumbection{Hierarchial}
-\plush{
+\subcrumbection{Hierarchical}
+\plush[2]{%
   \innoSection{Hierarchical Databases}
   \innoPic{0.8}{hierarchical}\par
   E.g. IBM Information Management System (IMS)
 }
 
 \subcrumbection{SQL}
-\plush{
+\plush[5]{%
   \innoSection{Relational Databases (SQL)}
   \innoPic{0.8}{relational}\par
   E.g. Oracle Database
 }
 
 \subcrumbection{Object}
-\plush{
+\plush[3]{%
   \innoSection{Object Databases}
   \innoPic{0.8}{object}\par
   E.g. ObjectStore
 }
 
 \subcrumbection{K-V}
-\plush{
+\plush[4]{%
   \innoSection{Key-Value Databases}
   \innoPic{0.4}{key-value}\par
   \innoPic{0.5}{dynamo}\par
@@ -71,7 +71,7 @@
 }
 
 \subcrumbection{Columnar}
-\plush{
+\plush[3]{%
   \innoSection{Columnar Databases}
   \innoPic{0.8}{columnar}\par
   E.g. ClickHouse by Yandex\par
@@ -79,41 +79,41 @@
 }
 
 \subcrumbection{NoSQL}
-\plush{
+\plush[4]{%
   \innoSection{Document Databases (a.k.a. NoSQL)}
   \innoPic{0.5}{document}\par
   E.g. MongoDB
 }
 
 \subcrumbection{XML}
-\plush{
+\plush[4]{%
   \innoSection{XML Databases}
   \innoPic{0.4}{xml}\par
   E.g. eXist
 }
 
 \subcrumbection{S3}
-\plush{
+\plush[5]{%
   \innoSection{AWS S3}
   \innoPic{0.9}{s3}\par
 }
 
 \subcrumbection{Graph}
-\plush{
+\plush[4]{%
   \innoSection{Graph Databases}
   \innoPic{0.5}{graph}\par
   E.g. Neo4j
 }
 
 \subcrumbection{NewSQL}
-\plush{
+\plush[2]{%
   \innoSection{NewSQL}
   ``NewSQL is a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system'' --- Wikipedia\par
   E.g. VoltDB
 }
 
 \subcrumbection{Big}
-\plush{
+\plush[5]{%
   \innoSection{Big Data}
   \innoPic{0.8}{hadoop}\par
   E.g. Hadoop
@@ -122,83 +122,89 @@
 \plush{\innoChapter[ER]{IDEF1X, ER Model, UML}}
 
 \subcrumbection{IDEF1X}
-\plush{
+\plush[3]{%
   \innoSection{IDEF1X Model for Databases}
   \innoPic{0.6}{idef1x-diagram}
 }
 
 \subcrumbection{UML}
-\plush{
+\plush[3]{%
   \innoSection{UML Class Diagram as Database Model}
   \innoPic{0.8}{uml}
 }
 
 \subcrumbection{ER}
-\plush{
+\plush[3]{%
   \innoSection{Entity-Relationship (ER) Model}
   \innoPic{0.8}{er-diagram}
 }
 
-\plush{\innoChapter[Properties]{Properties of Databases}}
+\plush{\innoChapter[Properties]{How to Choose the Right Database?}}
 
 \subcrumbection{ACID}
-\plick{\innoSection{ACID}}
-\plick{\textbf{\large A}tomicity: everything or nothing}
-\plick{\textbf{\large C}onsistency: invariants are in place}
-\plick{\textbf{\large I}solation: concurrent or sequential}
-\plush{\textbf{\large D}urability: completed txns $\rightarrow$ non-volatile memory}
+\print{\innoSection{ACID}}
+\plick{\nospell{\textbf{\large A}tomicity}: everything or nothing}
+\plick{\nospell{\textbf{\large C}onsistency}: invariants are in place}
+\plick{\nospell{\textbf{\large I}solation}: concurrent or sequential}
+\plush[5]{\nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory}
 
 \subcrumbection{Speed}
-\plick{\innoSection{Performance}}
+\print{\innoSection{Performance}}
 \plick{Queries Profiling \& Optimization}
 \plick{Denormalization}
-\plush{Caching}
+\plush[3]{Caching}
 
 \subcrumbection{Scale}
-\plick{\innoSection{Scalability}}
+\print{\innoSection{Scalability}}
 \plick{Vertical vs. Horizontal Scalability}
 \plick{Sharding vs. Master-Slave Replication}
-\plush{\innoPic{0.8}{sharding}}
+\plush[5]{\innoPic{0.8}{sharding}}
 
-\subcrumbection{Libs}
-\plick{\innoSection{Application Layer Support}}
+\subcrumbection{Libraries}
+\print{\innoSection{Application Layer Support}}
 \plick{Is it open source?}
 \plick{How mature is the library?}
 \plick{Is it a thin driver or ORM-ish framework?}
 \plick{How many languages are supported?}
 \plick{Are there alternatives?}
-\plush{Is the API open?}
+\plush[6]{Is the API open?}
 
 \subcrumbection{Versions}
-\plick{\innoSection{Schema Version Control}}
-\plick{
-  \innoPic{0.8}{0rsk}
-  \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}
+\plush[5]{
+  \innoSection{Schema Version Control}
+  \innoPic{0.8}{0rsk}\par
+  \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}\par
+  Liquibase, Flyway, Mongobee, Mongock, etc.
 }
-\plush{Liquibase, Flyway, Mongobee, Mongock, etc.}
 
 \subcrumbection{Integrity}
-\plush{
+\plush[4]{%
   \innoSection{Integrity: Primary and Foreign Keys}
   \innoPic{0.8}{keys}
 }
 
 \subcrumbection{Resilience}
-\plick{\innoSection{Resilience}}
-\plick{\innoPic{0.8}{mongo-failure}}
-\plush{Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.}
+\plush[3]{
+  \innoSection{Resilience}
+  \innoPic{0.7}{mongo-failure}\par
+  Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.
+}
 
 \subcrumbection{Liability}
-\plick{\innoSection{Liability: Who Pays for Losses?}}
-\plush{AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND LICENSORS WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."}
+\plush[2]{
+  \innoSection{Liability: Who Pays for Losses?}
+  AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND \nospell{LICENSORS} WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."
+}
 
 \subcrumbection{Durability}
-\plick{\innoSection{Durability: Can We Loose Data?}}
-\plush{\href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''}
+\plush[3]{
+  \innoSection{Durability: Can We Loose Data?}
+  \href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''
+}
 
 \innoBVC
 
-\plush[2]{
+\plush[1]{%
   \begin{multicols}{2}
     \innoBook{date}
       {C.J. Date}
@@ -210,18 +216,18 @@
   \end{multicols}
 }
 
-\plush[5]{
+\plush[1]{%
   \innoBanner{Where to go:}
   ACM SIGMOD/PODS Conference.
 }
 
-\plush[4]{
+\plush[2]{%
   \innoBanner{Call to Action:}
   Design a relational persistence layer in your app and then
   make it NoSQL; compare pros and cons.
 }
 
-\plush[4]{
+\plush[4]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{guarantee} 100\% durability, etc.?

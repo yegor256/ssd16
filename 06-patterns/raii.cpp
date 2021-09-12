@@ -1,14 +1,14 @@
-class File {
+class File {%
   std::FILE* h;
 public:
-  File(const char* name) {
+  File(const char* name) {%
     h = std::fopen(name, "w+")
   }
-  ~File() {
+  ~File() {%
     std::fclose(h);
   }
 }
-void foo() {
+void foo() {%
   f File("foo.txt");
   // write to f
 }

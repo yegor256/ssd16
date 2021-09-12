@@ -35,25 +35,25 @@
 \plush{\innoChapter[XML]{Extensible Markup Language (XML)}}
 
 \subcrumbection{XML}
-\plush[4]{
+\plush[4]{%
   \innoSection{Library in XML}
   \innoSnippet{library.xml}
 }
 
 \subcrumbection{Namespaces}
-\plush[3]{
+\plush[3]{%
   \innoSection{Namespaces}
   \innoSnippet{namespaces.xml}
 }
 
 \subcrumbection{Escaping}
-\plush[2]{
+\plush[2]{%
   \innoSection{Escaping}
   \innoSnippet{escaping.xml}
 }
 
 \subcrumbection{Formats}
-\plush[4]{
+\plush[4]{%
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
   \innoSection{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
@@ -64,13 +64,13 @@
 \plush{\innoChapter[XSD]{XSD, XPath, XSLT, XQuery, etc.}}
 
 \subcrumbection{XSD}
-\plush[4]{
+\plush[4]{%
   \innoSection{XML Schema Definition (XSD)}
   \innoSnippet[\scriptsize]{library.xsd}
 }
 
 \subcrumbection{XPath}
-\plush[4]{
+\plush[4]{%
   \innoSection{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
@@ -82,7 +82,7 @@
 }
 
 \subcrumbection{XSL}
-\plush[4]{
+\plush[4]{%
   \innoSection{XSL Transformations (XSLT)}
   \innoSnippet[\scriptsize]{library.xsl}
 }
@@ -90,13 +90,13 @@
 \plush{\innoChapter[JSON]{JavaScript Object Notation (JSON)}}
 
 \subcrumbection{JSON}
-\plush[3]{
+\plush[3]{%
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \innoSection{JSON for the Library}
   \innoSnippet{library.json}
 }
 
-\plush[2]{
+\plush[2]{%
   \innoBanner{JSON to JavaScript Object and Backwards}
   \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
   \ff{JSON.stringify(\{age: 25\});}
@@ -105,19 +105,19 @@
 \plush{\innoChapter[Others]{YAML, TOML, CSV}}
 
 \subcrumbection{YAML}
-\plush[2]{
+\plush[2]{%
   \innoSection{Yet Another Markup Language (YAML)}
   \innoSnippet{library.yml}
 }
 
 \subcrumbection{TOML}
-\plush[2]{
+\plush[2]{%
   \innoSection{TOML}
   \innoSnippet{library.toml}
 }
 
 \subcrumbection{CSV}
-\plush[2]{
+\plush[2]{%
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
   \innoSection{Comma-Separated Values (CSV)}
   \innoSnippet{library.csv}
@@ -125,7 +125,7 @@
 
 \innoBVC
 
-\plush{
+\plush{%
   \begin{multicols}{2}
     \innoBook{xml-nutshell}
       {\nospell{Elliotte Rusty Harold} et al.}
@@ -137,14 +137,14 @@
   \end{multicols}
 }
 
-\plush[2]{
+\plush[2]{%
   \innoBanner{Call to Action:}
   In your application, make sure your data is represented in
   XML, at least in one place, and being transformed by XSLT.\par
   Design your own data format.
 }
 
-\plush[3]{
+\plush[3]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{map} XML/JSON to objects?
