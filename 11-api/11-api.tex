@@ -45,26 +45,26 @@
 \subcrumbection{SOAP}
 \plush[3]{%
   \innoSection{Simple Object Access Protocol (SOAP)}
-  \innoPic{0.9}{soap}
+  \innoPic{0.7}{soap}
 }
 
 \subcrumbection{CORBA}
 \plush[5]{%
-  \innoSection{Common Object Request Broker Architecture (CORBA)}
-  \innoPic{0.9}{corba}
+  \innoSection{\small Common Object Request Broker Architecture (CORBA)}
+  \innoPic{0.8}{corba}
 }
 
 \subcrumbection{IDL}
 \plush[2]{%
   \innoSection{Interface Description Language (IDL)}
-  \innoPic{0.9}{idl}
+  \innoPic{0.8}{idl}
 }
 
 \subcrumbection{EJB}
 \plush[5]{%
   \innoSection{Enterprise Java Beans (EJB)}
-  \innoPic{0.8}{ejb}\par
-  \small
+  \innoPic{0.5}{ejb}\par
+  \footnotesize
   Java Naming and Directory Interface (JNDI) is an API
   that provides naming and directory functionality to applications
   written using the Java.\par
@@ -79,7 +79,8 @@
 \subcrumbection{Microservices}
 \plush[5]{%
   \innoSection{Microservices}
-  \innoPic{0.9}{microservices}\par
+  \innoPic{0.6}{microservices}\par
+  \small
   ``Microservices are a modern interpretation of service-oriented
   architectures used to build distributed software systems." --- Wikipedia
 }
@@ -93,46 +94,46 @@
 \subcrumbection{REST}
 \plush[10]{%
   \innoSection{Representational State Transfer (REST)}
-  \innoPic{0.8}{restful}
-  \innoPic{0.8}{restful2}
+  \innoPic{0.5}{restful}
+  \innoPic{0.5}{restful2}
 }
 
 \subcrumbection{HATEOAS}
 \plush[5]{%
-  \innoSection{Hypermedia As The Engine Of Application State (HATEOAS)}
+  \innoSection{\small Hypermedia As The Engine Of Application State (HATEOAS)}
   \innoPic{0.8}{hateoas}
 }
 
 \subcrumbection{Mesh}
 \plush[2]{%
   \innoSection{Service Mesh}
-  \innoPic{0.8}{mesh}
+  \innoPic{0.6}{mesh}\par
   ``A service mesh is a dedicated infrastructure layer for facilitating service-to-service communications between services or microservices, using a proxy'' --- Wikipedia
 }
 
 \plush{\innoChapter[RESTful]{Protobuf and gRPC}}
 
 \subcrumbection{gRPC}
-\plush{%
+\plush[2]{%
   \innoSection{gRPC}
-  \innoPic{0.8}{grpc}
+  \innoPic{0.7}{grpc}
 }
 
 \subcrumbection{Protobuf}
-\plush{%
+\plush[3]{%
   \innoSection{Protobuf}
   \begin{multicols}{2}
-    \innoPic{0.5}{proto1}
+    \innoPic{0.8}{proto1}
     \par\columnbreak
-    \innoPic{0.5}{proto2}
+    \innoPic{0.8}{proto2}
   \end{multicols}
 }
 
-\plush{\innoPic{0.8}{grpc-joke}}
+\plush[4]{\innoPic{0.8}{grpc-joke}}
 
 \plush{\innoChapter[IoT]{Internet of Things (IoT)}}
 
-\plush{\innoPic{0.8}{iot}}
+\plush[5]{\innoPic{0.8}{iot}}
 
 \plush{\innoBVC}
 
@@ -142,29 +143,30 @@
       {Leonard Richardson et al.}
       {RESTful Web APIs: Services for a Changing World}
     \par\columnbreak
-    \innoBook{}
-      {..}
-      {..}
+    \innoBook{monoliths}
+      {Sam Newman}
+      {Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith}
   \end{multicols}
 }
 
-\plush[5]{%
+\plush[2]{%
   \innoBanner{Where to go:}
-  ..
+  IEEE International Conference on Software Architecture (ICSA)
 }
 
 \plush[4]{%
   \innoBanner{Call to Action:}
-  ...
+  Design your own RESTful API and publish it at rapidapi.com or
+  similar place, where APIs are ``published.''
 }
 
-\plush[4]{%
+\plush[6]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
-    \item How to \ul{reverse} code to a model?
-    \item How to \ul{sync} a model with the code?
-    \item How to \ul{simplify} UML for practical programming?
-    \item How to \ul{restore} faith in MDA?
+    \item How to \ul{validate} an API?
+    \item How to \ul{generate} an API from object model?
+    \item How to \ul{test} API automatically?
+    \item How to \ul{spot} integration mistakes between APIs?
   \end{itemize}
 }
 

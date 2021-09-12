@@ -28,55 +28,151 @@
 \newcommand*\thesubtitle{in Cloud}
 \begin{document}
 
-% AWS: EC2, S3, CloudFormation, CloudFront, Lambda, RDS, SQS
-% chef, puppet
-% docker
-% kubernetes
-% containerization
-% serverless
-% pay as you go
-% PaaS, IaaS, SaaS
-% OpenStack
-% P2P, like Blockchain, BitTorrent
-
 \plush{\innoTitlePage{12}}
+
+\plush[3]{\innoPic{0.8}{cloud}}
 
 \innoToc
 
-\plush{\innoChapter[Class]{Class Diagram}}
+\plush{\innoChapter[AWS]{Amazon Web Services}}
+
+\subcrumbection{S3}
+\plush[5]{
+  \innoHeader{Simple Storage Service (S3)}
+  \innoPic{0.7}{s3}
+}
+
+\subcrumbection{EC2}
+\plush[5]{
+  \innoHeader{Elastic Compute Cloud (EC2)}
+  \innoPic{0.7}{ec2}
+}
+
+\subcrumbection{CloudFront}
+\plush[5]{
+  \innoHeader{CloudFront}
+  \innoPic{0.8}{cloudfront}
+}
+
+\subcrumbection{SQS}
+\plush[4]{
+  \innoHeader{Simple Queue Service (SQS)}
+  \innoPic{0.8}{sqs}
+}
+
+\subcrumbection{Lambda}
+\plush[3]{
+  \innoHeader{Lambda}
+  \innoPic{0.8}{lambda}
+}
+
+\subcrumbection{OpenStack}
+\plush[3]{
+  \innoHeader{OpenStack}
+  \innoPic{0.8}{openstack}\par
+  \url{https://docs.openstack.org/install-guide/get-started-logical-architecture.html}
+}
+
+\plush{\innoChapter[Docker]{Docker Containers}}
+
+\subcrumbection{Chef}
+\plush[4]{
+  \innoHeader{Chef, Puppet, etc.}
+  \innoPic{0.8}{chef}
+}
+
+\subcrumbection{Dockerfile}
+\plush[6]{
+  \innoHeader{Dockerfile}
+  \begin{multicols}{2}
+    \innoPic{0.8}{dockerfile}
+    \columnbreak
+    \innoPic{0.8}{dockerfile2}
+  \end{multicols}
+}
+
+\subcrumbection{LXC}
+\plush[2]{
+  \innoHeader{LXC}
+  \innoPic{0.7}{lxc}\par
+  LXC is an operating-system-level virtualization method for running multiple isolated Linux systems on a control host using a single Linux kernel.
+}
+
+\subcrumbection{K8s}
+\plush[4]{
+  \innoHeader{Kubernetes}
+  \innoPic{0.7}{kubernetes}
+}
+
+\plush{\innoChapter[?aaS]{PaaS, IaaS, SaaS, EaaS, etc.}}
+
+\subcrumbection{EaaS}
+\plush[2]{
+  \innoHeader{Everything as a Service (EaaS)}
+  \innoPic{0.5}{eaas}
+}
+
+\subcrumbection{Heroku}
+\plush[5]{
+  \innoHeader{Platform as a Service (PaaS)}
+  \innoPic{0.8}{heroku}
+}
+
+\subcrumbection{Serverless}
+\plush[7]{
+  \innoHeader{Serverless Architecture}
+  \innoPinQR{https://martinfowler.com/articles/serverless.html}
+  Serverless architectures are application designs that incorporate third-party ``Backend as a Service'' (BaaS) services, and/or that include custom code run in managed, ephemeral containers on a ``Functions as a Service'' (FaaS) platform.\par
+  Fundamentally, FaaS is about running backend code without managing \ul{your own server systems} or your own long-lived server applications.\par
+  AWS RDS vs. AWS DynamoDB
+}
+
+\plush{\innoChapter[P2P]{P2P: BitTorrent, Blockchain, and Beyond}}
+
+\subcrumbection{BitTorrent}
+\plush[3]{
+  \innoHeader{BitTorrent}
+  \innoPic{0.6}{bittorrent}
+}
+
+\subcrumbection{Blockchain}
+\plush[8]{
+  \innoHeader{Blockchain}
+  \innoPic{0.5}{blockchain}
+}
 
 \plush{\innoBVC}
 
-% \plush[2]{%
-%   \begin{multicols}{2}
-%     \innoBook{uml-book}
-%       {Martin Fowler}
-%       {UML Distilled}
-%     \par\columnbreak
-%     \innoBook{mda-explained}
-%       {\nospell{Anneke Kleppe} et al.}
-%       {MDA Explained: The Model Driven Architecture: Practice and Promise}
-%   \end{multicols}
-% }
+\plush[1]{%
+  \begin{multicols}{2}
+    \innoBook{aws}
+      {Ben Piper}
+      {AWS Certified Cloud Practitioner, Study Guide: CLF-C01 Exam}
+    \par\columnbreak
+    \innoBook{cloud}
+      {\nospell{Thomas Erl} et al.}
+      {Cloud Computing: Concepts, Technology \& Architecture}
+  \end{multicols}
+}
 
-\plush[5]{%
+\plush[3]{%
   \innoBanner{Where to go:}
-  ...
+  AWS Certified Solution Architect
 }
 
-\plush[4]{%
+\plush[2]{%
   \innoBanner{Call to Action:}
-  ...
+  Use two AWS services in your app.
 }
 
-% \plush[4]{%
-%   \innoBanner[orange]{Still unresolved issues:}
-%   \begin{itemize}
-%     \item How to \ul{reverse} code to a model?
-%     \item How to \ul{sync} a model with the code?
-%     \item How to \ul{simplify} UML for practical programming?
-%     \item How to \ul{restore} faith in MDA?
-%   \end{itemize}
-% }
+\plush[6]{%
+  \innoBanner[orange]{Still unresolved issues:}
+  \begin{itemize}
+    \item How to \ul{simplify} serverless design?
+    \item How to \ul{manage} data serverless?
+    \item How to \ul{decentralize} better than Blockchain?
+    \item How to \ul{enable} decentralized computing on IoT devices?
+  \end{itemize}
+}
 
 \end{document}

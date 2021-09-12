@@ -37,18 +37,18 @@
 \subcrumbection{CI}
 \print{\innoBanner{How Continuous Integration (CI) works:}}
 \plick{\innoPic{0.4}{ci}}
-\plush{It doesn't work :(}
+\plush[4]{It doesn't work :(}
 
 \plush{\innoQuote{books/cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
 
 \subcrumbection{Pre-Flight}
 \print{\innoBanner{Pre-Flight Builds}}
 \plick{\innoPic{0.5}{preflight}}
-\plush{Master branch is ``read-only''!}
+\plush[4]{Master branch is ``read-only''!}
 
 \plush{\innoChapter[CD]{Continuous Delivery}}
 
-\plush{%
+\plush[4]{%
   \innoPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
   \innoPic{0.8}{cd}\par
   Joker Conf 2018, \emph{Quality vs Quantity}, in Russian
@@ -64,7 +64,7 @@
 \plick{Integration tests}
 \plick{Test coverage control}
 \plick{Mutation coverage control}
-\plush{Manual code review(s)}
+\plush[10]{Manual code review(s)}
 
 \subcrumbection{Targets}
 \print{\innoSection{Target Platforms}}
@@ -72,23 +72,23 @@
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
 \plick{Bigger web app: AWS Elastic Beanstalk}
-\plush{Mobile app: TestFlight}
+\plush[8]{Mobile app: TestFlight}
 
 \subcrumbection{Versions}
 \print{\innoSection{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
-\plush{0ver.org: 0.43.3}
+\plush[4]{0ver.org: 0.43.3}
 
 \subcrumbection{Tools}
 \print{\innoSection{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
-\plush{Rultor.com}
+\plush[6]{Rultor.com}
 
 \subcrumbection{Blue/Green}
-\plush{%
+\plush[4]{%
   \innoSection{Blue/Green Deployment}
   \innoPic{0.8}{bluegreen}\par
   May not work with databases :(
@@ -96,7 +96,7 @@
 
 \plush{\innoChapter[GitHub]{Open Source in GitHub}}
 
-\plush{%
+\plush[10]{%
   \begin{multicols}{2}
     \innoPic{0.9}{github1}
     \par\columnbreak
@@ -119,7 +119,7 @@
   \end{multicols}
 }
 
-\plush[5]{%
+\plush[4]{%
   \innoBanner{Where to go:}
   Collect 1000 stars on GitHub for your product.
 }
@@ -128,6 +128,16 @@
   \innoBanner{Call to Action:}
   Setup continuous delivery pipeline in your application so that
   it is released to production automatically on each commit to \ff{master} branch.
+}
+
+\plush[6]{%
+  \innoBanner[orange]{Still unresolved issues:}
+  \begin{itemize}
+    \item How to \ul{parallelize} tests?
+    \item How to \ul{speed up} merging into ``master''?
+    \item How to \ul{generate} tests automatically?
+    \item How to \ul{enforce} quality for legacy code base?
+  \end{itemize}
 }
 
 \end{document}
