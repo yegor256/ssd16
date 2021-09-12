@@ -21,10 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
-\usepackage{/code/crumbs/crumbs}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
 \begin{document}
@@ -35,7 +34,7 @@
 
 \innoToc
 
-\plush{\innoSection[Interiors]{Software vs. Interiors}}
+\plush{\innoChapter[Interiors]{Software vs. Interiors}}
 
 \plush[3]{
   \begin{multicols}{2}
@@ -65,12 +64,12 @@
 
 \plush[2]{\innoThought{A good documentation \br is a \ul{precursor} to a good design.}}
 
-\plush{\innoSection[SDD]{SDD at IEEE 1016}}
+\plush{\innoChapter[SDD]{SDD at IEEE 1016}}
 
-\print{\innoQuote{books/ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}\click
-\print{\innoBanner[red]{Inactive-Reserved on March 2020}}
-\flush[3]
+\plick{\innoQuote{books/ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}
+\plush[3]{\innoBanner[red]{Inactive-Reserved on March 2020}}
 
+\subcrumbection{Glossary}
 \plush[4]{
   \innoSubsection{Glossary}
   A \ul{request} is data package sent from a \ul{client} to a \ul{server}.\br
@@ -81,66 +80,71 @@
 
 \plush[2]{\innoThought{If I don't understand you, \br it's your fault!}}
 
-\print{\innoSubsection{Languages}}
+\subcrumbection{Langs}
 \plush[5]{
+  \innoSubsection{Languages}
   \begin{multicols}{2}
     \innoBanner[red]{NOT like this:}
-    \innoPic{0.6}{bad-diagram}
+    \innoPic{0.5}{bad-diagram}
     \par\columnbreak
-    \innoBanner{But ike this:}
+    \innoBanner{But like this:}
     \innoPic{0.7}{good-uml}\br
     UML + visual-paradigm.com
   \end{multicols}
 }
 
+\subcrumbection{Stakeholders}
 \plush[3]{
   \innoSubsection{Stakeholders}
   \innoQuote{books/pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
 }
 
+\subcrumbection{Concerns}
 \plush[2]{
   \innoSubsection{Concerns}
   Functional \br and \br Non-Functional Requirements
 }
 
+\subcrumbection{Views}
 \plush[4]{
   \innoSubsection{Viewpoints}
   \innoPic{0.6}{viewpoint}
 }
 
+\subcrumbection{Elements}
 \plush[2]{
   \innoSubsection{Elements}
   \innoPic{0.5}{element}
 }
 
-\print{\innoSubsection{Rationale}}
-\print{\innoBanner{\large Why MongoDB, why not MySQL?}}\click
-\print{
+\subcrumbection{Rationale}
+\plick{\innoSubsection{Rationale}}
+\plick{\innoBanner{\large Why MongoDB, why not MySQL?}}
+\plush[5]{
   Multi-Criteria Decision Making (\nospell{MCDM})\\
   Architecture Trade-off Analysis Method (\nospell{ATAM})\\
   Decision Table\\
   Multi Factor Analysis\\
   Decision Matrix
 }
-\flush[5]
 
 \plush[3]{\innoThought{Don't expect them to trust \ul{you}, \br make them trust your \ul{decisions}.}}
 
-\plush{\innoSection[RUP]{SAD at RUP}}
+\plush{\innoChapter[RUP]{SAD at RUP}}
 
 \plush[4]{\innoQuote{books/rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
 
-\plush{\innoSection[CMMI]{TS at CMMI}}
+\plush{\innoChapter[CMMI]{TS at CMMI}}
 
 \plush[4]{\innoQuote{books/cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
 
-\plush{\innoSection{SWEBOK}}
+\plush{\innoChapter{SWEBOK}}
 
 \plush[4]{\innoQuote{books/swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
 
 \plush[3]{\innoThought{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}}
 
-\plush{\innoSection{README}}
+\plush{\innoChapter{README}}
 
 \plush[4]{
   \begin{multicols}{2}

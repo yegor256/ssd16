@@ -21,30 +21,32 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{Continuous Delivery}
 \newcommand*\thesubtitle{and its design}
 \begin{document}
 
-\innoTitlePage{10}
+\plush{\innoTitlePage{10}}
 
 \innoToc
 
-\innoSection[CI]{Continuous Integration}
+\plush{\innoChapter[CI]{Continuous Integration}}
 
+\subcrumbection{CI}
 \plick{\innoBanner{How Continuous Integration (CI) works:}}
 \plick{\innoPic{0.8}{ci}}
 \plush{\innoBanner{It doesn't work :(}}
 
 \plush{\innoQuote{cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
 
+\subcrumbection{Pre-Flight}
 \plick{\innoBanner{Pre-Flight Builds}}
 \plick{\innoPic{0.8}{preflight}}
 \plush{Master branch is ``read-only''!}
 
-\innoSection[CD]{Continuous Delivery}
+\plush{\innoChapter[CD]{Continuous Delivery}}
 
 \plush{
   \innoPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
@@ -52,9 +54,10 @@
   Joker Conf 2018, \emph{Quality vs Quantity}, in Russian
 }
 
-\plush{\innoQuote{release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
+\plush{\innoQuote{books/release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
 
-\plick{\innoSubsetion[Wall]{Quality Wall}}
+\subcrumbection{Wall}
+\plick{\innoSubsection{Quality Wall}}
 \plick{Linters}
 \plick{Static analyzers}
 \plick{Unit tests}
@@ -63,31 +66,35 @@
 \plick{Mutation coverage control}
 \plush{Manual code review(s)}
 
-\plick{\innoSubsetion[Targets]{Target Platforms}}
+\subcrumbection{Targets}
+\plick{\innoSubsection{Target Platforms}}
 \plick{Static web site: GitHub Pages}
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
 \plick{Bigger web app: AWS Elastic Beanstalk}
 \plush{Mobile app: TestFlight}
 
-\plick{\innoSubsection[Versions]{Versioning}}
+\subcrumbection{Versions}
+\plick{\innoSubsection{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
 \plush{0ver.org: 0.43.3}
 
-\plick{\innoSubsection[Tools]{CI/CD Tools}}
+\subcrumbection{Tools}
+\plick{\innoSubsection{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
 \plush{Rultor.com}
 
+\subcrumbection{Blue/Green}
 \plush{
-  \innoSubsetion[Blue/Green]{Blue/Green Deployment}
+  \innoSubsection{Blue/Green Deployment}
   \innoPic{0.8}{bluegreen}\par
   May not work with databases :(
 }
 
-\innoSection[GitHub]{Open Source in GitHub}
+\plush{\innoChapter[GitHub]{Open Source in GitHub}}
 
 \plush{
   \begin{multicols}{2}
@@ -95,7 +102,7 @@
     \par\columnbreak
     \innoPic{0.9}{github2}
   \end{multicols}
-\plush{}
+}
 
 \innoBVC
 

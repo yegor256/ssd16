@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{XML}
 \newcommand*\thesubtitle{vs JSON, YAML, TOML, etc.}
 \begin{document}
@@ -32,40 +32,46 @@
 
 \innoToc
 
-\innoSection[XML]{Extensible Markup Language (XML)}
+\plush{\innoChapter[XML]{Extensible Markup Language (XML)}}
 
+\subcrumbection{XML}
 \plush[4]{
-  \innoSubsection[XML]{Library in XML}
+  \innoSubsection{Library in XML}
   \innoSnippet{library.xml}
 }
 
+\subcrumbection{Namespaces}
 \plush[3]{
   \innoSubsection{Namespaces}
   \innoSnippet{namespaces.xml}
 }
 
+\subcrumbection{Escaping}
 \plush[2]{
   \innoSubsection{Escaping}
   \innoSnippet{escaping.xml}
 }
 
+\subcrumbection{Formats}
 \plush[4]{
   \innoPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
-  \innoSubsection[Formats]{XML Based Formats/Protocols}
+  \innoSubsection{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
   Open Office XML, XMPP, \\
   SyncML, RDF, XMI, XMIR :)
 }
 
-\innoSection[XSD]{XSD, XPath, XSLT, XQuery, etc.}
+\plush{\innoChapter[XSD]{XSD, XPath, XSLT, XQuery, etc.}}
 
+\subcrumbection{XSD}
 \plush[4]{
-  \innoSubsection[XSD]{XML Schema Definition (XSD)}
+  \innoSubsection{XML Schema Definition (XSD)}
   \innoSnippet[\scriptsize]{library.xsd}
 }
 
+\subcrumbection{XPath}
 \plush[4]{
-  \innoSubsection[XPath]{XML Path Language (XPath)}
+  \innoSubsection{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
   \ff{/library/book[@id='42']}\par
@@ -75,16 +81,18 @@
   \ff{//book[author[text()='David West']]}
 }
 
+\subcrumbection{XSL}
 \plush[4]{
-  \innoSubsection[XSL]{XSL Transformations (XSLT)}
+  \innoSubsection{XSL Transformations (XSLT)}
   \innoSnippet[\scriptsize]{library.xsl}
 }
 
-\innoSection[JSON]{JavaScript Object Notation (JSON)}
+\plush{\innoChapter[JSON]{JavaScript Object Notation (JSON)}}
 
+\subcrumbection{JSON}
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
-  \innoSubsection[JSON]{JSON for the Library}
+  \innoSubsection{JSON for the Library}
   \innoSnippet{library.json}
 }
 
@@ -94,21 +102,24 @@
   \ff{JSON.stringify(\{age: 25\});}
 }
 
-\innoSection[Others]{YAML, TOML, CSV}
+\plush{\innoChapter[Others]{YAML, TOML, CSV}}
 
+\subcrumbection{YAML}
 \plush[2]{
-  \innoSubsection[YAML]{Yet Another Markup Language (YAML)}
+  \innoSubsection{Yet Another Markup Language (YAML)}
   \innoSnippet{library.yml}
 }
 
+\subcrumbection{TOML}
 \plush[2]{
   \innoSubsection{TOML}
   \innoSnippet{library.toml}
 }
 
+\subcrumbection{CSV}
 \plush[2]{
   \innoPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
-  \innoSubsection[CSV]{Comma-Separated Values (CSV)}
+  \innoSubsection{Comma-Separated Values (CSV)}
   \innoSnippet{library.csv}
 }
 

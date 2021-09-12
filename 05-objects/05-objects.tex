@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{Object Thinking}
 \newcommand*\thesubtitle{and Domain Driven Design}
 \begin{document}
@@ -40,15 +40,17 @@
 
 \innoToc
 
-\innoSection[Theory]{The Philosophy of OOP}
+\plush{\innoChapter[Theory]{The Philosophy of OOP}}
 
+\subcrumbection{GOTO}
 \plush[3]{
-  \innoSubsection[GOTO]{The Era of GOTO}
+  \innoSubsection{The Era of GOTO}
   \innoPic{0.7}{basic}
 }
 
+\subcrumbection{IF/THEN}
 \plush[3]{
-  \innoSubsection[IF/THEN]{Structured Programming}
+  \innoSubsection{Structured Programming}
   \begin{multicols}{2}
     \innoPic{0.9}{pascal}
     \par\columnbreak
@@ -56,13 +58,15 @@
   \end{multicols}
 }
 
+\subcrumbection{CALL}
 \plush[3]{
-  \innoSubsection[CALL]{Procedural Programming}
+  \innoSubsection{Procedural Programming}
   \innoPic{0.5}{calls}
 }
 
+\subcrumbection{OOP$_1$}
 \plush[3]{
-  \innoSubsection[OOP$_1$]{Object-Oriented Programming ... Not!}
+  \innoSubsection{Object-Oriented Programming ... Not!}
   \innoPic{0.5}{oop-bad}
 }
 
@@ -71,8 +75,9 @@
   \innoPic{0.8}{rectangles1}
 }
 
+\subcrumbection{OOP$_2$}
 \plush[3]{
-  \innoSubsection[OOP$_2$]{OOP Done Right}
+  \innoSubsection{OOP Done Right}
   \innoPic{0.5}{oop-good}
 }
 
@@ -81,23 +86,27 @@
   \innoPic{0.8}{rectangles2}
 }
 
-\innoSection[Object]{What is an Object?}
+\plush{\innoChapter[Object]{What is an Object?}}
 
+\subcrumbection{C++}
 \plush{
   \innoSubsection{C++}
   \innoQuote{books/stroustrup}{An object is some memory that holds a value of some type}{\emph{Programming Principles and Practice Using C++} by \nospell{Bjarne Stroustrup}}
 }
 
+\subcrumbection{Wiki}
 \plush{
   \innoSubsection{Wiki}
   \innoQuote{books/wikipedia}{Objects may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods}{Wikipedia}
 }
 
+\subcrumbection{Smalltalk}
 \plush{
   \innoSubsection{Smalltalk}
   \innoQuote{books/smalltalk}{An object consists of some private memory and a set of operations}{\emph{Smalltalk-80: The Language and Its Implementation} by \nospell{Adele Goldberg} et al., p.~6}
 }
 
+\subcrumbection{Java}
 \plush{
   \innoSubsection{Java}
   \innoQuote{books/java-nutshell}{A class is a collection of data fields that hold values and methods that operate on those values}{\emph{Java in a Nutshell} by \nospell{Ben Evans}}
@@ -108,24 +117,27 @@
   \innoQuote{books/eckel}{Each object looks quite a bit like a little computer --- it has a state, and it has operations that you can ask it to perform}{\emph{Thinking in Java} by \nospell{Bruce Eckel}, p.~16}
 }
 
+\subcrumbection{West}
 \plush{
   \innoSubsection{West}
   \innoQuote{books/object-thinking}{An object is the equivalent of the quanta from which the universe is constructed}{\emph{Object Thinking} by \nospell{David West}, p.~66}
 }
 
-\innoSection[Evil]{Three Most Evil Parts of OOP}
+\plush{\innoChapter[Evil]{Three Most Evil Parts of OOP}}
 
+\subcrumbection{Static}
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \innoSubsection[Static]{1. Static Methods}
+  \innoSubsection{1. Static Methods}
   \innoPic{0.5}{static1}
   \par
   \innoPic{0.5}{static2}
 }
 
+\subcrumbection{Mutability}
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2014/11/07/how-immutability-helps.html}
-  \innoSubsection[Mutability]{2. Mutability vs. Immutability}
+  \innoSubsection{2. Mutability vs. Immutability}
   \innoPic{0.5}{mutable}
   \par
   \innoPic{0.4}{immutable}
@@ -137,9 +149,10 @@
   \innoPic{0.8}{immutability-benefits}
 }
 
+\subcrumbection{NULL}
 \plush[4]{
   \innoPinQR{https://www.yegor256.com/2014/05/13/why-null-is-bad.html}
-  \innoSubsection[NULL]{3. NULL References}
+  \innoSubsection{3. NULL References}
   \innoPic{0.8}{null}\par
   \emph{Null References, The Billion Dollar Mistake}\\
   presentation by \nospell{Tony Hoare},
@@ -157,24 +170,23 @@
   \innoPic{0.7}{fail-fast}
 }
 
-\innoSection[DDD]{Domain Driven Design}
+\plush{\innoChapter[DDD]{Domain Driven Design}}
 
 \plush[4]{
   \innoBanner{Names of Objects Done Right}
   \innoPic{0.6}{ddd}
 }
 
-\innoSection[EO]{Elegant Objects}
+\plush{\innoChapter{Elegant Objects}}
 
 \print{\innoPinQR{https://www.elegantobjects.org}}
-\print{\innoBanner{Elegant Objects (EO)}}\click
-\print{Started in 2014}\click
-\print{Two books, 40+ speeches, 80+ blog posts}\click
-\print{30+ frameworks and libraries}\click
-\print{50+ fans registered}\click
-\print{Six bloggers\\\small e.g. \nospell{pragmaticobjects.com}, \nospell{g4s8.wtf}, \nospell{amihaiemil.com}}\click
-\print{Five ``Object Thinking'' Meetups}
-\flush
+\plick{\innoBanner{Elegant Objects (EO)}}
+\plick{Started in 2014}
+\plick{Two books, 40+ speeches, 80+ blog posts}
+\plick{30+ frameworks and libraries}
+\plick{50+ fans registered}
+\plick{Six bloggers\\\small e.g. \nospell{pragmaticobjects.com}, \nospell{g4s8.wtf}, \nospell{amihaiemil.com}}
+\plush{Five ``Object Thinking'' Meetups}
 
 \plush[3]{
   \small
@@ -210,13 +222,12 @@
 }
 
 \print{\innoBanner{If you want to help:}}
-\print{EO to JavaScript/Go/Rust/Ruby compilers}\click
-\print{REPL for EO}\click
-\print{Static analysis of EO code}\click
-\print{EO integration with Java/C++}\click
-\print{Automated refactoring of EO code}\click
-\print{JetBrains plugin for EO}
-\flush
+\plick{EO to JavaScript/Go/Rust/Ruby compilers}
+\plick{REPL for EO}
+\plick{Static analysis of EO code}
+\plick{EO integration with Java/C++}
+\plick{Automated refactoring of EO code}
+\plush{JetBrains plugin for EO}
 
 \innoBVC
 

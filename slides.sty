@@ -42,25 +42,17 @@
   \par
 }
 
-\newcommand\innoSection[2][]{%
-  % \innoMiddle{%
-  %   {\large\ttfamily Chapter \#\the\value{section}:}
-  %   \section[#1]{#2}
-  % }
+\newcommand\innoChapter[2][]{%
+  \crumbection[#1]{#2}%
   \innoMiddle{%
     {\large\ttfamily Chapter \#\the\value{section}:}
-    \innoBanner[blue]{\section[#1]{#2}}
+    \innoBanner[blue]{\LARGE#2}
   }
 }
 
-\newcommand\innoSubsection[2][]{%
-  \subsection[#1]{#2}
-  % \innoBanner[orange]{\subsection[#1]{#2}}
-}
-
 \newcommand\innoHeader[1]{%
-  \innoBanner[orange]{\LARGE #1}
-  \vspace*{0.5in}
+  \innoBanner[orange]{\Large #1}
+  \vspace*{0.25in}
 }
 
 \newcommand\innoTitle[2]{
@@ -145,6 +137,12 @@
   }
 }
 
+\newcommand\innoSnippet[2][\small]{
+  \begin{samepage}
+    #1\verbatiminput{#2}
+  \end{samepage}
+}
+
 \newcommand\innoQR[2][2in]{
   \tikz{%
     \node[draw=white]{%
@@ -155,6 +153,7 @@
   }
 }
 
+\RequirePackage{seqsplit}
 \newcommand\innoPinQR[1]{%
   \innoPin{%
     \begin{minipage}{1.4in}

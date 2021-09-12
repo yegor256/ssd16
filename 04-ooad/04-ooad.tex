@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{Object-Oriented}
 \newcommand*\thesubtitle{Analysis and Design}
 \begin{document}
@@ -44,8 +44,9 @@
 
 \innoToc
 
-\innoSection[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}
+\plush{\innoChapter[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}}
 
+\subcrumbection{Abstraction}
 \plush[3]{
   \innoSubsection{Abstraction}
   \innoPic{0.8}{oop-vs-pp}
@@ -76,6 +77,7 @@
 
 \plush[2]{\innoPic{0.4}{java-abstraction2}}
 
+\subcrumbection{Encapsulation}
 \plush[3]{
   \innoSubsection{Encapsulation}
   \innoPic{0.7}{encapsulation}
@@ -83,19 +85,20 @@
 
 \plush[2]{\innoPic{0.7}{encapsulation2}}
 
-\print{
+\plick{
   ``Encapsulation Covers Up Naked Data'' (2016)\par
   \innoQR[1in]{https://www.yegor256.com/2016/11/21/naked-data.html}
-}\click
-\print{\innoPic{0.4}{naked1}}\click
-\print{\innoPic{0.4}{naked2}}
-\flush[5]
+}
+\plick{\innoPic{0.4}{naked1}}
+\plush[5]{\innoPic{0.4}{naked2}}
 
+\subcrumbection{Modularity}
 \plush[3]{
   \innoSubsection{Modularity}
   \innoPic{0.7}{modularity}
 }
 
+\subcrumbection{Hierarchy}
 \plush[3]{
   \innoSubsection{Hierarchy}
   \innoPic{0.7}{hierarchy}
@@ -113,8 +116,7 @@
   \innoQR[1.5in]{https://www.yegor256.com/2016/09/13/inheritance-is-procedural.html}
 }
 
-
-\innoSection[SOLID]{SOLID Principles by Uncle Bob}
+\plush{\innoChapter[SOLID]{SOLID Principles by Uncle Bob}}
 
 \plush{\innoQuote{books/agile-martin}{The attitude that agile developers have toward the design of the software is the same attitude that surgeons have toward sterile procedure. Sterile procedure is what makes surgery possible. Without it, the risk of infection would be far too high to tolerate. Agile developers feel the same way about their designs.}{\emph{Agile Software Development. Principles, Patterns, and Practices}, Robert Martin}}
 
@@ -136,8 +138,9 @@
   \ff{@unclebobmartin} on Twitter
 }
 
+\subcrumbection{SRP}
 \plush[3]{
-  \innoSubsection[SRP]{Single Responsibility Principle (SRP)}
+  \innoSubsection{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
   ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
@@ -148,53 +151,58 @@
 
 \plush[2]{\innoPic{0.7}{srp}}
 
+\subcrumbection{OCP}
 \plush{
-  \innoSubsection[OCP]{Open-Close Principle (OCP)}
+  \innoSubsection{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
   \par
   \innoPic{0.5}{ocp}
 }
 
+\subcrumbection{LSP}
 \plush[3]{
-  \innoSubsection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
+  \innoSubsection{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
   \innoPic{0.3}{lsp}\par
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
+\subcrumbection{Duck}
 \plush[3]{
-  \innoSubsection[Duck]{Duck Typing}
+  \innoSubsection{Duck Typing}
   \innoPic{0.7}{duck}
 }
 
+\subcrumbection{ISP}
 \plush{
-  \innoSubsection[ISP]{Interface Segregation Principle (ISP)}\par
+  \innoSubsection{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
   \par
   \innoPic{0.5}{isp}
 }
 
+\subcrumbection{DIP}
 \plush{
-  \innoSubsection[DIP]{Dependency Inversion Principle (DIP)}\par
+  \innoSubsection{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
   \par
   \innoPic{0.7}{dip}
 }
 
-\innoSection[Contracts]{Design by Contract by Bertrand Meyer}
+\plush{\innoChapter[Contracts]{Design by Contract by Bertrand Meyer}}
 
 \plush{\innoPic{0.5}{contracts}}
 
-\innoSection[DRY]{Don't Repeat Yourself (DRY)}
+\plush{\innoChapter[DRY]{Don't Repeat Yourself (DRY)}}
 
 \plush[3]{\innoPic{0.5}{dry}}
 
-\innoSection[YAGNI]{You Ain't Gonna Need It (YAGNI)}
+\plush{\innoChapter[YAGNI]{You Ain't Gonna Need It (YAGNI)}}
 
 \plush[3]{\innoPic{0.7}{yagni}}
 
-\innoSection[IoC]{Inversion of Control}
+\plush{\innoChapter[IoC]{Inversion of Control}}
 
 \plush[4]{
   ``How Does Inversion of Control Really Work?'' (2017)\par
@@ -202,7 +210,7 @@
   \innoPic{0.6}{ioc}
 }
 
-\innoSection[FP]{OOP vs. Functional Programming}
+\plush{\innoChapter[FP]{OOP vs. Functional Programming}}
 
 \plush[3]{
   \innoPic{0.8}{oop-vs-fp}\br

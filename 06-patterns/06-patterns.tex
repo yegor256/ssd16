@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{Patterns}
 \newcommand*\thesubtitle{Anti-Patterns and Refactoring}
 \begin{document}
@@ -36,7 +36,7 @@
 
 \innoToc
 
-\innoSection[Patterns]{Some Patterns}
+\plush{\innoChapter[Patterns]{Some Patterns}}
 
 \plush{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
@@ -44,27 +44,31 @@
   36 patterns (22 anti-patterns)
 }
 
+\subcrumbection{Decorator}
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
-  \innoSubsection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
+  \innoSubsection{Adapter, Facade, Proxy, Decorator, Bridge}
   \innoSnippet[\footnotesize]{adapter.java}
 }
 
+\subcrumbection{RAII}
 \plush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
-  \innoSubsection[RAII]{Resource Acquisition Is Initialization (RAII)}
+  \innoSubsection{Resource Acquisition Is Initialization (RAII)}
   \innoSnippet[\footnotesize]{raii.cpp}
 }
 
-\innoSection[Anti]{Some Anti-Patterns}
+\plush{\innoChapter[Anti]{Some Anti-Patterns}}
 
+\subcrumbection{GOTO}
 \plush[2]{
   \innoSubsection{GOTO}
   \innoSnippet[\footnotesize]{goto.c}
 }
 
+\subcrumbection{Numbers}
 \plush[2]{
-  \innoSubsection[Numbers]{Magic Numbers}
+  \innoSubsection{Magic Numbers}
   \innoSnippet{magic.rb}
 }
 
@@ -73,22 +77,25 @@
   \innoSnippet{magic2.rb}
 }
 
+\subcrumbection{God}
 \plush[2]{
-  \innoSubsection[God]{God Class}
+  \innoSubsection{God Class}
   \innoPic{0.6}{god-class}
 }
 
+\subcrumbection{Spaghetti}
 \plush[2]{
-  \innoSubsection[Spaghetti]{Spaghetti Code}
+  \innoSubsection{Spaghetti Code}
   \innoPic{0.4}{spaghetti}
 }
 
+\subcrumbection{Lasagna}
 \plush[2]{
-  \innoSubsection[Lasagna]{Lasagna and Ravioli}
+  \innoSubsection{Lasagna and Ravioli}
   \innoPic{0.3}{ravioli}
 }
 
-\innoSection[Anti-OOP]{Anti-OOP Patterns}
+\plush{\innoChapter[Anti-OOP]{Anti-OOP Patterns}}
 
 \plush[2]{
   Anti-Patterns in OOP (2014)\par
@@ -107,32 +114,36 @@
   Traits and Mixins.
 }
 
+\subcrumbection{DTO}
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
-  \innoSubsection[DTO]{Data Transfer Object (DTO)}
+  \innoSubsection{Data Transfer Object (DTO)}
   \innoBanner{Getters and Setters}
   \innoSnippet{dto.java}
 }
 
+\subcrumbection{Utility}
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \innoSubsection[Utility]{Utility Class}
+  \innoSubsection{Utility Class}
   \innoSnippet[\footnotesize]{utility.java}
 }
 
+\subcrumbection{Singleton}
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \innoSubsection{Singleton}
   \innoSnippet{singleton.java}
 }
 
+\subcrumbection{ORM}
 \plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
-  \innoSubsection[ORM]{Object-Relational Mapping (ORM)}
+  \innoSubsection{Object-Relational Mapping (ORM)}
   \innoSnippet{orm.java}
 }
 
-\innoSection[Refactorings]{Some Refactorings}
+\plush{\innoChapter[Refactorings]{Some Refactorings}}
 
 \plush[2]{\innoQuote{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 

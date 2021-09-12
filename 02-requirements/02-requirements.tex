@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
 \begin{document}
@@ -37,7 +37,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \innoToc
 
-\innoSection[UCs]{Use Cases (user stories)}
+\plush{\innoChapter[UCs]{Use Cases (user stories)}}
 
 \plush[2]{
   \begin{multicols}{2}
@@ -75,23 +75,22 @@ Extensions:
   \colorbox{white}{\innoPic{0.5}{uc-diagram}}
 }
 
-\innoSection[FPA]{FPA \& IFPUG \& COSMIC}
+\plush{\innoChapter[FPA]{FPA \& IFPUG \& COSMIC}}
 
-\print{\innoBanner{Function Point Analysis (FPA)}}
-\print{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}\click
-\print{International Function Point Users Group (IFPUG) is in charge}\click
-\print{Regulated by ISO 20296}\click
-\print{COSMIC is the modern version: ISO/IEC 14143}\click
-\print{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}\click
-\print{Function Points (FPs) are used for estimates}
-\flush[4]
+\plick{\innoBanner{Function Point Analysis (FPA)}}
+\plick{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}
+\plick{International Function Point Users Group (IFPUG) is in charge}
+\plick{Regulated by ISO 20296}
+\plick{COSMIC is the modern version: ISO/IEC 14143}
+\plick{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}
+\plush[4]{Function Points (FPs) are used for estimates}
 
 \plush[2]{
   \innoQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
-\innoSection[Matrix]{Traceability Matrix}
+\plush{\innoChapter[Matrix]{Traceability Matrix}}
 
 \plush[5]{
   \innoBanner{Traceability Matrix}\par
@@ -101,20 +100,19 @@ Extensions:
   Nodes, etc.}
 }
 
-\innoSection[V\&V]{Verification \& Validation}
+\plush{\innoChapter[V\&V]{Verification \& Validation}
 
 \plush[3]{\innoQuote{books/cmmi-vv}{Two different questions may be asked by a project team:
 \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}{}}
 
-\innoSection[NFRs]{Non-Functional Requirements (NFRs)}
+\plush{\innoChapter[NFRs]{Non-Functional Requirements (NFRs)}}
 
 \print{\innoBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
-\print{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}\click
-\print{Capacity: Clicks Per Second (CPS)}\click
-\print{Recovery: Recovery Time Objective (RTO)}\click
-\print{Maintainability: Mean Time To Repair (MTTR)}\click
-\print{Usability: focus group surveys?}
-\flush[8]
+\plick{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}
+\plick{Capacity: Clicks Per Second (CPS)}
+\plick{Recovery: Recovery Time Objective (RTO)}
+\plick{Maintainability: Mean Time To Repair (MTTR)}
+\plush[8]{Usability: focus group surveys?}
 
 \plush[5]{
   \begin{multicols}{2}
@@ -155,7 +153,7 @@ Extensions:
   \end{multicols}
 }
 
-\innoSection[COCOMO]{Estimates and COCOMO II}
+\plush{\innoChapter[COCOMO]{Estimates and COCOMO II}}
 
 \plush[2]{\innoQuote{books/boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 

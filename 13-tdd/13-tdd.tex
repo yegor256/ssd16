@@ -21,7 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
+\usepackage{../slides}
 \newcommand*\thetitle{Test-Driven}
 \newcommand*\thesubtitle{Development}
 \begin{document}
@@ -30,9 +32,9 @@
 
 \innoToc
 
-\innoSection{BDD}{Behavior Driven Development (BDD)}
+\plush{\innoChapter{BDD}{Behavior Driven Development (BDD)}}
 
-\innoSection{B.V.C}{Books, Venues, Call-to-Action}
+\innoBVC
 
 % \plush{
 %   \begin{multicols}{2}
@@ -46,13 +48,11 @@
 
 \plush{
   \innoBanner{Where to publish:}
-
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications.
 }
 
 \plush{
   \innoBanner{Call to Action:}
-
   ...
 }
 

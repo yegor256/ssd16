@@ -21,9 +21,9 @@
 % SOFTWARE.
 
 \documentclass{article}
+\usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\usepackage{../ssd}
 \newcommand*\thetitle{UML}
 \newcommand*\thesubtitle{and XMI, OCL, MOF, etc.}
 \begin{document}
@@ -34,101 +34,118 @@
 
 \innoToc
 
-\innoSection[Class]{Class Diagram}
+\plush{\innoChapter[Class]{Class Diagram}}
 
+\subcrumbection{Classes}
 \plush[4]{
   \innoSubsection{Classes}
   \innoPic{0.6}{classes}
 }
 
+\subcrumbection{Generalization}
 \plush[3]{
   \innoSubsection{Generalization}
   \innoPic{0.8}{generalization}
 }
 
+\subcrumbection{Composition}
 \plush[3]{
   \innoSubsection{Composition}
   \innoPic{0.7}{composition}
 }
 
+\subcrumbection{Aggregation}
 \plush[3]{
   \innoSubsection{Aggregation}
   \innoPic{0.7}{aggregation}
 }
 
+\subcrumbection{Association}
 \plush[3]{
   \innoSubsection{Association}
   \innoPic{0.8}{association}
 }
 
+\subcrumbection{Dependency}
 \plush[3]{
   \innoSubsection{Dependency}
   \innoPic{0.7}{dependency}
 }
 
-\innoSection[Other]{Some Other Diagrams}
+\plush{\innoChapter[Other]{Some Other Diagrams}}
 
+\subcrumbection{UC}
 \plush[6]{
-  \innoSubsection[UC]{Use Case Diagram}
+  \innoSubsection{Use Case Diagram}
   \innoPic{0.7}{usecases}
 }
 
+\subcrumbection{Component}
 \plush[6]{
-  \innoSubsection[Component]{Component Diagram}
+  \innoSubsection{Component Diagram}
   \innoPic{0.6}{component}
 }
 
+\subcrumbection{Deployment}
 \plush[6]{
-  \innoSubsection[Deployment]{Deployment Diagram}
+  \innoSubsection{Deployment Diagram}
   \innoPic{0.7}{deployment}
 }
 
+\subcrumbection{Activity}
 \plush[6]{
-  \innoSubsection[Activity]{Activity Diagram}
+  \innoSubsection{Activity Diagram}
   \innoPic{0.7}{activity}
 }
 
+\subcrumbection{Sequence}
 \plush[6]{
-  \innoSubsection[Sequence]{Sequence Diagram}
+  \innoSubsection{Sequence Diagram}
   \innoPic{0.7}{sequence}
 }
 
-\innoSection[MDA]{MDA: MOF, XMI, OCL, QVT, fUML, ...}
+\plush{\innoChapter[MDA]{MDA: MOF, XMI, OCL, QVT, fUML, ...}}
 
+\subcrumbection{MDA}
 \plush[7]{
-  \innoSubsection[MDA]{Model Driven Architecture (MDA)}
+  \innoSubsection{Model Driven Architecture (MDA)}
   \innoPic{0.5}{mda}\par
   \footnotesize Computation Independent Model (CIM),
   Platform Independent Model (PIM),
   Platform Specific Model (PSM).
 }
 
+\subcrumbection{MOF}
 \plush[4]{
-  \innoSubsection[MOF]{Meta-Object Facility (MOF)}
+  \innoSubsection{Meta-Object Facility (MOF)}
   \innoPic{0.7}{mof}\par
   \small ``MOF is a Domain Specific Language (DSL) used to define metamodels,
   just as EBNF is a DSL for defining grammars''
   --- \href{https://en.wikipedia.org/wiki/Meta-Object_Facility}{Wikipedia}
 }
 
+\subcrumbection{XMI}
 \plush[5]{
-  \innoSubsection[XMI]{XML Metadata Interchange (XMI)}
+  \innoSubsection{XML Metadata Interchange (XMI)}
   \innoPic{0.5}{xmi1}
   \innoPic{0.7}{xmi2}
 }
 
+\subcrumbection{OCL}
 \plush[4]{
-  \innoSubsection[OCL]{Object Constraint Language (OCL)}
+  \innoSubsection{Object Constraint Language (OCL)}
   \innoPic{0.9}{ocl}
 }
 
+\subcrumbection{QVT}
 \plush[4]{
-  \innoSubsection[QVT]{Query/View/Transformation (QVT)}
+  \innoSubsection{Query/View/Transformation (QVT)}
   \innoPic{0.8}{qvt}
 }
 
+\subcrumbection{fUML}
 \plush[4]{
-  \innoSubsection[fUML]{Executable UML, fUML, Alf}
+  \innoSubsection{Executable UML, fUML, Alf}
   \innoPic{0.7}{alf}
 }
 
