@@ -121,7 +121,8 @@
     \node[anchor=north east] at (current page text area.north east) {%
       \begin{minipage}{0.5\textwidth}%
         \vspace{1in}%
-        \raggedleft{#1}%
+        \raggedleft%
+        #1
       \end{minipage}%
     };%
   \end{tikzpicture}%
@@ -160,12 +161,13 @@
 \RequirePackage{seqsplit}
 \newcommand\innoPinQR[1]{%
   \innoPin{%
-    \begin{minipage}{1.4in}
+    \begin{minipage}{1.4in}%
       \raggedleft%
-      \innoQR[1in]{#1}
+      \innoQR[1in]{#1}%
       \\[3pt]
-      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}\\
-    \end{minipage}
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}
+      \\
+    \end{minipage}%
   }%
 }
 
