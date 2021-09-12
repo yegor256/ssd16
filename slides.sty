@@ -28,7 +28,6 @@
 \RequirePackage{qrcode}
 \RequirePackage{tikz}
   \RequirePackage{tikzpagenodes}
-\RequirePackage{/code/crumbs/crumbs}
 
 \newcommand\br{\newline}
 
@@ -42,6 +41,7 @@
   \par
 }
 
+\RequirePackage{/code/crumbs/crumbs}
 \newcommand\innoChapter[2][]{%
   \crumbection[#1]{#2}%
   \innoMiddle{%
@@ -55,17 +55,17 @@
   \vspace*{0.25in}
 }
 
-\newcommand\innoTitle[2]{
+\newcommand\innoTitle[2]{%
   {\innoBanner{\Huge #1}}
   {\innoBanner{\large #2}}
 }
 
 \newcommand*\innoTOC{}
-\newcommand\innoToc{
+\newcommand\innoToc{%
   \renewcommand*\innoTOC{}
-  \print{
-    \tikz{
-      \node (z) {
+  \print{%
+    \tikz{%
+      \node (z) {%
         \begin{varwidth}{\textwidth}
           \ifx\innoTOC\empty\else
             \begin{itemize}[label={}]
@@ -78,7 +78,7 @@
     }
   }
   \begin{@empty}
-    \renewcommand\crumb[2]{
+    \renewcommand\crumb[2]{%
       \ifx\innoTOC\empty\else\click\fi
       \gappto\innoTOC{\item ##2}
     }
@@ -87,7 +87,7 @@
   \flush
 }
 
-\newcommand\innoQuote[3]{
+\newcommand\innoQuote[3]{%
   \begin{tabularx}{\columnwidth}{c>{\raggedright\arraybackslash}X}
     \raisebox{\dimexpr-\height+\ht\strutbox}{\innoPic{0.25}{#1}}
     &
@@ -102,7 +102,7 @@
   \end{tabularx}
 }
 
-\newcommand\innoPic[2]{
+\newcommand\innoPic[2]{%
   {%
     \setlength{\fboxsep}{0pt}%
     \setlength{\fboxrule}{1pt}%
@@ -123,10 +123,10 @@
   \end{tikzpicture}%
 }
 
-\newcommand\innoThought[1]{
-  \innoMiddle{
-    \tikz{
-      \node [inner sep=18pt] (z) {
+\newcommand\innoThought[1]{%
+  \innoMiddle{%
+    \tikz{%
+      \node [inner sep=18pt] (z) {%
         \begin{varwidth}{0.8\textwidth}
           \Large
           #1
@@ -137,13 +137,13 @@
   }
 }
 
-\newcommand\innoSnippet[2][\small]{
+\newcommand\innoSnippet[2][\small]{%
   \begin{samepage}
     #1\verbatiminput{#2}
   \end{samepage}
 }
 
-\newcommand\innoQR[2][2in]{
+\newcommand\innoQR[2][2in]{%
   \tikz{%
     \node[draw=white]{%
       \href{#2}{%
