@@ -36,35 +36,35 @@
 
 \subcrumbection{Navi}
 \plush{
-  \innoSubsection{Navigational Databases}
+  \innoSection{Navigational Databases}
   \innoPic{0.8}{navigational}\par
   E.g. Integrated Data Store (IDS)
 }
 
 \subcrumbection{Hierarchial}
 \plush{
-  \innoSubsection{Hierarchical Databases}
+  \innoSection{Hierarchical Databases}
   \innoPic{0.8}{hierarchical}\par
   E.g. IBM Information Management System (IMS)
 }
 
 \subcrumbection{SQL}
 \plush{
-  \innoSubsection{Relational Databases (SQL)}
+  \innoSection{Relational Databases (SQL)}
   \innoPic{0.8}{relational}\par
   E.g. Oracle Database
 }
 
 \subcrumbection{Object}
 \plush{
-  \innoSubsection{Object Databases}
+  \innoSection{Object Databases}
   \innoPic{0.8}{object}\par
   E.g. ObjectStore
 }
 
 \subcrumbection{K-V}
 \plush{
-  \innoSubsection{Key-Value Databases}
+  \innoSection{Key-Value Databases}
   \innoPic{0.4}{key-value}\par
   \innoPic{0.5}{dynamo}\par
   E.g. Redis, AWS DynamoDB
@@ -72,7 +72,7 @@
 
 \subcrumbection{Columnar}
 \plush{
-  \innoSubsection{Columnar Databases}
+  \innoSection{Columnar Databases}
   \innoPic{0.8}{columnar}\par
   E.g. ClickHouse by Yandex\par
   Read also about Online Analytical Processing (OLAP)
@@ -80,41 +80,41 @@
 
 \subcrumbection{NoSQL}
 \plush{
-  \innoSubsection{Document Databases (a.k.a. NoSQL)}
+  \innoSection{Document Databases (a.k.a. NoSQL)}
   \innoPic{0.5}{document}\par
   E.g. MongoDB
 }
 
 \subcrumbection{XML}
 \plush{
-  \innoSubsection{XML Databases}
+  \innoSection{XML Databases}
   \innoPic{0.4}{xml}\par
   E.g. eXist
 }
 
 \subcrumbection{S3}
 \plush{
-  \innoSubsection{AWS S3}
+  \innoSection{AWS S3}
   \innoPic{0.9}{s3}\par
 }
 
 \subcrumbection{Graph}
 \plush{
-  \innoSubsection{Graph Databases}
+  \innoSection{Graph Databases}
   \innoPic{0.5}{graph}\par
   E.g. Neo4j
 }
 
 \subcrumbection{NewSQL}
 \plush{
-  \innoSubsection{NewSQL}
+  \innoSection{NewSQL}
   ``NewSQL is a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system'' --- Wikipedia\par
   E.g. VoltDB
 }
 
 \subcrumbection{Big}
 \plush{
-  \innoSubsection{Big Data}
+  \innoSection{Big Data}
   \innoPic{0.8}{hadoop}\par
   E.g. Hadoop
 }
@@ -123,45 +123,45 @@
 
 \subcrumbection{IDEF1X}
 \plush{
-  \innoSubsection{IDEF1X Model for Databases}
+  \innoSection{IDEF1X Model for Databases}
   \innoPic{0.6}{idef1x-diagram}
 }
 
 \subcrumbection{UML}
 \plush{
-  \innoSubsection{UML Class Diagram as Database Model}
+  \innoSection{UML Class Diagram as Database Model}
   \innoPic{0.8}{uml}
 }
 
 \subcrumbection{ER}
 \plush{
-  \innoSubsection{Entity-Relationship (ER) Model}
+  \innoSection{Entity-Relationship (ER) Model}
   \innoPic{0.8}{er-diagram}
 }
 
 \plush{\innoChapter[Properties]{Properties of Databases}}
 
 \subcrumbection{ACID}
-\plick{\innoSubsection{ACID}}
+\plick{\innoSection{ACID}}
 \plick{\textbf{\large A}tomicity: everything or nothing}
 \plick{\textbf{\large C}onsistency: invariants are in place}
 \plick{\textbf{\large I}solation: concurrent or sequential}
 \plush{\textbf{\large D}urability: completed txns $\rightarrow$ non-volatile memory}
 
 \subcrumbection{Speed}
-\plick{\innoSubsection{Performance}}
+\plick{\innoSection{Performance}}
 \plick{Queries Profiling \& Optimization}
 \plick{Denormalization}
 \plush{Caching}
 
 \subcrumbection{Scale}
-\plick{\innoSubsection{Scalability}}
+\plick{\innoSection{Scalability}}
 \plick{Vertical vs. Horizontal Scalability}
 \plick{Sharding vs. Master-Slave Replication}
 \plush{\innoPic{0.8}{sharding}}
 
 \subcrumbection{Libs}
-\plick{\innoSubsection{Application Layer Support}}
+\plick{\innoSection{Application Layer Support}}
 \plick{Is it open source?}
 \plick{How mature is the library?}
 \plick{Is it a thin driver or ORM-ish framework?}
@@ -170,7 +170,7 @@
 \plush{Is the API open?}
 
 \subcrumbection{Versions}
-\plick{\innoSubsection{Schema Version Control}}
+\plick{\innoSection{Schema Version Control}}
 \plick{
   \innoPic{0.8}{0rsk}
   \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}
@@ -179,21 +179,21 @@
 
 \subcrumbection{Integrity}
 \plush{
-  \innoSubsection{Integrity: Primary and Foreign Keys}
+  \innoSection{Integrity: Primary and Foreign Keys}
   \innoPic{0.8}{keys}
 }
 
 \subcrumbection{Resilience}
-\plick{\innoSubsection{Resilience}}
+\plick{\innoSection{Resilience}}
 \plick{\innoPic{0.8}{mongo-failure}}
 \plush{Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.}
 
 \subcrumbection{Liability}
-\plick{\innoSubsection{Liability: Who Pays for Losses?}}
+\plick{\innoSection{Liability: Who Pays for Losses?}}
 \plush{AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND LICENSORS WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."}
 
 \subcrumbection{Durability}
-\plick{\innoSubsection{Durability: Can We Loose Data?}}
+\plick{\innoSection{Durability: Can We Loose Data?}}
 \plush{\href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''}
 
 \innoBVC

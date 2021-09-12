@@ -28,7 +28,6 @@
 \RequirePackage{qrcode}
 \RequirePackage{tikz}
   \RequirePackage{tikzpagenodes}
-\RequirePackage{/code/crumbs/crumbs}
 
 \newcommand\br{\newline}
 
@@ -42,6 +41,7 @@
   \par
 }
 
+\RequirePackage{/code/crumbs/crumbs}
 \newcommand\innoChapter[2][]{%
   \crumbection[#1]{#2}%
   \innoMiddle{%
@@ -50,8 +50,13 @@
   }
 }
 
+\newcommand\innoSection[1]{%
+  \innoHeader{#1}%
+}
+
 \newcommand\innoHeader[1]{%
-  \innoBanner[orange]{\Large #1}
+  \vspace*{-0.15in}
+  \rotatebox{3}{\innoBanner[orange]{\Large #1}}\par
   \vspace*{0.25in}
 }
 
