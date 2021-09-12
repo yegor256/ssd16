@@ -49,7 +49,6 @@
 \RequirePackage{varwidth}
 \RequirePackage{verbatim}
 \RequirePackage[fontsize=24pt]{fontsize} % to make fonts larger
-\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{ffcode}
 \RequirePackage{multirow}
@@ -75,29 +74,29 @@
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
   \renewcommand\crumb[2]{%
+    \ifnum\value{crumbi}=1\else\hspace{1em}\fi
     \ifnum\value{crumbi}=\value{section}%
       {\setulcolor{blue}\color{blue}\ul{#1}}%
     \else%
       #1%
     \fi%
-    \;
   }
   \renewcommand\subcrumb[2]{%
+    \ifnum\value{subcrumbi}=1\else\hspace{1em}\fi
     \ifnum\value{subcrumbi}=\value{subsection}%
       {\setulcolor{blue}\color{blue}\ul{#1}}%
     \else%
       #1%
-    \fi
-    \;
+    \fi%
   }
   \fancyhead[L]{%
     \ifx\crumbs\empty\else
       \begin{textblock}{12}(1,1)%
         \ifnum\value{section}=0\else
           {\small\ttfamily\crumbs}
-          \ifx\crumbs\empty\else
+          \ifnum\value{subsection}=0\else
             \\[6pt]
-            {\quad\scriptsize\ttfamily\color{gray}[\subcrumbs]}
+            {\quad\scriptsize\ttfamily\color{gray}[ \subcrumbs{} ]}
           \fi
         \fi
       \end{textblock}%

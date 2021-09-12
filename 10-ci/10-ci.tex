@@ -35,15 +35,15 @@
 \plush{\innoChapter[CI]{Continuous Integration}}
 
 \subcrumbection{CI}
-\plick{\innoBanner{How Continuous Integration (CI) works:}}
-\plick{\innoPic{0.8}{ci}}
-\plush{\innoBanner{It doesn't work :(}}
+\print{\innoBanner{How Continuous Integration (CI) works:}}
+\plick{\innoPic{0.4}{ci}}
+\plush{It doesn't work :(}
 
-\plush{\innoQuote{cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
+\plush{\innoQuote{books/cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
 
 \subcrumbection{Pre-Flight}
-\plick{\innoBanner{Pre-Flight Builds}}
-\plick{\innoPic{0.8}{preflight}}
+\print{\innoBanner{Pre-Flight Builds}}
+\plick{\innoPic{0.5}{preflight}}
 \plush{Master branch is ``read-only''!}
 
 \plush{\innoChapter[CD]{Continuous Delivery}}
@@ -57,7 +57,7 @@
 \plush{\innoQuote{books/release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
 
 \subcrumbection{Wall}
-\plick{\innoSection{Quality Wall}}
+\print{\innoSection{Quality Wall}}
 \plick{Linters}
 \plick{Static analyzers}
 \plick{Unit tests}
@@ -67,7 +67,7 @@
 \plush{Manual code review(s)}
 
 \subcrumbection{Targets}
-\plick{\innoSection{Target Platforms}}
+\print{\innoSection{Target Platforms}}
 \plick{Static web site: GitHub Pages}
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
@@ -75,13 +75,13 @@
 \plush{Mobile app: TestFlight}
 
 \subcrumbection{Versions}
-\plick{\innoSection{Versioning}}
+\print{\innoSection{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
 \plush{0ver.org: 0.43.3}
 
 \subcrumbection{Tools}
-\plick{\innoSection{CI/CD Tools}}
+\print{\innoSection{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
@@ -100,6 +100,7 @@
   \begin{multicols}{2}
     \innoPic{0.9}{github1}
     \par\columnbreak
+    \vspace*{1in}
     \innoPic{0.9}{github2}
   \end{multicols}
 }

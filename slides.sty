@@ -159,13 +159,14 @@
 }
 
 \RequirePackage{seqsplit}
+\RequirePackage{hyperref}
 \newcommand\innoPinQR[1]{%
   \innoPin{%
     \begin{minipage}{1.4in}%
       \raggedleft%
       \innoQR[1in]{#1}%
       \\[3pt]
-      \ttfamily\fontsize{8pt}{10pt}\selectfont\href{#1}{\seqsplit{#1}}
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\seqsplit{#1} \href{#1}{$\rightarrow$}
       \\
     \end{minipage}%
   }%
