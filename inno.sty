@@ -74,21 +74,21 @@
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \renewcommand\crumb[2]{%
+  \renewcommand\crumb[2]{
     \ifnum\value{crumbi}=\value{section}
       {\setulcolor{blue}\color{blue}\ul{#1}}
     \else
       #1
     \fi
   }
-  \renewcommand\subcrumb[2]{%
+  \renewcommand\subcrumb[2]{
     \ifnum\value{subcrumbi}=\value{subsection}
       {\setulcolor{blue}\color{blue}\ul{#1}}
     \else
       #1
     \fi
   }
-  \fancyhead[L]{%
+  \fancyhead[L]{
     \ifx\crumbs\empty\else
       \begin{textblock}{12}(1,1)%
         \ifnum\value{section}=0\else
@@ -99,7 +99,7 @@
       \end{textblock}%
     \fi
   }
-  \fancyhead[R]{%
+  \fancyhead[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
         {\ttfamily\normalsize {\thepage{}}{\footnotesize{\color{grey}/\pageref{LastPage}}}}
@@ -113,7 +113,7 @@
   }
 
 \newcommand\innoLeft[1]{%
-  \fancyfoot[L]{%
+  \fancyfoot[L]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[0,1](1,15)%
         {\color{grey}\scriptsize\ttfamily #1}
@@ -123,7 +123,7 @@
 }
 
 \newcommand\innoRight[1]{%
-  \fancyfoot[R]{%
+  \fancyfoot[R]{
     \ifnum\value{page}=1\else%
       \begin{textblock}{8}[1,1](15,15)%
         {\color{grey}\scriptsize\ttfamily #1}

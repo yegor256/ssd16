@@ -38,21 +38,21 @@
 
 \plush{\innoChapter[Patterns]{Some Patterns}}
 
-\plush{%
+\plush{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
   \innoQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
   36 patterns (22 anti-patterns)
 }
 
 \subcrumbection{Decorator}
-\plush[5]{%
+\plush[5]{
   \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
   \innoHeader{Adapter, Facade, Proxy, Decorator, Bridge}
   \innoSnippet[\footnotesize]{adapter.java}
 }
 
 \subcrumbection{RAII}
-\plush[5]{%
+\plush[5]{
   \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
   \innoHeader{Resource Acquisition Is Initialization (RAII)}
   \innoSnippet[\footnotesize]{raii.cpp}
@@ -61,43 +61,43 @@
 \plush{\innoChapter[Anti]{Some Anti-Patterns}}
 
 \subcrumbection{GOTO}
-\plush[2]{%
+\plush[2]{
   \innoHeader{GOTO}
   \innoSnippet[\footnotesize]{goto.c}
 }
 
 \subcrumbection{Numbers}
-\plush[2]{%
+\plush[2]{
   \innoHeader{Magic Numbers}
   \innoSnippet{magic.rb}
 }
 
-\plush[2]{%
+\plush[2]{
   \innoBanner{Magic Numbers ... Not!}
   \innoSnippet{magic2.rb}
 }
 
 \subcrumbection{God}
-\plush[2]{%
+\plush[2]{
   \innoHeader{God Class}
   \innoPic{0.6}{god-class}
 }
 
 \subcrumbection{Spaghetti}
-\plush[2]{%
+\plush[2]{
   \innoHeader{Spaghetti Code}
   \innoPic{0.4}{spaghetti}
 }
 
 \subcrumbection{Lasagna}
-\plush[2]{%
+\plush[2]{
   \innoHeader{Lasagna and Ravioli}
   \innoPic{0.3}{ravioli}
 }
 
 \plush{\innoChapter[Anti-OOP]{Anti-OOP Patterns}}
 
-\plush[2]{%
+\plush[2]{
   Anti-Patterns in OOP (2014)\par
   \innoQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
   Eleven:
@@ -115,7 +115,7 @@
 }
 
 \subcrumbection{DTO}
-\plush[3]{%
+\plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
   \innoHeader{Data Transfer Object (DTO)}
   \innoBanner{Getters and Setters}
@@ -123,21 +123,21 @@
 }
 
 \subcrumbection{Utility}
-\plush[3]{%
+\plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \innoHeader{Utility Class}
   \innoSnippet[\footnotesize]{utility.java}
 }
 
 \subcrumbection{Singleton}
-\plush[3]{%
+\plush[3]{
   \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \innoHeader{Singleton}
   \innoSnippet{singleton.java}
 }
 
 \subcrumbection{ORM}
-\plush[3]{%
+\plush[3]{
   \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
   \innoHeader{Object-Relational Mapping (ORM)}
   \innoSnippet{orm.java}
@@ -147,7 +147,7 @@
 
 \plush[2]{\innoQuote{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 
-\plush[3]{%
+\plush[3]{
   \innoPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
   \innoBanner{Extract Method}
   \innoSnippet[\footnotesize]{extract.rb}
@@ -155,7 +155,7 @@
 
 \innoBVC
 
-\plush{%
+\plush{
   \begin{multicols}{2}
     \innoBook{feathers}
       {Michael Feathers}
@@ -167,7 +167,7 @@
   \end{multicols}
 }
 
-\plush{%
+\plush{
   \begin{multicols}{2}
     \innoBook{gamma}
       {Erich Gamma et al.}
@@ -179,20 +179,20 @@
   \end{multicols}
 }
 
-\plush{%
+\plush{
   \innoBanner{Where to publish:}
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
   International Conference on Code Quality (ICCQ),\br
   in cooperation with ACM SIGPLAN/SIGSOFT and IEEE
 }
 
-\plush[2]{%
+\plush[2]{
   \innoBanner{Call to Action:}
   In your application demonstrate the usage of 4+ design patterns.
   Also, perform 4+ refactorings, each one in its own pull request.
 }
 
-\plush[3]{%
+\plush[3]{
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{prove} certain patterns are anti-patterns?

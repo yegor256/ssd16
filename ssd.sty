@@ -37,7 +37,7 @@
   respected authors.\par
 }}
 
-\newcommand\innoTitlePage[1]{%
+\newcommand\innoTitlePage[1]{
   \innoTitle{\thetitle}{\thesubtitle}\par
   {\scshape Yegor Bugayenko}\par
   Lecture \##1 out of 16 \br
@@ -48,11 +48,11 @@
 % 1: cover file
 % 2: author
 % 3: title
-\newcommand\innoBook[3]{%
+\newcommand\innoBook[3]{
   \innoPic{0.4}{books/#1} \br ``#3'' by {\scshape #2}
 }
 
-\newcommand\innoBVC{%
+\newcommand\innoBVC{
   \innoChapter[B.V.C.]{Books, Venues, Call-to-Action}
 }
 

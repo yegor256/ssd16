@@ -1,10 +1,10 @@
 [
-  {%
+  {
     "id": 42,
     "author": "David West",
     "title": "Object Thinking"
   },
-  {%
+  {
     "id": 43,
     "author": "Martin Fowler",
     "title": "Refactoring"

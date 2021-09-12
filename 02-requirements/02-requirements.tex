@@ -39,7 +39,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \plush{\innoChapter[UCs]{Use Cases (user stories)}}
 
-\plush[2]{%
+\plush[2]{
   \begin{multicols}{2}
     \innoPic{0.4}{../images/people/ivar-jacobson}\br
     \nospell{Ivar Jacobson} \br
@@ -70,7 +70,7 @@ Extensions:
 \end{ffcode}
 \newpage
 
-\plush[3]{%
+\plush[3]{
   \innoBanner{Use Case Diagram}
   \colorbox{white}{\innoPic{0.5}{uc-diagram}}
 }
@@ -85,14 +85,14 @@ Extensions:
 \plick{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}
 \plush[4]{Function Points (FPs) are used for estimates}
 
-\plush[2]{%
+\plush[2]{
   \innoQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
 \plush{\innoChapter[Matrix]{Traceability Matrix}}
 
-\plush[5]{%
+\plush[5]{
   \innoBanner{Traceability Matrix}\par
   \colorbox{white}{\innoPic{0.6}{matrix}}\par
   {\small Use Cases, Non-Functional Requirements, Test Cases,
@@ -114,7 +114,7 @@ Extensions:
 \plick{Maintainability: Mean Time To Repair (MTTR)}
 \plush[8]{Usability: focus group surveys?}
 
-\plush[5]{%
+\plush[5]{
   \begin{multicols}{2}
     \innoBanner[red]{Bad NFRs}\par
     ``The software must be fast.''\par
@@ -133,7 +133,7 @@ Extensions:
   \end{multicols}
 }
 
-\plush[9]{%
+\plush[9]{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
     \innoQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
@@ -157,7 +157,7 @@ Extensions:
 
 \plush[2]{\innoQuote{books/boehm}{For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}{Software Engineering Economics \br \nospell{Barry W. Boehm}}}
 
-\plush[5]{%
+\plush[5]{
   First, we predict the size in Kilo Lines of Code ($K$).\par
   Then, we find effort adjustment factor ($F$).\par
   Then, we find coefficients $a$, $b$, and $c$ using the table.\par
@@ -167,12 +167,12 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\plush[5]{%
+\plush[5]{
   \innoBanner{Cone of Uncertainty}
   \innoPic{0.6}{cone}
 }
 
-\plush[5]{%
+\plush[5]{
   \innoQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
   ``How much for this software?'' they ask.\par
   ``The development will take forever and will consume all your money,'' we answer.
@@ -180,7 +180,7 @@ Extensions:
 
 \innoBVC
 
-\plush{%
+\plush{
   \begin{multicols}{2}
     \innoBook{wiegers}
       {\nospell{Karl Wiegers} et al.}
@@ -192,7 +192,7 @@ Extensions:
   \end{multicols}
 }
 
-\plush{%
+\plush{
   \begin{multicols}{2}
     \innoBook{cockburn}
       {\nospell{Alistair Cockburn}}
@@ -204,19 +204,19 @@ Extensions:
   \end{multicols}
 }
 
-\plush[2]{%
+\plush[2]{
   \innoBanner{Where to publish:}\par
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\plush[3]{%
+\plush[3]{
   \innoBanner{Call to Action:}\par
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
-\plush[4]{%
+\plush[4]{
   \innoBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?
