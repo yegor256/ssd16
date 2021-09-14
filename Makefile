@@ -55,5 +55,8 @@ copy:
 
 clean:
 	for d in $(DIRS); do
-		cd $${d} && latexmk -C && cd ..
+		cd $${d}
+		latexmk -C
+		rm -rf _minted*
+		cd ..
 	done

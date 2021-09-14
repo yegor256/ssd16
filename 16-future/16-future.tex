@@ -24,49 +24,45 @@
 \usepackage{../ssd}
 \usepackage{../inno}
 \usepackage{../slides}
-\newcommand*\thetitle{Test-Driven}
-\newcommand*\thesubtitle{Development}
+\newcommand*\thetitle{Future}
+\newcommand*\thesubtitle{of Software Design}
 \begin{document}
 
-% original idea of tdd
-% bdd
-%
-
-\innoTitlePage{13}
+\plush{\innoTitlePage{16}}
 
 \innoToc
 
-\plush{\innoChapter{BDD}{Behavior Driven Development (BDD)}}
-
 \plush{\innoBVC}
 
-% \plush{%
-%   \begin{multicols}{2}
-%     \innoPic{0.4}{rup}\br
-%     ``A Practitioner's Guide to the RUP,'' \br Per Kroll et al.
-%     \par\columnbreak
-%     % \innoPic{0.4}{agile-martin}\br
-%     % ``Agile Software Development. Principles, Patterns, and Practices,'' \br Robert Martin
-%   \end{multicols}
-% }
+\plush[1]{%
+  \begin{multicols}{2}
+    \innoBook{aws}
+      {Ben Piper}
+      {AWS Certified Cloud Practitioner, Study Guide: CLF-C01 Exam}
+    \par\columnbreak
+    \innoBook{cloud}
+      {\nospell{Thomas Erl} et al.}
+      {Cloud Computing: Concepts, Technology \& Architecture}
+  \end{multicols}
+}
 
-\plush{%
-  \innoBanner{Where to publish:}
+\plush[3]{%
+  \innoBanner{Where to go:}
   ...
 }
 
-\plush{%
+\plush[2]{%
   \innoBanner{Call to Action:}
   ...
 }
 
-\plush{%
+\plush[6]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
-    \item How to \ul{...} ?
+    \item How to \ul{...} ...?
+    \item How to \ul{...} ...?
+    \item How to \ul{...} ...?
+    \item How to \ul{...} ...?
   \end{itemize}
 }
 
