@@ -24,10 +24,9 @@
 \ProvidesPackage{slides}[00.00.0000 0.0.0 Slides]
 
 \RequirePackage{varwidth}
-\RequirePackage{lastpage}
 \RequirePackage{qrcode}
 \RequirePackage{tikz}
-  \RequirePackage{tikzpagenodes}
+\RequirePackage{tikzpagenodes}
 
 \newcommand\br{\newline}
 
@@ -41,7 +40,7 @@
   \par
 }
 
-\RequirePackage{/code/crumbs/crumbs}
+\RequirePackage{crumbs}
 \newcommand\innoChapter[2][]{%
   \crumbection[#1]{#2}%
   \innoMiddle{%

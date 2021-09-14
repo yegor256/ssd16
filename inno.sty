@@ -44,6 +44,7 @@
 \RequirePackage{pagecolor}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{microtype}
+\RequirePackage{href-ul}
 \RequirePackage{multicol}
 \RequirePackage{anyfontsize}
 \RequirePackage{varwidth}
@@ -66,8 +67,7 @@
   \usetikzlibrary{backgrounds}
   \usetikzlibrary{calc}
   \usetikzlibrary{shapes.arrows}
-\RequirePackage{lastpage}
-\RequirePackage{/code/crumbs/crumbs}
+\RequirePackage{crumbs}
 
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
@@ -102,6 +102,7 @@
       \end{textblock}%
     \fi
   }
+  \RequirePackage{lastpage}
   \fancyhead[R]{%
     \ifnum\value{page}=1\else%
       \begin{textblock}{4}[1,0](15,1)%
