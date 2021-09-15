@@ -115,12 +115,7 @@
   }
 }
 
-\newcommand\innoPin[2][lt]{%
-    % \def\ragged{\raggedright}
-    % \def\at{
-    %   \ifstrequal{#1}{LT}{north west}
-    %   \ifstrequal{#1}{RT}{north west}
-    % }
+\newcommand\innoPin[1]{%
   \begin{tikzpicture}[remember picture,overlay]%
     \node[anchor=north east] at (current page text area.north west) {%
       \begin{minipage}{0.25\textwidth}%
