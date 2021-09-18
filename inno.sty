@@ -27,8 +27,6 @@
 \DeclareOption{white}{\whitetrue}
 \ProcessOptions\relax
 
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
 \RequirePackage{geometry}
   \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \RequirePackage[absolute]{textpos}
@@ -135,10 +133,6 @@
     \fi
   }
 }
-
-\newenvironment{innoWide}[1]
-  {\begin{adjustwidth}{-2in}{-1in}\begin{multicols}{#1}}
-  {\end{multicols}\end{adjustwidth}}
 
 \AtBeginDocument{%
   \ifwhite\else
