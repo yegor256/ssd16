@@ -23,8 +23,8 @@
 \documentclass[nobrand,anonymous,nodate,nosecurity]{huawei}
 \begin{document}
 
-{\sffamily{\large Software System Design}\\
-16-lectures course, the Syllabus}
+{\sffamily{\bfseries\Large Software System Design}\\
+16-lectures course, the syllabus}
 
 Prerequisites to the course (it is expected that a student knows this):
 
@@ -52,36 +52,39 @@ After the course a student \emph{hopefully} will know:
 At the end of the course a student receives a \emph{score} of up
 to 100 points. The points are given after a \emph{subjective} review
 of an open source software product created by the student during the
-course. Even though the review is subjective, the following
+course (no oral presentation is needed).
+Even though the review is subjective, the following
 balance has to be maintained (the questions provided below
 stand merely as examples and do not constitute the entire scope):
 
 \begin{itemize}
-\item {\scshape Requirements} (15\%):
+\item {\bfseries\scshape Requirements} (15\%):
   Glossary is in place?
-  Use cases are used to explain functional requirements?
-  Non-functional requirements are explained?
+  Stakeholders and their concerns are identified?
+  Use cases explain functional requirements?
+  Non-functional requirements are documented?
   NFRs are measurable?
-\item {\scshape Design} (25\%):
-  UML diagrams, such as component, deployment, class, and sequence, are present?
+\item {\bfseries\scshape Design} (25\%):
+  UML diagrams, such as Class, Component, Deployment, and Sequence, are present?
   Design decisions are explained?
   Design patterns are used?
   Traceability between requirements and design elements is visible?
-\item {\scshape Architecture} (30\%):
+\item {\bfseries\scshape Architecture} (30\%):
   The design is modular?
-  The composition of modules make sense?
+  The composition of modules makes sense?
   Design elements are cohesive?
-  Build is automated?
-  Delivery pipeline is automated?
-\item {\scshape Code} (15\%):
-  The code is clean?
+  Design elements are decoupled enough?
+  The build is automated?
+  The delivery pipeline is automated?
+\item {\bfseries\scshape Code} (15\%):
+  The code is clean enough?
   In-code documentation is present?
   Static analyzers and style checkers are used?
   Unit tests are in place?
-  Integration tests?
-\item {\scshape Spirit} (15\%):
-  Is product already somewhat popular on GitHub (or similar platform)?
-  Issues and pull requests are used?
+  Integration tests are present?
+\item {\bfseries\scshape Spirit} (15\%):
+  The product is somewhat popular on GitHub (or a similar platform)?
+  Issues and pull requests were used during development?
   Commit comments are detailed enough?
   GitHub features are actively used, like releases, actions, etc.?
 \end{itemize}
@@ -90,5 +93,48 @@ A few versions of the product may be presented for review:
 Alpha, Beta, and Final. The scores given to a student
 after version reviews don't affect the overall
 score given at the end of the course.
+
+The score may be turned into a grade using the following formula:
+
+\begin{itemize}
+\item \textbf{A} Excellent: 90+
+\item \textbf{B} Good: 75+
+\item \textbf{C} Satisfactory: 55+
+\item \textbf{D} Poor: 0+
+\end{itemize}
+
+The following books are highly recommended to read (in no particular order):
+
+\begin{multicols}{2}\small\raggedright
+Len Bass et al., \emph{Software Architecture in Practice}\\
+Paul Clements et al., \emph{Documenting Software Architectures: Views and Beyond}\\
+\nospell{Karl Wiegers} et al., \emph{Software Requirements}\\
+{\nospell{Alistair Cockburn}}, \emph{Writing Effective Use Cases}\\
+{\nospell{Steve McConnell}}, \emph{Software Estimation: Demystifying the Black Art}\\
+{Robert Martin}, \emph{Clean Architecture: A Craftsman's Guide to Software Structure and Design}\\
+{Steve McConnell}, \emph{Code Complete}\\
+{Frederick Brooks Jr.}, \emph{Mythical Man-Month, The: Essays on Software Engineering}\\
+{David Thomas et al.}, \emph{The Pragmatic Programmer: Your Journey To Mastery}\\
+{Robert C. Martin}, \emph{Clean Code: A Handbook of Agile Software Craftsmanship}\\
+{\nospell{Grady Booch} et al.}, \emph{Object-Oriented Analysis and Design with Applications}\\
+{\nospell{Bjarne Stroustrup}}, \emph{Programming: Principles and Practice Using C++}\\
+{\nospell{Brett McLaughlin} et al.}, \emph{Head First Object-Oriented Analysis and Design: A Brain Friendly Guide to OOA\&D}\\
+{David West}, \emph{Object Thinking}\\
+{Eric Evans}, \emph{Domain-Driven Design: Tackling Complexity in the Heart of Software}\\
+{Yegor Bugayenko}, \emph{Elegant Objects}\\
+{Michael Feathers}, \emph{Working Effectively with Legacy Code}\\
+{Martin Fowler}, \emph{Refactoring: Improving the Design of Existing Code}\\
+{Erich Gamma et al.}, \emph{Design Patterns: Elements of Reusable Object-Oriented Software}\\
+{Scott Meyers}, \emph{Effective C++: 55 Specific Ways to Improve Your Programs and Designs}\\
+{\nospell{Elliotte Rusty Harold} et al.}, \emph{XML in a Nutshell, Third Edition}\\
+{\nospell{Michael James Fitzgerald}}, \emph{Learning XSLT: A Hands-On Introduction to XSLT and XPath}\\
+{Martin Fowler}, \emph{UML Distilled}\\
+{\nospell{Anneke Kleppe} et al.}, \emph{MDA Explained: The Model Driven Architecture: Practice and Promise}\\
+{C.J. Date}, \emph{An Introduction to Database Systems, 8th Edition}\\
+{\nospell{Pramod Sadalage} et al.}, \emph{NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence}\\
+{\nospell{Jez Humble} et al.}, \emph{Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}\\
+{\nospell{Michael T. Nygard}}, \emph{Release It!: Design and Deploy Production-Ready Software}\\
+{Leonard Richardson et al.}, \emph{RESTful Web APIs: Services for a Changing World}
+\end{multicols}
 
 \end{document}
