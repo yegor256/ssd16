@@ -28,48 +28,265 @@
 \newcommand*\thesubtitle{Patterns and Anti-Patterns}
 \begin{document}
 
-% all anti-patterns
-% oop + tests
-% how to make code testable
-% dependencies are evil
-
 \plush{\innoTitlePage{14}}
 
 \innoToc
 
-\plush{\innoChapter[AWS]{Amazon Web Services}}
+\plush{\innoChapter[23]{Twenty Three Test Anti-Patterns}}
+
+\plush{
+  \begin{multicols}{2}
+  \textbf{Cuckoo} \br
+  \textbf{Test-per-Method} \br
+  \textbf{Anal Probe} \br
+  \textbf{Conjoined Twins} \br
+  \textbf{Happy Path} \br
+  \textbf{Slow Poke} \br
+  \textbf{Giant} \br
+  \textbf{Mockery} \br
+  \textbf{Inspector} \br
+  \textbf{Generous Leftovers} \br
+  \textbf{Local Hero} \br
+  \textbf{Nitpicker} \br
+  \textbf{Secret Catcher} \br
+  \textbf{Dodger} \br
+  \textbf{Loudmouth} \br
+  \textbf{Greedy Catcher} \br
+  \textbf{Sequencer} \br
+  \textbf{Enumerator}  \br
+  \textbf{Free Ride} \br
+  \textbf{Excessive Setup}  \br
+  \textbf{Line hitter} \br
+  \textbf{Forty-Foot Pole Test} \br
+  \textbf{The Liar}
+  \end{multicols}
+  \small\url{https://www.yegor256.com/2018/12/11/unit-testing-anti-patterns.html}
+}
+
+\subcrumbection{1}
+\plush{
+  \innoSection{Test-per-Method}
+  Although a one-to-one relationship between test and production classes is a reasonable starting point, a one-to-one relationship between test and production method is almost always a bad idea.
+}
+
+\subcrumbection{2}
+\plush{
+  \innoSection{Anal Probe}
+  A test that has to use unhealthy ways to perform its task, such as reading private fields using reflection.
+}
+
+\subcrumbection{3}
+\plush{
+  \innoSection{Happy Path}
+  The tests stay on happy paths (i.e. expected results, e.g. 18 years old) without testing for boundaries and exceptions (e.g. -2 years old)
+}
+
+\subcrumbection{4}
+\plush{
+  \innoHeader{Slow Poke}
+  A unit test that runs incredibly slow. When developers kick it off, they have time to go to the bathroom, grab a smoke, or worse, kick the test off before they go home at the end of the day.
+}
+
+\subcrumbection{5}
+\plush{
+  \innoHeader{Giant}
+  A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many many test cases. This can be an indicator that the system-under-test is a God Object.
+}
+
+\subcrumbection{6}
+\plush{
+  \innoHeader{Mockery}
+  Sometimes mocking can be good, and handy. But sometimes developers can lose themselves in their effort to mock out what isn’t being tested. In this case, a unit test contains so many mocks, stubs, and/or fakes that the system under test isn’t even being tested at all, instead data returned from mocks is what is being tested.
+}
+
+\subcrumbection{7}
+\plush{
+  \innoHeader{Inspector}
+  A unit test that violates encapsulation in an effort to achieve 100\% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.
+}
+
+\subcrumbection{8}
+\plush{
+  \innoHeader{Generous Leftovers (aka Chain Gang, Wet Floor)}
+  An instance where one unit test creates data that is persisted somewhere, and another test reuses the data for its own devious purposes. If the “generator” is ran afterward, or not at all, the test using that data will outright fail.
+}
+
+\subcrumbection{9}
+\plush{
+  \innoHeader{Local Hero (aka Hidden Dependency)}
+  A test case that is dependent on something specific to the development environment it was written on, in order to run. The result is that the test passes on development boxes, but fails when someone attempts to run it elsewhere.
+}
+
+\subcrumbection{10}
+\plush{
+  \innoHeader{Dodger}
+  A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.
+}
+
+\subcrumbection{11}
+\plush{
+  \innoHeader{Loudmouth}
+  A unit test (or test suite) that clutters up the console with diagnostic messages, logging, and other miscellaneous chatter, even when tests are passing.
+}
+
+\subcrumbection{12}
+\plush{
+  \innoHeader{Sequencer}
+  A unit test that depends on items in an unordered list appearing in the same order during assertions.
+}
+
+\subcrumbection{13}
+\plush{
+  \innoHeader{Enumerator (aka Test With No Name)}
+  Unit tests where each test case method name is only an enumeration, e.g. test1, test2, test3. As a result, the intention of the test case is unclear, and the only way to be sure is to read the test case code and pray for clarity.
+}
+
+\subcrumbection{14}
+\plush{
+  \innoHeader{Free Ride (aka Piggyback)}
+  Rather than write a new test case method to test another feature or functionality, a new assertion rides along in an existing test case.
+}
+
+\subcrumbection{15}
+\plush{
+  \innoHeader{Excessive Setup (aka Mother Hen)}
+  A test that requires a lot of work to set up in order to even begin testing. Sometimes several hundred lines of code are used to setup the environment for one test, with several objects involved, which can make it difficult to really ascertain what is being tested due to the ``noise'' of all of the setup.
+}
+
+\subcrumbection{16}
+\plush{
+  \innoHeader{Line hitter}
+  At first glance, the tests cover everything and code coverage tools confirm it with 100\%, but in reality the   tests merely hit the code, without doing any output analysis.
+}
+
+\subcrumbection{17}
+\plush{
+  \innoHeader{The Liar (aka Evergreen Tests, Success Against All Odds)}
+  A test doesn’t validate any behaviour and passes in every scenario. Any new bug introduced in the code will never be discovered by this test. It was probably created after the implementation was finished, so the author of this test couldn’t know whether the test actually tests something.
+}
+
+\plush{\innoChapter[Mocking]{Mocking Frameworks}}
+
+\plush{
+  \innoHeader{Mocking Frameworks are Evil}
+  \innoPinQR[left]{https://www.youtube.com/watch?v=1bAixLaOCSA}
+  \innoPic{0.8}{mocking}
+}
+
+\plush{
+  \innoHeader{Instead: Doubles or Fake Objects}
+  \innoPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \innoPic{0.9}{fakes}
+}
+
+\plush{\innoChapter[OOP]{OOP + Tests}}
+
+\plush{
+  \innoHeader{xUnit Tests are Procedural}
+  \innoPinQR{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \innoPic{0.9}{algorithm}
+}
+
+\plush{
+  \innoHeader{Instead: Single-Method Unit Tests}
+  \innoPinQR{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \innoPic{0.9}{onemethod}
+}
+
+\plush{\innoChapter[Testable]{Testable Code}}
+
+\clearpage
+\innoHeader{All Dependencies Are Injectable}
+\begin{innoWide}{2}\small
+\innoBanner[red]{Wrong}
+\begin{ffcode}
+import java.nio.file.Files;
+class Book {
+  String title() {
+    return Files.readAllLines(
+      Paths.get("/my-files/book.txt")
+    )[0];
+  }
+}
+\end{ffcode}
+\par\columnbreak
+\innoBanner[green]{Right}
+\begin{ffcode}
+import java.nio.file.Files;
+class Book {
+  private Path file;
+  Book(Path f) {
+    this.file = f;
+  }
+  String title() {
+    return Files.readAllLines(
+      this.file
+    )[0];
+  }
+}
+\end{ffcode}
+\end{innoWide}
+\clearpage
+
+\clearpage
+\innoHeader{Each Interface Has a Fake Object}
+\begin{innoWide}{2}\small
+\innoBanner{Interface}
+\begin{ffcode}
+interface Book {
+  String title();
+  String author();
+}
+\end{ffcode}
+\par\columnbreak
+\innoBanner{Fake Book}
+\begin{ffcode}
+class FakeBook implements Book {
+  @Override
+  String title() {
+    return "Fake Title";
+  }
+  @Override
+  String author() {
+    return "Fake Author";
+  }
+}
+\end{ffcode}
+\end{innoWide}
+\clearpage
 
 \plush{\innoBVC}
 
 \plush[1]{%
   \begin{multicols}{2}
-    \innoBook{aws}
-      {Ben Piper}
-      {AWS Certified Cloud Practitioner, Study Guide: CLF-C01 Exam}
+    \innoBook{goos}
+      {\nospell{Steve Freeman} et al.}
+      {Growing Object-Oriented Software, Guided by Tests}
     \par\columnbreak
-    \innoBook{cloud}
-      {\nospell{Thomas Erl} et al.}
-      {Cloud Computing: Concepts, Technology \& Architecture}
+    \innoBook{feathers}
+      {Michael Feathers}
+      {Working Effectively with Legacy Code}
   \end{multicols}
 }
 
 \plush[3]{%
   \innoBanner{Where to go:}
-  ...
+  International Symposium on Software Testing and Analysis (ISSTA)
 }
 
 \plush[2]{%
   \innoBanner{Call to Action:}
-  ...
+  Get rid of mocking framework in your code and only
+  use fake objects.
 }
 
 \plush[6]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
+    \item How to \ul{detect} test anti-patterns automatically?
+    \item How to \ul{refactor} tests automatically?
+    \item How to \ul{write} fake objects faster?
+    \item How to \ul{educate} programmers to write better tests?
   \end{itemize}
 }
 
