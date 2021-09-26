@@ -28,53 +28,118 @@
 \newcommand*\thesubtitle{and Other Metrics}
 \begin{document}
 
-% why metrics?
-% cohesion metrics
-% maintainability
-% lines of code controversy
-% hits of code
-% productivity metrics
-% merged PRs, submitted tickets
-% volatility
-%
-
 \plush{\innoTitlePage{15}}
 
 \innoToc
 
-\plush{\innoChapter[AWS]{Amazon Web Services}}
+\plush{\innoChapter[Size]{Size and Complexity Metrics}}
+
+\subcrumbection{SLOC}
+\plush[5]{
+  \innoSection{Software Lines of Code (SLOC)}
+  \innoPic{0.8}{sloc}\br
+  \url{https://github.com/AlDanial/cloc}
+}
+
+\subcrumbection{HoC}
+\plush[5]{
+  \innoSection{Hits Of Code (HoC) or Code Churn}
+  \innoPic{0.8}{hoc}\br
+  \url{https://www.yegor256.com/2014/11/14/hits-of-code.html}\br
+  \url{https://hitsofcode.com/}
+}
+
+\subcrumbection{CC}
+\plush[5]{
+  \innoSection{McCabe Cyclomatic Complexity (CC)}
+  \innoPic{0.8}{mccabe}\br
+  Introduced by by Thomas J. McCabe, Sr. in 1976
+}
+
+\subcrumbection{CoC}
+\plush[3]{
+  \innoSection{Cognitive Complexity (CoC)}
+  \innoPic{0.8}{cognitive}\br
+  by G. Ann Campbell, SonarSource, 2011
+}
+
+\plush{\innoChapter[C\&C]{Coupling and Cohesion}}
+
+\plush[5]{
+  \innoSection{Low Coupling and High Cohesion}
+  \innoPic{0.8}{coupling}\br
+  Invented by Larry Constantine in the late 1960s as part of a structured design.
+}
+
+\subcrumbection{LCOM}
+\plush[5]{
+  \innoSection{Lack of Cohesion of Methods (LCOM)}
+  \innoPic{0.8}{lcom}
+}
+
+\subcrumbection{MMAC}
+\plush[5]{
+  \innoSection{Method-Method through Attributes Cohesion (MMAC)}
+  \innoPic{0.8}{mmac}
+}
+
+\subcrumbection{NHD}
+\plush[5]{
+  \innoSection{Normalized Hamming Distance (NHD)}
+  \innoPic{0.8}{nhd}
+}
+
+\subcrumbection{SCOM}
+\plush[5]{
+  \innoSection{Sensitive Class Cohesion Metric (SCOM)}
+  \innoPic{0.8}{scom}
+}
+
+\plush{\innoChapter[Productivity]{Productivity Metrics}}
+
+\print{\innoPinQR{https://www.yegor256.com/shift-m/2020/44.html}}
+\print{\innoHeader{Some Productivity Metrics}}
+\plick{Features Delivered}
+\plick{Pull Requests Merged}
+\plick{Bugs Fixed}
+\plick{Bugs Reported}
+\plick{Releases Published}
+\plick{Uptime}
+\plick{Cost of Pull Request}
+\plush{Mentee Results}
 
 \plush{\innoBVC}
 
-\plush[1]{%
-  \begin{multicols}{2}
-    \innoBook{aws}
-      {Ben Piper}
-      {AWS Certified Cloud Practitioner, Study Guide: CLF-C01 Exam}
-    \par\columnbreak
-    \innoBook{cloud}
-      {\nospell{Thomas Erl} et al.}
-      {Cloud Computing: Concepts, Technology \& Architecture}
-  \end{multicols}
-}
+% \plush[1]{%
+%   \begin{multicols}{2}
+%     \innoBook{aws}
+%       {Ben Piper}
+%       {AWS Certified Cloud Practitioner, Study Guide: CLF-C01 Exam}
+%     \par\columnbreak
+%     \innoBook{cloud}
+%       {\nospell{Thomas Erl} et al.}
+%       {Cloud Computing: Concepts, Technology \& Architecture}
+%   \end{multicols}
+% }
 
 \plush[3]{%
   \innoBanner{Where to go:}
-  ...
+  International Conference on Software Metrics in Software Engineering (ICSMSE)
 }
 
 \plush[2]{%
   \innoBanner{Call to Action:}
-  ...
+  Configure automated collection of cohesion and other metrics
+  in your project, and publish the numbers on each build.
 }
 
 \plush[6]{%
   \innoBanner[orange]{Still unresolved issues:}
   \begin{itemize}
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
-    \item How to \ul{...} ...?
+    \item How to \ul{measure} code readability?
+    \item How to \ul{connect} management and software metrics?
+    \item How to \ul{balance} different metrics?
+    \item How to \ul{predict} the future using metrics?
   \end{itemize}
 }
 
