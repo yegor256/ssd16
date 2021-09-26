@@ -115,11 +115,11 @@
   }
 }
 
-\newcommand\innoPin[1]{%
+\newcommand\innoPin[2][right]{%
   \begin{tikzpicture}[remember picture,overlay]%
     \node[anchor=north east] at (current page text area.north east) {%
       \begin{minipage}{0.25\textwidth}%
-        \raggedright #1
+        \raggedright #2
       \end{minipage}%
     };%
   \end{tikzpicture}%
@@ -157,13 +157,13 @@
 
 \RequirePackage{seqsplit}
 \RequirePackage{hyperref}
-\newcommand\innoPinQR[1]{%
-  \innoPin{%
+\newcommand\innoPinQR[2][right]{%
+  \innoPin[#1]{%
     \begin{minipage}{1.4in}%
       \raggedleft%
-      \innoQR[1in]{#1}%
+      \innoQR[1in]{#2}%
       \\[3pt]
-      \ttfamily\fontsize{8pt}{10pt}\selectfont\seqsplit{#1} \href{#1}{$\rightarrow$}
+      \ttfamily\fontsize{8pt}{10pt}\selectfont\seqsplit{#2} \href{#2}{$\rightarrow$}
       \\
     \end{minipage}%
   }%
