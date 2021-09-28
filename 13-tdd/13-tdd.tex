@@ -22,7 +22,7 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
+\usepackage[white]{../inno}
 \usepackage{../slides}
 \newcommand*\thetitle{Test-Driven}
 \newcommand*\thesubtitle{Development}
@@ -276,11 +276,11 @@ class BookTest {
 }
 
 \print{\innoHeader{Coverage Criteria}}
-\plick[2]{Function Coverage\br\small Has each function (or subroutine) in the program been called?}
-\plick[2]{Statement Coverage\br\small Has each statement in the program been executed?}
-\plick[2]{Edge Coverage\br\small Has every edge in the control-flow graph been executed?}
-\plick[2]{Branch Coverage\br\small Has each branch of each control structure been executed?}
-\plush[2]{Condition Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
+\plick[2]{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
+\plick[2]{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
+\plick[2]{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
+\plick[2]{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
+\plush[2]{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
 
 \clearpage
 \innoHeader{Mutation Testing + Coverage}
@@ -323,7 +323,7 @@ f(1) == 2
 f(2) == 5
 \end{ffcode}
 
-Test coverage: 100\%
+Test coverage: 100\% \par
 Mutation coverage = 50\%
 \end{innoWide}\clearpage
 

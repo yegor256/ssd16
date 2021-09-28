@@ -117,11 +117,21 @@
 
 \newcommand\innoPin[2][right]{%
   \begin{tikzpicture}[remember picture,overlay]%
-    \node[anchor=north east] at (current page text area.north east) {%
-      \begin{minipage}{0.25\textwidth}%
-        \raggedright #2
-      \end{minipage}%
-    };%
+    \ifthenelse{\equal{#1}{left}}
+    {
+      \node[anchor=north east] at (current page text area.north west) {%
+        \begin{minipage}{0.25\textwidth}%
+          \raggedleft #2
+        \end{minipage}%
+      };
+    }
+    {
+      \node[anchor=north east] at (current page text area.north east) {%
+        \begin{minipage}{0.25\textwidth}%
+          \raggedright #2
+        \end{minipage}%
+      };%
+    }
   \end{tikzpicture}%
 }
 
@@ -168,5 +178,12 @@
     \end{minipage}%
   }%
 }
+
+\newenvironment{innoWideOne}
+  {\begin{adjustwidth}{-2in}{-1in}}
+  {\end{adjustwidth}}
+\newenvironment{innoWide}[1]
+  {\begin{innoWideOne}\begin{multicols}{#1}}
+  {\end{multicols}\end{innoWideOne}}
 
 \endinput
