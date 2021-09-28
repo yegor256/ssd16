@@ -119,7 +119,7 @@
   \begin{tikzpicture}[remember picture,overlay]%
     \ifthenelse{\equal{#1}{left}}
     {
-      \node[anchor=north east] at (current page text area.north west) {%
+      \node[anchor=north east] at ($(current page text area.north west) - (24pt, 18pt)$) {%
         \begin{minipage}{0.25\textwidth}%
           \raggedleft #2
         \end{minipage}%
