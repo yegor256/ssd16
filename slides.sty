@@ -82,12 +82,12 @@
   }
   \begin{@empty}
     \renewcommand\crumb[2]{%
-      \ifx\innoTOC\empty\else\click\fi
+      \ifx\innoTOC\empty\else\click[0]\fi
       \gappto\innoTOC{\item ##2}
     }
     \crumbs
   \end{@empty}
-  \flush
+  \flush[1]
 }
 
 \newcommand\innoQuote[3]{%
