@@ -12,7 +12,6 @@ jobs:
           command: make
           opts: -pdf
           packages: acmart cjk ffcode href-ul datetime fmtcount libertine paralist makecell footmisc currfile enumitem wrapfig lastpage biblatex titling svg trimspaces catchfile transparent textpos fvextra xstring framed environ totpages hyperxmp ifmtarg ncctools comment anyfontsize fdsymbol algpseudocodex algorithmicx stmaryrd preprint cyrillic cm-super babel-russian hyphen-russian lh to-be-determined cancel
-      - run: make
       - uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
