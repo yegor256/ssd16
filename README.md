@@ -1,5 +1,7 @@
 <img src="innopolis-logo.svg" height="48px"/>
 
+[![latexmk](https://github.com/yegor256/ssd16/actions/workflows/latexmk.yml/badge.svg?branch=master)](https://github.com/yegor256/ssd16/actions/workflows/latexmk.yml)
+
 There are slides for my lectures about Software Systems Design,
 which were presented to 3rd year BSc students at [Innopolis University](https://innopolis.university/)
 in 2021. Videos are in 
