@@ -42,6 +42,11 @@ package: latexmk
 	for d in $(DIRS); do
 		cp $${d}/*.pdf package
 	done
+	cd package
+	rm -rf index.html
+	for f in $$(ls *.pdf); do
+		echo "<p><a href='$${f}'>$${f}</a></p>" >> index.html
+	done
 
 copy:
 	for d in $(DIRS); do
