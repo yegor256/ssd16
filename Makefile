@@ -25,7 +25,7 @@
 
 DIRS := $(wildcard [0-9][0-9]-*/.)
 
-all: latexmk lacheck
+all: latexmk package
 
 latexmk:
 	for d in $(DIRS); do
@@ -37,21 +37,18 @@ lacheck:
 		cd $${d} && lacheck *.tex && cd ..
 	done
 
+package: latexmk
+	mkdir -p package
+	for d in $(DIRS); do
+		cp $${d}/*.pdf package
+	done
+
 copy:
 	for d in $(DIRS); do
 		cp .latexmkrc $${d}
 		cp .texsc $${d}
 		cp .texqc $${d}
 	done
-
-# static:
-# 	for d in $(DIRS); do
-# 		cd $${d}
-# 		for f in $$(ls *.tex); do
-# 			sed -i "s/documentclass\\.+{/x/g" $${f}
-# 		done
-# 		cd ..
-# 	done
 
 clean:
 	for d in $(DIRS); do

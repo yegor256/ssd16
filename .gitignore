@@ -20,3 +20,4 @@ _minted-wp/
 *.xcp
 *.toc
 *.crumbs
+package/
