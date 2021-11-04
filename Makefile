@@ -25,7 +25,7 @@ SHELL := /bin/bash
 .SHELLFLAGS = -e -o pipefail -c
 .ONESHELL:
 
-DIRS := $(wildcard [0-9][0-9]-*/.)
+DIRS := $(wildcard [0-9][0-9]-*/.) syllabus
 
 all: latexmk package
 
