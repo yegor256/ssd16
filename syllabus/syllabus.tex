@@ -21,10 +21,45 @@
 % SOFTWARE.
 
 \documentclass[nobrand,anonymous,nodate,nosecurity]{huawei}
+\usepackage{href-ul}
 \begin{document}
 
 {\sffamily{\bfseries\Large Software System Design}\\
-16-lectures course, the syllabus}
+16-lectures course presented by \href{https://www.yegor256.com}{Yegor Bugayenko}\\
+to 3rd-year BSc students of \href{https://innopolis.university/en/}{Innopolis University} in 2021,\\
+and \href{https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM}{video recorded}}
+
+\section*{Introduction}
+
+\textbf{Who is the teacher?}
+I'm not a professional teacher and, frankly speaking, I'm doing this course
+as a humble attempt to become one. My background is 25+ years of
+practical software engineering in small startups and large software companies,
+like Huawei, where I'm at the moment a director of an R\&D laboratory focused
+on software quality problems. You may find some lectures I've presented
+at some software conferences on \href{https://www.youtube.com/channel/UCr9qCdqXLm2SU0BIs6d_68Q}{my YouTube channel}.
+
+\textbf{Why this course?}
+The idea to present this course organically
+came out from cooperation, which has recently started between
+Huawei and Innopolis University. We both realized that the practical experience
+Huawei has gained by writing millions line of code over the last few decades
+may be a valuable contribution to the education provided by the University
+to the next tech generation.
+
+\textbf{What's the methodology?}
+The learning process in this course is very much \emph{problem-based}:
+each lecture presents a number of key problems software development industry
+has known for years. For example, in the lecture about database design I
+demonstrate that transaction isolation, schema versioning, data distribution, and
+performance are the problems. Then, I explain some solutions which already
+exist and suggest future research directions to find better ones. On top
+of that, the learning is \emph{project-based}, since it's required for the
+students to apply some of the solutions suggested in the projects they are
+making in order to pass the exam at the end of the course.
+
+\newpage
+\section*{Course Aims}
 
 Prerequisites to the course (it is expected that a student knows this):
 
@@ -48,6 +83,9 @@ After the course a student \emph{hopefully} will know:
 \item How to test software
 \item How to measure the quality of software design
 \end{itemize}
+
+\newpage
+\section*{Assessment}
 
 At the end of the course a student receives a \emph{score} of up
 to 100 points. The points are given after a \emph{subjective} review
@@ -108,37 +146,40 @@ The score may be turned into a grade using the following formula:
 \item \textbf{D} Poor: 0+
 \end{itemize}
 
+\newpage
+\section*{Learning Material}
+
 The following books are highly recommended to read (in no particular order):
 
 \begin{multicols}{2}\small\raggedright
-Len Bass et al., \emph{Software Architecture in Practice}\\
-Paul Clements et al., \emph{Documenting Software Architectures: Views and Beyond}\\
-\nospell{Karl Wiegers} et al., \emph{Software Requirements}\\
-{\nospell{Alistair Cockburn}}, \emph{Writing Effective Use Cases}\\
-{\nospell{Steve McConnell}}, \emph{Software Estimation: Demystifying the Black Art}\\
-{Robert Martin}, \emph{Clean Architecture: A Craftsman's Guide to Software Structure and Design}\\
-{Steve McConnell}, \emph{Code Complete}\\
-{Frederick Brooks Jr.}, \emph{Mythical Man-Month, The: Essays on Software Engineering}\\
-{David Thomas et al.}, \emph{The Pragmatic Programmer: Your Journey To Mastery}\\
-{Robert C. Martin}, \emph{Clean Code: A Handbook of Agile Software Craftsmanship}\\
-{\nospell{Grady Booch} et al.}, \emph{Object-Oriented Analysis and Design with Applications}\\
-{\nospell{Bjarne Stroustrup}}, \emph{Programming: Principles and Practice Using C++}\\
-{\nospell{Brett McLaughlin} et al.}, \emph{Head First Object-Oriented Analysis and Design: A Brain Friendly Guide to OOA\&D}\\
-{David West}, \emph{Object Thinking}\\
-{Eric Evans}, \emph{Domain-Driven Design: Tackling Complexity in the Heart of Software}\\
-{Yegor Bugayenko}, \emph{Elegant Objects}\\
-{Michael Feathers}, \emph{Working Effectively with Legacy Code}\\
-{Martin Fowler}, \emph{Refactoring: Improving the Design of Existing Code}\\
-{Erich Gamma et al.}, \emph{Design Patterns: Elements of Reusable Object-Oriented Software}\\
-{Scott Meyers}, \emph{Effective C++: 55 Specific Ways to Improve Your Programs and Designs}\\
-{\nospell{Elliotte Rusty Harold} et al.}, \emph{XML in a Nutshell, Third Edition}\\
-{\nospell{Michael James Fitzgerald}}, \emph{Learning XSLT: A Hands-On Introduction to XSLT and XPath}\\
-{Martin Fowler}, \emph{UML Distilled}\\
-{\nospell{Anneke Kleppe} et al.}, \emph{MDA Explained: The Model Driven Architecture: Practice and Promise}\\
-{C.J. Date}, \emph{An Introduction to Database Systems, 8th Edition}\\
-{\nospell{Pramod Sadalage} et al.}, \emph{NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence}\\
-{\nospell{Jez Humble} et al.}, \emph{Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}\\
-{\nospell{Michael T. Nygard}}, \emph{Release It!: Design and Deploy Production-Ready Software}\\
+Len Bass et al., \emph{Software Architecture in Practice}\\[3pt]
+Paul Clements et al., \emph{Documenting Software Architectures: Views and Beyond}\\[3pt]
+\nospell{Karl Wiegers} et al., \emph{Software Requirements}\\[3pt]
+{\nospell{Alistair Cockburn}}, \emph{Writing Effective Use Cases}\\[3pt]
+{\nospell{Steve McConnell}}, \emph{Software Estimation: Demystifying the Black Art}\\[3pt]
+{Robert Martin}, \emph{Clean Architecture: A Craftsman's Guide to Software Structure and Design}\\[3pt]
+{Steve McConnell}, \emph{Code Complete}\\[3pt]
+{Frederick Brooks Jr.}, \emph{Mythical Man-Month, The: Essays on Software Engineering}\\[3pt]
+{David Thomas et al.}, \emph{The Pragmatic Programmer: Your Journey To Mastery}\\[3pt]
+{Robert C. Martin}, \emph{Clean Code: A Handbook of Agile Software Craftsmanship}\\[3pt]
+{\nospell{Grady Booch} et al.}, \emph{Object-Oriented Analysis and Design with Applications}\\[3pt]
+{\nospell{Bjarne Stroustrup}}, \emph{Programming: Principles and Practice Using C++}\\[3pt]
+{\nospell{Brett McLaughlin} et al.}, \emph{Head First Object-Oriented Analysis and Design: A Brain Friendly Guide to OOA\&D}\\[3pt]
+{David West}, \emph{Object Thinking}\\[3pt]
+{Eric Evans}, \emph{Domain-Driven Design: Tackling Complexity in the Heart of Software}\\[3pt]
+{Yegor Bugayenko}, \emph{Elegant Objects}\\[3pt]
+{Michael Feathers}, \emph{Working Effectively with Legacy Code}\\[3pt]
+{Martin Fowler}, \emph{Refactoring: Improving the Design of Existing Code}\\[3pt]
+{Erich Gamma et al.}, \emph{Design Patterns: Elements of Reusable Object-Oriented Software}\\[3pt]
+{Scott Meyers}, \emph{Effective C++: 55 Specific Ways to Improve Your Programs and Designs}\\[3pt]
+{\nospell{Elliotte Rusty Harold} et al.}, \emph{XML in a Nutshell, Third Edition}\\[3pt]
+{\nospell{Michael James Fitzgerald}}, \emph{Learning XSLT: A Hands-On Introduction to XSLT and XPath}\\[3pt]
+{Martin Fowler}, \emph{UML Distilled}\\[3pt]
+{\nospell{Anneke Kleppe} et al.}, \emph{MDA Explained: The Model Driven Architecture: Practice and Promise}\\[3pt]
+{C.J. Date}, \emph{An Introduction to Database Systems, 8th Edition}\\[3pt]
+{\nospell{Pramod Sadalage} et al.}, \emph{NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence}\\[3pt]
+{\nospell{Jez Humble} et al.}, \emph{Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}\\[3pt]
+{\nospell{Michael T. Nygard}}, \emph{Release It!: Design and Deploy Production-Ready Software}\\[3pt]
 {Leonard Richardson et al.}, \emph{RESTful Web APIs: Services for a Changing World}
 \end{multicols}
 
