@@ -33,15 +33,13 @@
 
 \plush{\pptChapter[CI]{Continuous Integration}}
 
-\subcrumbection{CI}
-\print{\pptBanner{How Continuous Integration (CI) works:}}
+\print{\pptSection[CI]{How Continuous Integration (CI) works:}}
 \plick{\pptPic{0.4}{ci}}
 \plush[4]{It doesn't work :(}
 
 \plush{\pptQuote{books/cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
 
-\subcrumbection{Pre-Flight}
-\print{\pptBanner{Pre-Flight Builds}}
+\print{\pptSection[Pre-Flight]{Pre-Flight Builds}}
 \plick{\pptPic{0.5}{preflight}}
 \plush[4]{Master branch is ``read-only''!}
 
@@ -55,8 +53,7 @@
 
 \plush{\pptQuote{books/release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
 
-\subcrumbection{Wall}
-\print{\pptSection{Quality Wall}}
+\print{\pptSection[Wall]{Quality Wall}}
 \plick{Linters}
 \plick{Static analyzers}
 \plick{Unit tests}
@@ -65,30 +62,26 @@
 \plick{Mutation coverage control}
 \plush[10]{Manual code review(s)}
 
-\subcrumbection{Targets}
-\print{\pptSection{Target Platforms}}
+\print{\pptSection[Targets]{Target Platforms}}
 \plick{Static web site: GitHub Pages}
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
 \plick{Bigger web app: AWS Elastic Beanstalk}
 \plush[8]{Mobile app: TestFlight}
 
-\subcrumbection{Versions}
-\print{\pptSection{Versioning}}
+\print{\pptSection[Versions]{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
 \plush[4]{0ver.org: 0.43.3}
 
-\subcrumbection{Tools}
-\print{\pptSection{CI/CD Tools}}
+\print{\pptSection[Tools]{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
 \plush[6]{Rultor.com}
 
-\subcrumbection{Blue/Green}
 \plush[4]{%
-  \pptSection{Blue/Green Deployment}
+  \pptSection[Blue/Green]{Blue/Green Deployment}
   \pptPic{0.8}{bluegreen}\par
   May not work with databases :(
 }

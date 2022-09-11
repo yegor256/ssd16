@@ -45,7 +45,6 @@
 
 \plush{\pptChapter[\nospell{Booch}]{Object Model by \nospell{Grady Booch}}}
 
-\subcrumbection{Abstraction}
 \plush[3]{%
   \pptSection{Abstraction}
   \pptPic{0.8}{oop-vs-pp}
@@ -76,7 +75,6 @@
 
 \plush[2]{\pptPic{0.4}{java-abstraction2}}
 
-\subcrumbection{Encapsulation}
 \plush[3]{%
   \pptSection{Encapsulation}
   \pptPic{0.7}{encapsulation}
@@ -91,13 +89,11 @@
 \plick{\pptPic{0.4}{naked1}}
 \plush[5]{\pptPic{0.4}{naked2}}
 
-\subcrumbection{Modularity}
 \plush[3]{%
   \pptSection{Modularity}
   \pptPic{0.7}{modularity}
 }
 
-\subcrumbection{Hierarchy}
 \plush[3]{%
   \pptSection{Hierarchy}
   \pptPic{0.7}{hierarchy}
@@ -137,9 +133,8 @@
   \ff{@unclebobmartin} on Twitter
 }
 
-\subcrumbection{SRP}
 \plush[3]{%
-  \pptSection{Single Responsibility Principle (SRP)}
+  \pptSection[SRP]{Single Responsibility Principle (SRP)}
   \small
   ``A class should have only one reason to change.''\par
   ``Every module, class or function in a computer program should have responsibility over a single part of that program's functionality, and it should encapsulate that part.''\par
@@ -150,40 +145,35 @@
 
 \plush[2]{\pptPic{0.7}{srp}}
 
-\subcrumbection{OCP}
 \plush{%
-  \pptSection{Open-Close Principle (OCP)}
+  \pptSection[OCP]{Open-Close Principle (OCP)}
   ``Software entities should be open for extension, but closed for modification.'' --- Robert Martin
   \par
   \pptPic{0.5}{ocp}
 }
 
-\subcrumbection{LSP}
 \plush[3]{%
-  \pptSection{\nospell{Liskov} Substitution Principle (LSP)}
+  \pptSection[LSP]{\nospell{Liskov} Substitution Principle (LSP)}
   \small
   ``If for each object $o_1$ of type $S$ there is an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ is unchanged when $o_1$ is substituted for $o_2$ then $S$ is a subtype of $T$.'' --- \nospell{Barbara Liskov}\par
   \pptPic{0.3}{lsp}\par
   ``The LSP makes it clear that in OOD, the \ul{IS-A} relationship pertains to behavior that can be reasonably assumed and that clients depend on.''
 }
 
-\subcrumbection{Duck}
 \plush[3]{%
-  \pptSection{Duck Typing}
+  \pptSection[Duck]{Duck Typing}
   \pptPic{0.7}{duck}
 }
 
-\subcrumbection{ISP}
 \plush{%
-  \pptSection{Interface Segregation Principle (ISP)}\par
+  \pptSection[ISP]{Interface Segregation Principle (ISP)}\par
   ``Clients should not be forced to depend on methods that they do not use.'' --- Robert Martin
   \par
   \pptPic{0.5}{isp}
 }
 
-\subcrumbection{DIP}
 \plush{%
-  \pptSection{Dependency Inversion Principle (DIP)}\par
+  \pptSection[DIP]{Dependency Inversion Principle (DIP)}\par
   ``a)~High-level modules should not depend on low-level modules. Both should depend on abstractions. b)~Abstractions should not depend on details. Details should depend on abstractions.'' --- Robert Martin
   \par
   \pptPic{0.7}{dip}
