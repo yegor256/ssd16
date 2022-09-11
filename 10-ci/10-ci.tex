@@ -22,42 +22,41 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Continuous Delivery}
 \newcommand*\thesubtitle{and its design}
 \begin{document}
 
 \plush{\innoTitlePage{10}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[CI]{Continuous Integration}}
+\plush{\pptChapter[CI]{Continuous Integration}}
 
 \subcrumbection{CI}
-\print{\innoBanner{How Continuous Integration (CI) works:}}
-\plick{\innoPic{0.4}{ci}}
+\print{\pptBanner{How Continuous Integration (CI) works:}}
+\plick{\pptPic{0.4}{ci}}
 \plush[4]{It doesn't work :(}
 
-\plush{\innoQuote{books/cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
+\plush{\pptQuote{books/cd}{Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}{Jez Humble, \emph{Continuous Delivery}, p.~55}}
 
 \subcrumbection{Pre-Flight}
-\print{\innoBanner{Pre-Flight Builds}}
-\plick{\innoPic{0.5}{preflight}}
+\print{\pptBanner{Pre-Flight Builds}}
+\plick{\pptPic{0.5}{preflight}}
 \plush[4]{Master branch is ``read-only''!}
 
-\plush{\innoChapter[CD]{Continuous Delivery}}
+\plush{\pptChapter[CD]{Continuous Delivery}}
 
 \plush[4]{%
-  \innoPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
-  \innoPic{0.8}{cd}\par
+  \pptPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
+  \pptPic{0.8}{cd}\par
   Joker Conf 2018, \emph{Quality vs Quantity}, in Russian
 }
 
-\plush{\innoQuote{books/release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
+\plush{\pptQuote{books/release-it}{Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}{\nospell{Michael Nygard}, \emph{Release It!}}}
 
 \subcrumbection{Wall}
-\print{\innoSection{Quality Wall}}
+\print{\pptSection{Quality Wall}}
 \plick{Linters}
 \plick{Static analyzers}
 \plick{Unit tests}
@@ -67,7 +66,7 @@
 \plush[10]{Manual code review(s)}
 
 \subcrumbection{Targets}
-\print{\innoSection{Target Platforms}}
+\print{\pptSection{Target Platforms}}
 \plick{Static web site: GitHub Pages}
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
@@ -75,13 +74,13 @@
 \plush[8]{Mobile app: TestFlight}
 
 \subcrumbection{Versions}
-\print{\innoSection{Versioning}}
+\print{\pptSection{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
 \plush[4]{0ver.org: 0.43.3}
 
 \subcrumbection{Tools}
-\print{\innoSection{CI/CD Tools}}
+\print{\pptSection{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
@@ -89,19 +88,19 @@
 
 \subcrumbection{Blue/Green}
 \plush[4]{%
-  \innoSection{Blue/Green Deployment}
-  \innoPic{0.8}{bluegreen}\par
+  \pptSection{Blue/Green Deployment}
+  \pptPic{0.8}{bluegreen}\par
   May not work with databases :(
 }
 
-\plush{\innoChapter[GitHub]{Open Source in GitHub}}
+\plush{\pptChapter[GitHub]{Open Source in GitHub}}
 
 \plush[10]{%
   \begin{multicols}{2}
-    \innoPic{0.9}{github1}
+    \pptPic{0.9}{github1}
     \par\columnbreak
     \vspace*{1in}
-    \innoPic{0.9}{github2}
+    \pptPic{0.9}{github2}
   \end{multicols}
 }
 
@@ -120,18 +119,18 @@
 }
 
 \plush[4]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   Collect 1000 stars on GitHub for your product.
 }
 
 \plush[4]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Setup continuous delivery pipeline in your application so that
   it is released to production automatically on each commit to \ff{master} branch.
 }
 
 \plush[6]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{parallelize} tests?
     \item How to \ul{speed up} merging into ``master''?

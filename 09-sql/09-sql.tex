@@ -22,146 +22,145 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{IDEF}
 \newcommand*\thesubtitle{and SQL/NoSQL Databases}
 \begin{document}
 
 \plush{\innoTitlePage{9}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Types]{Types of Databases}}
+\plush{\pptChapter[Types]{Types of Databases}}
 
 \subcrumbection{Navi}
 \plush[2]{%
-  \innoSection{Navigational Databases}
-  \innoPic{0.8}{navigational}\par
+  \pptSection{Navigational Databases}
+  \pptPic{0.8}{navigational}\par
   E.g. Integrated Data Store (IDS)
 }
 
 \subcrumbection{Hierarchical}
 \plush[2]{%
-  \innoSection{Hierarchical Databases}
-  \innoPic{0.8}{hierarchical}\par
+  \pptSection{Hierarchical Databases}
+  \pptPic{0.8}{hierarchical}\par
   E.g. IBM Information Management System (IMS)
 }
 
 \subcrumbection{SQL}
 \plush[5]{%
-  \innoSection{Relational Databases (SQL)}
-  \innoPic{0.8}{relational}\par
+  \pptSection{Relational Databases (SQL)}
+  \pptPic{0.8}{relational}\par
   E.g. Oracle Database
 }
 
 \subcrumbection{Object}
 \plush[3]{%
-  \innoSection{Object Databases}
-  \innoPic{0.8}{object}\par
+  \pptSection{Object Databases}
+  \pptPic{0.8}{object}\par
   E.g. ObjectStore
 }
 
 \subcrumbection{K-V}
 \plush[4]{%
-  \innoSection{Key-Value Databases}
-  \innoPic{0.4}{key-value}\par
-  \innoPic{0.5}{dynamo}\par
+  \pptSection{Key-Value Databases}
+  \pptPic{0.4}{key-value}\par
+  \pptPic{0.5}{dynamo}\par
   E.g. Redis, AWS DynamoDB
 }
 
 \subcrumbection{Columnar}
 \plush[3]{%
-  \innoSection{Columnar Databases}
-  \innoPic{0.8}{columnar}\par
+  \pptSection{Columnar Databases}
+  \pptPic{0.8}{columnar}\par
   E.g. ClickHouse by Yandex\par
   Read also about Online Analytical Processing (OLAP)
 }
 
 \subcrumbection{NoSQL}
 \plush[4]{%
-  \innoSection{Document Databases (a.k.a. NoSQL)}
-  \innoPic{0.5}{document}\par
+  \pptSection{Document Databases (a.k.a. NoSQL)}
+  \pptPic{0.5}{document}\par
   E.g. MongoDB
 }
 
 \subcrumbection{XML}
 \plush[4]{%
-  \innoSection{XML Databases}
-  \innoPic{0.4}{xml}\par
+  \pptSection{XML Databases}
+  \pptPic{0.4}{xml}\par
   E.g. eXist
 }
 
 \subcrumbection{S3}
 \plush[5]{%
-  \innoSection{AWS S3}
-  \innoPic{0.9}{s3}\par
+  \pptSection{AWS S3}
+  \pptPic{0.9}{s3}\par
 }
 
 \subcrumbection{Graph}
 \plush[4]{%
-  \innoSection{Graph Databases}
-  \innoPic{0.5}{graph}\par
+  \pptSection{Graph Databases}
+  \pptPic{0.5}{graph}\par
   E.g. Neo4j
 }
 
 \subcrumbection{NewSQL}
 \plush[2]{%
-  \innoSection{NewSQL}
+  \pptSection{NewSQL}
   ``NewSQL is a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system'' --- Wikipedia\par
   E.g. VoltDB
 }
 
 \subcrumbection{Big}
 \plush[5]{%
-  \innoSection{Big Data}
-  \innoPic{0.8}{hadoop}\par
+  \pptSection{Big Data}
+  \pptPic{0.8}{hadoop}\par
   E.g. Hadoop
 }
 
-\plush{\innoChapter[ER]{IDEF1X, ER Model, UML}}
+\plush{\pptChapter[ER]{IDEF1X, ER Model, UML}}
 
 \subcrumbection{IDEF1X}
 \plush[3]{%
-  \innoSection{IDEF1X Model for Databases}
-  \innoPic{0.6}{idef1x-diagram}
+  \pptSection{IDEF1X Model for Databases}
+  \pptPic{0.6}{idef1x-diagram}
 }
 
 \subcrumbection{UML}
 \plush[3]{%
-  \innoSection{UML Class Diagram as Database Model}
-  \innoPic{0.8}{uml}
+  \pptSection{UML Class Diagram as Database Model}
+  \pptPic{0.8}{uml}
 }
 
 \subcrumbection{ER}
 \plush[3]{%
-  \innoSection{Entity-Relationship (ER) Model}
-  \innoPic{0.8}{er-diagram}
+  \pptSection{Entity-Relationship (ER) Model}
+  \pptPic{0.8}{er-diagram}
 }
 
-\plush{\innoChapter[Properties]{How to Choose the Right Database?}}
+\plush{\pptChapter[Properties]{How to Choose the Right Database?}}
 
 \subcrumbection{ACID}
-\print{\innoSection{ACID}}
+\print{\pptSection{ACID}}
 \plick{\nospell{\textbf{\large A}tomicity}: everything or nothing}
 \plick{\nospell{\textbf{\large C}onsistency}: invariants are in place}
 \plick{\nospell{\textbf{\large I}solation}: concurrent or sequential}
 \plush[5]{\nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory}
 
 \subcrumbection{Speed}
-\print{\innoSection{Performance}}
+\print{\pptSection{Performance}}
 \plick{Queries Profiling \& Optimization}
 \plick{Denormalization}
 \plush[3]{Caching}
 
 \subcrumbection{Scale}
-\print{\innoSection{Scalability}}
+\print{\pptSection{Scalability}}
 \plick{Vertical vs. Horizontal Scalability}
 \plick{Sharding vs. Master-Slave Replication}
-\plush[5]{\innoPic{0.8}{sharding}}
+\plush[5]{\pptPic{0.8}{sharding}}
 
 \subcrumbection{Libraries}
-\print{\innoSection{Application Layer Support}}
+\print{\pptSection{Application Layer Support}}
 \plick{Is it open source?}
 \plick{How mature is the library?}
 \plick{Is it a thin driver or ORM-ish framework?}
@@ -171,34 +170,34 @@
 
 \subcrumbection{Versions}
 \plush[5]{%
-  \innoSection{Schema Version Control}
-  \innoPic{0.8}{0rsk}\par
+  \pptSection{Schema Version Control}
+  \pptPic{0.8}{0rsk}\par
   \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}\par
   Liquibase, Flyway, Mongobee, Mongock, etc.
 }
 
 \subcrumbection{Integrity}
 \plush[4]{%
-  \innoSection{Integrity: Primary and Foreign Keys}
-  \innoPic{0.8}{keys}
+  \pptSection{Integrity: Primary and Foreign Keys}
+  \pptPic{0.8}{keys}
 }
 
 \subcrumbection{Resilience}
 \plush[3]{%
-  \innoSection{Resilience}
-  \innoPic{0.7}{mongo-failure}\par
+  \pptSection{Resilience}
+  \pptPic{0.7}{mongo-failure}\par
   Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.
 }
 
 \subcrumbection{Liability}
 \plush[2]{%
-  \innoSection{Liability: Who Pays for Losses?}
+  \pptSection{Liability: Who Pays for Losses?}
   AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND \nospell{LICENSORS} WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."
 }
 
 \subcrumbection{Durability}
 \plush[3]{%
-  \innoSection{Durability: Can We Loose Data?}
+  \pptSection{Durability: Can We Loose Data?}
   \href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''
 }
 
@@ -217,18 +216,18 @@
 }
 
 \plush[1]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   ACM SIGMOD/PODS Conference.
 }
 
 \plush[2]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Design a relational persistence layer in your app and then
   make it NoSQL; compare pros and cons.
 }
 
 \plush[4]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{guarantee} 100\% durability, etc.?
     \item How to \ul{optimize} database schema automatically?

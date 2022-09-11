@@ -22,20 +22,19 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Tests}
 \newcommand*\thesubtitle{Patterns and Anti-Patterns}
 \begin{document}
 
 \plush{\innoTitlePage{14}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Patterns]{Twenty Three Test Anti-Patterns}}
+\plush{\pptChapter[Patterns]{Twenty Three Test Anti-Patterns}}
 
 \plush[3]{
-  \innoPinQR[left]{https://www.yegor256.com/2018/12/11/unit-testing-anti-patterns.html}
+  \pptPinQR[left]{https://www.yegor256.com/2018/12/11/unit-testing-anti-patterns.html}
   \begin{multicols}{2}
   Cuckoo \br
   Test-per-Method \br
@@ -65,140 +64,140 @@
 
 \subcrumbection{1}
 \plush[3]{
-  \innoMiddle{\innoSection{Test-per-Method}
+  \pptMiddle{\pptSection{Test-per-Method}
   Although a one-to-one relationship between test and production classes is a reasonable starting point, a one-to-one relationship between test and production method is almost always a bad idea.}
 }
 
 \subcrumbection{2}
 \plush[3]{
-  \innoMiddle{\innoSection{Anal Probe}
+  \pptMiddle{\pptSection{Anal Probe}
   A test that has to use unhealthy ways to perform its task, such as reading private fields using reflection.}
 }
 
 \subcrumbection{3}
 \plush[3]{
-  \innoMiddle{\innoSection{Happy Path}
+  \pptMiddle{\pptSection{Happy Path}
   The tests stay on happy paths (i.e. expected results, e.g. 18 years old) without testing for boundaries and exceptions (e.g. -2 years old)}
 }
 
 \subcrumbection{4}
 \plush[3]{
-  \innoMiddle{\innoHeader{Slow Poke}
+  \pptMiddle{\pptHeader{Slow Poke}
   A unit test that runs incredibly slow. When developers kick it off, they have time to go to the bathroom, grab a smoke, or worse, kick the test off before they go home at the end of the day.}
 }
 
 \subcrumbection{5}
 \plush[3]{
-  \innoMiddle{\innoHeader{Giant}
+  \pptMiddle{\pptHeader{Giant}
   A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many many test cases. This can be an indicator that the system-under-test is a God Object.}
 }
 
 \subcrumbection{6}
 \plush[3]{
-  \innoMiddle{\innoHeader{Mockery}
+  \pptMiddle{\pptHeader{Mockery}
   Sometimes mocking can be good, and handy. But sometimes developers can lose themselves in their effort to mock out what isn’t being tested. In this case, a unit test contains so many mocks, stubs, and/or fakes that the system under test isn’t even being tested at all, instead data returned from mocks is what is being tested.}
 }
 
 \subcrumbection{7}
 \plush[3]{
-  \innoMiddle{\innoHeader{Inspector}
+  \pptMiddle{\pptHeader{Inspector}
   A unit test that violates encapsulation in an effort to achieve 100\% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.}
 }
 
 \subcrumbection{8}
 \plush[3]{
-  \innoMiddle{\innoHeader{Generous Leftovers (aka Chain Gang, Wet Floor)}
+  \pptMiddle{\pptHeader{Generous Leftovers (aka Chain Gang, Wet Floor)}
   An instance where one unit test creates data that is persisted somewhere, and another test reuses the data for its own devious purposes. If the “generator” is ran afterward, or not at all, the test using that data will outright fail.}
 }
 
 \subcrumbection{9}
 \plush[3]{
-  \innoMiddle{\innoHeader{Local Hero (aka Hidden Dependency)}
+  \pptMiddle{\pptHeader{Local Hero (aka Hidden Dependency)}
   A test case that is dependent on something specific to the development environment it was written on, in order to run. The result is that the test passes on development boxes, but fails when someone attempts to run it elsewhere.}
 }
 
 \subcrumbection{10}
 \plush[3]{
-  \innoHeader{Dodger}
-  \innoMiddle{A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.}
+  \pptHeader{Dodger}
+  \pptMiddle{A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.}
 }
 
 \subcrumbection{11}
 \plush[3]{
-  \innoMiddle{\innoHeader{Loudmouth}
+  \pptMiddle{\pptHeader{Loudmouth}
   A unit test (or test suite) that clutters up the console with diagnostic messages, logging, and other miscellaneous chatter, even when tests are passing.}
 }
 
 \subcrumbection{12}
 \plush[3]{
-  \innoMiddle{\innoHeader{Sequencer}
+  \pptMiddle{\pptHeader{Sequencer}
   A unit test that depends on items in an unordered list appearing in the same order during assertions.}
 }
 
 \subcrumbection{13}
 \plush[3]{
-  \innoMiddle{\innoHeader{Enumerator (aka Test With No Name)}
+  \pptMiddle{\pptHeader{Enumerator (aka Test With No Name)}
   Unit tests where each test case method name is only an enumeration, e.g. test1, test2, test3. As a result, the intention of the test case is unclear, and the only way to be sure is to read the test case code and pray for clarity.}
 }
 
 \subcrumbection{14}
 \plush[3]{
-  \innoMiddle{\innoHeader{Free Ride (aka Piggyback)}
+  \pptMiddle{\pptHeader{Free Ride (aka Piggyback)}
   Rather than write a new test case method to test another feature or functionality, a new assertion rides along in an existing test case.}
 }
 
 \subcrumbection{15}
 \plush[3]{
-  \innoMiddle{\innoHeader{Excessive Setup (aka Mother Hen)}
+  \pptMiddle{\pptHeader{Excessive Setup (aka Mother Hen)}
   A test that requires a lot of work to set up in order to even begin testing. Sometimes several hundred lines of code are used to setup the environment for one test, with several objects involved, which can make it difficult to really ascertain what is being tested due to the ``noise'' of all of the setup.}
 }
 
 \subcrumbection{16}
 \plush[3]{
-  \innoMiddle{\innoHeader{Line hitter}
+  \pptMiddle{\pptHeader{Line hitter}
   At first glance, the tests cover everything and code coverage tools confirm it with 100\%, but in reality the   tests merely hit the code, without doing any output analysis.}
 }
 
 \subcrumbection{17}
 \plush[3]{
-  \innoMiddle{\innoHeader{The Liar (aka Evergreen Tests)}
+  \pptMiddle{\pptHeader{The Liar (aka Evergreen Tests)}
   A test doesn’t validate any behaviour and passes in every scenario. Any new bug introduced in the code will never be discovered by this test. It was probably created after the implementation was finished, so the author of this test couldn’t know whether the test actually tests something.}
 }
 
-\plush{\innoChapter[Mocking]{Mocking Frameworks}}
+\plush{\pptChapter[Mocking]{Mocking Frameworks}}
 
 \plush[3]{
-  \innoHeader{Mocking Frameworks are Evil}
-  \innoPinQR[left]{https://www.youtube.com/watch?v=1bAixLaOCSA}
-  \innoPic{0.8}{mocking}
+  \pptHeader{Mocking Frameworks are Evil}
+  \pptPinQR[left]{https://www.youtube.com/watch?v=1bAixLaOCSA}
+  \pptPic{0.8}{mocking}
 }
 
 \plush[3]{
-  \innoHeader{Instead: Doubles or Fake Objects}
-  \innoPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
-  \innoPic{0.9}{fakes}
+  \pptHeader{Instead: Doubles or Fake Objects}
+  \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \pptPic{0.9}{fakes}
 }
 
-\plush{\innoChapter[OOP]{OOP + Tests}}
+\plush{\pptChapter[OOP]{OOP + Tests}}
 
 \plush[3]{
-  \innoHeader{xUnit Tests are Procedural}
-  \innoPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
-  \innoPic{0.9}{algorithm}
+  \pptHeader{xUnit Tests are Procedural}
+  \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \pptPic{0.9}{algorithm}
 }
 
 \plush[3]{
-  \innoHeader{Instead: Single-Method Unit Tests}
-  \innoPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
-  \innoPic{0.9}{onemethod}
+  \pptHeader{Instead: Single-Method Unit Tests}
+  \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
+  \pptPic{0.9}{onemethod}
 }
 
-\plush{\innoChapter[Testable]{Testable Code}}
+\plush{\pptChapter[Testable]{Testable Code}}
 
 \clearpage
-\innoHeader{All Dependencies Are Injectable}
-\begin{innoWide}{2}\small
-\innoBanner[red]{Wrong}
+\pptHeader{All Dependencies Are Injectable}
+\begin{pptWide}{2}\small
+\pptBanner[red]{Wrong}
 \begin{ffcode}
 import java.nio.file.Files;
 class Book {
@@ -210,7 +209,7 @@ class Book {
 }
 \end{ffcode}
 \par\columnbreak
-\innoBanner[green]{Right}
+\pptBanner[green]{Right}
 \begin{ffcode}
 import java.nio.file.Files;
 class Book {
@@ -225,13 +224,13 @@ class Book {
   }
 }
 \end{ffcode}
-\end{innoWide}
+\end{pptWide}
 \clearpage
 
 \clearpage
-\innoHeader{Each Interface Has a Fake Object}
-\begin{innoWide}{2}\small
-\innoBanner{Interface}
+\pptHeader{Each Interface Has a Fake Object}
+\begin{pptWide}{2}\small
+\pptBanner{Interface}
 \begin{ffcode}
 interface Book {
   String title();
@@ -239,7 +238,7 @@ interface Book {
 }
 \end{ffcode}
 \par\columnbreak
-\innoBanner{Fake Book}
+\pptBanner{Fake Book}
 \begin{ffcode}
 class FakeBook implements Book {
   @Override
@@ -252,7 +251,7 @@ class FakeBook implements Book {
   }
 }
 \end{ffcode}
-\end{innoWide}
+\end{pptWide}
 \clearpage
 
 \plush{\innoBVC}
@@ -270,18 +269,18 @@ class FakeBook implements Book {
 }
 
 \plush[2]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   International Symposium on Software Testing and Analysis (ISSTA)
 }
 
 \plush[2]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Get rid of mocking framework in your code and only
   use fake objects.
 }
 
 \plush[6]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{detect} test anti-patterns automatically?
     \item How to \ul{refactor} tests automatically?

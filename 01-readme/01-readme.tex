@@ -22,104 +22,103 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{README}
 \newcommand*\thesubtitle{vs. IEEE, RUP, SWEBOK, CMMI}
 \begin{document}
 
 \plush{\innoTitlePage{1}}
 
-\plush[2]{\innoQuote{books/freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
+\plush[2]{\pptQuote{books/freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Interiors]{Software vs. Interiors}}
+\plush{\pptChapter[Interiors]{Software vs. Interiors}}
 
 \plush[3]{%
   \begin{multicols}{2}
-    \innoPic{0.7}{interior}\br
+    \pptPic{0.7}{interior}\br
     Interior\par
-    \innoPic{0.7}{floor-plan}\br
+    \pptPic{0.7}{floor-plan}\br
     Interior Design
     \par\columnbreak
-    \innoPic{0.7}{docker-logo}\br
+    \pptPic{0.7}{docker-logo}\br
     Software\par
-    \innoPic{0.7}{docker-uml}\br
+    \pptPic{0.7}{docker-uml}\br
     Software Design
   \end{multicols}
 }
 
 \plush[3]{%
   \begin{multicols}{2}
-    \innoPic{0.8}{floor-plan}\br
+    \pptPic{0.8}{floor-plan}\br
     \textcolor{red}{How to explain it?}\br
     \textcolor{green}{Standards}
     \par\columnbreak
-    \innoPic{0.8}{interior}\br
+    \pptPic{0.8}{interior}\br
     \textcolor{red}{How to design?}\br
     \textcolor{green}{Patterns}
   \end{multicols}
 }
 
-\plush[2]{\innoThought{A good documentation \br is a \ul{precursor} to a good design.}}
+\plush[2]{\pptThought{A good documentation \br is a \ul{precursor} to a good design.}}
 
-\plush{\innoChapter[SDD]{SDD at IEEE 1016}}
+\plush{\pptChapter[SDD]{SDD at IEEE 1016}}
 
-\plick{\innoQuote{books/ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}
-\plush[3]{\innoBanner[red]{Inactive-Reserved on March 2020}}
+\plick{\pptQuote{books/ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}
+\plush[3]{\pptBanner[red]{Inactive-Reserved on March 2020}}
 
 \subcrumbection{Glossary}
 \plush[4]{%
-  \innoSection{Glossary}
+  \pptSection{Glossary}
   A \ul{request} is data package sent from a \ul{client} to a \ul{server}.\br
   A \ul{client} is a computer with a web browser.\br
   A \ul{server} is a computer with a software installed.\par
-  \innoQR{https://www.yegor256.com/2015/03/16/technical-glossaries.html}
+  \pptQR{https://www.yegor256.com/2015/03/16/technical-glossaries.html}
 }
 
-\plush[2]{\innoThought{If I don't understand you, \br it's your fault!}}
+\plush[2]{\pptThought{If I don't understand you, \br it's your fault!}}
 
 \subcrumbection{Languages}
 \plush[5]{%
-  \innoSection{Languages}
+  \pptSection{Languages}
   \begin{multicols}{2}
-    \innoBanner[red]{NOT like this:}
-    \innoPic{0.5}{bad-diagram}
+    \pptBanner[red]{NOT like this:}
+    \pptPic{0.5}{bad-diagram}
     \par\columnbreak
-    \innoBanner{But like this:}
-    \innoPic{0.7}{good-uml}\br
+    \pptBanner{But like this:}
+    \pptPic{0.7}{good-uml}\br
     UML + visual-paradigm.com
   \end{multicols}
 }
 
 \subcrumbection{Stakeholders}
 \plush[3]{%
-  \innoSection{Stakeholders}
-  \innoQuote{books/pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
+  \pptSection{Stakeholders}
+  \pptQuote{books/pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
 }
 
 \subcrumbection{Concerns}
 \plush[2]{%
-  \innoSection{Concerns}
+  \pptSection{Concerns}
   Functional \br and \br Non-Functional Requirements
 }
 
 \subcrumbection{Views}
 \plush[4]{%
-  \innoSection{Viewpoints}
-  \innoPic{0.6}{viewpoint}
+  \pptSection{Viewpoints}
+  \pptPic{0.6}{viewpoint}
 }
 
 \subcrumbection{Elements}
 \plush[2]{%
-  \innoSection{Elements}
-  \innoPic{0.5}{element}
+  \pptSection{Elements}
+  \pptPic{0.5}{element}
 }
 
 \subcrumbection{Rationale}
-\plick{\innoSection{Rationale}}
-\plick{\innoBanner{\large Why MongoDB, why not MySQL?}}
+\plick{\pptSection{Rationale}}
+\plick{\pptBanner{\large Why MongoDB, why not MySQL?}}
 \plush[5]{%
   Multi-Criteria Decision Making (\nospell{MCDM})\\
   Architecture Trade-off Analysis Method (\nospell{ATAM})\\
@@ -128,27 +127,27 @@
   Decision Matrix
 }
 
-\plush[3]{\innoThought{Don't expect them to trust \ul{you}, \br make them trust your \ul{decisions}.}}
+\plush[3]{\pptThought{Don't expect them to trust \ul{you}, \br make them trust your \ul{decisions}.}}
 
-\plush{\innoChapter[RUP]{SAD at RUP}}
+\plush{\pptChapter[RUP]{SAD at RUP}}
 
-\plush[4]{\innoQuote{books/rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
+\plush[4]{\pptQuote{books/rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
 
-\plush{\innoChapter[CMMI]{TS at CMMI}}
+\plush{\pptChapter[CMMI]{TS at CMMI}}
 
-\plush[4]{\innoQuote{books/cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
+\plush[4]{\pptQuote{books/cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
 
-\plush{\innoChapter{SWEBOK}}
+\plush{\pptChapter{SWEBOK}}
 
-\plush[4]{\innoQuote{books/swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
+\plush[4]{\pptQuote{books/swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
 
-\plush[3]{\innoThought{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}}
+\plush[3]{\pptThought{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}}
 
-\plush{\innoChapter{README}}
+\plush{\pptChapter{README}}
 
 \plush[4]{%
   \begin{multicols}{2}
-    \innoPic{0.8}{markdown}
+    \pptPic{0.8}{markdown}
     \par\columnbreak
     \includegraphics[width=0.3\columnwidth]{github-logo}\par
     GitHub\par
@@ -157,12 +156,12 @@
 }
 
 \plush[5]{%
-  \innoPic{0.4}{mockups}\par
+  \pptPic{0.4}{mockups}\par
   UI mockups\par
   \ff{moqups.com}, \ff{balsamiq.com}, \ff{sketch.com}, \ff{dribbble.com}, etc.
 }
 
-\plush[3]{\innoThought{Brevity is a virtue, \br redundancy is a sin.}}
+\plush[3]{\pptThought{Brevity is a virtue, \br redundancy is a sin.}}
 
 \plush{\innoBVC}
 
@@ -179,18 +178,18 @@
 }
 
 \plush[3]{%
-  \innoBanner{Where to publish:}\par
+  \pptBanner{Where to publish:}\par
   IEEE International Conference on Software Architecture (ICSA)
 }
 
 \plush[4]{%
-  \innoBanner{Call to Action:}\par
+  \pptBanner{Call to Action:}\par
   Create and explain the design of a QR-code generator app in the
   README.md file in a new GitHub repository. Sample: www.4qrcode.com
 }
 
 \plush[5]{%
-  \innoBanner[orange]{Still unresolved issues:}\par
+  \pptBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{synchronize} an SDD with the source code?
     \item How to \ul{generate} the code from an SDD?

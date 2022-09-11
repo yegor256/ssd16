@@ -27,7 +27,10 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[dry,increment]{crumbs}
 \RequirePackage[static]{clicks}
+\RequirePackage[template=dark,directory=/code/ctan/ppt]{/code/ctan/ppt/ppt}
 \RequirePackage{href-ul}
+\RequirePackage{ffcode}
+\RequirePackage{amsmath}
 \RequirePackage{graphicx}
   \graphicspath{{../images/}}
 
@@ -40,7 +43,7 @@
 }}
 
 \newcommand\innoTitlePage[1]{%
-  \innoTitle{\thetitle}{\thesubtitle}\par
+  \pptTitle{\thetitle}{\thesubtitle}\par
   {\scshape Yegor Bugayenko}\par
   Lecture \##1 out of 16 \br
   90 minutes\par
@@ -51,18 +54,18 @@
 % 2: author
 % 3: title
 \newcommand\innoBook[3]{%
-  \innoPic{0.4}{books/#1} \br ``#3'' by {\scshape #2}
+  \pptPic{0.4}{books/#1} \br ``#3'' by {\scshape #2}
 }
 
 \newcommand\innoBVC{%
-  \innoChapter[B.V.C.]{Books, Venues, Call-to-Action}
+  \pptChapter[B.V.C.]{Books, Venues, Call-to-Action}
 }
 
 \newcommand\nospell[1]{#1}
 
 \AtBeginDocument{%
-  \innoLeft{\thetitle{} \thesubtitle}%
-  \innoRight{@yegor256}%
+  \pptLeft{\thetitle{} \thesubtitle}%
+  \pptRight{@yegor256}%
 }
 
 \endinput

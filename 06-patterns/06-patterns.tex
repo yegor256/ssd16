@@ -22,84 +22,83 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Patterns}
 \newcommand*\thesubtitle{Anti-Patterns and Refactoring}
 \begin{document}
 
 \plush{\innoTitlePage{6}}
 
-\plush[2]{\innoQuote{books/gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
+\plush[2]{\pptQuote{books/gamma}{Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}{\emph{Design Patterns: Elements of Reusable Object-Oriented Software}, Erich Gamma et al.}}
 
-\plush[2]{\innoQuote{people/paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
+\plush[2]{\pptQuote{people/paul-graham}{When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}{\emph{Revenge of the Nerds}, Paul Graham}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Patterns]{Some Patterns}}
+\plush{\pptChapter[Patterns]{Some Patterns}}
 
 \plush{%
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
-  \innoQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
+  \pptQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
   36 patterns (22 anti-patterns)
 }
 
 \subcrumbection{Decorator}
 \plush[5]{%
-  \innoPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
-  \innoSection{Adapter, Facade, Proxy, Decorator, Bridge}
-  \innoSnippet[\footnotesize]{adapter.java}
+  \pptPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
+  \pptSection{Adapter, Facade, Proxy, Decorator, Bridge}
+  \pptSnippet[\footnotesize]{adapter.java}
 }
 
 \subcrumbection{RAII}
 \plush[5]{%
-  \innoPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
-  \innoSection{Resource Acquisition Is Initialization (RAII)}
-  \innoSnippet[\footnotesize]{raii.cpp}
+  \pptPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
+  \pptSection{Resource Acquisition Is Initialization (RAII)}
+  \pptSnippet[\footnotesize]{raii.cpp}
 }
 
-\plush{\innoChapter[Anti]{Some Anti-Patterns}}
+\plush{\pptChapter[Anti]{Some Anti-Patterns}}
 
 \subcrumbection{GOTO}
 \plush[2]{%
-  \innoSection{GOTO}
-  \innoSnippet[\footnotesize]{goto.c}
+  \pptSection{GOTO}
+  \pptSnippet[\footnotesize]{goto.c}
 }
 
 \subcrumbection{Numbers}
 \plush[2]{%
-  \innoSection{Magic Numbers}
-  \innoSnippet{magic.rb}
+  \pptSection{Magic Numbers}
+  \pptSnippet{magic.rb}
 }
 
 \plush[2]{%
-  \innoBanner{Magic Numbers ... Not!}
-  \innoSnippet{magic2.rb}
+  \pptBanner{Magic Numbers ... Not!}
+  \pptSnippet{magic2.rb}
 }
 
 \subcrumbection{God}
 \plush[2]{%
-  \innoSection{God Class}
-  \innoPic{0.6}{god-class}
+  \pptSection{God Class}
+  \pptPic{0.6}{god-class}
 }
 
 \subcrumbection{Spaghetti}
 \plush[2]{%
-  \innoSection{Spaghetti Code}
-  \innoPic{0.4}{spaghetti}
+  \pptSection{Spaghetti Code}
+  \pptPic{0.4}{spaghetti}
 }
 
 \subcrumbection{Lasagna}
 \plush[2]{%
-  \innoSection{Lasagna and Ravioli}
-  \innoPic{0.3}{ravioli}
+  \pptSection{Lasagna and Ravioli}
+  \pptPic{0.3}{ravioli}
 }
 
-\plush{\innoChapter[Anti-OOP]{Anti-OOP Patterns}}
+\plush{\pptChapter[Anti-OOP]{Anti-OOP Patterns}}
 
 \plush[2]{%
   Anti-Patterns in OOP (2014)\par
-  \innoQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
+  \pptQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
   Eleven:
   NULL,
   Utility Classes,
@@ -116,41 +115,41 @@
 
 \subcrumbection{DTO}
 \plush[3]{%
-  \innoPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
-  \innoSection{Data Transfer Object (DTO)}
-  \innoBanner{Getters and Setters}
-  \innoSnippet{dto.java}
+  \pptPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
+  \pptSection{Data Transfer Object (DTO)}
+  \pptBanner{Getters and Setters}
+  \pptSnippet{dto.java}
 }
 
 \subcrumbection{Utility}
 \plush[3]{%
-  \innoPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
-  \innoSection{Utility Class}
-  \innoSnippet[\footnotesize]{utility.java}
+  \pptPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
+  \pptSection{Utility Class}
+  \pptSnippet[\footnotesize]{utility.java}
 }
 
 \subcrumbection{Singleton}
 \plush[3]{%
-  \innoPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
-  \innoSection{Singleton}
-  \innoSnippet{singleton.java}
+  \pptPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
+  \pptSection{Singleton}
+  \pptSnippet{singleton.java}
 }
 
 \subcrumbection{ORM}
 \plush[3]{%
-  \innoPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
-  \innoSection{Object-Relational Mapping (ORM)}
-  \innoSnippet{orm.java}
+  \pptPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
+  \pptSection{Object-Relational Mapping (ORM)}
+  \pptSnippet{orm.java}
 }
 
-\plush{\innoChapter[Refactorings]{Some Refactorings}}
+\plush{\pptChapter[Refactorings]{Some Refactorings}}
 
-\plush[2]{\innoQuote{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
+\plush[2]{\pptQuote{books/fowler-refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 
 \plush[3]{%
-  \innoPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
-  \innoBanner{Extract Method}
-  \innoSnippet[\footnotesize]{extract.rb}
+  \pptPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
+  \pptBanner{Extract Method}
+  \pptSnippet[\footnotesize]{extract.rb}
 }
 
 \plush{\innoBVC}
@@ -180,20 +179,20 @@
 }
 
 \plush{%
-  \innoBanner{Where to publish:}
+  \pptBanner{Where to publish:}
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
   International Conference on Code Quality (ICCQ),\br
   in cooperation with ACM SIGPLAN/SIGSOFT and IEEE
 }
 
 \plush[2]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   In your application demonstrate the usage of 4+ design patterns.
   Also, perform 4+ refactorings, each one in its own pull request.
 }
 
 \plush[3]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{prove} certain patterns are anti-patterns?
     \item How to \ul{find} methods for automated refactoring?

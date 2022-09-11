@@ -22,48 +22,47 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Microservices}
 \newcommand*\thesubtitle{and RESTful APIs}
 \begin{document}
 
 \plush{\innoTitlePage{11}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[SOA]{Service-Oriented Architecture (SOA)}}
+\plush{\pptChapter[SOA]{Service-Oriented Architecture (SOA)}}
 
-\plush[3]{\innoPic{0.9}{soa}}
+\plush[3]{\pptPic{0.9}{soa}}
 
 \subcrumbection{RPC}
 \plush[2]{%
-  \innoSection{XML RPC}
-  \innoPic{0.5}{rpc}
+  \pptSection{XML RPC}
+  \pptPic{0.5}{rpc}
 }
 
 \subcrumbection{SOAP}
 \plush[3]{%
-  \innoSection{Simple Object Access Protocol (SOAP)}
-  \innoPic{0.7}{soap}
+  \pptSection{Simple Object Access Protocol (SOAP)}
+  \pptPic{0.7}{soap}
 }
 
 \subcrumbection{CORBA}
 \plush[5]{%
-  \innoSection{\small Common Object Request Broker Architecture (CORBA)}
-  \innoPic{0.8}{corba}
+  \pptSection{\small Common Object Request Broker Architecture (CORBA)}
+  \pptPic{0.8}{corba}
 }
 
 \subcrumbection{IDL}
 \plush[2]{%
-  \innoSection{Interface Description Language (IDL)}
-  \innoPic{0.8}{idl}
+  \pptSection{Interface Description Language (IDL)}
+  \pptPic{0.8}{idl}
 }
 
 \subcrumbection{EJB}
 \plush[5]{%
-  \innoSection{Enterprise Java Beans (EJB)}
-  \innoPic{0.5}{ejb}\par
+  \pptSection{Enterprise Java Beans (EJB)}
+  \pptPic{0.5}{ejb}\par
   \footnotesize
   Java Naming and Directory Interface (JNDI) is an API
   that provides naming and directory functionality to applications
@@ -74,72 +73,72 @@
   serialized Java classes and distributed garbage-collection.
 }
 
-\plush{\innoChapter[RESTful]{Microservices and RESTful API}}
+\plush{\pptChapter[RESTful]{Microservices and RESTful API}}
 
 \subcrumbection{Microservices}
 \plush[5]{%
-  \innoSection{Microservices}
-  \innoPic{0.6}{microservices}\par
+  \pptSection{Microservices}
+  \pptPic{0.6}{microservices}\par
   \small
   ``Microservices are a modern interpretation of service-oriented
   architectures used to build distributed software systems." --- Wikipedia
 }
 
 \plush[5]{%
-  \innoBanner{Stateless vs. Stateful Architecture}
+  \pptBanner{Stateless vs. Stateful Architecture}
   ``A stateless process or application can be understood in isolation. There is no stored knowledge of or reference to past transactions. Each transaction is made as if from scratch for the first time.'' ---
   \href{https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless}{RedHat}
 }
 
 \subcrumbection{REST}
 \plush[10]{%
-  \innoSection{Representational State Transfer (REST)}
-  \innoPic{0.5}{restful}
-  \innoPic{0.5}{restful2}
+  \pptSection{Representational State Transfer (REST)}
+  \pptPic{0.5}{restful}
+  \pptPic{0.5}{restful2}
 }
 
 \subcrumbection{HATEOAS}
 \plush[5]{%
-  \innoSection{\small Hypermedia As The Engine Of Application State (HATEOAS)}
-  \innoPic{0.8}{hateoas}
+  \pptSection{\small Hypermedia As The Engine Of Application State (HATEOAS)}
+  \pptPic{0.8}{hateoas}
 }
 
 \subcrumbection{Mesh}
 \plush[2]{%
-  \innoSection{Service Mesh}
-  \innoPic{0.6}{mesh}\par
+  \pptSection{Service Mesh}
+  \pptPic{0.6}{mesh}\par
   ``A service mesh is a dedicated infrastructure layer for facilitating service-to-service communications between services or microservices, using a proxy'' --- Wikipedia
 }
 
 \subcrumbection{Chatbots}
 \plush[4]{%
-  \innoSection{Chatbots}
-  \innoPic{0.6}{chatbots}
+  \pptSection{Chatbots}
+  \pptPic{0.6}{chatbots}
 }
 
-\plush{\innoChapter[gRPC]{Protobuf and gRPC}}
+\plush{\pptChapter[gRPC]{Protobuf and gRPC}}
 
 \subcrumbection{gRPC}
 \plush[2]{%
-  \innoSection{gRPC}
-  \innoPic{0.7}{grpc}
+  \pptSection{gRPC}
+  \pptPic{0.7}{grpc}
 }
 
 \subcrumbection{Protobuf}
 \plush[3]{%
-  \innoSection{Protobuf}
+  \pptSection{Protobuf}
   \begin{multicols}{2}
-    \innoPic{0.8}{proto1}
+    \pptPic{0.8}{proto1}
     \par\columnbreak
-    \innoPic{0.8}{proto2}
+    \pptPic{0.8}{proto2}
   \end{multicols}
 }
 
-\plush[4]{\innoPic{0.8}{grpc-joke}}
+\plush[4]{\pptPic{0.8}{grpc-joke}}
 
-\plush{\innoChapter[IoT]{Internet of Things (IoT)}}
+\plush{\pptChapter[IoT]{Internet of Things (IoT)}}
 
-\plush[5]{\innoPic{0.8}{iot}}
+\plush[5]{\pptPic{0.8}{iot}}
 
 \plush{\innoBVC}
 
@@ -156,18 +155,18 @@
 }
 
 \plush[2]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   IEEE International Conference on Software Architecture (ICSA)
 }
 
 \plush[4]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Design your own RESTful API and publish it at rapidapi.com or
   similar place, where APIs are ``published.''
 }
 
 \plush[6]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{validate} an API?
     \item How to \ul{generate} an API from object model?

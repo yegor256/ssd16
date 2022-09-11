@@ -22,29 +22,28 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Coupling \& Cohesion}
 \newcommand*\thesubtitle{and Other Metrics}
 \begin{document}
 
 \plush{\innoTitlePage{15}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Size]{Size and Complexity Metrics}}
+\plush{\pptChapter[Size]{Size and Complexity Metrics}}
 
 \subcrumbection{SLOC}
 \plush[5]{
-  \innoSection{Software Lines of Code (SLOC)}
-  \innoPic{0.8}{sloc}\br
+  \pptSection{Software Lines of Code (SLOC)}
+  \pptPic{0.8}{sloc}\br
   \url{https://github.com/AlDanial/cloc}
 }
 
 \subcrumbection{HoC}
 \plush[5]{
-  \innoSection{Hits Of Code (HoC) or Code Churn}
-  \innoPic{0.8}{hoc}\br
+  \pptSection{Hits Of Code (HoC) or Code Churn}
+  \pptPic{0.8}{hoc}\br
   \small
   \url{https://www.yegor256.com/2014/11/14/hits-of-code.html}\br
   \url{https://hitsofcode.com/}\br
@@ -55,55 +54,55 @@
 
 \subcrumbection{CC}
 \plush[5]{
-  \innoSection{McCabe Cyclomatic Complexity (CC)}
-  \innoPic{0.8}{mccabe}\br
+  \pptSection{McCabe Cyclomatic Complexity (CC)}
+  \pptPic{0.8}{mccabe}\br
   Introduced by by Thomas J. McCabe, Sr. in 1976
 }
 
 \subcrumbection{CoC}
 \plush[3]{
-  \innoSection{Cognitive Complexity (CoC)}
-  \innoPic{0.8}{cognitive}\br
+  \pptSection{Cognitive Complexity (CoC)}
+  \pptPic{0.8}{cognitive}\br
   by G. Ann Campbell, SonarSource, 2011
 }
 
-\plush{\innoChapter[C\&C]{Coupling and Cohesion}}
+\plush{\pptChapter[C\&C]{Coupling and Cohesion}}
 
 \plush[5]{
-  \innoSection{Low Coupling and High Cohesion}
-  \innoPic{0.8}{coupling}\br
+  \pptSection{Low Coupling and High Cohesion}
+  \pptPic{0.8}{coupling}\br
   Invented by Larry Constantine in the late 1960s as part of a structured design.
 }
 
 \subcrumbection{LCOM}
 \plush[5]{
-  \innoSection{Lack of Cohesion of Methods (LCOM)}
-  \innoPic{0.8}{lcom}
+  \pptSection{Lack of Cohesion of Methods (LCOM)}
+  \pptPic{0.8}{lcom}
 }
 
 \subcrumbection{MMAC}
 \plush[5]{
-  \innoSection{\small Method-Method through Attributes Cohesion (MMAC)}
-  \innoPic{0.8}{mmac}
+  \pptSection{\small Method-Method through Attributes Cohesion (MMAC)}
+  \pptPic{0.8}{mmac}
 }
 
 \subcrumbection{NHD}
 \plush[5]{
-  \innoSection{Normalized Hamming Distance (NHD)}
-  \innoPic{0.8}{nhd}
+  \pptSection{Normalized Hamming Distance (NHD)}
+  \pptPic{0.8}{nhd}
 }
 
 \subcrumbection{SCOM}
 \plush[5]{
-  \innoSection{Sensitive Class Cohesion Metric (SCOM)}
-  \innoPic{0.8}{scom}
+  \pptSection{Sensitive Class Cohesion Metric (SCOM)}
+  \pptPic{0.8}{scom}
 }
 
-\plush{\innoChapter[Productivity]{Productivity and Its Metrics}}
+\plush{\pptChapter[Productivity]{Productivity and Its Metrics}}
 
 \subcrumbection{\nospell{Metrics}}
-\print{\innoPinQR{https://www.yegor256.com/shift-m/2020/44.html}}
-\print{\innoHeader{Some Productivity Metrics}}
+\print{\pptPinQR{https://www.yegor256.com/shift-m/2020/44.html}}
+\print{\pptHeader{Some Productivity Metrics}}
 \plick{Features Delivered}
 \plick{Pull Requests Merged}
 \plick{Bugs Fixed}
@@ -114,8 +113,8 @@
 \plush{Mentee Results}
 
 \subcrumbection{\nospell{Soft}}
-\print{\innoPinQR{https://www.yegor256.com/2018/08/29/soft-skills.html}}
-\print{\innoHeader{Soft Skills}}
+\print{\pptPinQR{https://www.yegor256.com/2018/08/29/soft-skills.html}}
+\print{\pptHeader{Soft Skills}}
 \plick{Drawing}
 \plick{Writing}
 \plick{Reporting}
@@ -125,31 +124,31 @@
 \plush{Relaxing}
 
 \subcrumbection{\nospell{NoBlame}}
-\plush[5]{\innoMiddle{
-  \innoHeader{Blame the Code, Not Yourself}
+\plush[5]{\pptMiddle{
+  \pptHeader{Blame the Code, Not Yourself}
   \footnotesize
   \url{https://www.yegor256.com/2018/04/17/how-to-be-lazy.html}\br
   \url{https://www.yegor256.com/2015/02/16/it-is-not-a-school.html}
 }}
 
 \subcrumbection{\nospell{NoQuality}}
-\plush[5]{\innoMiddle{
-  \innoHeader{Aim for Speed, Not for Quality}
+\plush[5]{\pptMiddle{
+  \pptHeader{Aim for Speed, Not for Quality}
   \footnotesize
   \url{https://www.yegor256.com/2018/03/06/speed-vs-quality.html}
 }}
 
 \subcrumbection{\nospell{NoMeetings}}
-\plush[5]{\innoMiddle{
-  \innoHeader{Avoid Meetings}
+\plush[5]{\pptMiddle{
+  \pptHeader{Avoid Meetings}
   \footnotesize
   \url{https://www.yegor256.com/2015/07/13/meetings-are-legalized-robbery.html}\br
   \url{https://www.yegor256.com/2015/01/08/morning-standup-meetings.html}
 }}
 
 \subcrumbection{\nospell{NoBoss}}
-\plush[5]{\innoMiddle{
-  \innoHeader{Work for Product, Not for Boss}
+\plush[5]{\pptMiddle{
+  \pptHeader{Work for Product, Not for Boss}
   \footnotesize
   \url{https://www.yegor256.com/2015/01/26/happy-boss-false-objective.html}\br
   \url{https://www.yegor256.com/2015/02/23/haircut.html}
@@ -170,18 +169,18 @@
 }
 
 \plush[3]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   International Conference on Software Metrics in Software Engineering (ICSMSE)
 }
 
 \plush[2]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Configure automated collection of cohesion and other metrics
   in your project, and publish the numbers on each build.
 }
 
 \plush[6]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{measure} code readability?
     \item How to \ul{connect} management and software metrics?

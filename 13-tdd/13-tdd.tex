@@ -22,21 +22,20 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Test-Driven}
 \newcommand*\thesubtitle{Development}
 \begin{document}
 
 \plush{\innoTitlePage{13}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[Psychology]{The Psychology of Testing}}
+\plush{\pptChapter[Psychology]{The Psychology of Testing}}
 
-\plush{\innoQuote{people/glenford-myers}{One of the primary causes of poor application testing is the fact that most programmers begin with a \ul{false definition} of the term. They might say: 'Testing is the process of demonstrating that errors \ul{are not present}.'}{\nospell{Glenford J. Myers}, \emph{The Art of Software Testing}}}
+\plush{\pptQuote{people/glenford-myers}{One of the primary causes of poor application testing is the fact that most programmers begin with a \ul{false definition} of the term. They might say: 'Testing is the process of demonstrating that errors \ul{are not present}.'}{\nospell{Glenford J. Myers}, \emph{The Art of Software Testing}}}
 
-\plush{\innoQuote{books/myers}{Don't test a program to show that it works; rather, start with the assumption that the program contains errors. Testing is the process of executing a program with the intent of finding errors.}{\emph{The Art of Software Testing}, \nospell{Glenford J. Myers} et al.}}
+\plush{\pptQuote{books/myers}{Don't test a program to show that it works; rather, start with the assumption that the program contains errors. Testing is the process of executing a program with the intent of finding errors.}{\emph{The Art of Software Testing}, \nospell{Glenford J. Myers} et al.}}
 
 \plush[3]{\footnotesize
   \begin{multicols}{2}
@@ -73,38 +72,38 @@
   \end{multicols}
 }
 
-\plush{\innoQuote{books/pragmatic-testing}{Software testing is not about proving conclusively that the software is free from any defects, or even about discovering \ul{all} the defects. Such a mission for a test team is truly \ul{impossible} to achieve.}{\nospell{Rex Black}, \emph{Pragmatic Software Testing: Becoming Effective and Efficient Test Professional}}}
+\plush{\pptQuote{books/pragmatic-testing}{Software testing is not about proving conclusively that the software is free from any defects, or even about discovering \ul{all} the defects. Such a mission for a test team is truly \ul{impossible} to achieve.}{\nospell{Rex Black}, \emph{Pragmatic Software Testing: Becoming Effective and Efficient Test Professional}}}
 
-\plush{\innoQuote{books/testing-chauhan}{The immediate goal of testing is to find errors at any stage of software development. \ul{More} the bugs discovered at an early stage, \ul{better} will be the success rate of software testing.}{\nospell{Naresh Chauhan}, \emph{Software Testing: Principles and Practices}}}
+\plush{\pptQuote{books/testing-chauhan}{The immediate goal of testing is to find errors at any stage of software development. \ul{More} the bugs discovered at an early stage, \ul{better} will be the success rate of software testing.}{\nospell{Naresh Chauhan}, \emph{Software Testing: Principles and Practices}}}
 
-\plush{\innoQuote{books/black-box}{Anything written by people has bugs. Not testing something is equivalent to asserting that it's bug-free. Programmers can't think of everything especially of all the possible interactions between features and between different pieces of software. We try to \ul{break} software because that's \ul{the only} practical way we know of to be confident about the product's fitness for use.}{\nospell{Boris Beizer}, \emph{Black-Box Testing: Techniques for Functional Testing of Software and Systems}}}
+\plush{\pptQuote{books/black-box}{Anything written by people has bugs. Not testing something is equivalent to asserting that it's bug-free. Programmers can't think of everything especially of all the possible interactions between features and between different pieces of software. We try to \ul{break} software because that's \ul{the only} practical way we know of to be confident about the product's fitness for use.}{\nospell{Boris Beizer}, \emph{Black-Box Testing: Techniques for Functional Testing of Software and Systems}}}
 
-\plush[2]{\innoQuote{books/beizer-testing}{The probability of showing that the software works decreases as testing increases; that is, the more you test, the likelier you are to find a bug. Therefore, if your objective is to demonstrate a high probability of working, that objective is best achieved by not testing at all!}{\nospell{Beizer, Boris}, \emph{Software Testing Techniques}}}
+\plush[2]{\pptQuote{books/beizer-testing}{The probability of showing that the software works decreases as testing increases; that is, the more you test, the likelier you are to find a bug. Therefore, if your objective is to demonstrate a high probability of working, that objective is best achieved by not testing at all!}{\nospell{Beizer, Boris}, \emph{Software Testing Techniques}}}
 
-\plush[2]{\innoQuote{people/edsger-dijkstra}{Program testing can be used to show the presence of bugs, but never to show their absence!}{\nospell{Edsger W. Dijkstra}, \emph{Notes on Structured Programming}, 1970}}
+\plush[2]{\pptQuote{people/edsger-dijkstra}{Program testing can be used to show the presence of bugs, but never to show their absence!}{\nospell{Edsger W. Dijkstra}, \emph{Notes on Structured Programming}, 1970}}
 
 \plush[3]{%
   \small\begin{multicols}{2}
   \emph{Software Testing Philosophy}\\
   Bee Mobile Meetup\\
   Moscow, Russia, 7 November 2018\\
-  \innoQR[1in]{https://youtu.be/y0X-WQ1bOUI}\par
+  \pptQR[1in]{https://youtu.be/y0X-WQ1bOUI}\par
   \emph{Testing and Testers}\\
   TestCon \\
   Moscow, Russia, 16 September 2020\\
-  \innoQR[1in]{https://www.youtube.com/watch?v=aYXuK2do6FA}
+  \pptQR[1in]{https://www.youtube.com/watch?v=aYXuK2do6FA}
   \par\columnbreak
   \emph{Software Testing Pitfalls}\\
   JPoint \\
   Moscow, Russia, 5 April 2019\\
-  \innoQR[1in]{https://www.youtube.com/watch?v=9ynzUGZjKFk}\par
+  \pptQR[1in]{https://www.youtube.com/watch?v=9ynzUGZjKFk}\par
   \emph{Quality Assurance vs. Testing}\\
   QA Fest\\
   Kyiv, Ukraine, 20 September 2019\\
-  \innoQR[1in]{https://www.youtube.com/watch?v=jZitXMQaXvE}
+  \pptQR[1in]{https://www.youtube.com/watch?v=jZitXMQaXvE}
   \end{multicols}}
 
-\plush[2]{\innoChapter[TDD]{Test Driven Development (TDD)}}
+\plush[2]{\pptChapter[TDD]{Test Driven Development (TDD)}}
 
 \clearpage\begin{multicols}{2}
 \begin{ffcode}
@@ -140,31 +139,31 @@ Can you put some code here?
 \end{ffcode}
 \end{multicols}\clearpage
 
-\plush[6]{\innoQuote{people/dhh}{Test-first fundamentalism is like abstinence-only sex ed: An unrealistic, ineffective morality campaign for self-loathing and shaming.}{\nospell{David Heinemeier Hansson}, \emph{\href{https://dhh.dk/2014/tdd-is-dead-long-live-testing.html}{TDD is dead. Long live testing}}}}
+\plush[6]{\pptQuote{people/dhh}{Test-first fundamentalism is like abstinence-only sex ed: An unrealistic, ineffective morality campaign for self-loathing and shaming.}{\nospell{David Heinemeier Hansson}, \emph{\href{https://dhh.dk/2014/tdd-is-dead-long-live-testing.html}{TDD is dead. Long live testing}}}}
 
-\plush[2]{\innoQuote{people/robert-martin}{It would not surprise me if, one day, TDD had the \ul{force of law} behind it.}{Robert Martin, \emph{\href{https://blog.cleancoder.com/uncle-bob/2014/05/02/ProfessionalismAndTDD.html}{Professionalism and TDD (Reprise)}}}}
+\plush[2]{\pptQuote{people/robert-martin}{It would not surprise me if, one day, TDD had the \ul{force of law} behind it.}{Robert Martin, \emph{\href{https://blog.cleancoder.com/uncle-bob/2014/05/02/ProfessionalismAndTDD.html}{Professionalism and TDD (Reprise)}}}}
 
 \plush[5]{
-  \innoPic{0.7}{flow}\\
+  \pptPic{0.7}{flow}\\
   ``I only create tests later when my users express the need for them by reporting bugs.''\\
   \url{https://www.yegor256.com/2017/03/24/tdd-that-works.html}
 }
 
 \plush[5]{
-  \innoPic{0.8}{curve}\\
+  \pptPic{0.8}{curve}\\
   `` I don’t need tests at the beginning of the project''\\
   \url{https://www.yegor256.com/2017/03/24/tdd-that-works.html}
 }
 
 \plush[4]{
-  \innoHeader{Safety Net}
-  \innoPic{0.8}{safety-net}
+  \pptHeader{Safety Net}
+  \pptPic{0.8}{safety-net}
 }
 
-\plush{\innoChapter[Unit]{Unit vs. Integration Tests}}
+\plush{\pptChapter[Unit]{Unit vs. Integration Tests}}
 
-\print{\innoPinQR{https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/}}
-\print{\innoHeader{Good Tests Are:}}
+\print{\pptPinQR{https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/}}
+\print{\pptHeader{Good Tests Are:}}
 \plick[2]{1) \textbf{Short}: less than $x$ lines each}
 \plick[2]{2) \textbf{Fast}: less than $y$ milliseconds each}
 \plick[2]{3) \textbf{Independent}: runs alone and in a suite}
@@ -172,7 +171,7 @@ Can you put some code here?
 \plick[2]{5) \textbf{Careful}: side effect free, doesn't leave temp files}
 \plush[2]{6) \textbf{Isolated}: doesn't touch my files}
 
-\clearpage\begin{innoWide}{2}\small
+\clearpage\begin{pptWide}{2}\small
 \begin{ffcode}
 import java.nio.file.Files;
 class Book {
@@ -197,11 +196,11 @@ class BookTest {
   }
 }
 \end{ffcode}
-\end{innoWide}
+\end{pptWide}
 Is it Short, Fast, Independent, Portable, Careful, and Isolated?
 \clearpage
 
-\clearpage\begin{innoWide}{2}\small
+\clearpage\begin{pptWide}{2}\small
 \begin{ffcode}
 import java.nio.file.Files;
 class Book {
@@ -231,11 +230,11 @@ class BookTest {
   }
 }
 \end{ffcode}
-\end{innoWide}
+\end{pptWide}
 Is it Short, Fast, Independent, Portable, Careful, and Isolated?
 \clearpage
 
-\clearpage\begin{innoWide}{2}\small
+\clearpage\begin{pptWide}{2}\small
 \begin{ffcode}
 import java.nio.file.Files;
 class Book {
@@ -266,16 +265,16 @@ class BookTest {
   }
 }
 \end{ffcode}
-\end{innoWide}\clearpage
+\end{pptWide}\clearpage
 
-\plush[10]{\innoChapter[Coverage]{Test Coverage}}
+\plush[10]{\pptChapter[Coverage]{Test Coverage}}
 
 \plush[5]{
-  \innoPic{0.8}{coverage}
+  \pptPic{0.8}{coverage}
   \url{https://codecov.io/gh/yegor256/sibit/tree/master/lib}
 }
 
-\print{\innoHeader{Coverage Criteria}}
+\print{\pptHeader{Coverage Criteria}}
 \plick[2]{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
 \plick[2]{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
 \plick[2]{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
@@ -283,8 +282,8 @@ class BookTest {
 \plush[2]{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
 
 \clearpage
-\innoHeader{Mutation Testing + Coverage}
-\begin{innoWide}{2}\small
+\pptHeader{Mutation Testing + Coverage}
+\begin{pptWide}{2}\small
 \begin{ffcode}
 def f(n)
   n * n + 1
@@ -296,11 +295,11 @@ f(0) == 1
 f(1) == 2
 f(2) == 5
 \end{ffcode}
-\end{innoWide}\clearpage
+\end{pptWide}\clearpage
 
 \clearpage
-\innoHeader{Mutation Testing + Coverage}
-\begin{innoWide}{2}\small
+\pptHeader{Mutation Testing + Coverage}
+\begin{pptWide}{2}\small
 \begin{ffcode}
 def f(n)
   n * n + 1
@@ -325,12 +324,12 @@ f(2) == 5
 
 Test coverage: 100\% \par
 Mutation coverage = 50\%
-\end{innoWide}\clearpage
+\end{pptWide}\clearpage
 
-\plush{\innoChapter[Performance]{Automated Performance Testing}}
+\plush{\pptChapter[Performance]{Automated Performance Testing}}
 
 \plush[5]{
-  \innoHeader{Some Tools}
+  \pptHeader{Some Tools}
   \begin{multicols}{2}
   \nospell{
   WebLOAD\br
@@ -354,19 +353,19 @@ Mutation coverage = 50\%
   \end{multicols}
 }
 
-\plush{\innoChapter[BDD]{Behavior Driven Development (BDD)}}
+\plush{\pptChapter[BDD]{Behavior Driven Development (BDD)}}
 
 \plush[3]{
-  \innoPic{0.8}{bdd}
+  \pptPic{0.8}{bdd}
   \url{https://www.agilealliance.org/glossary/bdd}
 }
 
-\plush{\innoChapter[QA]{Testing vs. QA}}
+\plush{\pptChapter[QA]{Testing vs. QA}}
 
 \plush[5]{
-  \innoBanner{Testing $\not=$ Quality Assurance (QA)}
-  \innoPinQR[left]{https://www.youtube.com/watch?v=jZitXMQaXvE}
-  \innoPic{0.8}{qa}
+  \pptBanner{Testing $\not=$ Quality Assurance (QA)}
+  \pptPinQR[left]{https://www.youtube.com/watch?v=jZitXMQaXvE}
+  \pptPic{0.8}{qa}
 }
 
 \plush{\innoBVC}
@@ -384,17 +383,17 @@ Mutation coverage = 50\%
 }
 
 \plush{%
-  \innoBanner{Where to publish:}
+  \pptBanner{Where to publish:}
   International Symposium on Software Testing and Analysis (ISSTA)
 }
 
 \plush[3]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Integrate mutation coverage control into your build.
 }
 
 \plush[5]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{test} performance right?
     \item How to \ul{create} tests automatically?

@@ -22,124 +22,123 @@
 
 \documentclass{article}
 \usepackage{../ssd}
-\usepackage{../inno}
-\usepackage{../slides}
+
 \newcommand*\thetitle{Serverless Design}
 \newcommand*\thesubtitle{in Cloud}
 \begin{document}
 
 \plush{\innoTitlePage{12}}
 
-\plush[3]{\innoPic{0.8}{cloud}}
+\plush[3]{\pptPic{0.8}{cloud}}
 
-\innoToc
+\pptToc
 
-\plush{\innoChapter[AWS]{Amazon Web Services}}
+\plush{\pptChapter[AWS]{Amazon Web Services}}
 
 \subcrumbection{S3}
 \plush[5]{%
-  \innoHeader{Simple Storage Service (S3)}
-  \innoPic{0.7}{s3}
+  \pptHeader{Simple Storage Service (S3)}
+  \pptPic{0.7}{s3}
 }
 
 \subcrumbection{EC2}
 \plush[5]{%
-  \innoHeader{Elastic Compute Cloud (EC2)}
-  \innoPic{0.7}{ec2}
+  \pptHeader{Elastic Compute Cloud (EC2)}
+  \pptPic{0.7}{ec2}
 }
 
 \subcrumbection{CloudFront}
 \plush[5]{%
-  \innoHeader{CloudFront}
-  \innoPic{0.8}{cloudfront}
+  \pptHeader{CloudFront}
+  \pptPic{0.8}{cloudfront}
 }
 
 \subcrumbection{SQS}
 \plush[4]{%
-  \innoHeader{Simple Queue Service (SQS)}
-  \innoPic{0.8}{sqs}
+  \pptHeader{Simple Queue Service (SQS)}
+  \pptPic{0.8}{sqs}
 }
 
 \subcrumbection{Lambda}
 \plush[3]{%
-  \innoHeader{Lambda}
-  \innoPic{0.8}{lambda}
+  \pptHeader{Lambda}
+  \pptPic{0.8}{lambda}
 }
 
 \subcrumbection{OpenStack}
 \plush[3]{%
-  \innoHeader{OpenStack}
-  \innoPic{0.8}{openstack}\par
+  \pptHeader{OpenStack}
+  \pptPic{0.8}{openstack}\par
   \url{https://docs.openstack.org/install-guide/get-started-logical-architecture.html}
 }
 
-\plush{\innoChapter[Docker]{Docker Containers}}
+\plush{\pptChapter[Docker]{Docker Containers}}
 
 \subcrumbection{Chef}
 \plush[4]{%
-  \innoHeader{Chef, Puppet, etc.}
-  \innoPic{0.8}{chef}
+  \pptHeader{Chef, Puppet, etc.}
+  \pptPic{0.8}{chef}
 }
 
 \subcrumbection{Dockerfile}
 \plush[6]{%
-  \innoHeader{Dockerfile}
+  \pptHeader{Dockerfile}
   \begin{multicols}{2}
-    \innoPic{0.8}{dockerfile}
+    \pptPic{0.8}{dockerfile}
     \columnbreak
-    \innoPic{0.8}{dockerfile2}
+    \pptPic{0.8}{dockerfile2}
   \end{multicols}
 }
 
 \subcrumbection{LXC}
 \plush[2]{%
-  \innoHeader{LXC}
-  \innoPic{0.7}{lxc}\par
+  \pptHeader{LXC}
+  \pptPic{0.7}{lxc}\par
   \small
   LXC is an operating-system-level virtualization method for running multiple isolated Linux systems on a control host using a single Linux kernel.
 }
 
 \subcrumbection{K8s}
 \plush[4]{%
-  \innoHeader{Kubernetes}
-  \innoPic{0.7}{kubernetes}
+  \pptHeader{Kubernetes}
+  \pptPic{0.7}{kubernetes}
 }
 
-\plush{\innoChapter[?aaS]{PaaS, IaaS, SaaS, EaaS, etc.}}
+\plush{\pptChapter[?aaS]{PaaS, IaaS, SaaS, EaaS, etc.}}
 
 \subcrumbection{EaaS}
 \plush[2]{%
-  \innoHeader{Everything as a Service (EaaS)}
-  \innoPic{0.5}{eaas}
+  \pptHeader{Everything as a Service (EaaS)}
+  \pptPic{0.5}{eaas}
 }
 
 \subcrumbection{Heroku}
 \plush[5]{%
-  \innoHeader{Platform as a Service (PaaS)}
-  \innoPic{0.8}{heroku}
+  \pptHeader{Platform as a Service (PaaS)}
+  \pptPic{0.8}{heroku}
 }
 
 \subcrumbection{Serverless}
 \plush[7]{%
-  \innoHeader{Serverless Architecture}
-  \innoPinQR{https://martinfowler.com/articles/serverless.html}
+  \pptHeader{Serverless Architecture}
+  \pptPinQR{https://martinfowler.com/articles/serverless.html}
   Serverless architectures are application designs that incorporate third-party ``Backend as a Service'' (BaaS) services, and/or that include custom code run in managed, ephemeral containers on a ``Functions as a Service'' (FaaS) platform.\par
   Fundamentally, FaaS is about running backend code without managing \ul{your own server systems} or your own long-lived server applications.\par
   AWS RDS vs. AWS DynamoDB
 }
 
-\plush{\innoChapter[P2P]{P2P: BitTorrent, Blockchain, and Beyond}}
+\plush{\pptChapter[P2P]{P2P: BitTorrent, Blockchain, and Beyond}}
 
 \subcrumbection{BitTorrent}
 \plush[3]{%
-  \innoHeader{BitTorrent}
-  \innoPic{0.6}{bittorrent}
+  \pptHeader{BitTorrent}
+  \pptPic{0.6}{bittorrent}
 }
 
 \subcrumbection{Blockchain}
 \plush[8]{%
-  \innoHeader{Blockchain}
-  \innoPic{0.5}{blockchain}
+  \pptHeader{Blockchain}
+  \pptPic{0.5}{blockchain}
 }
 
 \plush{\innoBVC}
@@ -157,17 +156,17 @@
 }
 
 \plush[3]{%
-  \innoBanner{Where to go:}
+  \pptBanner{Where to go:}
   AWS Certified Solution Architect
 }
 
 \plush[2]{%
-  \innoBanner{Call to Action:}
+  \pptBanner{Call to Action:}
   Use two AWS services in your app.
 }
 
 \plush[6]{%
-  \innoBanner[orange]{Still unresolved issues:}
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{simplify} serverless design?
     \item How to \ul{manage} data serverless?
