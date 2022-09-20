@@ -8,7 +8,11 @@ in 2021. Videos are in
 [this YouTube playlist](https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM).
 All compiled slide decks in PDF are [here](https://yegor256.github.io/ssd16/).
 
-To compile everything just run:
+To compile everything just run (I use my own LaTeX packages, incl.
+[ppt-slides](https://ctan.org/pkg/ppt-slides),
+[crumbs](https://ctan.org/pkg/crumbs),
+and
+[clicks](https://ctan.org/pkg/clicks)):
 
 ```bash
 $ make
