@@ -49,6 +49,7 @@ package: latexmk
 	for f in $$(ls *.pdf); do
 		echo "<p><a href='$${f}'>$${f}</a></p>" >> index.html
 	done
+	echo "<p>Compiled on: $$(date)</p>" >> index.html
 
 copy:
 	for d in $(DIRS); do
