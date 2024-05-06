@@ -3,7 +3,8 @@ docker:
 install: |-
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install huawei xstring totpages environ hyperxmp ifmtarg ncctools comment biblatex href-ul libertine ffcode acmart cjk ffcode href-ul datetime fmtcount libertine paralist makecell footmisc currfile enumitem wrapfig lastpage biblatex titling svg trimspaces catchfile transparent textpos fvextra xstring framed environ totpages hyperxmp ifmtarg ncctools comment anyfontsize fdsymbol algpseudocodex algorithmicx stmaryrd preprint cyrillic cm-super babel-russian hyphen-russian lh to-be-determined cancel iexec docshots upquote eolang crumbs clicks ppt-slides fontsize changepage ifoddpage doi pgf tikzfill pdfcol listingsutf8 bbold semantic cleveref adjustbox mdframed zref needspace csquotes biber
+  sudo tlmgr --verify-repo=none install $(cut -d' ' -f2 DEPENDS.txt | uniq)
+  sudo tlmgr --verify-repo=none update $(cut -d' ' -f2 DEPENDS.txt | uniq)
 merge:
   script: |-
     make
