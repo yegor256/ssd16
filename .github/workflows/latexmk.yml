@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: yegor256/latexmk-action@0.11.1
+      - uses: yegor256/latexmk-action@0.12.0
         with:
           cmd: make
           depends: DEPENDS.txt
