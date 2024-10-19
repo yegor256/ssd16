@@ -1,0 +1,3 @@
+[submodule "faces"]
+	path = faces
+	url = https://github.com/yegor256/faces
