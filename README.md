@@ -4,7 +4,7 @@
 
 There are slides for my lectures about Software Systems Design,
 which were presented to 3rd year BSc students at [Innopolis University](https://innopolis.university/)
-in 2021. Videos are in 
+in 2021. Videos are in
 [this YouTube playlist](https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM).
 All compiled slide decks in PDF are [here](https://yegor256.github.io/ssd16/).
 

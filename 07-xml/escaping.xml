@@ -3,5 +3,5 @@
   <f title='Fibonacci&apos;s'> <!-- Fibonacci's -->
     <e>if x &lt; 2 return x</e> <!-- if x < 2 return x -->
     <e>else return f(x-1) + f(x-2)</e>
-  </book>
-</library>
+  </f>
+</formulas>
