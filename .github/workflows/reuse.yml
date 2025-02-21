@@ -20,8 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-# yamllint disable rule:line-length
-name: latexmk
+name: reuse
 'on':
   push:
     branches:
@@ -30,18 +29,9 @@ name: latexmk
     branches:
       - master
 jobs:
-  latexmk:
+  reuse:
     timeout-minutes: 15
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: yegor256/latexmk-action@0.15.0
-        with:
-          cmd: make
-          depends: DEPENDS.txt
-      - uses: JamesIves/github-pages-deploy-action@v4.7.3
-        with:
-          branch: gh-pages
-          folder: package
-          clean: false
-        if: github.ref == 'refs/heads/master'
+      - uses: fsfe/reuse-action@v5
