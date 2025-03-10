@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Yegor Bugayenko
+# SPDX-License-Identifier: MIT
+
 def h2sec(h)
   return h * 60 * 60
 end

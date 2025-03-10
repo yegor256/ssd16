@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Yegor Bugayenko
+# SPDX-License-Identifier: MIT
+
 def root(a, b, c)
   d = Math.sqrt(b * b - 4 * a * c)
   r1 = (-b + d) / (2 * a)
