@@ -16,10 +16,12 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - uses: yegor256/latexmk-action@0.16.1
         with:
           cmd: make
-          depends: DEPENDS.txt
+          depends: lecture-notes/DEPENDS.txt
       - uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: gh-pages
