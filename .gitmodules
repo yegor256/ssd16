@@ -1,3 +1,6 @@
 [submodule "faces"]
 	path = faces
 	url = https://github.com/yegor256/faces
+[submodule "lecture-notes"]
+	path = lecture-notes
+	url = https://github.com/yegor256/lecture-notes
