@@ -4,3 +4,6 @@
 [submodule "lecture-notes"]
 	path = lecture-notes
 	url = https://github.com/yegor256/lecture-notes
+[submodule "bibliography"]
+	path = bibliography
+	url = https://github.com/yegor256/bibliography
