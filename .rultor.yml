@@ -3,12 +3,9 @@
 ---
 # yamllint disable rule:line-length
 docker:
-  image: yegor256/rultor-image:1.24.0
+  image: yegor256/latex
 install: |-
-  sudo tlmgr option repository ctan
-  sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install $(cut -d' ' -f2 DEPENDS.txt | uniq)
-  sudo tlmgr --verify-repo=none update $(cut -d' ' -f2 DEPENDS.txt | uniq)
+  sudo lecture-notes/tlmgr-install.sh
 merge:
   script: |-
     make
