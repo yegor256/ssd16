@@ -1,4 +1,4 @@
---pws=../aspell.en.pws
+--pws=../lecture-notes/aspell.en.pws
 --ignore=href,ffcode
 --ignore=ff,nospell,citet,citep
 --ignore=pptPic:pp
