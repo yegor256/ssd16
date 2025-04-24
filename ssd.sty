@@ -23,52 +23,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ssd}[00.00.0000 0.0.0 This Course Specials]
 
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[dry,increment]{crumbs}
-\RequirePackage[static]{clicks}
-\RequirePackage[template,scheme=dark]{ppt-slides}
-\RequirePackage[novert]{ffcode}
-\RequirePackage{amsmath}
-\RequirePackage{graphicx}
-  \graphicspath{{../images/}}
-\usetikzlibrary{calc}
+\RequirePackage{../lecture-notes/notes}
 
 \newcommand\br{\newline}
 
-\newcommand\innoDisclaimer{{%
-  \color{grey}\ttfamily\footnotesize
-  All visual and text materials presented in this slidedeck are
-  either originally made by the author or taken from public Internet
-  sources, such as website. Copyright belongs to their
-  respected authors.\par
-}}
-
-\newcommand\innoTitlePage[1]{%
-  \pptTitle{\thetitle}{\thesubtitle}\par
-  {\scshape Yegor Bugayenko}\par
-  Lecture \##1 out of 16 \br
-  90 minutes\par
-  All videos are in \href{https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM}{this YouTube playlist}.\par
-  \innoDisclaimer{}
-}
-
-% 1: cover file
-% 2: author
-% 3: title
 \newcommand\innoBook[3]{%
   \pptPic{0.4}{../bibliography/book-covers/#1} \br ``#3'' by {\scshape #2}
 }
 
 \newcommand\innoBVC{%
   \pptChapter[B.V.C.]{Books, Venues, Call-to-Action}
-}
-
-\newcommand\nospell[1]{#1}
-
-\AtBeginDocument{%
-  \pptLeft{\thetitle{} \thesubtitle}%
-  \pptRight{@yegor256}%
 }
 
 \endinput
