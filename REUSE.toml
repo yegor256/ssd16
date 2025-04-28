@@ -5,7 +5,12 @@ version = 1
 [[annotations]]
 path = [
     "**.csv",
+    "**.c",
+    "**.cpp",
+    "**.toml",
+    "**.java",
     "**.jpg",
+    "**.jpeg",
     "**.json",
     "**.md",
     "**.pdf",
