@@ -8,11 +8,9 @@
 
 \newcommand\br{\newline}
 
-% 1: cover file
-% 2: author
-% 3: title
-\newcommand\innoBook[3]{%
-  \pptPic{0.4}{../bibliography/book-covers/#1} \br ``#3'' by {\scshape #2}
+% 1: bibtex key
+\newcommand\innoBook[1]{%
+  \pptPic{0.4}{../bibliography/book-covers/#1.jpg} \br \rmfamily\scriptsize\bibentry{#1}
 }
 
 \newcommand\innoBVC{%
