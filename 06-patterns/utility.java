@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright (c) 2021 Yegor Bugayenko
+// SPDX-License-Identifier: MIT
+
 public class NumberUtils {%
   public static int max(int a, int b) {%
     return a > b ? a : b;

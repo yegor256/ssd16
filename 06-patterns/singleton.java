@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright (c) 2021 Yegor Bugayenko
+// SPDX-License-Identifier: MIT
+
 class Database {%
   public static Database INSTANCE = new Database();
   private Database() {  /* start */ }
