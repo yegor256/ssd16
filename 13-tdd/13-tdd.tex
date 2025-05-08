@@ -85,30 +85,23 @@
 
 \plush[2]{\pptChapter[TDD]{Test Driven Development (TDD)}}
 
-\clearpage\begin{multicols}{2}
-\begin{ffcode}
+\begin{lnSnippet}[fibonacci.lisp]
 (test one
   (is (= 1 (f 1))))
 (test two
   (is (= 1 (f 2))))
 (test fifteen
   (is (= 610 (f 15))))
-\end{ffcode}
-\par\columnbreak
-Can you put some code here?
-\end{multicols}\clearpage
+\end{lnSnippet}
+\plush{
+  \begin{multicols}{2}
+  \small\ffinput{fibonacci.lisp}
+  \par\columnbreak
+  Can you put some code here?
+  \end{multicols}
+}
 
-\clearpage\begin{multicols}{2}
-\begin{ffcode}
-(test one
-  (is (= 1 (f 1))))
-(test two
-  (is (= 1 (f 2))))
-(test fifteen
-  (is (= 610 (f 15))))
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
+\begin{lnSnippet}[fibonacci-test.lisp]
 (defun f (n)
   (cond
     ((= n 1) 0)
@@ -116,8 +109,14 @@ Can you put some code here?
     (+
       (f (- n 1))
       (f (- n 2)))))
-\end{ffcode}
-\end{multicols}\clearpage
+\end{lnSnippet}
+\plush{
+  \begin{multicols}{2}
+    \small\ffinput{fibonacci.lisp}
+    \par\columnbreak
+    \small\ffinput{fibonacci-test.lisp}
+  \end{multicols}
+}
 
 \plush[6]{\pptQuote{../faces/dhh}{Test-first fundamentalism is like abstinence-only sex ed: An unrealistic, ineffective morality campaign for self-loathing and shaming.}{\nospell{David Heinemeier Hansson}, \emph{\href{https://dhh.dk/2014/tdd-is-dead-long-live-testing.html}{TDD is dead. Long live testing}}}}
 
@@ -151,8 +150,7 @@ Can you put some code here?
 \plick[2]{5) \textbf{Careful}: side effect free, doesn't leave temp files}
 \plush[2]{6) \textbf{Isolated}: doesn't touch my files}
 
-\clearpage\begin{pptWide}{2}\small
-\begin{ffcode}
+\begin{lnSnippet}[book-static-file.java]
 import java.nio.file.Files;
 class Book {
   String title() {
@@ -161,9 +159,8 @@ class Book {
     )[0];
   }
 }
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
+\end{lnSnippet}
+\begin{lnSnippet}[book-static-file-test.java]
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 class BookTest {
@@ -175,13 +172,17 @@ class BookTest {
     );
   }
 }
-\end{ffcode}
-\end{pptWide}
-Is it Short, Fast, Independent, Portable, Careful, and Isolated?
-\clearpage
+\end{lnSnippet}
+\plush{
+  \begin{pptWide}{2}
+    \small\ffinput{book-static-file.java}
+    \par\columnbreak
+    \small\ffinput{book-static-file-test.java}
+  \end{pptWide}
+  Is it Short, Fast, Independent, Portable, Careful, and Isolated?
+}
 
-\clearpage\begin{pptWide}{2}\small
-\begin{ffcode}
+\begin{lnSnippet}[book-dynamic-file.java]
 import java.nio.file.Files;
 class Book {
   private Path file;
@@ -194,9 +195,8 @@ class Book {
     )[0];
   }
 }
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
+\end{lnSnippet}
+\begin{lnSnippet}[book-dynamic-file-test.java]
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 class BookTest {
@@ -209,28 +209,17 @@ class BookTest {
     Assertions.assertEquals(title, t);
   }
 }
-\end{ffcode}
-\end{pptWide}
-Is it Short, Fast, Independent, Portable, Careful, and Isolated?
-\clearpage
-
-\clearpage\begin{pptWide}{2}\small
-\begin{ffcode}
-import java.nio.file.Files;
-class Book {
-  private Path file;
-  Book(Path f) {
-    this.file = f;
-  }
-  String title() {
-    return Files.readAllLines(
-      this.file
-    )[0];
-  }
+\end{lnSnippet}
+\plush{
+  \begin{pptWide}{2}
+    \small\ffinput{book-dynamic-file.java}
+    \par\columnbreak
+    \small\ffinput{book-dynamic-file-test.java}
+  \end{pptWide}
+  Is it Short, Fast, Independent, Portable, Careful, and Isolated?
 }
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
+
+\begin{lnSnippet}[isolated-book-test.java]
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -244,8 +233,14 @@ class BookTest {
     Assertions.assertEquals(title, t);
   }
 }
-\end{ffcode}
-\end{pptWide}\clearpage
+\end{lnSnippet}
+\plush{
+  \begin{pptWide}{2}
+    \small\ffinput{book-dynamic-file.java}
+    \par\columnbreak
+    \small\ffinput{isolated-book-test.java}
+  \end{pptWide}
+}
 
 \plush[10]{\pptChapter[Coverage]{Test Coverage}}
 
@@ -261,26 +256,26 @@ class BookTest {
 \plick[2]{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
 \plush[2]{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
 
-\clearpage
-\pptHeader{Mutation Testing + Coverage}
-\begin{pptWide}{2}\small
-\begin{ffcode}
+\begin{lnSnippet}[f.rb]
 def f(n)
   n * n + 1
 end
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
+\end{lnSnippet}
+\begin{lnSnippet}[f-test.rb]
 f(0) == 1
 f(1) == 2
 f(2) == 5
-\end{ffcode}
-\end{pptWide}\clearpage
+\end{lnSnippet}
+\plush{
+  \pptHeader{Mutation Testing + Coverage}
+  \begin{pptWide}{2}
+  \small\ffinput{f.rb}
+  \par\columnbreak
+  \small\ffinput{f-test.rb}
+  \end{pptWide}
+}
 
-\clearpage
-\pptHeader{Mutation Testing + Coverage}
-\begin{pptWide}{2}\small
-\begin{ffcode}
+\begin{lnSnippet}[mut-f.rb]
 def f(n)
   n * n + 1
 end
@@ -294,17 +289,17 @@ end
 def f(n)
   n * n - 1
 end
-\end{ffcode}
-\par\columnbreak
-\begin{ffcode}
-f(0) == 1
-f(1) == 2
-f(2) == 5
-\end{ffcode}
-
-Test coverage: 100\% \par
-Mutation coverage = 50\%
-\end{pptWide}\clearpage
+\end{lnSnippet}
+\plush{
+  \pptHeader{Mutation Testing + Coverage}
+  \begin{pptWide}{2}
+    \small\ffinput{mut-f.rb}
+    \par\columnbreak
+    \small\ffinput{f-test.rb}
+    Test coverage: 100\% \par
+    Mutation coverage = 50\%
+  \end{pptWide}
+}
 
 \plush{\pptChapter[Performance]{Automated Performance Testing}}
 

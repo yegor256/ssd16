@@ -1,8 +1,0 @@
-[library.a]
-  id = 42
-  author = "David West"
-  title = "Object Thinking"
-[library.b]
-  id = 43
-  author = "Martin Fowler"
-  title = "Refactoring"

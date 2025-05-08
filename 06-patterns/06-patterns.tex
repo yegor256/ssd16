@@ -23,33 +23,101 @@
   36 patterns (22 anti-patterns)
 }
 
+\begin{lnSnippet}[adapter.java]
+class Database {
+  String sql(String q);
+}
+void echo(Book b) {
+  print(b.title());
+  print(b.author());
+}
+class BookInDatabase implements Book {
+  private Database d;
+  private int id;
+  String title() {
+    return d.sql("SELECT title FROM book WHERE id=%1", id);
+  }
+}
+\end{lnSnippet}
 \plush[5]{%
   \pptPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
   \pptSection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
-  \pptSnippet[\footnotesize]{adapter.java}
+  \footnotesize\ffinput{adapter.java}
 }
 
+\begin{lnSnippet}[raii.cpp]
+class File {
+  std::FILE* h;
+public:
+  File(const char* name) {
+    h = std::fopen(name, "w+");
+  }
+  ~File() {
+    std::fclose(h);
+  }
+}
+void foo() {
+  f File("foo.txt");
+  // write to f
+}
+\end{lnSnippet}
 \plush[5]{%
   \pptPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
   \pptSection[RAII]{Resource Acquisition Is Initialization (RAII)}
-  \pptSnippet[\footnotesize]{raii.cpp}
+  \footnotesize\ffinput{raii.cpp}
 }
 
 \plush{\pptChapter[Anti]{Some Anti-Patterns}}
 
+\begin{lnSnippet}[goto.c]
+void foo(int a) {
+  if (a % 2 == 0) {
+    printf("Even!");
+    goto exit;
+  }
+  printf("Odd!");
+  exit:
+}
+void foo(int a) {
+  if (a % 2 == 0) {
+    printf("Even!");
+  } else {
+    printf("Odd!");
+  }
+}
+\end{lnSnippet}
 \plush[2]{%
   \pptSection{GOTO}
-  \pptSnippet[\footnotesize]{goto.c}
+  \footnotesize\ffinput{goto.c}
 }
 
+\begin{lnSnippet}[magic.rb]
+def points
+  File.readlines("/data/users.csv") # why here?
+    .map { |t| t.split(',', 11) } # what is 11?
+    .map { a[7].to_i } # why 7?
+    .inject(&:+)
+end
+\end{lnSnippet}
 \plush[2]{%
   \pptSection[Numbers]{Magic Numbers}
-  \pptSnippet{magic.rb}
+  \small\ffinput{magic.rb}
 }
 
+\begin{lnSnippet}[magic2.rb]
+def h2sec(h)
+  return h * 60 * 60
+end
+
+def h2sec(h)
+  seconds_in_minutes = 60
+  minutes_in_hours = 60
+  return h * seconds_in_minutes * minutes_in_hours
+end
+\end{lnSnippet}
 \plush[2]{%
   \pptBanner{Magic Numbers ... Not!}
-  \pptSnippet{magic2.rb}
+  \small\ffinput{magic2.rb}
 }
 
 \plush[2]{%
@@ -86,39 +154,105 @@
   Traits and Mixins.
 }
 
+\begin{lnSnippet}[dto.java]
+// Getters and Setters: WRONG!
+Dog dog = new Dog();
+dog.setWeight("23kg");
+w = dog.getWeight();
+
+// Smart objects: RIGHT!
+Dog dog = new Dog("23kg");
+int w = dog.weight();
+\end{lnSnippet}
 \plush[3]{%
   \pptPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
   \pptSection[DTO]{Data Transfer Object (DTO)}
   \pptBanner{Getters and Setters}
-  \pptSnippet{dto.java}
+  \small\ffinput{dto.java}
 }
 
+\begin{lnSnippet}[utility.java]
+public class NumberUtils {
+  public static int max(int a, int b) {
+    return a > b ? a : b;
+  }
+}
+public class Max implements Number {
+  private final int a;
+  private final int b;
+  public Max(int x, int y) { this.a = x; this.b = y; }
+  public int intValue() {
+    return this.a > this.b ? this.a : this.b;
+  }
+}
+\end{lnSnippet}
 \plush[3]{%
   \pptPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \pptSection[Utility]{Utility Class}
-  \pptSnippet[\footnotesize]{utility.java}
+  \footnotesize\ffinput{utility.java}
 }
 
+\begin{lnSnippet}[singleton.java]
+class Database {
+  public static Database INSTANCE = new Database();
+  private Database() {  /* start */ }
+  public java.sql.Connection connect() { /* fetch */ }
+}
+c = Database.INSTANCE.connect();
+class Foo {
+  private final Database d;
+  void foo() {
+    this.d.connect();
+  }
+}
+\end{lnSnippet}
 \plush[3]{%
   \pptPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \pptSection[Singleton]{Singleton}
-  \pptSnippet{singleton.java}
+  \small\ffinput{singleton.java}
 }
 
+\begin{lnSnippet}[orm.java]
+// ORM: Wrong!
+Post post = new Post();
+post.setDate(new Date());
+post.setTitle("How to cook an omelette");
+session.save(post);
+
+// Objects: RIGHT!
+Post post = new Post();
+post.setDate(new Date());
+\end{lnSnippet}
 \plush[3]{%
   \pptPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
   \pptSection[ORM]{Object-Relational Mapping (ORM)}
-  \pptSnippet{orm.java}
+  \small\ffinput{orm.java}
 }
 
 \plush{\pptChapter[Refactorings]{Some Refactorings}}
 
 \plush[2]{\pptQuote{../bibliography/book-covers/fowler1999refactoring}{Whenever I do refactoring, the first step is always the same. I need to build a solid set of tests for that section of code. The tests are essential because even though I follow refactorings structured to avoid most of the opportunities for introducing bugs, I'm still human and still make mistakes. Thus I need solid tests.}{\emph{Refactoring: Improving the Design of Existing Code}, Martin Fowler}}
 
+\begin{lnSnippet}[extract.rb]
+def root(a, b, c)
+  d = Math.sqrt(b * b - 4 * a * c)
+  r1 = (-b + d) / (2 * a)
+  r2 = (-b - d) / (2 * a)
+  [r1, r2]
+end
+
+def root(a, b, c)
+  d = Math.sqrt(b * b - 4 * a * c)
+  [r(a, b, d, 1), r(a, b, d, -1)]
+end
+def r(a, b, d, m)
+  (-b + d * m) / (2 * a)
+end
+\end{lnSnippet}
 \plush[3]{%
   \pptPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
   \pptBanner{Extract Method}
-  \pptSnippet[\footnotesize]{extract.rb}
+  \footnotesize\ffinput{extract.rb}
 }
 
 \plush{\innoBVC}
