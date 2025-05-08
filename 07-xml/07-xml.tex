@@ -13,19 +13,54 @@
 
 \plush{\pptChapter[XML]{Extensible Markup Language (XML)}}
 
+\begin{lnSnippet}[library.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="42">
+    <author>David West</author>
+    <title>Object Thinking</title>
+  </book>
+  <book id='43'>
+    <author>Martin Fowler</author>
+    <title>Refactoring</title>
+  </book>
+</library>
+\end{lnSnippet}
 \plush[4]{%
   \pptSection[XML]{Library in XML}
-  \pptSnippet{library.xml}
+  \small\ffinput{library.xml}
 }
 
+\begin{lnSnippet}[namespaces.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="https://innopolis.university/ssd16"
+  xmlns:a="https://www.amazon.com"
+  xmlns:t="https://www.twitter.com">
+  <book id="42">
+    <a:dp>0134757599</a:dp>
+    <t:author>@martinfowler</t:author>
+    <author>Martin Fowler</author>
+    <title>Refactoring</title>
+  </book>
+</library>
+\end{lnSnippet}
 \plush[3]{%
   \pptSection{Namespaces}
-  \pptSnippet{namespaces.xml}
+  \small\ffinput{namespaces.xml}
 }
 
+\begin{lnSnippet}[escaping.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<formulas>
+  <f title='Fibonacci&apos;s'> <!-- Fibonacci's -->
+    <e>if x &lt; 2 return x</e> <!-- if x < 2 return x -->
+    <e>else return f(x-1) + f(x-2)</e>
+  </f>
+</formulas>
+\end{lnSnippet}
 \plush[2]{%
   \pptSection{Escaping}
-  \pptSnippet{escaping.xml}
+  \small\ffinput{escaping.xml}
 }
 
 \plush[4]{%
@@ -38,9 +73,28 @@
 
 \plush{\pptChapter[XSD]{XSD, XPath, XSLT, XQuery, etc.}}
 
+\begin{lnSnippet}[library.xsd]
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="book">
+    <xs:sequence>
+      <xs:element name="author" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="title" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:decimal"/>
+  </xs:complexType>
+  <xs:element name="library">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" type="book" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+\end{lnSnippet}
 \plush[4]{%
   \pptSection[XSD]{XML Schema Definition (XSD)}
-  \pptSnippet[\scriptsize]{library.xsd}
+  \scriptsize\ffinput{library.xsd}
 }
 
 \plush[4]{%
@@ -54,17 +108,49 @@
   \ff{//book[author[text()='David West']]}
 }
 
+\begin{lnSnippet}[library.xsl]
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="book">
+    <item>
+      <xsl:value-of select="title"/>
+      <xsl:text> by </xsl:text>
+      <xsl:value-of select="title"/>
+    </item>
+  </xsl:template>
+  <xsl:template match="node()|@*">
+    <xsl:copy>
+      <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+</xsl:stylesheet>
+\end{lnSnippet}
 \plush[4]{%
   \pptSection[XSL]{XSL Transformations (XSLT)}
-  \pptSnippet[\scriptsize]{library.xsl}
+  \scriptsize\ffinput{library.xsl}
 }
 
 \plush{\pptChapter[JSON]{JavaScript Object Notation (JSON)}}
 
+\begin{lnSnippet}[library.json]
+[
+  {
+    "author": "David West",
+    "id": 42,
+    "title": "Object Thinking"
+  },
+  {
+    "author": "Martin Fowler",
+    "id": 43,
+    "title": "Refactoring"
+  }
+]
+\end{lnSnippet}
 \plush[3]{%
   \pptPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \pptSection[JSON]{JSON for the Library}
-  \pptSnippet{library.json}
+  \small\ffinput{library.json}
 }
 
 \plush[2]{%
@@ -75,20 +161,44 @@
 
 \plush{\pptChapter[Others]{YAML, TOML, CSV}}
 
+\begin{lnSnippet}[library.yml]
+library:
+- id: 42
+  author: David West
+  title: Object Thinking
+- id: 43
+  author: Martin Fowler
+  title: Refactoring
+\end{lnSnippet}
 \plush[2]{%
   \pptSection[YAML]{Yet Another Markup Language (YAML)}
-  \pptSnippet{library.yml}
+  \small\ffinput{library.yml}
 }
 
+\begin{lnSnippet}[library.toml]
+[library.a]
+  id = 42
+  author = "David West"
+  title = "Object Thinking"
+[library.b]
+  id = 43
+  author = "Martin Fowler"
+  title = "Refactoring"
+\end{lnSnippet}
 \plush[2]{%
   \pptSection{TOML}
-  \pptSnippet{library.toml}
+  \small\ffinput{library.toml}
 }
 
+\begin{lnSnippet}[library.csv]
+Id,Author,Title
+42,David West,Object Thinking
+43,"Martin Fowler","Refactoring"
+\end{lnSnippet}
 \plush[2]{%
   \pptPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
   \pptSection[CSV]{Comma-Separated Values (CSV)}
-  \pptSnippet{library.csv}
+  \small\ffinput{library.csv}
 }
 
 \plush{\innoBVC}

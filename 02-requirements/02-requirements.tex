@@ -33,7 +33,7 @@ with have explicit \ul{borders}.}{\emph{Code Ahead}, Yegor Bugayenko}}
 
 \plush[10]{\pptQuote{../bibliography/book-covers/uml-book}{There is no standard way to write the content of a use case, and different formats work well in different cases}{UML Distilled \br Martin Fowler}}
 
-\begin{ffcode}
+\begin{lnSnippet}[use-case.txt]
 Use Case: Make a QR code
 Primary Actor: User
 Basic flow:
@@ -46,8 +46,10 @@ Extensions:
     2. The User confirms.
   3a. The User cancels downloading.
     1. The System stops sending data over HTTP.
-\end{ffcode}
-\newpage
+\end{lnSnippet}
+\plush{
+  \small\ffinput{use-case.txt}
+}
 
 \plush[3]{%
   \pptBanner{Use Case Diagram}
