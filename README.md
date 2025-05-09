@@ -1,27 +1,26 @@
-<img src="innopolis-logo.svg" height="48px"/>
+# Software Systems Design, Lecture Notes
 
 [![latexmk](https://github.com/yegor256/ssd16/actions/workflows/latexmk.yml/badge.svg?branch=master)](https://github.com/yegor256/ssd16/actions/workflows/latexmk.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/ssd16/blob/master/LICENSE.txt)
 
-There are slides for my lectures about Software Systems Design,
-which were presented to 3rd year BSc students at [Innopolis University](https://innopolis.university/)
-in 2021. Videos are in
-[this YouTube playlist](https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM).
-All compiled slide decks in PDF are [here](https://yegor256.github.io/ssd16/).
+There are slides for my series of lectures for
+[Innopolis University](https://innopolis.university/) (Kazan, Russia).
 
-To compile everything just run (I use my own LaTeX packages, incl.
-[ppt-slides](https://ctan.org/pkg/ppt-slides),
-[crumbs](https://ctan.org/pkg/crumbs),
-and
-[clicks](https://ctan.org/pkg/clicks)):
+All recorded videos are in [this YouTube playlist][playlist].
+
+All compiled slide decks in PDF are
+[here](https://yegor256.github.io/ssd16/).
+
+To compile everything just run:
 
 ```bash
-$ make
+make
 ```
 
 To clean everything up, do:
 
-```
-$ make clean
+```bash
+make clean
 ```
 
 You need to have
@@ -36,3 +35,5 @@ installed.
 this slidedeck are either originally made by the author or taken from public
 Internet sources, such as website. Copyright belongs to their respected
 authors.
+
+[playlist]: https://www.youtube.com/playlist?list=PLaIsQH4uc08woJKRAA7mmjs9fU0jeKjjM
