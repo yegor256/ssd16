@@ -9,7 +9,11 @@
 
 \lnTitlePage{1}{16}{SisRFSKI4iI}
 
-\plush[2]{\pptQuote{../bibliography/book-covers/freeman}{Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}{Peter Freeman and David Hart, \emph{Communications of the ACM}, vol. 47, no. 8, 2004}}
+\plush[2]{
+  \innoQuote
+    {freeman2004science}
+    {Design encompasses all the activities involved in \ul{conceptualizing}, \ul{framing}, \ul{implementing}, \ul{commissioning}, and ultimately \ul{modifying} complex systems—not just the activity following requirements specification and before programming, as it might be translated from a stylized software engineering process.}
+}
 
 \pptToc
 
@@ -45,7 +49,11 @@
 
 \plush{\pptChapter[SDD]{SDD at IEEE 1016}}
 
-\plick{\pptQuote{../bibliography/book-covers/ieee-1016}{An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}{IEEE 1016-2009\br IEEE Standard for Information Technology---Systems Design---Software Design Descriptions}}
+\plick{
+  \innoQuote
+    {ieee1016}
+    {An SDD is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders. This standard is intended for use in design situations in which an explicit SDD is to be prepared.}
+}
 \plush[3]{\pptBanner[red]{Inactive-Reserved on March 2020}}
 
 \plush[4]{%
@@ -72,7 +80,9 @@
 
 \plush[3]{%
   \pptSection{Stakeholders}
-  \pptQuote{../bibliography/book-covers/pmbok}{Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}{A Guide to the Project Management \br Body of Knowledge (PMBOK\textregistered Guide), \br Project Stakeholder Management \br Knowledge Area}
+  \innoQuote
+    {pmbok2021}
+    {Identify Stakeholders is the process of identifying the people, groups, or organizations that could impact or be impacted by a decision, activity, or outcome of the project.}
 }
 
 \plush[2]{%
@@ -104,15 +114,27 @@
 
 \plush{\pptChapter[RUP]{SAD at RUP}}
 
-\plush[4]{\pptQuote{../bibliography/book-covers/rup}{The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}{The Rational Unified Process Made Easy: \br A Practitioner's Guide to the RUP \br \nospell{Per Kroll} et al.}}
+\plush[4]{
+  \innoQuote
+    {kroll2003rational}
+    {The main responsibility of the architect is to describe the architecture of the system in a major artifact of the RUP product, called the \ul{Software Architecture Document (SAD)}. For many projects, this may be the only part of the design that is described in an actual document, as most design aspects can be documented in UML models and in the code itself.}
+}
 
 \plush{\pptChapter[CMMI]{TS at CMMI}}
 
-\plush[4]{\pptQuote{../bibliography/book-covers/cmmi}{Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}{CMMI for Development \br Capability Maturity Model Integration (CMMI\textregistered) \br Technical Solution (TS) Process Area}}
+\plush[4]{
+  \innoQuote
+    {cmmi2010}
+    {Detailed design is focused on software product component development. The internal structure of product components is defined, data schemes are generated, algorithms are developed, and heuristics are established to provide product component capabilities that satisfy allocated requirements.}
+}
 
 \plush{\pptChapter{SWEBOK}}
 
-\plush[4]{\pptQuote{../bibliography/book-covers/swebok}{Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction}{Guide to the Software Engineering Body of Knowledge (SWEBOK), IEEE Computer Society, Chapter 2: Software Design}}
+\plush[4]{
+  \innoQuote
+    {bourque2014guide}
+    {Viewed as a process, software design is the software engineering life cycle activity in which software requirements are analyzed in order to produce a description of the software’s internal structure that will serve as the basis for its construction.}
+}
 
 \lnThought{Stay away from MS Word, \br instead, use \LaTeX{} with Git.}
 
@@ -140,13 +162,9 @@
 
 \plush[2]{%
   \begin{multicols}{2}
-    \innoBook{bass}
-      {Len Bass et al.}
-      {Software Architecture in Practice}
+    \innoBook{bass2021software}
     \par\columnbreak
-    \innoBook{clements}
-      {Paul Clements et al.}
-      {Documenting Software Architectures: Views and Beyond}
+    \innoBook{clements2011documenting}
   \end{multicols}
 }
 
