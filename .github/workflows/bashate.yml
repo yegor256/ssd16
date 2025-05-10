@@ -22,4 +22,8 @@ jobs:
       - run: pip install bashate
       - run: |
           readarray -t files < <(find . -name '*.sh')
-          bashate -i E006,E003 "${files[@]}"
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No .sh files found. Skipping check."
+          else
+            bashate -i E006,E003 "${files[@]}"
+          fi
