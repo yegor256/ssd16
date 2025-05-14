@@ -177,12 +177,12 @@
 
 \print{\pptPinQR{https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/}}
 \print{\pptHeader{Good Tests Are:}}
-\plick[2]{1) \textbf{Short}: less than $x$ lines each}
-\plick[2]{2) \textbf{Fast}: less than $y$ milliseconds each}
-\plick[2]{3) \textbf{Independent}: runs alone and in a suite}
-\plick[2]{4) \textbf{Portable}: runs on your laptop and on mine}
-\plick[2]{5) \textbf{Careful}: side effect free, doesn't leave temp files}
-\lnPitch{6) \textbf{Isolated}: doesn't touch my files}
+\plick{1) \textbf{Short}: less than $x$ lines each}
+\plick{2) \textbf{Fast}: less than $y$ milliseconds each}
+\plick{3) \textbf{Independent}: runs alone and in a suite}
+\plick{4) \textbf{Portable}: runs on your laptop and on mine}
+\plick{5) \textbf{Careful}: side effect free, doesn't leave temp files}
+\plush{6) \textbf{Isolated}: doesn't touch my files}
 
 \begin{lnSnippet}[book-static-file.java]
 import java.nio.file.Files;
@@ -284,11 +284,11 @@ class BookTest {
 }
 
 \print{\pptHeader{Coverage Criteria}}
-\plick[2]{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
-\plick[2]{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
-\plick[2]{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
-\plick[2]{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
-\lnPitch{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
+\plick{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
+\plick{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
+\plick{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
+\plick{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
+\plush{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
 
 \begin{lnSnippet}[f.rb]
 def f(n)
