@@ -11,11 +11,11 @@
 
 \pptToc
 
-\plush{\pptChapter[CI]{Continuous Integration}}
+\lnPitch{\pptChapter[CI]{Continuous Integration}}
 
 \print{\pptSection[CI]{How Continuous Integration (CI) works:}}
 \plick{\pptPic{0.4}{ci}}
-\plush[4]{It doesn't work :(}
+\lnPitch{It doesn't work :(}
 
 \lnQuote
   {jez-humble}
@@ -24,11 +24,11 @@
 
 \print{\pptSection[Pre-Flight]{Pre-Flight Builds}}
 \plick{\pptPic{0.5}{preflight}}
-\plush[4]{Master branch is ``read-only''!}
+\lnPitch{Master branch is ``read-only''!}
 
-\plush{\pptChapter[CD]{Continuous Delivery}}
+\lnPitch{\pptChapter[CD]{Continuous Delivery}}
 
-\plush[4]{%
+\lnPitch{
   \pptPinQR{https://www.youtube.com/watch?v=55mwAbuDrV8}
   \pptPic{0.8}{cd}\par
   Joker Conf 2018, \emph{Quality vs Quantity}, in Russian
@@ -46,35 +46,35 @@
 \plick{Integration tests}
 \plick{Test coverage control}
 \plick{Mutation coverage control}
-\plush[10]{Manual code review(s)}
+\lnPitch{Manual code review(s)}
 
 \print{\pptSection[Targets]{Target Platforms}}
 \plick{Static web site: GitHub Pages}
 \plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
 \plick{Small web app: Heroku or Dokku}
 \plick{Bigger web app: AWS Elastic Beanstalk}
-\plush[8]{Mobile app: TestFlight}
+\lnPitch{Mobile app: TestFlight}
 
 \print{\pptSection[Versions]{Versioning}}
 \plick{snapshot, alpha, beta, final}
 \plick{semver.org: 1.4.17}
-\plush[4]{0ver.org: 0.43.3}
+\lnPitch{0ver.org: 0.43.3}
 
 \print{\pptSection[Tools]{CI/CD Tools}}
 \plick{Jenkins}
 \plick{1000+ Hosted Services like Travis}
 \plick{GitHub Actions}
-\plush[6]{Rultor.com}
+\lnPitch{Rultor.com}
 
-\plush[4]{%
+\lnPitch{
   \pptSection[Blue/Green]{Blue/Green Deployment}
   \pptPic{0.8}{bluegreen}\par
   May not work with databases :(
 }
 
-\plush{\pptChapter[GitHub]{Open Source in GitHub}}
+\lnPitch{\pptChapter[GitHub]{Open Source in GitHub}}
 
-\plush[10]{%
+\lnPitch{
   \begin{multicols}{2}
     \pptPic{0.9}{github1}
     \par\columnbreak
@@ -83,9 +83,9 @@
   \end{multicols}
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush[2]{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{humble2010continuous}
     \par\columnbreak
@@ -93,18 +93,18 @@
   \end{multicols}
 }
 
-\plush[4]{%
+\lnPitch{
   \pptBanner{Where to go:}
   Collect 1000 stars on GitHub for your product.
 }
 
-\plush[4]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   Setup continuous delivery pipeline in your application so that
   it is released to production automatically on each commit to \ff{master} branch.
 }
 
-\plush[6]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{parallelize} tests?

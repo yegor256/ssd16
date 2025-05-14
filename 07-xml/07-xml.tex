@@ -11,7 +11,7 @@
 
 \pptToc
 
-\plush{\pptChapter[XML]{Extensible Markup Language (XML)}}
+\lnPitch{\pptChapter[XML]{Extensible Markup Language (XML)}}
 
 \begin{lnSnippet}[library.xml]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -26,7 +26,7 @@
   </book>
 </library>
 \end{lnSnippet}
-\plush[4]{%
+\lnPitch{
   \pptSection[XML]{Library in XML}
   \small\ffinput{library.xml}
 }
@@ -44,7 +44,7 @@
   </book>
 </library>
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptSection{Namespaces}
   \small\ffinput{namespaces.xml}
 }
@@ -58,12 +58,12 @@
   </f>
 </formulas>
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptSection{Escaping}
   \small\ffinput{escaping.xml}
 }
 
-\plush[4]{%
+\lnPitch{
   \pptPinQR{https://en.wikipedia.org/wiki/Category:XML-based\_standards}
   \pptSection[Formats]{XML Based Formats/Protocols}
   SOAP, RSS, Atom, SVG, XHTML, HTML5, \\
@@ -71,7 +71,7 @@
   SyncML, RDF, XMI, XMIR :)
 }
 
-\plush{\pptChapter[XSD]{XSD, XPath, XSLT, XQuery, etc.}}
+\lnPitch{\pptChapter[XSD]{XSD, XPath, XSLT, XQuery, etc.}}
 
 \begin{lnSnippet}[library.xsd]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -92,12 +92,12 @@
   </xs:element>
 </xs:schema>
 \end{lnSnippet}
-\plush[4]{%
+\lnPitch{
   \pptSection[XSD]{XML Schema Definition (XSD)}
   \scriptsize\ffinput{library.xsd}
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[XPath]{XML Path Language (XPath)}
   \ff{<library><book id=42><author>David West</..></..></..>}\par
   \vspace*{12pt}
@@ -126,12 +126,12 @@
   </xsl:template>
 </xsl:stylesheet>
 \end{lnSnippet}
-\plush[4]{%
+\lnPitch{
   \pptSection[XSL]{XSL Transformations (XSLT)}
   \scriptsize\ffinput{library.xsl}
 }
 
-\plush{\pptChapter[JSON]{JavaScript Object Notation (JSON)}}
+\lnPitch{\pptChapter[JSON]{JavaScript Object Notation (JSON)}}
 
 \begin{lnSnippet}[library.json]
 [
@@ -147,19 +147,19 @@
   }
 ]
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2015/11/16/json-vs-xml.html}
   \pptSection[JSON]{JSON for the Library}
   \small\ffinput{library.json}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{JSON to JavaScript Object and Backwards}
   \ff{var a = JSON.parse('\{"age": 25\}').age;}\par
   \ff{JSON.stringify(\{age: 25\});}
 }
 
-\plush{\pptChapter[Others]{YAML, TOML, CSV}}
+\lnPitch{\pptChapter[Others]{YAML, TOML, CSV}}
 
 \begin{lnSnippet}[library.yml]
 library:
@@ -170,7 +170,7 @@ library:
   author: Martin Fowler
   title: Refactoring
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptSection[YAML]{Yet Another Markup Language (YAML)}
   \small\ffinput{library.yml}
 }
@@ -185,7 +185,7 @@ library:
   author = "Martin Fowler"
   title = "Refactoring"
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptSection{TOML}
   \small\ffinput{library.toml}
 }
@@ -195,15 +195,15 @@ Id,Author,Title
 42,David West,Object Thinking
 43,"Martin Fowler","Refactoring"
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptPinQR{https://en.wikipedia.org/wiki/List\_of\_file\_formats}
   \pptSection[CSV]{Comma-Separated Values (CSV)}
   \small\ffinput{library.csv}
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{harold2000xml}
     \par\columnbreak
@@ -211,14 +211,14 @@ Id,Author,Title
   \end{multicols}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   In your application, make sure your data is represented in
   XML, at least in one place, and being transformed by XSLT.\par
   Design your own data format.
 }
 
-\plush[3]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{map} XML/JSON to objects?
