@@ -21,9 +21,9 @@
 
 \pptToc
 
-\plush{\pptChapter[UCs]{Use Cases (user stories)}}
+\lnPitch{\pptChapter[UCs]{Use Cases (user stories)}}
 
-\plush[2]{%
+\lnPitch{
   \begin{multicols}{2}
     \pptPic{0.4}{../faces/ivar-jacobson}\br
     \nospell{Ivar Jacobson} \br
@@ -55,16 +55,16 @@ Extensions:
   3a. The User cancels downloading.
     1. The System stops sending data over HTTP.
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \small\ffinput{use-case.txt}
 }
 
-\plush[3]{%
+\lnPitch{
   \pptBanner{Use Case Diagram}
   \colorbox{white}{\pptPic{0.5}{uc-diagram}}
 }
 
-\plush{\pptChapter[FPA]{FPA, IFPUG, COSMIC}}
+\lnPitch{\pptChapter[FPA]{FPA, IFPUG, COSMIC}}
 
 \plick{\pptBanner{Function Point Analysis (FPA)}}
 \plick{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}
@@ -72,16 +72,16 @@ Extensions:
 \plick{Regulated by ISO 20296}
 \plick{COSMIC is the modern version: ISO/IEC 14143}
 \plick{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}
-\plush[4]{Function Points (FPs) are used for estimates}
+\plush{Function Points (FPs) are used for estimates}
 
-\plush[2]{%
+\lnPitch{
   \pptQR{https://en.wikipedia.org/wiki/Use_case_points}\par
   Also, read about Use Case Points (UCP)
 }
 
-\plush{\pptChapter[Matrix]{Traceability Matrix}}
+\lnPitch{\pptChapter[Matrix]{Traceability Matrix}}
 
-\plush[5]{%
+\lnPitch{
   \pptBanner{Traceability Matrix}\par
   \colorbox{white}{\pptPic{0.6}{matrix}}\par
   {\small Use Cases, Non-Functional Requirements, Test Cases,
@@ -89,25 +89,25 @@ Extensions:
   Nodes, etc.}
 }
 
-\plush{\pptChapter[V-and-V]{Verification and Validation}}
+\lnPitch{\pptChapter[V-and-V]{Verification and Validation}}
 
-\plush[3]{
+\lnPitch{
   \pptQuote
     {../bibliography/book-covers/cmmi-vv}
     {Two different questions may be asked by a project team: \ul{`We do it right?'} vs. \ul{`We do the right thing?'} CMMI-Dev has two separate process areas: VER and VAL.}
     {}
 }
 
-\plush{\pptChapter[NFRs]{Non-Functional Requirements (NFRs)}}
+\lnPitch{\pptChapter[NFRs]{Non-Functional Requirements (NFRs)}}
 
 \print{\pptBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
 \plick{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}
 \plick{Capacity: Clicks Per Second (CPS)}
 \plick{Recovery: Recovery Time Objective (RTO)}
 \plick{Maintainability: Mean Time To Repair (MTTR)}
-\plush[8]{Usability: focus group surveys?}
+\plush{Usability: focus group surveys?}
 
-\plush[5]{%
+\lnPitch{
   \begin{multicols}{2}
     \pptBanner[red]{Bad NFRs}\par
     ``The software must be fast.''\par
@@ -126,7 +126,7 @@ Extensions:
   \end{multicols}
 }
 
-\plush[9]{%
+\lnPitch{
   \begin{multicols}{2}
     ``Ten Mistakes in Specs'' (2015)
     \pptQR{https://www.yegor256.com/2015/11/10/ten-mistakes-in-specs.html}
@@ -146,14 +146,14 @@ Extensions:
   \end{multicols}
 }
 
-\plush{\pptChapter[COCOMO]{Estimates and COCOMO II}}
+\lnPitch{\pptChapter[COCOMO]{Estimates and COCOMO II}}
 
 \lnQuote
   {barry-boehm}
   {For software decisions, the most critical and difficult of these inputs to provide are estimates of the cost of a proposed software project.}
   {boehm1984software}
 
-\plush[5]{%
+\lnPitch{
   First, we predict the size in Kilo Lines of Code ($K$).\par
   Then, we find effort adjustment factor ($F$).\par
   Then, we find coefficients $a$, $b$, and $c$ using the table.\par
@@ -163,20 +163,20 @@ Extensions:
   $$D = 2.5 \times E^c$$
 }
 
-\plush[5]{%
+\lnPitch{
   \pptBanner{Cone of Uncertainty}
   \pptPic{0.6}{cone}
 }
 
-\plush[5]{%
+\lnPitch{
   \pptQR{https://www.yegor256.com/2015/06/02/how-to-estimate-software-cost.html}\par
   ``How much for this software?'' they ask.\par
   ``The development will take forever and will consume all your money,'' we answer.
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{wiegers2003software}
     \par\columnbreak
@@ -184,7 +184,7 @@ Extensions:
   \end{multicols}
 }
 
-\plush{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{cockburn2000writing}
     \par\columnbreak
@@ -192,19 +192,19 @@ Extensions:
   \end{multicols}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Where to publish:}\par
   IEEE International Requirements Engineering Conference (RE)
 }
 
-\plush[3]{%
+\lnPitch{
   \pptBanner{Call to Action:}\par
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
-\plush[4]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}\par
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?

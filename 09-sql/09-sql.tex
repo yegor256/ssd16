@@ -11,115 +11,115 @@
 
 \pptToc
 
-\plush{\pptChapter[Types]{Types of Databases}}
+\lnPitch{\pptChapter[Types]{Types of Databases}}
 
-\plush[2]{%
+\lnPitch{
   \pptSection[Navi]{Navigational Databases}
   \pptPic{0.8}{navigational}\par
   E.g. Integrated Data Store (IDS)
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection[Hierarchical]{Hierarchical Databases}
   \pptPic{0.8}{hierarchical}\par
   E.g. IBM Information Management System (IMS)
 }
 
-\plush[5]{%
+\lnPitch{
   \pptSection[SQL]{Relational Databases (SQL)}
   \pptPic{0.8}{relational}\par
   E.g. Oracle Database
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection[Object]{Object Databases}
   \pptPic{0.8}{object}\par
   E.g. ObjectStore
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[K-V]{Key-Value Databases}
   \pptPic{0.4}{key-value}\par
   \pptPic{0.5}{dynamo}\par
   E.g. Redis, AWS DynamoDB
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection[Columnar]{Columnar Databases}
   \pptPic{0.8}{columnar}\par
   E.g. ClickHouse by Yandex\par
   Read also about Online Analytical Processing (OLAP)
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[NoSQL]{Document Databases (a.k.a. NoSQL)}
   \pptPic{0.5}{document}\par
   E.g. MongoDB
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[XML]{XML Databases}
   \pptPic{0.4}{xml}\par
   E.g. eXist
 }
 
-\plush[5]{%
+\lnPitch{
   \pptSection[S2]{AWS S3}
   \pptPic{0.9}{s3}\par
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[Graph]{Graph Databases}
   \pptPic{0.5}{graph}\par
   E.g. Neo4j
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection{NewSQL}
   ``NewSQL is a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system'' --- Wikipedia\par
   E.g. VoltDB
 }
 
-\plush[5]{%
+\lnPitch{
   \pptSection[Big]{Big Data}
   \pptPic{0.8}{hadoop}\par
   E.g. Hadoop
 }
 
-\plush{\pptChapter[ER]{IDEF1X, ER Model, UML}}
+\lnPitch{\pptChapter[ER]{IDEF1X, ER Model, UML}}
 
-\plush[3]{%
+\lnPitch{
   \pptSection[IDEF1X]{IDEF1X Model for Databases}
   \pptPic{0.6}{idef1x-diagram}
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection[UML]{UML Class Diagram as Database Model}
   \pptPic{0.8}{uml}
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection[ER]{Entity-Relationship (ER) Model}
   \pptPic{0.8}{er-diagram}
 }
 
-\plush{\pptChapter[Properties]{How to Choose the Right Database?}}
+\lnPitch{\pptChapter[Properties]{How to Choose the Right Database?}}
 
 \print{\pptSection{ACID}}
 \plick{\nospell{\textbf{\large A}tomicity}: everything or nothing}
 \plick{\nospell{\textbf{\large C}onsistency}: invariants are in place}
 \plick{\nospell{\textbf{\large I}solation}: concurrent or sequential}
-\plush[5]{\nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory}
+\plush{\nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory}
 
 \print{\pptSection[Speed]{Performance}}
 \plick{Queries Profiling \& Optimization}
 \plick{Denormalization}
-\plush[3]{Caching}
+\plush{Caching}
 
 \print{\pptSection[Scale]{Scalability}}
 \plick{Vertical vs. Horizontal Scalability}
 \plick{Sharding vs. Master-Slave Replication}
-\plush[5]{\pptPic{0.8}{sharding}}
+\plush{\pptPic{0.8}{sharding}}
 
 \print{\pptSection[Libraries]{Application Layer Support}}
 \plick{Is it open source?}
@@ -127,39 +127,39 @@
 \plick{Is it a thin driver or ORM-ish framework?}
 \plick{How many languages are supported?}
 \plick{Are there alternatives?}
-\plush[6]{Is the API open?}
+\plush{Is the API open?}
 
-\plush[5]{%
+\lnPitch{
   \pptSection[Versions]{Schema Version Control}
   \pptPic{0.8}{0rsk}\par
   \small\url{https://github.com/yegor256/0rsk/blob/master/liquibase}\par
   Liquibase, Flyway, Mongobee, Mongock, etc.
 }
 
-\plush[4]{%
+\lnPitch{
   \pptSection[Integrity]{Integrity: Primary and Foreign Keys}
   \pptPic{0.8}{keys}
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection{Resilience}
   \pptPic{0.7}{mongo-failure}\par
   Resilience is the capacity of your database infrastructure to \ul{recover} from disaster and keep on providing service.
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection[Liability]{Liability: Who Pays for Losses?}
   AWS Terms, \href{https://aws.amazon.com/agreement/}{Section 11}: "WE AND OUR AFFILIATES AND \nospell{LICENSORS} WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES. INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS, OPPORTUNITIES, GOODWILL, USE, \ul{OR DATA}."
 }
 
-\plush[3]{%
+\lnPitch{
   \pptSection[Durability]{Durability: Can We Loose Data?}
   \href{https://aws.amazon.com/s3/faqs}{FAQ}: Amazon S3 is designed to provide 99.999999999\% (11 9's) of data durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001\% of objects. For example, if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years.''
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush[1]{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{date2004introduction}
     \par\columnbreak
@@ -167,18 +167,18 @@
   \end{multicols}
 }
 
-\plush[1]{%
+\lnPitch{
   \pptBanner{Where to go:}
   ACM SIGMOD/PODS Conference.
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   Design a relational persistence layer in your app and then
   make it NoSQL; compare pros and cons.
 }
 
-\plush[4]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{guarantee} 100\% durability, etc.?
