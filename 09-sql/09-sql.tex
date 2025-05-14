@@ -105,29 +105,37 @@
 
 \lnPitch{\pptChapter[Properties]{How to Choose the Right Database?}}
 
-\print{\pptSection{ACID}}
-\plick{\nospell{\textbf{\large A}tomicity}: everything or nothing}
-\plick{\nospell{\textbf{\large C}onsistency}: invariants are in place}
-\plick{\nospell{\textbf{\large I}solation}: concurrent or sequential}
-\lnPitch{\nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory}
+\lnPitch{
+  \pptSection{ACID}
+  \nospell{\textbf{\large A}tomicity}: everything or nothing\par
+  \nospell{\textbf{\large C}onsistency}: invariants are in place\par
+  \nospell{\textbf{\large I}solation}: concurrent or sequential\par
+  \nospell{\textbf{\large D}urability}: completed transactions $\rightarrow$ non-volatile memory
+}
 
-\print{\pptSection[Speed]{Performance}}
-\plick{Queries Profiling \& Optimization}
-\plick{Denormalization}
-\lnPitch{Caching}
+\lnPitch{
+  \pptSection[Speed]{Performance}
+  Queries Profiling \& Optimization\par
+  Denormalization\par
+  Caching
+}
 
-\print{\pptSection[Scale]{Scalability}}
-\plick{Vertical vs. Horizontal Scalability}
-\plick{Sharding vs. Master-Slave Replication}
-\lnPitch{\pptPic{0.8}{sharding}}
+\lnPitch{
+  \pptSection[Scale]{Scalability}
+  Vertical vs. Horizontal Scalability\par
+  Sharding vs. Master-Slave Replication\par
+  \pptPic{0.8}{sharding}
+}
 
-\print{\pptSection[Libraries]{Application Layer Support}}
-\plick{Is it open source?}
-\plick{How mature is the library?}
-\plick{Is it a thin driver or ORM-ish framework?}
-\plick{How many languages are supported?}
-\plick{Are there alternatives?}
-\lnPitch{Is the API open?}
+\lnPitch{
+  \pptSection[Libraries]{Application Layer Support}
+  Is it open source?\par
+  How mature is the library?\par
+  Is it a thin driver or ORM-ish framework?\par
+  How many languages are supported?\par
+  Are there alternatives?\par
+  Is the API open?
+}
 
 \lnPitch{
   \pptSection[Versions]{Schema Version Control}

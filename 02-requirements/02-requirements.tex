@@ -66,13 +66,15 @@ Extensions:
 
 \lnPitch{\pptChapter[FPA]{FPA, IFPUG, COSMIC}}
 
-\plick{\pptBanner{Function Point Analysis (FPA)}}
-\plick{FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM}
-\plick{International Function Point Users Group (IFPUG) is in charge}
-\plick{Regulated by ISO 20296}
-\plick{COSMIC is the modern version: ISO/IEC 14143}
-\plick{The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)}
-\lnPitch{Function Points (FPs) are used for estimates}
+\lnPitch{
+  \pptBanner{Function Point Analysis (FPA)}
+  FPA was originally developed by \nospell{Allan Albrecht} in the late 1970s at IBM\par
+  International Function Point Users Group (IFPUG) is in charge\par
+  Regulated by ISO 20296\par
+  COSMIC is the modern version: ISO/IEC 14143\par
+  The method breaks down the requirements into combinations of the four data movements types: Entry (E), Exit (X), Read (R), Write (W)\par
+  Function Points (FPs) are used for estimates
+}
 
 \lnPitch{
   \pptQR{https://en.wikipedia.org/wiki/Use_case_points}\par
@@ -100,12 +102,14 @@ Extensions:
 
 \lnPitch{\pptChapter[NFRs]{Non-Functional Requirements (NFRs)}}
 
-\print{\pptBanner{Quality Attributes or just ``\nospell{-ilities}'':}}
-\plick{Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$}
-\plick{Capacity: Clicks Per Second (CPS)}
-\plick{Recovery: Recovery Time Objective (RTO)}
-\plick{Maintainability: Mean Time To Repair (MTTR)}
-\lnPitch{Usability: focus group surveys?}
+\lnPitch{
+  \pptBanner{Quality Attributes or just ``\nospell{-ilities}'':}
+  Availability: $A = \dfrac{E_\text{up}}{E_\text{down} + E_\text{up}}$\par
+  Capacity: Clicks Per Second (CPS)\par
+  Recovery: Recovery Time Objective (RTO)\par
+  Maintainability: Mean Time To Repair (MTTR)\par
+  Usability: focus group surveys?
+}
 
 \lnPitch{
   \begin{multicols}{2}
@@ -193,19 +197,19 @@ Extensions:
 }
 
 \lnPitch{
-  \pptBanner{Where to publish:}\par
+  \pptBanner{Where to publish:}
   IEEE International Requirements Engineering Conference (RE)
 }
 
 \lnPitch{
-  \pptBanner{Call to Action:}\par
+  \pptBanner{Call to Action:}
   Specify 4+ use cases and 10+ non-functional requirements for your app.
   Then, count all FPs, estimate the size in LoC, and then estimate
   the cost in man-months using COCOMO II.
 }
 
 \lnPitch{
-  \pptBanner[orange]{Still unresolved issues:}\par
+  \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{validate} requirements automatically?
     \item How to \ul{trace} them automatically?

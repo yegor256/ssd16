@@ -13,18 +13,22 @@
 
 \lnPitch{\pptChapter[CI]{Continuous Integration}}
 
-\print{\pptSection[CI]{How Continuous Integration (CI) works:}}
-\plick{\pptPic{0.4}{ci}}
-\lnPitch{It doesn't work :(}
+\lnPitch{
+  \pptSection[CI]{How Continuous Integration (CI) works:}
+  \pptPic{0.4}{ci}\par
+  It doesn't work :(
+}
 
 \lnQuote
   {jez-humble}
   {Crucially, if the build fails, the development team stops whatever they are doing and fixes the problem immediately}
   {humble2010continuous}
 
-\print{\pptSection[Pre-Flight]{Pre-Flight Builds}}
-\plick{\pptPic{0.5}{preflight}}
-\lnPitch{Master branch is ``read-only''!}
+\lnPitch{
+  \pptSection[Pre-Flight]{Pre-Flight Builds}
+  \pptPic{0.5}{preflight}\par
+  Master branch is ``read-only''!
+}
 
 \lnPitch{\pptChapter[CD]{Continuous Delivery}}
 
@@ -39,32 +43,40 @@
   {Each stage of a build pipeline is looking for reasons to reject the build. Tests failed? Reject it. Lint complains? Reject it. Build fails integration tests in staging? Reject it. Finished archive smells funny? Reject it.}
   {nygard2007release}
 
-\print{\pptSection[Wall]{Quality Wall}}
-\plick{Linters}
-\plick{Static analyzers}
-\plick{Unit tests}
-\plick{Integration tests}
-\plick{Test coverage control}
-\plick{Mutation coverage control}
-\lnPitch{Manual code review(s)}
+\lnPitch{
+  \pptSection[Wall]{Quality Wall}
+  Linters\par
+  Static analyzers\par
+  Unit tests\par
+  Integration tests\par
+  Test coverage control\par
+  Mutation coverage control\par
+  Manual code review(s)
+}
 
-\print{\pptSection[Targets]{Target Platforms}}
-\plick{Static web site: GitHub Pages}
-\plick{Library: Maven Central, RubyGems.org, Npm.org, etc.}
-\plick{Small web app: Heroku or Dokku}
-\plick{Bigger web app: AWS Elastic Beanstalk}
-\lnPitch{Mobile app: TestFlight}
+\lnPitch{
+  \pptSection[Targets]{Target Platforms}
+  Static web site: GitHub Pages\par
+  Library: Maven Central, RubyGems.org, Npm.org, etc.\par
+  Small web app: Heroku or Dokku\par
+  Bigger web app: AWS Elastic Beanstalk\par
+  Mobile app: TestFlight
+}
 
-\print{\pptSection[Versions]{Versioning}}
-\plick{snapshot, alpha, beta, final}
-\plick{semver.org: 1.4.17}
-\lnPitch{0ver.org: 0.43.3}
+\lnPitch{
+  \pptSection[Versions]{Versioning}
+  snapshot, alpha, beta, final\par
+  semver.org: 1.4.17\par
+  0ver.org: 0.43.3
+}
 
-\print{\pptSection[Tools]{CI/CD Tools}}
-\plick{Jenkins}
-\plick{1000+ Hosted Services like Travis}
-\plick{GitHub Actions}
-\lnPitch{Rultor.com}
+\lnPitch{
+  \pptSection[Tools]{CI/CD Tools}
+  Jenkins\par
+  1000+ Hosted Services like Travis\par
+  GitHub Actions\par
+  Rultor.com
+}
 
 \lnPitch{
   \pptSection[Blue/Green]{Blue/Green Deployment}
