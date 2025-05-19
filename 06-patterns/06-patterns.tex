@@ -9,13 +9,13 @@
 
 \lnTitlePage{6}{16}{LrTBIcFhawI}
 
-\plush[2]{
+\lnPitch{
   \innoQuote
     {gamma1994design}
     {Experienced designers evidently know something inexperienced ones don't. What is it? One thing expert designers know \ul{not} to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts.}
 }
 
-\plush[2]{
+\lnPitch{
   \pptQuote
     {../faces/paul-graham}
     {When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough---often that I'm generating by hand the expansions of some macro that I need to write.}
@@ -24,9 +24,9 @@
 
 \pptToc
 
-\plush{\pptChapter[Patterns]{Some Patterns}}
+\lnPitch{\pptChapter[Patterns]{Some Patterns}}
 
-\plush{%
+\lnPitch{
   Design Patterns and Anti-Patterns, Love and Hate (2016)\par
   \pptQR{https://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html}\par
   36 patterns (22 anti-patterns)
@@ -48,7 +48,7 @@ class BookInDatabase implements Book {
   }
 }
 \end{lnSnippet}
-\plush[5]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2015/02/26/composable-decorators.html}
   \pptSection[Decorator]{Adapter, Facade, Proxy, Decorator, Bridge}
   \footnotesize\ffinput{adapter.java}
@@ -70,13 +70,13 @@ void foo() {
   // write to f
 }
 \end{lnSnippet}
-\plush[5]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2017/08/08/raii-in-java.html}
   \pptSection[RAII]{Resource Acquisition Is Initialization (RAII)}
   \footnotesize\ffinput{raii.cpp}
 }
 
-\plush{\pptChapter[Anti]{Some Anti-Patterns}}
+\lnPitch{\pptChapter[Anti]{Some Anti-Patterns}}
 
 \begin{lnSnippet}[goto.c]
 void foo(int a) {
@@ -95,7 +95,7 @@ void foo(int a) {
   }
 }
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptSection{GOTO}
   \footnotesize\ffinput{goto.c}
 }
@@ -108,7 +108,7 @@ def points
     .inject(&:+)
 end
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptSection[Numbers]{Magic Numbers}
   \small\ffinput{magic.rb}
 }
@@ -124,29 +124,29 @@ def h2sec(h)
   return h * seconds_in_minutes * minutes_in_hours
 end
 \end{lnSnippet}
-\plush[2]{%
+\lnPitch{
   \pptBanner{Magic Numbers ... Not!}
   \small\ffinput{magic2.rb}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection[God]{God Class}
   \pptPic{0.6}{god-class}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection[Spaghetti]{Spaghetti Code}
   \pptPic{0.4}{spaghetti}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptSection[Lasagna]{Lasagna and Ravioli}
   \pptPic{0.3}{ravioli}
 }
 
-\plush{\pptChapter[Anti-OOP]{Anti-OOP Patterns}}
+\lnPitch{\pptChapter[Anti-OOP]{Anti-OOP Patterns}}
 
-\plush[2]{%
+\lnPitch{
   Anti-Patterns in OOP (2014)\par
   \pptQR{https://www.yegor256.com/2014/09/10/anti-patterns-in-oop.html}\par
   Eleven:
@@ -173,7 +173,7 @@ w = dog.getWeight();
 Dog dog = new Dog("23kg");
 int w = dog.weight();
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html}
   \pptSection[DTO]{Data Transfer Object (DTO)}
   \pptBanner{Getters and Setters}
@@ -195,7 +195,7 @@ public class Max implements Number {
   }
 }
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2014/05/05/oop-alternative-to-utility-classes.html}
   \pptSection[Utility]{Utility Class}
   \footnotesize\ffinput{utility.java}
@@ -215,7 +215,7 @@ class Foo {
   }
 }
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2016/06/27/singletons-must-die.html}
   \pptSection[Singleton]{Singleton}
   \small\ffinput{singleton.java}
@@ -232,13 +232,13 @@ session.save(post);
 Post post = new Post();
 post.setDate(new Date());
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPinQR{https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html}
   \pptSection[ORM]{Object-Relational Mapping (ORM)}
   \small\ffinput{orm.java}
 }
 
-\plush{\pptChapter[Refactorings]{Some Refactorings}}
+\lnPitch{\pptChapter[Refactorings]{Some Refactorings}}
 
 \lnQuote
   {martin-fowler}
@@ -261,15 +261,15 @@ def r(a, b, d, m)
   (-b + d * m) / (2 * a)
 end
 \end{lnSnippet}
-\plush[3]{%
+\lnPitch{
   \pptPin{$x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$}
   \pptBanner{Extract Method}
   \footnotesize\ffinput{extract.rb}
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{feathers2004working}
     \par\columnbreak
@@ -277,7 +277,7 @@ end
   \end{multicols}
 }
 
-\plush{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{gamma1994design}
     \par\columnbreak
@@ -285,20 +285,20 @@ end
   \end{multicols}
 }
 
-\plush{%
+\lnPitch{
   \pptBanner{Where to publish:}
   SPLASH: ACM SIGPLAN conference on Systems, Programming, Languages, and Applications\par
   International Conference on Code Quality (ICCQ),\br
   in cooperation with ACM SIGPLAN/SIGSOFT and IEEE
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   In your application demonstrate the usage of 4+ design patterns.
   Also, perform 4+ refactorings, each one in its own pull request.
 }
 
-\plush[3]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{prove} certain patterns are anti-patterns?

@@ -11,22 +11,22 @@
 
 \pptToc
 
-\plush{\pptChapter[Psychology]{The Psychology of Testing}}
+\lnPitch{\pptChapter[Psychology]{The Psychology of Testing}}
 
-\plush{
+\lnPitch{
   \pptQuote
     {../faces/glenford-myers}
     {One of the primary causes of poor application testing is the fact that most programmers begin with a \ul{false definition} of the term. They might say: 'Testing is the process of demonstrating that errors \ul{are not present}.'}
     {\nospell{Glenford J. Myers}, \emph{The Art of Software Testing}}
 }
 
-\plush{
+\lnPitch{
   \innoQuote
     {myers2012art}
     {Don't test a program to show that it works; rather, start with the assumption that the program contains errors. Testing is the process of executing a program with the intent of finding errors.}
 }
 
-\plush[3]{\footnotesize
+\lnPitch{\footnotesize
   \begin{multicols}{2}
   {``If something is to be delivered, then it is the testers who make the final
   \ul{decision} as to whether or not that something is delivered into
@@ -61,25 +61,25 @@
   \end{multicols}
 }
 
-\plush{
+\lnPitch{
   \innoQuote
     {black2007pragmatic}
     {Software testing is not about proving conclusively that the software is free from any defects, or even about discovering \ul{all} the defects. Such a mission for a test team is truly \ul{impossible} to achieve.}
 }
 
-\plush{
+\lnPitch{
   \innoQuote
     {chauhan2010software}
     {The immediate goal of testing is to find errors at any stage of software development. \ul{More} the bugs discovered at an early stage, \ul{better} will be the success rate of software testing.}
 }
 
-\plush{
+\lnPitch{
   \innoQuote
     {beizer1995}
     {Anything written by people has bugs. Not testing something is equivalent to asserting that it's bug-free. Programmers can't think of everything especially of all the possible interactions between features and between different pieces of software. We try to \ul{break} software because that's \ul{the only} practical way we know of to be confident about the product's fitness for use.}
 }
 
-\plush[2]{
+\lnPitch{
   \innoQuote
     {beizer1990software}
     {The probability of showing that the software works decreases as testing increases; that is, the more you test, the likelier you are to find a bug. Therefore, if your objective is to demonstrate a high probability of working, that objective is best achieved by not testing at all!}
@@ -90,7 +90,7 @@
     {Program testing can be used to show the presence of bugs, but never to show their absence!}
     {dijkstra1970notes}
 
-\plush[3]{%
+\lnPitch{
   \small\begin{multicols}{2}
   \emph{Software Testing Philosophy}\\
   Bee Mobile Meetup\\
@@ -111,7 +111,7 @@
   \pptQR[1in]{https://www.youtube.com/watch?v=jZitXMQaXvE}
   \end{multicols}}
 
-\plush[2]{\pptChapter[TDD]{Test Driven Development (TDD)}}
+\lnPitch{\pptChapter[TDD]{Test Driven Development (TDD)}}
 
 \begin{lnSnippet}[fibonacci.lisp]
 (test one
@@ -121,7 +121,7 @@
 (test fifteen
   (is (= 610 (f 15))))
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \begin{multicols}{2}
   \small\ffinput{fibonacci.lisp}
   \par\columnbreak
@@ -138,7 +138,7 @@
       (f (- n 1))
       (f (- n 2)))))
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \begin{multicols}{2}
     \small\ffinput{fibonacci.lisp}
     \par\columnbreak
@@ -156,33 +156,33 @@
   {It would not surprise me if, one day, TDD had the \ul{force of law} behind it.}
   {martin2014tdd}
 
-\plush[5]{
+\lnPitch{
   \pptPic{0.7}{flow}\\
   ``I only create tests later when my users express the need for them by reporting bugs.''\\
   \url{https://www.yegor256.com/2017/03/24/tdd-that-works.html}
 }
 
-\plush[5]{
+\lnPitch{
   \pptPic{0.8}{curve}\\
   `` I don’t need tests at the beginning of the project''\\
   \url{https://www.yegor256.com/2017/03/24/tdd-that-works.html}
 }
 
-\plush[4]{
+\lnPitch{
   \pptHeader{Safety Net}
   \pptPic{0.8}{safety-net}
 }
 
-\plush{\pptChapter[Unit]{Unit vs. Integration Tests}}
+\lnPitch{\pptChapter[Unit]{Unit vs. Integration Tests}}
 
 \print{\pptPinQR{https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/}}
 \print{\pptHeader{Good Tests Are:}}
-\plick[2]{1) \textbf{Short}: less than $x$ lines each}
-\plick[2]{2) \textbf{Fast}: less than $y$ milliseconds each}
-\plick[2]{3) \textbf{Independent}: runs alone and in a suite}
-\plick[2]{4) \textbf{Portable}: runs on your laptop and on mine}
-\plick[2]{5) \textbf{Careful}: side effect free, doesn't leave temp files}
-\plush[2]{6) \textbf{Isolated}: doesn't touch my files}
+\plick{1) \textbf{Short}: less than $x$ lines each}
+\plick{2) \textbf{Fast}: less than $y$ milliseconds each}
+\plick{3) \textbf{Independent}: runs alone and in a suite}
+\plick{4) \textbf{Portable}: runs on your laptop and on mine}
+\plick{5) \textbf{Careful}: side effect free, doesn't leave temp files}
+\plush{6) \textbf{Isolated}: doesn't touch my files}
 
 \begin{lnSnippet}[book-static-file.java]
 import java.nio.file.Files;
@@ -207,7 +207,7 @@ class BookTest {
   }
 }
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \begin{pptWide}{2}
     \small\ffinput{book-static-file.java}
     \par\columnbreak
@@ -244,7 +244,7 @@ class BookTest {
   }
 }
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \begin{pptWide}{2}
     \small\ffinput{book-dynamic-file.java}
     \par\columnbreak
@@ -268,7 +268,7 @@ class BookTest {
   }
 }
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \begin{pptWide}{2}
     \small\ffinput{book-dynamic-file.java}
     \par\columnbreak
@@ -276,19 +276,19 @@ class BookTest {
   \end{pptWide}
 }
 
-\plush[10]{\pptChapter[Coverage]{Test Coverage}}
+\lnPitch{\pptChapter[Coverage]{Test Coverage}}
 
-\plush[5]{
+\lnPitch{
   \pptPic{0.8}{coverage}
   \url{https://codecov.io/gh/yegor256/sibit/tree/master/lib}
 }
 
 \print{\pptHeader{Coverage Criteria}}
-\plick[2]{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
-\plick[2]{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
-\plick[2]{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
-\plick[2]{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
-\plush[2]{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
+\plick{\textbf{Function} Coverage\br\small Has each function (or subroutine) in the program been called?}
+\plick{\textbf{Statement} Coverage\br\small Has each statement in the program been executed?}
+\plick{\textbf{Edge} Coverage\br\small Has every edge in the control-flow graph been executed?}
+\plick{\textbf{Branch} Coverage\br\small Has each branch of each control structure been executed?}
+\plush{\textbf{Condition} Coverage\br\small Has each Boolean sub-expression evaluated both to true and false?}
 
 \begin{lnSnippet}[f.rb]
 def f(n)
@@ -300,7 +300,7 @@ f(0) == 1
 f(1) == 2
 f(2) == 5
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \pptHeader{Mutation Testing + Coverage}
   \begin{pptWide}{2}
   \small\ffinput{f.rb}
@@ -324,7 +324,7 @@ def f(n)
   n * n - 1
 end
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \pptHeader{Mutation Testing + Coverage}
   \begin{pptWide}{2}
     \small\ffinput{mut-f.rb}
@@ -335,9 +335,9 @@ end
   \end{pptWide}
 }
 
-\plush{\pptChapter[Performance]{Automated Performance Testing}}
+\lnPitch{\pptChapter[Performance]{Automated Performance Testing}}
 
-\plush[5]{
+\lnPitch{
   \pptHeader{Some Tools}
   \begin{multicols}{2}
   \nospell{
@@ -362,24 +362,24 @@ end
   \end{multicols}
 }
 
-\plush{\pptChapter[BDD]{Behavior Driven Development (BDD)}}
+\lnPitch{\pptChapter[BDD]{Behavior Driven Development (BDD)}}
 
-\plush[3]{
+\lnPitch{
   \pptPic{0.8}{bdd}
   \url{https://www.agilealliance.org/glossary/bdd}
 }
 
-\plush{\pptChapter[QA]{Testing vs. QA}}
+\lnPitch{\pptChapter[QA]{Testing vs. QA}}
 
-\plush[5]{
+\lnPitch{
   \pptBanner{Testing $\not=$ Quality Assurance (QA)}
   \pptPinQR[left]{https://www.youtube.com/watch?v=jZitXMQaXvE}
   \pptPic{0.8}{qa}
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush[2]{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{myers2012art}
     \par\columnbreak
@@ -387,17 +387,17 @@ end
   \end{multicols}
 }
 
-\plush{%
+\lnPitch{
   \pptBanner{Where to publish:}
   International Symposium on Software Testing and Analysis (ISSTA)
 }
 
-\plush[3]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   Integrate mutation coverage control into your build.
 }
 
-\plush[5]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{test} performance right?

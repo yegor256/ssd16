@@ -11,9 +11,9 @@
 
 \pptToc
 
-\plush{\pptChapter[Patterns]{Twenty Three Test Anti-Patterns}}
+\lnPitch{\pptChapter[Patterns]{Twenty Three Test Anti-Patterns}}
 
-\plush[3]{
+\lnPitch{
   \pptPinQR[left]{https://www.yegor256.com/2018/12/11/unit-testing-anti-patterns.html}
   \begin{multicols}{2}
   Cuckoo \br
@@ -42,121 +42,121 @@
   \end{multicols}
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[1]{Test-per-Method}
-  Although a one-to-one relationship between test and production classes is a reasonable starting point, a one-to-one relationship between test and production method is almost always a bad idea.}
+\lnPitch{
+  \pptSection[1]{Test-per-Method}
+  Although a one-to-one relationship between test and production classes is a reasonable starting point, a one-to-one relationship between test and production method is almost always a bad idea.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[2]{Anal Probe}
-  A test that has to use unhealthy ways to perform its task, such as reading private fields using reflection.}
+\lnPitch{
+  \pptSection[2]{Anal Probe}
+  A test that has to use unhealthy ways to perform its task, such as reading private fields using reflection.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[3]{Happy Path}
-  The tests stay on happy paths (i.e. expected results, e.g. 18 years old) without testing for boundaries and exceptions (e.g. -2 years old)}
+\lnPitch{
+  \pptSection[3]{Happy Path}
+  The tests stay on happy paths (i.e. expected results, e.g. 18 years old) without testing for boundaries and exceptions (e.g. -2 years old)
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[4]{Slow Poke}
-  A unit test that runs incredibly slow. When developers kick it off, they have time to go to the bathroom, grab a smoke, or worse, kick the test off before they go home at the end of the day.}
+\lnPitch{
+  \pptSection[4]{Slow Poke}
+  A unit test that runs incredibly slow. When developers kick it off, they have time to go to the bathroom, grab a smoke, or worse, kick the test off before they go home at the end of the day.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[5]{Giant}
-  A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many many test cases. This can be an indicator that the system-under-test is a God Object.}
+\lnPitch{
+  \pptSection[5]{Giant}
+  A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many many test cases. This can be an indicator that the system-under-test is a God Object.
 }
 
 \subcrumbection{6}
-\plush[3]{
-  \pptMiddle{\pptSection[6]{Mockery}
-  Sometimes mocking can be good, and handy. But sometimes developers can lose themselves in their effort to mock out what isn’t being tested. In this case, a unit test contains so many mocks, stubs, and/or fakes that the system under test isn’t even being tested at all, instead data returned from mocks is what is being tested.}
+\lnPitch{
+  \pptSection[6]{Mockery}
+  Sometimes mocking can be good, and handy. But sometimes developers can lose themselves in their effort to mock out what isn’t being tested. In this case, a unit test contains so many mocks, stubs, and/or fakes that the system under test isn’t even being tested at all, instead data returned from mocks is what is being tested.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[7]{Inspector}
-  A unit test that violates encapsulation in an effort to achieve 100\% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.}
+\lnPitch{
+  \pptSection[7]{Inspector}
+  A unit test that violates encapsulation in an effort to achieve 100\% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[8]{Generous Leftovers (aka Chain Gang, Wet Floor)}
-  An instance where one unit test creates data that is persisted somewhere, and another test reuses the data for its own devious purposes. If the “generator” is ran afterward, or not at all, the test using that data will outright fail.}
+\lnPitch{
+  \pptSection[8]{Generous Leftovers (aka Chain Gang, Wet Floor)}
+  An instance where one unit test creates data that is persisted somewhere, and another test reuses the data for its own devious purposes. If the “generator” is ran afterward, or not at all, the test using that data will outright fail.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[9]{Local Hero (aka Hidden Dependency)}
-  A test case that is dependent on something specific to the development environment it was written on, in order to run. The result is that the test passes on development boxes, but fails when someone attempts to run it elsewhere.}
+\lnPitch{
+  \pptSection[9]{Local Hero (aka Hidden Dependency)}
+  A test case that is dependent on something specific to the development environment it was written on, in order to run. The result is that the test passes on development boxes, but fails when someone attempts to run it elsewhere.
 }
 
-\plush[3]{
+\lnPitch{
   \pptSection[10]{Dodger}
-  \pptMiddle{A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.}
+  A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[11]{Loudmouth}
-  A unit test (or test suite) that clutters up the console with diagnostic messages, logging, and other miscellaneous chatter, even when tests are passing.}
+\lnPitch{
+  \pptSection[11]{Loudmouth}
+  A unit test (or test suite) that clutters up the console with diagnostic messages, logging, and other miscellaneous chatter, even when tests are passing.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[12]{Sequencer}
-  A unit test that depends on items in an unordered list appearing in the same order during assertions.}
+\lnPitch{
+  \pptSection[12]{Sequencer}
+  A unit test that depends on items in an unordered list appearing in the same order during assertions.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[13]{Enumerator (aka Test With No Name)}
-  Unit tests where each test case method name is only an enumeration, e.g. test1, test2, test3. As a result, the intention of the test case is unclear, and the only way to be sure is to read the test case code and pray for clarity.}
+\lnPitch{
+  \pptSection[13]{Enumerator (aka Test With No Name)}
+  Unit tests where each test case method name is only an enumeration, e.g. test1, test2, test3. As a result, the intention of the test case is unclear, and the only way to be sure is to read the test case code and pray for clarity.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[14]{Free Ride (aka Piggyback)}
-  Rather than write a new test case method to test another feature or functionality, a new assertion rides along in an existing test case.}
+\lnPitch{
+  \pptSection[14]{Free Ride (aka Piggyback)}
+  Rather than write a new test case method to test another feature or functionality, a new assertion rides along in an existing test case.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[15]{Excessive Setup (aka Mother Hen)}
-  A test that requires a lot of work to set up in order to even begin testing. Sometimes several hundred lines of code are used to setup the environment for one test, with several objects involved, which can make it difficult to really ascertain what is being tested due to the ``noise'' of all of the setup.}
+\lnPitch{
+  \pptSection[15]{Excessive Setup (aka Mother Hen)}
+  A test that requires a lot of work to set up in order to even begin testing. Sometimes several hundred lines of code are used to setup the environment for one test, with several objects involved, which can make it difficult to really ascertain what is being tested due to the ``noise'' of all of the setup.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[16]{Line hitter}
-  At first glance, the tests cover everything and code coverage tools confirm it with 100\%, but in reality the   tests merely hit the code, without doing any output analysis.}
+\lnPitch{
+  \pptSection[16]{Line hitter}
+  At first glance, the tests cover everything and code coverage tools confirm it with 100\%, but in reality the   tests merely hit the code, without doing any output analysis.
 }
 
-\plush[3]{
-  \pptMiddle{\pptSection[17]{The Liar (aka Evergreen Tests)}
-  A test doesn’t validate any behaviour and passes in every scenario. Any new bug introduced in the code will never be discovered by this test. It was probably created after the implementation was finished, so the author of this test couldn’t know whether the test actually tests something.}
+\lnPitch{
+  \pptSection[17]{The Liar (aka Evergreen Tests)}
+  A test doesn’t validate any behaviour and passes in every scenario. Any new bug introduced in the code will never be discovered by this test. It was probably created after the implementation was finished, so the author of this test couldn’t know whether the test actually tests something.
 }
 
-\plush{\pptChapter[Mocking]{Mocking Frameworks}}
+\lnPitch{\pptChapter[Mocking]{Mocking Frameworks}}
 
-\plush[3]{
+\lnPitch{
   \pptHeader{Mocking Frameworks are Evil}
   \pptPinQR[left]{https://www.youtube.com/watch?v=1bAixLaOCSA}
   \pptPic{0.8}{mocking}
 }
 
-\plush[3]{
+\lnPitch{
   \pptHeader{Instead: Doubles or Fake Objects}
   \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
   \pptPic{0.9}{fakes}
 }
 
-\plush{\pptChapter[OOP]{OOP + Tests}}
+\lnPitch{\pptChapter[OOP]{OOP + Tests}}
 
-\plush[3]{
+\lnPitch{
   \pptHeader{xUnit Tests are Procedural}
   \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
   \pptPic{0.9}{algorithm}
 }
 
-\plush[3]{
+\lnPitch{
   \pptHeader{Instead: Single-Method Unit Tests}
   \pptPinQR[left]{https://www.youtube.com/watch?v=CCr8hRE\_TUs}
   \pptPic{0.9}{onemethod}
 }
 
-\plush{\pptChapter[Testable]{Testable Code}}
+\lnPitch{\pptChapter[Testable]{Testable Code}}
 
 \begin{lnSnippet}[book-static-file.java]
 import java.nio.file.Files;
@@ -182,7 +182,7 @@ class Book {
   }
 }
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \pptHeader{All Dependencies Are Injectable}
   \begin{pptWide}{2}
     \pptBanner[red]{Wrong}
@@ -211,7 +211,7 @@ class FakeBook implements Book {
   }
 }
 \end{lnSnippet}
-\plush{
+\lnPitch{
   \pptHeader{Each Interface Has a Fake Object}
   \begin{pptWide}{2}
     \pptBanner{Interface}
@@ -222,9 +222,9 @@ class FakeBook implements Book {
   \end{pptWide}
 }
 
-\plush{\innoBVC}
+\lnPitch{\innoBVC}
 
-\plush[2]{%
+\lnPitch{
   \begin{multicols}{2}
     \innoBook{freeman2009growing}
     \par\columnbreak
@@ -232,18 +232,18 @@ class FakeBook implements Book {
   \end{multicols}
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Where to go:}
   International Symposium on Software Testing and Analysis (ISSTA)
 }
 
-\plush[2]{%
+\lnPitch{
   \pptBanner{Call to Action:}
   Get rid of mocking framework in your code and only
   use fake objects.
 }
 
-\plush[6]{%
+\lnPitch{
   \pptBanner[orange]{Still unresolved issues:}
   \begin{itemize}
     \item How to \ul{detect} test anti-patterns automatically?
