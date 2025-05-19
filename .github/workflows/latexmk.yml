@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - uses: yegor256/latexmk-action@0.16.1
+      - uses: yegor256/latexmk-action@0.16.2
         with:
           cmd: make
           depends: lecture-notes/DEPENDS.txt
