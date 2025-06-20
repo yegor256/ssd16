@@ -8,8 +8,7 @@ There are slides for my series of lectures for
 
 All recorded videos are in [this YouTube playlist][playlist].
 
-All compiled slide decks in PDF are
-[here](https://yegor256.github.io/ssd16/).
+All compiled slide decks [in PDF](https://yegor256.github.io/ssd16/).
 
 To compile everything just run:
 
