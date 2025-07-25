@@ -5,7 +5,7 @@
 docker:
   image: yegor256/latex
 install: |-
-  sudo lecture-notes/tlmgr-install.sh
+  sudo "$(pwd)/lecture-notes/tlmgr-install.sh"
 merge:
   script: |-
     make
