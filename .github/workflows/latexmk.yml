@@ -22,7 +22,7 @@ jobs:
         with:
           cmd: make
           depends: lecture-notes/DEPENDS.txt
-      - uses: JamesIves/github-pages-deploy-action@v4.7.3
+      - uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: package
